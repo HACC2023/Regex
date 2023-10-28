@@ -6,14 +6,9 @@
 
 ### Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone [Your Repository URL]
-   cd [Your Repository Directory]
-
-2. Install the dependencies
+    Install the dependencies
     ```bash
-    pip install beautifulsoup4 lxml
+        pip install beautifulsoup4 lxml
     ```
 
 ## Using the Parser
@@ -35,3 +30,20 @@ Ensure all the HTML files you want to parse are placed in a directory named arti
 
    Check the generated JSON files in the parsed_json directory to see the parsed and cleaned data.
    If any articles returned null values for both the "question" and "article_text" fields, their filenames will be saved in null_articles.txt for review.
+
+## Storing Data in MongoDB
+2. After parsing, structure and store the data in MongoDB. For instance, the data can be organized as:
+
+```json
+{
+  "_id": ObjectId("someid"),
+  "question": "How to reset my password?",
+  "text": "To reset your password, follow these steps...",
+  "images": [{
+    "src": "/help/chasek/images/Image/Bacula/Screen%20Shot%202023-08-11%20at%2011_40_43%20AM.png",
+    "alt": "Description of image",
+    "width": 502,
+    "height": 387
+  }]
+}
+```
