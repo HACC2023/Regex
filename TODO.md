@@ -60,14 +60,11 @@ After parsing, structure and store the data in MongoDB. For instance, the data c
 
 ## Metrics and Success Tracking
 - ✅ Integrate a system to monitor and track metrics. (Core MVP feature to gauge performance)
-    - ⭕ Monitor successful searches. (Key metric for chatbot effectiveness)
-    - 🔲 Track reductions in Help Desk ticket submissions. (Direct measure of system impact and ROI)
+- ⭕ Monitor successful searches. (Key metric for chatbot effectiveness)
+- 🔲 Track reductions in Help Desk ticket submissions. (Direct measure of system impact and ROI)
 - 🔲 Utilize the metrics to evaluate the effectiveness and success of the implemented solution. (Allows for iterative improvements based on data-driven insights)
-  User Feedback Analysis:
-  🔲 Gather and analyze user feedback to identify areas of improvement.
-  User Engagement Metrics:
-  🔲 Track metrics like average session duration, bounce rate, and return users to understand user engagement and satisfaction.
-  Error Rate:
-  🔲 Monitor the rate at which the chatbot misunderstands or can't answer user queries, which can be crucial for further refinements.
-  Response Time:
-  🔲 Measure the average time the chatbot takes to respond to user queries, ensuring that it meets user expectations for speed.
+    ## User Feedback Analysis:
+  - 🔲 Gather and analyze user feedback to identify areas of improvement. User Engagement Metrics:
+  - 🔲 Track metrics like average session duration, bounce rate, and return users to understand user engagement and satisfaction. Error Rate:
+  - 🔲 Monitor the rate at which the chatbot misunderstands or can't answer user queries, which can be crucial for further refinements. Response Time:
+  - 🔲 Measure the average time the chatbot takes to respond to user queries, ensuring that it meets user expectations for speed.
