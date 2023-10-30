@@ -3,8 +3,18 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+
+const handleGenerateEmbeddings = () => {
+  Meteor.call('generateAndStoreEmbeddings', (err) => {
+    if (err) {
+      alert('Error:', err.reason);
+    } else {
+      alert('Embeddings generated and stored successfully');
+    }
+  });
+};
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -26,7 +36,8 @@ const NavBar = () => {
               <Nav.Link id="list-stuff-nav" as={NavLink} to="/list" key="list">List Stuff</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
+              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
+                <Button variant="primary" onClick={handleGenerateEmbeddings}>Generate Embeddings</Button>
             ) : ''}
           </Nav>
           <Nav className="justify-content-end">

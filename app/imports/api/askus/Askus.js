@@ -12,6 +12,8 @@ class AskusCollection {
       filename: String,
       question: String,
       article_text: String,
+      embedding: { type: Array, optional: true }, // Add this line
+      'embedding.$': Number, // Each item in the embedding array is a Number
       // Add more fields if necessary
     });
     // Attach the schema to the collection.

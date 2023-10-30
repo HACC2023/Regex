@@ -18,3 +18,5 @@ Make sure meteor starts up without errors.
 ```bash
 $ meteor npm run start
 ```
+
+https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
