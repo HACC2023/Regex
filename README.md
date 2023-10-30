@@ -19,4 +19,19 @@ Make sure meteor starts up without errors.
 $ meteor npm run start
 ```
 
+## OpenAI API Key Environment Set Up
+```bash
+powershell
+$env:OPENAI_API_KEY="<your key here>"
+Write-Output $env:OPENAI_API_KEY
+
+linux
+echo "export OPENAI_API_KEY='<your key here>'" >> ~/.zshrc
+source ~/.zshrc
+echo $OPENAI_API_KEY
+
+window
+set OPENAI_API_KEY "<your key here>"
+echo %OPENAI_API_KEY%
+```
 https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety

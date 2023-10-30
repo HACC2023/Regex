@@ -65,8 +65,11 @@ Meteor.methods({
     const similarArticles = findMostSimilarArticles(questionEmbedding);
 
     if (similarArticles.length > 0) {
-      return similarArticles[0].article_text;
+      return similarArticles.slice(0, 5).map(article => ({
+        article_text: article.article_text,
+        filename: article.filename,
+      }));
     }
-    return "Sorry, I couldn't find a relevant answer to your question.";
+    return [];
   },
 });

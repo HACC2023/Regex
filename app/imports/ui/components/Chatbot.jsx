@@ -4,19 +4,25 @@ import { Button, Form, Container, Row, Col, Alert } from 'react-bootstrap';
 
 const ChatBox = () => {
   const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
+  const [mainAnswer, setMainAnswer] = useState(''); // Main answer
+  const [mainFilename, setMainFilename] = useState(''); // Main filename
+  const [similarArticles, setSimilarArticles] = useState([]); // New state for similar articles
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setAnswer('');
+    setMainAnswer('');
+    setMainFilename('');
+    setSimilarArticles([]);
     setError('');
 
     Meteor.call('askus.getAnswer', question, (err, res) => {
       if (err) {
         setError(err.reason);
       } else {
-        setAnswer(res);
+        setMainAnswer(res[0].article_text);
+        setMainFilename(res[0].filename);
+        setSimilarArticles(res.slice(1)); // Exclude the main answer
       }
     });
   };
@@ -44,10 +50,23 @@ const ChatBox = () => {
               {error}
             </Alert>
           )}
-          {answer && (
+          {mainAnswer && (
             <Alert variant="info" className="mt-4">
-              <strong>Answer:</strong> {answer}
+              <strong>Top Answer from {mainFilename}:</strong> {mainAnswer}
             </Alert>
+          )}
+
+          {similarArticles.length > 0 && (
+            <div className="mt-4">
+              <h5>Other similar articles:</h5>
+              <ul>
+                {similarArticles.map((article, index) => (
+                  <li key={index}>
+                    <strong>From {article.filename}:</strong> {article.article_text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </Col>
       </Row>
