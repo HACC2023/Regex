@@ -46,10 +46,8 @@ def parse_html_simple_clean_text(file_path):
 # Directory containing the HTML files
 html_dir = "article_html"
 
-# Create a directory to save JSON files if it doesn't exist
-json_output_dir = "parsed_json"
-if not os.path.exists(json_output_dir):
-    os.makedirs(json_output_dir)
+# List to accumulate the parsed results
+parsed_articles = []
 
 # List to store filenames of articles with null values
 null_articles = []
@@ -64,12 +62,21 @@ for filename in os.listdir(html_dir):
         if parsed_data["question"] is None and parsed_data["article_text"] is None:
             null_articles.append(filename)
         else:
-            # Save the parsed data as a JSON file
-            json_filename = os.path.join(json_output_dir, f"{os.path.splitext(filename)[0]}.json")
-            with open(json_filename, "w", encoding="utf-8") as json_file:
-                json.dump(parsed_data, json_file, ensure_ascii=False, indent=4)
+            # Append the parsed data to the list
+            parsed_articles.append({
+                "filename": filename,
+                "question": parsed_data["question"],
+                "article_text": parsed_data["article_text"]
+            })
 
-            print(f"Saved cleaned data for {filename} to {json_filename}")
+        print(f"Parsed data for {filename}")
+
+# Serialize the parsed results to a JSON file
+json_filename = "parsed_articles.json"
+with open(json_filename, "w", encoding="utf-8") as json_file:
+    json.dump(parsed_articles, json_file, ensure_ascii=False, indent=4)
+
+print(f"\nSaved parsed data to {json_filename}")
 
 # Save the list of articles with null values to a file
 with open("null_articles.txt", "w", encoding="utf-8") as null_file:

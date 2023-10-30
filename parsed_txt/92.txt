@@ -1,0 +1,2 @@
+Question: How can I change my desktop resolution?
+Article Text: Click on "Start", then "Control Panel" , then "Display", then "Settings" tab. Adjust the slider bar under the heading "Screen resolution."

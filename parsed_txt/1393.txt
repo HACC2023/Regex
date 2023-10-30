@@ -1,0 +1,2 @@
+Question: Can the vendor have two different withholdings on the same payment?
+Article Text: No, the vendor can only have one withholding per payment. You must create separate payments for each withholding amount.

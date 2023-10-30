@@ -1,0 +1,2 @@
+Question: Setting up UHM wireless on Mac OS X
+Article Text: These instructions are for setting up access to the UHM broadcasted wireless SSID at the UH-Manoa campus when using Mac OS X. First, click on the wireless icon in the upper left corner near the time and date and select UHM. If it is not in the list the signal may be weak or you may not be in the coverage area. Once connected, launch a web browser, like Safari or Mozilla Firefox, to login to the wireless network. Once logged in you are ready to browse the Web. More about the wireless network

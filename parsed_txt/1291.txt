@@ -1,0 +1,2 @@
+Question: Google Calendar Gadget
+Article Text: If using Internet Explorer 7 to access the Gmail web interface with the Google Calendar Gadget lab enabled, this causes the page to reload continuously every few seconds. The recommended solution is to disable the Google Calendar Gadget lab by seleting Settings, then Labs.

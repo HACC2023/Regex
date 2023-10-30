@@ -1,0 +1,2 @@
+Question: Getting Started with Wordpress
+Article Text: This article details how to get started with a new Wordpress site hosted through the UH Hosted Website Service. Current documentation is located here: https://www.hawaii.edu/its/wptheme/user-guide/

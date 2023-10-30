@@ -1,0 +1,2 @@
+Question: What is spam?
+Article Text: Spam is unsolicited email messages sent to your account. Spam is also referred to as "unsolicited commercial email" and "unsolicited bulk email". They range from harmless advertising to potentially offensive (complete with pictures). Spam is very similar to "junk mail" that you receive in your regular postal mailbox. ref: http://www.hawaii.edu/infotech/spam/spam.html#what

@@ -1,0 +1,2 @@
+Question: How Much Memory (RAM) Does my Windows Computer Have?
+Article Text: Computer memory (RAM) is typically installed in megabytes (MB) or gigabytes (GB), typically in some combination of 256 MB, 512 MB, 1 GB or 4 GB. For Windows 10: Right-click on the Start button, click System. Installed memory (RAM) is listed.

@@ -1,0 +1,2 @@
+Question: Thunderbird Information (Mac)
+Article Text: General Information Thunderbird, a free email application, allows you to receive, send, and read your electronic mail on your computer. Minimum System Requirements A Macintosh running macOS 10.9* or later An Intel x86 processor 512 MB RAM 200 MB hard disk space *Limited support for macOS 10.9 and 10.10 ITS Supported Version Thunderbird Documentation Google@UH Gmail Thunderbird (Mac) Setup Email & Your Quota [HTML] Network Etiquette [HTML] Company Web Site http://www.mozilla.com

@@ -1,0 +1,2 @@
+Question: How Do I Create a Google@UH Site?
+Article Text: To create a new site If you are in Gmail, click on "Sites" in the upper left hand corner or go to http://sites.google.com/a/hawaii.edu/ Click on "Create site" Name your Site, choose a theme, and manage any additional options prior to selecting Create site.

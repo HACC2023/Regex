@@ -1,0 +1,2 @@
+Question: Adding a "Dummy" student account to a Laulima course space
+Article Text: If you want to view your course exactly as your students see it you can add a non-University of Hawai'i email to create a "dummy student" account. Viewing your Laulima course in this fashion will help you evaluate your settings and experience your course as your students will. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_addingdummystud.htm (link opens in new window)

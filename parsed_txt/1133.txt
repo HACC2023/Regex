@@ -1,0 +1,2 @@
+Question: Editing the tool list in Laulima
+Article Text: The tools available in Laulima which are located on the left side of every course space can be edited. Using the Page Order function found in Site Info you will be able to rename a tool, rearrange or move its placement on the left-hand side of the screen, as well as delete or remove tools that you are not using. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_editingtoollist.htm (link opens in new window)

@@ -1,0 +1,2 @@
+Question: How do I request a new LISTSERV list?
+Article Text: Login to the LISTSERV request page with your UH username and password. Follow the instructions on the page. You will need to supply a name for the new list (must include a hyphen), provide a description, and select one of the configuration options. At the bottom of the page, acknowledge the terms of use (UH Executive Policy E2.210, Chapter 708, Hawaii Revised Statutes, List Owner's Responsibilities) by checking off the boxes and click on "Request List".

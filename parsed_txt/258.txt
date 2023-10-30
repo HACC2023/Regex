@@ -1,0 +1,2 @@
+Question: I am having trouble removing a file from my Unix account. The filename has a space in it. How do I delete files with spaces in them?
+Article Text: To delete a file that has a space in its' file name, please use the following command. Rm "file name" The quotes must be used.

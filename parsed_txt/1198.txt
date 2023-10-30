@@ -1,0 +1,2 @@
+Question: What happened to my email folders?
+Article Text: Gmail doesn’t use a folder system. Instead labels are used to group and organize messages. Labels are more efficient for organizing your email because conversations can have more than one label and they can be searched for by label name. Click here for more information on labels.

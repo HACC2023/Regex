@@ -1,0 +1,2 @@
+Question: How to transfer ownership of a site in Google@UH Sites
+Article Text: Transfering ownership of a site in Google@UH Sites is a two-step process. The first step is to add a new owner to the existing Google site: http://sites.google.com/support/bin/answer.py?hl=en&answer=97934 After adding a new owner, the new owner can login to remove the previous owner: http://sites.google.com/support/bin/answer.py?hl=en&answer=98190

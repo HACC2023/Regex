@@ -1,0 +1,2 @@
+Question: Where can I find documentation for SAS software?
+Article Text: Documentation for SAS software is available in many formats including an HTML-based online library, a PDF version and SAS books. For the latest information, go to http://support.sas.com/documentation/onlinedoc/index.html.

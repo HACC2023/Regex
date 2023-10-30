@@ -1,0 +1,2 @@
+Question: Where do I change my dial-up number?
+Article Text: Right click on 'My Network Places' and select properties. Then under 'Dial-up' right click and select properties on the connection you wish to modify.

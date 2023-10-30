@@ -1,0 +1,2 @@
+Question: Registering iclickers using Laulima
+Article Text: Instructors can enable students to register their iclickers for a course using a student list from Laulima's Gradebook tool. This tutorial shows how to export the student list from the Gradebook and to incorporate it to enable the registration process in iclicker: http://www.hawaii.edu/talent/laulimatutorials/laulima_iclicker_registration.htm (link opens in new window)

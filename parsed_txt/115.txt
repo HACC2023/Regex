@@ -1,0 +1,2 @@
+Question: How do I restore the defaults for my Unix account?
+Article Text: At your Unix prompt, type in "/usr/uh/pkg/its/restore-defaults" and it will restore the defaults to your Unix account.

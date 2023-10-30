@@ -1,0 +1,2 @@
+Question: What is a macro virus?
+Article Text: A macro virus is a type of virus that spreads to computers via programs that uses macros. Example of programs that uses macros are Microsoft Word and Microsoft Excel.
