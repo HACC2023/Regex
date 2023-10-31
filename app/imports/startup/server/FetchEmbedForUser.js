@@ -59,7 +59,10 @@ function findMostSimilarArticles(userEmbedding) {
 }
 
 function getRelevantContextFromDB(userEmbedding) {
+  console.log('User Embedding:', userEmbedding);
   const similarArticles = findMostSimilarArticles(userEmbedding);
+  console.log('Similar articles found:', similarArticles);
+
 
   return similarArticles.map((article) => ({
     role: 'system',
@@ -72,7 +75,13 @@ Meteor.methods({
     const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
     const chatbotContext = getRelevantContextFromDB(userEmbedding);
 
+    const initialContext = [
+      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
+      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
+    ];
+
     const messages = [
+      ...initialContext,
       ...chatbotContext,
       { role: 'user', content: userMessage },
     ];
@@ -81,10 +90,20 @@ Meteor.methods({
       const response = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         messages: messages,
+        temperature: 0.2,
+        max_tokens: 150,
       });
 
       if (response && response.choices && response.choices[0]) {
-        return response.choices[0].message.content;
+        const answer = response.choices[0].message.content;
+
+        // Post-process: Check if the answer is IT related (this is a simplistic check)
+        const IT_KEYWORDS = ['server', 'network', 'computer', 'software', 'hardware'];
+        if (IT_KEYWORDS.some(keyword => answer.toLowerCase().includes(keyword))) {
+          return answer;
+        }
+        return 'Sorry, I can only provide information related to IT based on our embedded knowledge.';
+
       }
       throw new Error('Unexpected OpenAI API response format');
 
