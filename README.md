@@ -4,6 +4,7 @@
 
 ## 1. Install Meteor
 ```bash
+npm install openai
 place holder for now
 ```
 

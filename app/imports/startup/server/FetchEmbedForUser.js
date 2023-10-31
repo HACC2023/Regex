@@ -1,6 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { HTTP } from 'meteor/http';
+import OpenAI from 'openai';
 import { Askus } from '../../api/askus/Askus.js';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 function computeCosineSimilarity(embedding1, embedding2) {
   if (!Array.isArray(embedding1) || !Array.isArray(embedding2)) {
@@ -18,58 +22,75 @@ function computeCosineSimilarity(embedding1, embedding2) {
   return dotProduct / (magnitude1 * magnitude2);
 }
 
-function getEmbeddingFromOpenAI(text) {
-  const openaiAPIKey = process.env.OPENAI_API_KEY; // Remember to secure this or use environment variables
-
+async function getEmbeddingFromOpenAI(text) {
   try {
-    const response = HTTP.post('https://api.openai.com/v1/embeddings', {
-      headers: {
-        Authorization: `Bearer ${openaiAPIKey}`,
-        'Content-Type': 'application/json',
-      },
-      data: {
-        model: 'text-embedding-ada-002',
-        input: text,
-      },
+    console.log(openai.embeddings);
+
+    const response = await openai.embeddings.create({
+      model: 'text-embedding-ada-002',
+      input: text,
     });
 
-    return response.data.data[0].embedding;
+    if (response && response.data) {
+      return response.data[0].embedding;
+    }
+    throw new Error('Unexpected OpenAI API response format');
+
   } catch (error) {
-    console.error('Detailed OpenAI API Error:', error.response ? error.response.content : error);
-    throw new Meteor.Error('embedding-error', 'Failed to fetch embedding from OpenAI');
+    console.error('Error during OpenAI API call:', error);
+    throw new Meteor.Error('embedding-error', error.message || 'Failed to fetch embedding from OpenAI');
   }
 }
 
 function findMostSimilarArticles(userEmbedding) {
   const articles = Askus.collection.find({}).fetch();
 
-  const similarArticles = articles
-    .filter(article => Array.isArray(article.embedding)) // Filter out articles without valid embeddings
-    .map(article => {
-      console.log('User Embedding:', userEmbedding); // For debugging
-      console.log('Article Embedding:', article.embedding); // For debugging
-
+  return articles
+    .filter((article) => Array.isArray(article.embedding))
+    .map((article) => {
       const similarity = computeCosineSimilarity(userEmbedding, article.embedding);
       return {
         ...article,
         similarity,
       };
-    });
+    })
+    .sort((a, b) => b.similarity - a.similarity)
+    .slice(0, 5);
+}
 
-  return similarArticles.sort((a, b) => b.similarity - a.similarity).slice(0, 5);
+function getRelevantContextFromDB(userEmbedding) {
+  const similarArticles = findMostSimilarArticles(userEmbedding);
+
+  return similarArticles.map((article) => ({
+    role: 'system',
+    content: `From ${article.filename}: ${article.article_text}`,
+  }));
 }
 
 Meteor.methods({
-  'askus.getAnswer': function (userQuestion) {
-    const questionEmbedding = getEmbeddingFromOpenAI(userQuestion);
-    const similarArticles = findMostSimilarArticles(questionEmbedding);
+  async getChatbotResponse(userMessage) {
+    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+    const chatbotContext = getRelevantContextFromDB(userEmbedding);
 
-    if (similarArticles.length > 0) {
-      return similarArticles.slice(0, 5).map(article => ({
-        article_text: article.article_text,
-        filename: article.filename,
-      }));
+    const messages = [
+      ...chatbotContext,
+      { role: 'user', content: userMessage },
+    ];
+
+    try {
+      const response = await openai.chat.completions.create({
+        model: 'gpt-3.5-turbo',
+        messages: messages,
+      });
+
+      if (response && response.choices && response.choices[0]) {
+        return response.choices[0].message.content;
+      }
+      throw new Error('Unexpected OpenAI API response format');
+
+    } catch (error) {
+      console.error('Error during OpenAI API call:', error);
+      throw new Meteor.Error('api-error', 'Failed to get a response from the chatbot');
     }
-    return [];
   },
 });
