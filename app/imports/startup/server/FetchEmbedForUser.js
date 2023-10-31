@@ -83,7 +83,7 @@ Meteor.methods({
     const messages = [
       ...initialContext,
       ...chatbotContext,
-      { role: 'user', content: userMessage },
+      { role: 'user', content: `Can you answer the question: ${userMessage} based on the given IT articles?` },
     ];
 
     try {
@@ -95,15 +95,7 @@ Meteor.methods({
       });
 
       if (response && response.choices && response.choices[0]) {
-        const answer = response.choices[0].message.content;
-
-        // Post-process: Check if the answer is IT related (this is a simplistic check)
-        const IT_KEYWORDS = ['server', 'network', 'computer', 'software', 'hardware'];
-        if (IT_KEYWORDS.some(keyword => answer.toLowerCase().includes(keyword))) {
-          return answer;
-        }
-        return 'Sorry, I can only provide information related to IT based on our embedded knowledge.';
-
+        return response.choices[0].message.content;
       }
       throw new Error('Unexpected OpenAI API response format');
 
