@@ -20,7 +20,7 @@ Meteor.methods({
       }
 
       try {
-        console.log(openai); // Check what's available on the openai object
+        // console.log(openai); // Check what's available on the openai object
         const response = await openai.embeddings.create({
           model: 'text-embedding-ada-002',
           input: articleText,

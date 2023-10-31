@@ -138,3 +138,69 @@ Meteor.methods({
     };
   },
 });
+
+/*
+########################################################
+# Use this method for a stricter IT related chatbot
+########################################################
+  Meteor.methods({
+  async getChatbotResponse(userMessage) {
+    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+
+    const initialContext = [
+      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
+      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
+    ];
+
+    const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?`;
+
+    const messages = [
+      ...initialContext,
+      ...messagesForChatbot,
+      { role: 'user', content: userQueryMessage },
+    ];
+
+    const chatbotResponse = await createOpenAICompletion(messages);
+
+    return {
+      chatbotResponse,
+      similarArticles: articlesForComponent,
+    };
+  },
+});
+########################################################
+*/
+
+/*
+########################################################
+# Need to test this method
+########################################################
+  Meteor.methods({
+  async getChatbotResponse(userMessage) {
+    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+
+    const initialContext = [
+      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
+      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
+    ];
+
+    const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?`;
+
+    const messages = [
+      ...initialContext,
+      ...messagesForChatbot,
+      { role: 'user', content: userQueryMessage },
+    ];
+
+    const chatbotResponse = await createOpenAICompletion(messages);
+
+    return {
+      chatbotResponse,
+      similarArticles: articlesForComponent,
+    };
+  },
+});
+########################################################
+*/
