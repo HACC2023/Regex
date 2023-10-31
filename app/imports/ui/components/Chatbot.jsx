@@ -30,7 +30,7 @@ const ChatBox = () => {
             const mostRelevantArticle = result.similarArticles[0];
             const articleMessage = {
               sender: 'bot',
-              text: `Here is the most relevant article link: [${mostRelevantArticle.question}](/article_html/${mostRelevantArticle.filename})`
+              text: `Here is the most relevant article link: [${mostRelevantArticle.question}](/article_html/${mostRelevantArticle.filename})`,
             };
             newMessages.push(articleMessage);
           }
