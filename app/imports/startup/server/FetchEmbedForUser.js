@@ -6,6 +6,15 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const MAX_ARTICLES = 5;
+const MAX_SIMILAR_ARTICLES = 3;
+const MAX_TOKENS_PER_ARTICLE = 600;
+
+const throwError = (type, message) => {
+  console.error(message);
+  throw new Meteor.Error(type, message);
+};
+
 function computeCosineSimilarity(embedding1, embedding2) {
   if (!Array.isArray(embedding1) || !Array.isArray(embedding2)) {
     throw new Error('Both embeddings must be arrays.');
@@ -22,10 +31,8 @@ function computeCosineSimilarity(embedding1, embedding2) {
   return dotProduct / (magnitude1 * magnitude2);
 }
 
-async function getEmbeddingFromOpenAI(text) {
+const getEmbeddingFromOpenAI = async (text) => {
   try {
-    console.log(openai.embeddings);
-
     const response = await openai.embeddings.create({
       model: 'text-embedding-ada-002',
       input: text,
@@ -34,13 +41,12 @@ async function getEmbeddingFromOpenAI(text) {
     if (response && response.data) {
       return response.data[0].embedding;
     }
-    throw new Error('Unexpected OpenAI API response format');
+    return throwError('embedding-error', 'Unexpected OpenAI API response format');
 
   } catch (error) {
-    console.error('Error during OpenAI API call:', error);
-    throw new Meteor.Error('embedding-error', error.message || 'Failed to fetch embedding from OpenAI');
+    return throwError('embedding-error', `Failed to fetch embedding from OpenAI: ${error.message}`);
   }
-}
+};
 
 function findMostSimilarArticles(userEmbedding) {
   const articles = Askus.collection.find({}).fetch();
@@ -50,22 +56,21 @@ function findMostSimilarArticles(userEmbedding) {
     similarity: computeCosineSimilarity(userEmbedding, article.embedding),
   }));
 
-  const sortedArticles = similarities.sort((a, b) => b.similarity - a.similarity).slice(0, 5);
+  const sortedArticles = similarities.sort((a, b) => b.similarity - a.similarity).slice(0, MAX_ARTICLES);
 
   return sortedArticles.map(item => item.article);
 }
 
 function getRelevantContextFromDB(userEmbedding) {
   console.log('User Embedding:', userEmbedding);
-  const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, 3); // Only take top 3 articles
-  console.log('Similar articles found:', similarArticles);
+  const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
 
-  const maxTokensPerArticle = 600; // further reduce to 600 tokens per article
+  console.log('Similar articles found:', similarArticles);
 
   // Truncate each article to maxTokensPerArticle tokens
   const truncatedArticles = similarArticles.map(article => {
     const tokens = article.article_text.split(' '); // naive tokenization by spaces
-    const truncatedText = tokens.slice(0, maxTokensPerArticle).join(' ');
+    const truncatedText = tokens.slice(0, MAX_TOKENS_PER_ARTICLE).join(' ');
     return {
       ...article,
       article_text: truncatedText,
@@ -90,6 +95,24 @@ function getRelevantContextFromDB(userEmbedding) {
     articlesForComponent: articlesForComponent,
   };
 }
+const createOpenAICompletion = async (messages) => {
+  try {
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: messages,
+      temperature: 0.2,
+      max_tokens: 150,
+    });
+
+    if (response && response.choices && response.choices[0]) {
+      return response.choices[0].message.content;
+    }
+    return throwError('api-error', 'Unexpected OpenAI API response format');
+
+  } catch (error) {
+    return throwError('api-error', `Failed to get a response from the chatbot: ${error.message}`);
+  }
+};
 
 Meteor.methods({
   async getChatbotResponse(userMessage) {
@@ -107,24 +130,11 @@ Meteor.methods({
       { role: 'user', content: `Can you answer the question: ${userMessage} based on the given IT articles?` },
     ];
 
-    try {
-      const response = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
-        messages: messages,
-        temperature: 0.2,
-        max_tokens: 150,
-      });
+    const chatbotResponse = await createOpenAICompletion(messages);
 
-      if (response && response.choices && response.choices[0]) {
-        return {
-          chatbotResponse: response.choices[0].message.content,
-          similarArticles: articlesForComponent, // Return the articles in the expected format
-        };
-      }
-      throw new Error('Unexpected OpenAI API response format');
-    } catch (error) {
-      console.error('Error during OpenAI API call:', error);
-      throw new Meteor.Error('api-error', 'Failed to get a response from the chatbot');
-    }
+    return {
+      chatbotResponse,
+      similarArticles: articlesForComponent,
+    };
   },
 });
