@@ -28,9 +28,20 @@ const ChatBox = () => {
           // Check if similarArticles is available and non-empty
           if (result.similarArticles && result.similarArticles.length > 0) {
             const mostRelevantArticle = result.similarArticles[0];
+            const articleLink = (
+              <a
+                href={`/article_html/${mostRelevantArticle.filename}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: 'white' }}
+              >
+                {mostRelevantArticle.question}
+              </a>
+            );
             const articleMessage = {
               sender: 'bot',
-              text: `Here is the most relevant article link: [${mostRelevantArticle.question}](/article_html/${mostRelevantArticle.filename})`,
+              text: 'Here is the most relevant article link:',
+              link: articleLink,
             };
             newMessages.push(articleMessage);
           }
@@ -45,6 +56,15 @@ const ChatBox = () => {
     }, 1000); // simulate a 1-second delay for the typing effect
   };
 
+  const chatSender = (message) => {
+    if (message.sender === 'user') {
+      return <div>You</div>;
+    }
+    if (message.link != null) {
+      return ('');
+    }
+    return <div>ChatBot</div>;
+  };
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -57,21 +77,26 @@ const ChatBox = () => {
         <Col>
           <div className="chat-window">
             {chatHistory.map((message, index) => (
-              <div key={index} className={`chat-message ${message.sender}`}>
-                {message.text}
-              </div>
+              <>
+                {chatSender(message)}
+                <div key={index} className={`chat-message ${message.sender}`}>
+                  {message.text} {message.link}
+                </div>
+              </>
             ))}
             {loading && <div><Spinner animation="border" /> <span>typing...</span></div>}
             <div ref={chatEndRef} />
           </div>
           <Form onSubmit={handleSend} className="mt-3">
-            <Form.Control
-              type="text"
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-              placeholder="Ask something..."
-            />
-            <Button type="submit" className="mt-2">Send</Button>
+            <div style={{ display: 'flex' }}>
+              <Form.Control
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                placeholder="Ask something..."
+              />
+              <Button type="submit" className="mt-2 ms-2">Send</Button>
+            </div>
           </Form>
         </Col>
       </Row>
