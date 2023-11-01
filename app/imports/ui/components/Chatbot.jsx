@@ -33,7 +33,7 @@ const ChatBox = () => {
                 href={`/article_html/${mostRelevantArticle.filename}`}
                 target="_blank"
                 rel="noreferrer"
-                style={{ color: 'white' }}
+                className="chat-message bot"
               >
                 {mostRelevantArticle.question}
               </a>
@@ -80,7 +80,7 @@ const ChatBox = () => {
               <>
                 {chatSender(message)}
                 <div key={index} className={`chat-message ${message.sender}`}>
-                  {message.text} {message.link}
+                  {message.text}{message.link}
                 </div>
               </>
             ))}
