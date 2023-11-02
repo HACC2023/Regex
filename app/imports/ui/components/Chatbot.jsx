@@ -11,6 +11,8 @@ const ChatBox = () => {
 
   const chatEndRef = useRef(null);
 
+  const timeStart = (new Date()).getTime();
+
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -50,11 +52,19 @@ const ChatBox = () => {
           setChatHistory([...chatHistory, ...newMessages]);
           setSimilarArticles(result.similarArticles);
           setUserInput('');
+
+          const timeEnd = (new Date()).getTime();
+          const responseTimeMs = timeEnd - timeStart;
+          console.log(`User Input: "${userInput}"`);
+          console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
+
         } else {
           setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
+          console.log(`User Input: ${userInput}`);
+          console.log('Request failed.');
         }
       });
-    }, 1000); // simulate a 1-second delay for the typing effect
+    }, 0); // simulate a 1-second delay for the typing effect
   };
 
   const chatSender = (message) => {
@@ -81,7 +91,7 @@ const ChatBox = () => {
               <>
                 {chatSender(message)}
                 <div key={index} className={`chat-message ${message.sender}`}>
-                  {message.text}{message.link}
+                  {message.text} {message.link}
                 </div>
               </>
             ))}
