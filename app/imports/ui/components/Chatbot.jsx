@@ -55,13 +55,11 @@ const ChatBox = () => {
 
           const timeEnd = (new Date()).getTime();
           const responseTimeMs = timeEnd - timeStart;
-          console.log(`User Input: "${userInput}"`);
-          console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
+          console.log(`Response took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds. (User Input: "${userInput}")`);
 
         } else {
           setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
-          console.log(`User Input: ${userInput}`);
-          console.log('Request failed.');
+          console.log(`Response failed. (User Input: "${userInput}")`);
         }
       });
     }, 0); // simulate a 1-second delay for the typing effect
