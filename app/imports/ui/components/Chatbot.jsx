@@ -85,18 +85,19 @@ const ChatBox = () => {
                 </div>
               </>
             ))}
+            {/* ChatLoading Circle is rendered here */}
             {loading && <ChatLoading />}
             <div ref={chatEndRef} />
           </div>
           <Form onSubmit={handleSend} className="mt-3">
-            <div style={{ display: 'flex' }}>
+            <div className="d-flex">
               <Form.Control
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
               />
-              <Button type="submit" className="mt-2 ms-2">Send</Button>
+              <Button type="submit" className="ms-2">Send</Button>
             </div>
           </Form>
         </Col>
