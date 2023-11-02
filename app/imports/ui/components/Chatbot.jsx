@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Form, Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import ChatLoading from './ChatLoading';
 
 const ChatBox = () => {
   const [userInput, setUserInput] = useState('');
@@ -84,7 +85,7 @@ const ChatBox = () => {
                 </div>
               </>
             ))}
-            {loading && <div><Spinner animation="border" /> <span>typing...</span></div>}
+            {loading && <ChatLoading />}
             <div ref={chatEndRef} />
           </div>
           <Form onSubmit={handleSend} className="mt-3">
