@@ -97,7 +97,7 @@ const ChatBox = () => {
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
               />
-              <Button type="submit" className="ms-2">Send</Button>
+              <Button type="submit" className="ms-2" disabled={loading}>Send</Button>
             </div>
           </Form>
         </Col>
