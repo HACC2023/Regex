@@ -15,7 +15,7 @@ const FAQStatsAdmin = () => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
-    const items = AskUs.collection.find({}).fetch();
+    const items = AskUs.collection.find({}, { sort: { freq: -1 } }).fetch().slice(0, 12);
     return {
       pages: items,
       ready: rdy,
