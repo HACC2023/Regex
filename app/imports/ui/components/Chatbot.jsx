@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
-import swal from 'sweetalert';
 import ChatLoading from './ChatLoading';
 import { Askus } from '../../api/askus/Askus';
 
@@ -17,12 +16,11 @@ const ChatBox = () => {
 
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
-    const { _id, filename } = item;
+    const { _id } = item;
     const freq = item.freq + amount;
-    console.log(`increased ${filename} freq by ${amount}`);
     Askus.collection.update(_id, { $set: { freq } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+      console.log('Error', error.message) :
+      console.log(/* 'Success', `increased ${filename} freq by ${amount}` */)));
   };
 
   const handleSend = (e) => {
