@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Container, Nav, Navbar, NavDropdown, Button, Image } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import EmbeddedButton from './EmbeddedButton';
 
 const handleGenerateEmbeddings = () => {
   Meteor.call('generateAndStoreEmbeddings', (err) => {
@@ -37,7 +38,7 @@ const NavBar = () => {
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
-              <Button variant="link" onClick={handleGenerateEmbeddings} style={{ color: 'black', textDecoration: 'none' }}>Generate Embeddings</Button>,
+              <EmbeddedButton />,
             ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
