@@ -1,7 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import swal from 'sweetalert';
 import ChatLoading from './ChatLoading';
+import { Askus } from '../../api/askus/Askus';
 
 const ChatBox = () => {
   const [userInput, setUserInput] = useState('');
@@ -12,6 +14,16 @@ const ChatBox = () => {
   const chatEndRef = useRef(null);
 
   const timeStart = (new Date()).getTime();
+
+  // Increases the freq attribute in the Askus database for selected item.
+  const increaseFreq = (item, amount) => {
+    const { _id, filename } = item;
+    const freq = item.freq + amount;
+    console.log(`increased ${filename} freq by ${amount}`);
+    Askus.collection.update(_id, { $set: { freq } }, (error) => (error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
+  };
 
   const handleSend = (e) => {
     e.preventDefault();
@@ -46,7 +58,15 @@ const ChatBox = () => {
               text: 'Here is the most relevant article link:',
               link: articleLink,
             };
+            increaseFreq(mostRelevantArticle, 1);
             newMessages.push(articleMessage);
+          }
+
+          for (let i = 1; i < 3; i++) {
+            if (result.similarArticles[i]) {
+              const runnerUpArticle = result.similarArticles[i];
+              increaseFreq(runnerUpArticle, 0.5);
+            }
           }
 
           setChatHistory([...chatHistory, ...newMessages]);

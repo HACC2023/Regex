@@ -85,8 +85,10 @@ function getRelevantContextFromDB(userEmbedding) {
 
   // Return articles in the expected format
   const articlesForComponent = truncatedArticles.map((article) => ({
+    _id: article._id,
     filename: article.filename,
     question: article.question,
+    freq: article.freq,
     article_text: article.article_text,
   }));
 
