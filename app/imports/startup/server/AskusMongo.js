@@ -26,6 +26,7 @@ Meteor.startup(() => {
             filename: record.filename,
             question: record.question,
             article_text: record.article_text,
+            freq: 0,
           });
         } else {
           console.warn(`Skipping record with filename: ${record.filename} due to missing article_text`);
