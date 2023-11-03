@@ -3,19 +3,9 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown, Button, Image } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 import EmbeddedButton from './EmbeddedButton';
-
-const handleGenerateEmbeddings = () => {
-  Meteor.call('generateAndStoreEmbeddings', (err) => {
-    if (err) {
-      alert('Error:', err.reason);
-    } else {
-      alert('Embeddings generated and stored successfully');
-    }
-  });
-};
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
