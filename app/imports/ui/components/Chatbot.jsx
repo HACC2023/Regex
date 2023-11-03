@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import ChatLoading from './ChatLoading';
-import { Askus } from '../../api/askus/Askus';
+import { AskUs } from '../../api/askus/AskUs';
 
 const ChatBox = () => {
   const [userInput, setUserInput] = useState('');
@@ -18,7 +18,7 @@ const ChatBox = () => {
   const increaseFreq = (item, amount) => {
     const { _id } = item;
     const freq = item.freq + amount;
-    Askus.collection.update(_id, { $set: { freq } }, (error) => (error ?
+    AskUs.collection.update(_id, { $set: { freq } }, (error) => (error ?
       console.log('Error', error.message) :
       console.log(/* 'Success', `increased ${filename} freq by ${amount}` */)));
   };

@@ -1,17 +1,17 @@
 import { Meteor } from 'meteor/meteor';
-import { Askus } from '../../api/askus/Askus.js';
+import { AskUs } from '../../api/askus/AskUs.js';
 
 /* eslint-disable no-console */
 
 // Function to add data to the Askus collection.
 const addDataToAskus = (data) => {
   console.log(`  Adding: ${data.filename} (Question: ${data.question})`);
-  Askus.collection.insert(data);
+  AskUs.collection.insert(data);
 };
 
 // Initialize the Askus collection if empty.
 Meteor.startup(() => {
-  if (Askus.collection.find().count() === 0) {
+  if (AskUs.collection.find().count() === 0) {
     console.log('No data found in Askus collection. Initializing with default data.');
 
     try {
