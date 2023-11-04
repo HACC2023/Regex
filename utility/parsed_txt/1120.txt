@@ -1,0 +1,2 @@
+Question: Adding a guest to a Laulima course space
+Article Text: You are able to add a guest student or participant to your class even if they are not enrolled in your course. If a student is in the process of getting an over ride you can add them as a guest until the request is processed. Please keep in mind that you should add students with their UH Usernames when possible. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_addingguests.htm (link opens in new window)

@@ -1,0 +1,2 @@
+Question: Drupal: Adding your own favicon
+Article Text: 1. Copy your icon to your themes directory. 2. Login to your site as the Administrator. 3. Click on "Appearance." 4. Under Shortcut Icon Settings, uncheck "Use the default shortcut icon." 5. Under "Path to custom icon," enter the path to your favicon.ico eg: sites/<sites directory>/themes/<themes directory>/favicion.ico 6. Click on "Save Configuration."

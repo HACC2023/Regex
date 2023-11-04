@@ -1,0 +1,2 @@
+Question: What is WebCT?
+Article Text: WebCT is a set of online course and student management tools. *The site license for WebCT for the University of Hawai'i has expired as of Sept 30, 2008. The new online course management system for the University of Hawai'i is a Sakai based system called Laulima. The main Laulima page can be found at https://laulima.hawaii.edu

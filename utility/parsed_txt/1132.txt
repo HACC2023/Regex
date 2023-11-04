@@ -1,0 +1,2 @@
+Question: Import materials from one site to another on Laulima
+Article Text: If you would like to reuse the materials from a previous semester or a different course or project site you can use the Import from Site tool which will copy most materials from one site to another. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_importingsite.htm (link opens in new window)

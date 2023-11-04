@@ -1,0 +1,2 @@
+Question: How are PO and contract payments processed?
+Article Text: PO and contract payments will be processed centrally by Disbursing. The vendor invoices will be sent directly to Disbursing (or forward to Disbursing if sent to the field campus office). Disbursing will enter the invoice information and the payment will be routed to the campus field business office for review and approval.

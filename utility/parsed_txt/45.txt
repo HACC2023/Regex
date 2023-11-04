@@ -1,0 +1,2 @@
+Question: What do I do if my icons on the desktop are not showing up correctly?
+Article Text: On startup, hold down the "Command and "Option" keys until you receive a prompt asking you if you want to rebuild the desktop.

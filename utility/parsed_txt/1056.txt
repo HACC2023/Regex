@@ -1,0 +1,2 @@
+Question: Laulima: My guest account users don't know the password to login.
+Article Text: When a guest account is added to Laulima (e.g. user@some.server) an email is sent directly to their email account with information on how to login. If for some reason they didn't get that information, they can request to have a new password sent to them by clicking on the "Guest Account Password Reset" link on the Laulima homepage <https://laulima.hawaii.edu/>.

@@ -1,0 +1,2 @@
+Question: UHUNIX Shell Services
+Article Text: UHUNIX Shell Services include open-source compilers and personal home pages. Now that most work is done on personal computers, ITS Help Desk resources for supporting these services are limited to best effort. The host name for UHUNIX is uhunix.hawaii.edu. For more information on creating and managing personal home pages, please visit: http://www.hawaii.edu/askus/694 Software currently provided on UHUNIX: nano ('pico') vim GNU C & C++ Compiler GFortran Oracle Java

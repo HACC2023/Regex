@@ -1,0 +1,2 @@
+Question: Adding another instructor or a TA to a Laulima course space
+Article Text: If you would like a colleague, teaching assistant, or other course developer to assist you with creating course content or developing a Laulima course you can add them to your course space. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_ta_designer.htm (link opens in new window)

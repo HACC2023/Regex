@@ -1,0 +1,2 @@
+Question: How can I empty the recycle bin?
+Article Text: Right click on the Recycle Bin and select 'Empty Recycle Bin'.

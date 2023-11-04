@@ -1,0 +1,2 @@
+Question: How do I flag a message for follow-up?
+Article Text: Gmail uses a star system instead of flags. To star a message, click on the star icon to make the message stand out in your inbox. To view all starred messages click on the Starred link in the label list.

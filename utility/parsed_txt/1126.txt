@@ -1,0 +1,2 @@
+Question: Copy/Paste from a Word document in Laulima
+Article Text: Copying/pasting from a Word document into Laulima's text editors often carries over extraneous background code. In some cases, an error message may result. This tutorial details how to resolve this issue using the Paste form Word function: http://www.hawaii.edu/talent/laulimatutorials/laulima_copypasteWord.htm (link opens in new window)

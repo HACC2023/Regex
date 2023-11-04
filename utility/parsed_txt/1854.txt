@@ -1,0 +1,2 @@
+Question: Mobile Application Development at UH
+Article Text: Information Technology Services maintains Apple and Google Developer accounts for official University of Hawaii mobile phone application development. Units must work with a developer/vendor to develop an app, and can then publish the app through our Apple/Google developer accounts. Contact uhmobile@hawaii.edu for more information.

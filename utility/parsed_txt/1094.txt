@@ -1,0 +1,2 @@
+Question: We have a new list, but when I try to send an email to it I get a "5.1.1 illegal or unknown alias"
+Article Text: If you are correctly addressing the list (don't forget that all list names have a hyphen in them), then there may have been an error in the list creation process. In this case, please contact the ITS Help Desk at (808) 956-8883 (neighbor island residents may call (800) 558-2669), email help@hawaii.edu, or use the form at http://www.hawaii.edu/its/contact.

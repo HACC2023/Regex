@@ -1,0 +1,2 @@
+Question: What is ITS doing about spam?
+Article Text: Google uses a combination of algorithms and reporting tools to protect against spam, viruses, and phishing attacks. Using the same advanced computing infrastructure as its search engine, along with a vast community of users, Google touts having one of the best spam blockers in the business. For more information on Google and spam, click on https://support.google.com/mail/answer/1366858?hl=en. ref: http://www.hawaii.edu/infotech/spam/spam.html#whatisits

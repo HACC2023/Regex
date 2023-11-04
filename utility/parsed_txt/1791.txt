@@ -1,0 +1,2 @@
+Question: Editing Wordpress Pages & Posts
+Article Text: This article details how to edit Wordpress pages and posts utilizing a Wordpress site hosted through the UH Hosted Website Service. Current documentation is located here: https://www.hawaii.edu/its/wptheme/user-guide/

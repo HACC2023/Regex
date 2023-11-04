@@ -1,0 +1,2 @@
+Question: How do I find out what version of Windows I am running?
+Article Text: 1. Go to the desktop and right-click on "This PC." Click on "Properties." Your Windows version should be displayed in the section labelled "Windows specifications". or 2. Click Start, type winver in the search box, and hit the Enter key.

@@ -1,0 +1,2 @@
+Question: How do I delete an event in Google@UH Calendar?
+Article Text: Click on the event, then click on "Delete." You can also click on the event’s title, then click on the “Delete” button. Please note your event will be deleted immediately, with no confirmation. For more information, visit http://www.google.com/support/calendar/bin/answer.py?hl=en&answer=37113

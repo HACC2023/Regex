@@ -1,0 +1,2 @@
+Question: Known Issues for Google@UH Gmail
+Article Text: Known issues and recent fixes for Gmail can be found at http://mail.google.com/support/bin/static.py?page=known_issues.cs Please consult http://mail.google.com/support/bin/topic.py?hl=en&topic=12914 for General Issues and solutions.

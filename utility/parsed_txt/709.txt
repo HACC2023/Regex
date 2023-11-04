@@ -1,0 +1,2 @@
+Question: Emailing a Form from the hosted web servers
+Article Text: Previously, we offered a perl script, pipeline.pl, to email a form. But, for security reasons, that script has been removed from our servers. Instead, we suggest you use the "mailto:" action of an HTML form: The "mailto:" action of an HTML form will use the client's email program to send the email. For an example, please view the page on www.w3schools.com: http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_mail

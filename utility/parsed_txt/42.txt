@@ -1,0 +1,2 @@
+Question: How do I stop receiving messages from a LISTSERV list temporarily without being removed from it?
+Article Text: Send an email to listserv@lists.hawaii.edu with a blank subject line and the message body containing the SET command, the list name, and the NOMAIL option. SET listname NOMAIL You should receive a confirmation that your subscription settings were updated. To resume receiving mail for the list, send another email to listserv@lists.hawaii.edu with a blank subject line and the message body containing the following: SET listname MAIL

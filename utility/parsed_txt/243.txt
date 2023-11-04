@@ -1,0 +1,2 @@
+Question: How do you enter a return character in a cell in Microsoft Excel (Mac)?
+Article Text: To enter a return character (line break) in a cell, i.e. to start a new line of text or add spacing between lines or paragraphs of text, press the Option, Command, and the Return keys at the same time. Double-click the cell in which you want to insert a line break. Click the location where you want to break the line. Press Option, Command, and Return keys to insert the line break.

@@ -1,0 +1,2 @@
+Question: Can a LISTSERV list have more than one owner?
+Article Text: Yes, LISTSERV lists can have multiple owners. You can view or modify owners by following the steps listed here.

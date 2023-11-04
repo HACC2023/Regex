@@ -1,0 +1,2 @@
+Question: What is pdf?
+Article Text: PDF is short for portable document format. This format was created by Adobe. To read this format, you will need to install Adobe Reader (formerly Adobe Acrobat Reader) onto your computer.

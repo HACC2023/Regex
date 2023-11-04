@@ -1,0 +1,2 @@
+Question: What is the command to remove a file from your home directory in Unix?
+Article Text: The command to remove a file is "rm filename"

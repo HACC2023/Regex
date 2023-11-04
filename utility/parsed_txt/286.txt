@@ -1,0 +1,2 @@
+Question: I am trying to SSH to the UHUNIX system. What host name should I use?
+Article Text: The hostname for the UHUNIX system is uhunix.hawaii.edu

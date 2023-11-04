@@ -1,0 +1,2 @@
+Question: NACHA Phishing Email
+Article Text: If you receive an email like this one, DO NOT CLICK ON THE REPORT! It's an infected link.

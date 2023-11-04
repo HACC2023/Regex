@@ -4,3 +4,4 @@ import '../imports/startup/client/Startup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Override the default bootstrap styles.
 import './style.css';
+import './chatbox.css';

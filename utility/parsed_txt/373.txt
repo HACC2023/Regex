@@ -1,0 +1,2 @@
+Question: When I launch the SSH client, the sFTP interface launches instead. How do I fix this?
+Article Text: To fix:1. Open the terminal window.2. Close the ftp window.3. Click on "File menu" and select "Save Layout."

@@ -5,3 +5,6 @@ node_modules
 settings.production.json
 app/.deploy/mup.js
 app/.deploy/settings.json
+training/constants.py
+config/settings.development.json
+

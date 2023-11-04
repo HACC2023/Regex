@@ -1,0 +1,2 @@
+Question: Why do I have all of these extra contacts?
+Article Text: By default Gmail adds contacts that are not already in your contact list to your All Contacts list when you reply to, forward, or compose a new message.
