@@ -5,6 +5,8 @@
 :root {
   --matr-navbar-bg: #ECECEC;
   --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-navbar-highlight-text: white;
+  --matr-navbar-text-color: white;
 }
 
 /* Change bootstrap variable values.
@@ -13,7 +15,14 @@
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
 
+}
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
@@ -25,4 +34,27 @@ body {
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+.navbarColor {
+  background-color: #444444;
+}
+
+.input-wrapper {
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0 15px;
+  box-shadow: 0 0 0 #ddd;
+  display: flex;
+  align-items: center;
+}
+input{
+background-color: transparent;
+border: none;
+outline: none;
+height: 100%;
+width: 100%;
+font-size: 1.25rem;
 }

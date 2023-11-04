@@ -13,10 +13,11 @@ import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
-import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
+import UHNavbar from '../components/UHNavbar';
+import Header from '../components/Header';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -29,7 +30,8 @@ const App = () => {
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        <NavBar />
+        <UHNavbar />
+        <Header />
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
