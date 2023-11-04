@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import ChatLoading from './ChatLoading';
 import { Askus } from '../../api/askus/Askus';
+import TypingAnimation from "./TypingAnimation";
 
 const ChatBox = () => {
   const [userInput, setUserInput] = useState('');
@@ -107,7 +108,8 @@ const ChatBox = () => {
               <>
                 {chatSender(message)}
                 <div key={index} className={`chat-message ${message.sender}`}>
-                  {message.text} {message.link}
+                  {message.sender === 'bot' ? <TypingAnimation text={message.text} delay={20}/> : message.text }
+                  {message.link}
                 </div>
               </>
             ))}
