@@ -11,7 +11,7 @@ const FAQStatsAdmin = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, pages } = useTracker(() => {
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(AskUs.adminPublicationName);
+    const subscription = Meteor.subscribe(AskUs.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
