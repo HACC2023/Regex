@@ -1,6 +1,5 @@
 import { IndexFlatL2 } from 'faiss-node';
 import { Meteor } from 'meteor/meteor';
-import { writeFileSync } from 'fs';
 import { Askus } from '../../api/askus/Askus';
 
 /**

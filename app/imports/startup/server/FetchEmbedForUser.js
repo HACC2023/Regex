@@ -83,23 +83,39 @@ const getEmbeddingFromOpenAI = async (text) => {
  * @param {number[]} userEmbedding - The embedding of the user's query.
  * @returns {Object[]} An array of the most similar articles.
  */
-function findMostSimilarArticlesFAISS(userEmbedding) {
-  if (!fs.existsSync('faiss.index')) {
+let faissIndex; // Global variable to store the FAISS index in memory
+
+// Function to load the FAISS index into memory
+function loadFAISSIndex() {
+  const indexFilePath = 'faiss.index';
+  if (!fs.existsSync(indexFilePath)) {
     console.error('FAISS index file not found.');
-    return []; // Return an empty array or handle as needed
+    return;
   }
 
   // Load the FAISS index from file
-  const index = IndexFlatL2.read('faiss.index');
+  faissIndex = IndexFlatL2.read(indexFilePath);
+  console.log('FAISS index loaded successfully.');
+}
+
+// Call this function when your server starts
+loadFAISSIndex();
+
+// Updated function to find the most similar articles using FAISS
+function findMostSimilarArticlesFAISS(userEmbedding) {
+  if (!faissIndex) {
+    console.error('FAISS index not loaded.');
+    return []; // Return an empty array or handle as needed
+  }
+
   const k = MAX_SIMILAR_ARTICLES; // Number of nearest neighbors
-  const results = index.search(userEmbedding, k);
+  const results = faissIndex.search(userEmbedding, k);
 
   // Fetch the articles with the IDs returned by FAISS
   const articleIds = results.labels;
   const articles = articleIds.map(id => Askus.collection.findOne({ _id: id }));
   return articles;
 }
-
 /**
  * Finds the most similar articles to the user's embedding.
  * This function calculates the cosine similarity between the user's embedding and the embedding of each article,
