@@ -16,6 +16,17 @@ const handleGenerateEmbeddings = () => {
   });
 };
 
+const handleBuildFAISSIndex = () => {
+  Meteor.call('buildFAISSIndex', (err) => {
+    if (err) {
+      console.error('Error building FAISS index:', err);
+      alert(`Error: ${err.reason}`);
+    } else {
+      alert('FAISS index built and saved successfully');
+    }
+  });
+};
+
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { currentUser } = useTracker(() => ({
@@ -38,6 +49,7 @@ const NavBar = () => {
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
               <Button variant="link" onClick={handleGenerateEmbeddings} style={{ color: 'black', textDecoration: 'none' }}>Generate Embeddings</Button>,
+              <Button variant="link" onClick={handleBuildFAISSIndex} style={{ color: 'black', textDecoration: 'none' }}>Build FAISS Index</Button>,
             ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
