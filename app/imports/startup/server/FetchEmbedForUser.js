@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
 import { check } from 'meteor/check';
+import fs from 'fs';
+import { IndexFlatL2 } from 'faiss-node';
 import { Askus } from '../../api/askus/Askus.js';
 
 /**
@@ -97,6 +99,24 @@ function findMostSimilarArticles(userEmbedding) {
 }
 
 /**
+ * Finds the most similar articles to the user's embedding using FAISS.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object[]} An array of the most similar articles.
+ */
+function findMostSimilarArticlesFAISS(userEmbedding) {
+  // Load the FAISS index from file
+  const fname = 'faiss.index';
+  const index = IndexFlatL2.read(fname);
+  const k = MAX_SIMILAR_ARTICLES;
+  const results = index.search(userEmbedding, k);
+
+  // Fetch the articles with the IDs returned by FAISS
+  const articleIds = results.labels;
+  const articles = articleIds.map(id => Askus.collection.findOne({ _id: id }));
+  return articles;
+}
+
+/**
  * Gets the relevant context from the database based on the user's embedding.
  * This function finds articles similar to the user's query, truncates them to a specified length,
  * and prepares the context for the chatbot and the articles for the component.
@@ -106,10 +126,10 @@ function findMostSimilarArticles(userEmbedding) {
  * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
  */
 function getRelevantContextFromDB(userEmbedding) {
-  console.log('User Embedding:', userEmbedding);
+  // console.log('User Embedding:', userEmbedding);
   const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
 
-  console.log('Similar articles found:', similarArticles);
+  // console.log('Similar articles found:', similarArticles);
 
   // Truncate each article to maxTokensPerArticle tokens
   const truncatedArticles = similarArticles.map(article => {
@@ -192,7 +212,28 @@ Meteor.methods({
       chatbotResponse = 'Hello! How can I assist you today?';
       similarArticles = [];
     } else {
-      const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+      let userEmbedding;
+      try {
+        userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+      } catch (error) {
+        console.error('Error fetching user embedding:', error);
+        return throwError('embedding-error', `Failed to fetch embedding from OpenAI: ${error.message}`);
+      }
+
+      // Check if the FAISS index file exists
+      if (fs.existsSync('faiss.index')) {
+        console.log('Using FAISS for finding similar articles.');
+        try {
+          similarArticles = findMostSimilarArticlesFAISS(userEmbedding);
+        } catch (error) {
+          console.error('Error using FAISS for similarity search:', error);
+          similarArticles = []; // fallback to empty array in case of error
+        }
+      } else {
+        console.log('Using cosine similarity for finding similar articles.');
+        similarArticles = findMostSimilarArticles(userEmbedding);
+      }
+
       const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
 
       const initialContext = [
@@ -209,7 +250,12 @@ Meteor.methods({
         { role: 'user', content: userQueryMessage },
       ];
 
-      chatbotResponse = await createOpenAICompletion(messages);
+      try {
+        chatbotResponse = await createOpenAICompletion(messages);
+      } catch (error) {
+        console.error('Error getting response from chatbot:', error);
+        return throwError('api-error', `Failed to get a response from the chatbot: ${error.message}`);
+      }
       similarArticles = articlesForComponent;
     }
 
