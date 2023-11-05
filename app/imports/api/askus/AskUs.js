@@ -1,10 +1,10 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class AskusCollection {
+class AskUsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'AskusCollection';
+    this.name = 'AskUsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -25,5 +25,8 @@ class AskusCollection {
   }
 }
 
-// The singleton instance of the AskusCollection.
-export const Askus = new AskusCollection();
+/**
+ * The singleton instance of the AskUsCollection.
+ * @type {AskUsCollection}
+ */
+export const AskUs = new AskUsCollection();
