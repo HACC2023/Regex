@@ -80,9 +80,10 @@ const ChatBox = () => {
           console.log(`Response failed. (User Input: "${userInput}")`);
         }
       });
-    }, 0); // simulate a 1-second delay for the typing effect
+    }, 0); // simulate a 1-second delay for the typing effect (changed from 1000 (1s) to 0 so there's no extra delay)
   };
 
+  // Helper function that provides message sender above messages that aren't chatbot links.
   const chatSender = (message) => {
     if (message.sender === 'user') {
       return <div>You</div>;
@@ -115,6 +116,7 @@ const ChatBox = () => {
             {loading && <ChatLoading />}
             <div ref={chatEndRef} />
           </div>
+          {/* Input and submit */}
           <Form onSubmit={handleSend} className="mt-3">
             <div className="d-flex">
               <Form.Control
@@ -128,6 +130,7 @@ const ChatBox = () => {
           </Form>
         </Col>
       </Row>
+      {/* Similar articles cards */}
       <Row className="mt-5">
         <h5 className="mb-3">Similar Articles</h5>
         {similarArticles.slice(0, 3).map((article, index) => {
