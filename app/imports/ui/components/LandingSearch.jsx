@@ -21,6 +21,7 @@ const LandingSearch = () => {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             placeholder="Have a question?"
+            required
           />
           <Button type="submit" className="ms-2">Ask Us</Button>
         </div>
