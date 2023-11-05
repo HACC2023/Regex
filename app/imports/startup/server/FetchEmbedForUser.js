@@ -79,6 +79,28 @@ const getEmbeddingFromOpenAI = async (text) => {
 };
 
 /**
+ * Finds the most similar articles to the user's embedding using FAISS.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object[]} An array of the most similar articles.
+ */
+function findMostSimilarArticlesFAISS(userEmbedding) {
+  if (!fs.existsSync('faiss.index')) {
+    console.error('FAISS index file not found.');
+    return []; // Return an empty array or handle as needed
+  }
+
+  // Load the FAISS index from file
+  const index = IndexFlatL2.read('faiss.index');
+  const k = MAX_SIMILAR_ARTICLES; // Number of nearest neighbors
+  const results = index.search(userEmbedding, k);
+
+  // Fetch the articles with the IDs returned by FAISS
+  const articleIds = results.labels;
+  const articles = articleIds.map(id => Askus.collection.findOne({ _id: id }));
+  return articles;
+}
+
+/**
  * Finds the most similar articles to the user's embedding.
  * This function calculates the cosine similarity between the user's embedding and the embedding of each article,
  * sorts the articles by similarity, and returns the top articles.
@@ -96,24 +118,6 @@ function findMostSimilarArticles(userEmbedding) {
   const sortedArticles = similarities.sort((a, b) => b.similarity - a.similarity).slice(0, MAX_ARTICLES);
 
   return sortedArticles.map(item => item.article);
-}
-
-/**
- * Finds the most similar articles to the user's embedding using FAISS.
- * @param {number[]} userEmbedding - The embedding of the user's query.
- * @returns {Object[]} An array of the most similar articles.
- */
-function findMostSimilarArticlesFAISS(userEmbedding) {
-  // Load the FAISS index from file
-  const fname = 'faiss.index';
-  const index = IndexFlatL2.read(fname);
-  const k = MAX_SIMILAR_ARTICLES;
-  const results = index.search(userEmbedding, k);
-
-  // Fetch the articles with the IDs returned by FAISS
-  const articleIds = results.labels;
-  const articles = articleIds.map(id => Askus.collection.findOne({ _id: id }));
-  return articles;
 }
 
 /**
