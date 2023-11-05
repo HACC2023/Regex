@@ -100,8 +100,8 @@ const ChatBox = (props) => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
 
+  // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();
-
   useEffect(() => {
     // console.log(input);
     // alert('handle submit');
