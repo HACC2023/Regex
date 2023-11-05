@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
-import { Askus } from '../../api/askus/Askus.js';
+import { AskUs } from '../../api/askus/AskUs.js';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -49,7 +49,7 @@ const getEmbeddingFromOpenAI = async (text) => {
 };
 
 function findMostSimilarArticles(userEmbedding) {
-  const articles = Askus.collection.find({}).fetch();
+  const articles = AskUs.collection.find({}).fetch();
 
   const similarities = articles.map(article => ({
     article: article,

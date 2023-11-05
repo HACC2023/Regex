@@ -26,3 +26,12 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+/* Styling for landing (LandingSearch and FAQCards) below */
+.landingSearchButton {
+  white-space: nowrap !important;
+  background: #907139 !important;
+  border: 0 !important;
+  font-family: 'Open Sans', Tahoma, sans-serif !important;
+  padding: 8px 20px 10px !important;
+}
