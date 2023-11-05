@@ -5,6 +5,7 @@ import { Button, Container, Form, Col, Row } from 'react-bootstrap';
 const LandingSearch = () => {
   const [userInput, setUserInput] = useState('');
 
+  // Handles user pressing button; stores input locally then redirects page to chatbot.
   const redirect = (e) => {
     e.preventDefault();
     localStorage.setItem('questionAsked', userInput);
