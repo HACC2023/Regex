@@ -3,19 +3,28 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import ChatLoading from './ChatLoading';
 
+/**
+ * The ChatBox component provides a chat interface where users can interact with a chatbot and receive responses.
+ * It also displays a list of similar articles related to the conversation.
+ */
 const ChatBox = () => {
+  // State variables for user input, chat history, loading state, and similar articles
   const [userInput, setUserInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
 
+  // Reference to scroll to the end of the chat
   const chatEndRef = useRef(null);
 
+  // Record the start time for measuring response time
   const timeStart = (new Date()).getTime();
 
+  // Function to handle sending user messages
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
+    // Add the user's message to the chat history
     setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
     // Simulate chatbot typing effect
@@ -31,6 +40,7 @@ const ChatBox = () => {
           // Check if similarArticles is available and non-empty
           if (result.similarArticles && result.similarArticles.length > 0) {
             const mostRelevantArticle = result.similarArticles[0];
+            // Create a link to the relevant article
             const articleLink = (
               <a
                 href={`/article_html/${mostRelevantArticle.filename}`}
@@ -41,6 +51,8 @@ const ChatBox = () => {
                 {mostRelevantArticle.question}
               </a>
             );
+
+            // Create a message with the article link
             const articleMessage = {
               sender: 'bot',
               text: 'Here is the most relevant article link:',
@@ -49,16 +61,19 @@ const ChatBox = () => {
             newMessages.push(articleMessage);
           }
 
+          // Update chat history, similar articles, and clear the user input
           setChatHistory([...chatHistory, ...newMessages]);
           setSimilarArticles(result.similarArticles);
           setUserInput('');
 
+          // Record the end time and calculate response time
           const timeEnd = (new Date()).getTime();
           const responseTimeMs = timeEnd - timeStart;
           console.log(`User Input: "${userInput}"`);
           console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
 
         } else {
+          // Handle an error response from the chatbot
           setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
           console.log(`User Input: ${userInput}`);
           console.log('Request failed.');
@@ -67,6 +82,7 @@ const ChatBox = () => {
     }, 0); // simulate a 1-second delay for the typing effect
   };
 
+  // Function to determine the sender of a message
   const chatSender = (message) => {
     if (message.sender === 'user') {
       return <div>You</div>;
@@ -76,7 +92,7 @@ const ChatBox = () => {
     }
     return <div>ChatBot</div>;
   };
-
+  // Effect to scroll to the end of the chat when it updates
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
