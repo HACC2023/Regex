@@ -104,8 +104,11 @@ const ChatBox = (props) => {
 
   useEffect(() => {
     // console.log(input);
+    // alert('handle submit');
     if (input !== '') {
-      alert('handle send here');
+      form.current.dispatchEvent(
+        new Event('submit', { cancelable: true, bubbles: true }),
+      );
     }
   }, []);
 
