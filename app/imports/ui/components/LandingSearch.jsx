@@ -13,7 +13,7 @@ const LandingSearch = () => {
   };
 
   return (
-    <Container className="landingSearchContainer px-5 py-5">
+    <Container className="landingSearchContainer px-5 pt-3 pb-5">
       <Row>
         <Col xs={3} />
         <Col xs={6}>

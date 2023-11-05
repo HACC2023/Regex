@@ -22,11 +22,11 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   return this.ready();
 });
 
-// Publishes the top 12 most frequently visited sites.
+// Publishes the top 8 most frequently visited sites.
 Meteor.publish(AskUs.userPublicationName, function () {
   return AskUs.collection.find(
     {},
-    { sort: { freq: -1 }, limit: 12 },
+    { sort: { freq: -1 }, limit: 8 },
   );
 });
 
