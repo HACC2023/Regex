@@ -18,9 +18,9 @@ body {
 body .navbar {
   --bs-navbar-active-color: var(--matr-navbar-highlight-text);
   --bs-navbar-brand-color: var(--matr-navbar-text-color);
-  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-hover-color: lightgray;
   --bs-navbar-color: var(--matr-navbar-text-color);
-  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-hover-color: lightgray;
 
 }
 /* Set the alert background on the signin and signup pages. */
