@@ -40,21 +40,51 @@ body .navbar {
   background-color: #444444;
 }
 
-.input-wrapper {
-  background-color: white;
-  width: 100%;
-  border-radius: 10px;
-  height: 2.5rem;
-  padding: 0 15px;
-  box-shadow: 0 0 0 #ddd;
-  display: flex;
-  align-items: center;
+.siteSearch {
+  border: 2px solid #856404 !important; /* Change the border color */
+  padding: 5px 10px; /* Adjust padding as needed */
 }
-input{
-background-color: transparent;
-border: none;
-outline: none;
-height: 100%;
-width: 100%;
-font-size: 1.25rem;
+.search {
+  color: #856404 !important; /* Change the color */
+}
+
+.department {
+  color: #1b1e21 !important; /* Change the color */
+}
+.bottom-nav {
+  color: var(--bs-dark);
+  padding-top: 10px;
+  padding-bottom: 20px;
+  --bs-nav-link-color: black !important;
+  --bs-nav-link-hover-color: black !important;
+}
+
+#footer_top {
+  background-color: #fff;
+  padding: 0;
+}
+#footer_btm {
+  background-color: #222 !important;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  color: lightgray;
+}
+#footer_btm a {
+  color: white;
+}
+.footerIcons{
+  --bs-nav-link-color: white !important;
+  --bs-nav-link-hover-color: white !important;
+}
+.custom-navlink{
+  --bs-nav-link-padding-x: 5px;
+  --bs-nav-link-padding-y: 0px;
+}
+div {
+  display: block;
+}
+footer {
+  clear: both;
+  width: 100%;
+  margin: 0;
 }
