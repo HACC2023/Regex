@@ -201,7 +201,7 @@ Meteor.methods({
         { role: 'assistant', content: 'Hello! How can I assist you today?' },
       ];
 
-      const userQueryMessage = `${userMessage}`;
+      const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?, if i say thank you say the appropriate response`;
 
       const messages = [
         ...initialContext,

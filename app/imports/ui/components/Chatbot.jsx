@@ -39,8 +39,9 @@ const ChatBox = () => {
 
           // Check if similarArticles is available and non-empty
           if (result.similarArticles && result.similarArticles.length > 0) {
-            const mostRelevantArticle = result.similarArticles[0];
+            // const mostRelevantArticle = result.similarArticles[0];
             // Create a link to the relevant article
+            /*
             const articleLink = (
               <a
                 href={`/article_html/${mostRelevantArticle.filename}`}
@@ -59,6 +60,7 @@ const ChatBox = () => {
               link: articleLink,
             };
             newMessages.push(articleMessage);
+            */
           }
 
           // Update chat history, similar articles, and clear the user input
@@ -107,7 +109,8 @@ const ChatBox = () => {
               <React.Fragment key={message.id || `message-${index}`}>
                 {chatSender(message)}
                 <div className={`chat-message ${message.sender}`}>
-                  {message.text} {message.link}
+                  {message.text},
+                  {/* message.link */}
                 </div>
               </React.Fragment>
             ))}
@@ -129,7 +132,7 @@ const ChatBox = () => {
         </Col>
       </Row>
       <Row className="mt-5">
-        <h5 className="mb-3">Similar Articles</h5>
+        <h5 className="mb-3">Relevant Articles</h5>
         {similarArticles.slice(0, 3).map((article) => {
           // Truncating the article content to 200 characters for the excerpt
           const truncatedContent = `${article.article_text.substring(0, 500)}...`;
