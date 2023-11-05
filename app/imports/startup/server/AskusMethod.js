@@ -7,10 +7,11 @@ const MAX_TOKENS = 8192; // Max tokens allowed by the model
 
 Meteor.methods({
   generateAndStoreEmbeddings: async function () {
+    // Fetch articles from the Askus collection that do not have an embedding yet.
     const articles = Askus.collection.find({ embedding: { $exists: false } }).fetch();
 
-    // eslint-disable-next-line no-restricted-syntax
-    for (const article of articles) {
+    // Process each article in parallel and wait for all operations to complete
+    await Promise.all(articles.map(async (article) => {
       let articleText = article.article_text;
 
       // If the article text is too long, truncate it
@@ -20,7 +21,6 @@ Meteor.methods({
       }
 
       try {
-        // console.log(openai); // Check what's available on the openai object
         const response = await openai.embeddings.create({
           model: 'text-embedding-ada-002',
           input: articleText,
@@ -38,10 +38,11 @@ Meteor.methods({
             },
           });
         }
-
       } catch (error) {
         console.log('Error generating embedding for article:', article._id, error);
       }
-    }
+    }));
+
+    console.log('All articles processed.');
   },
 });

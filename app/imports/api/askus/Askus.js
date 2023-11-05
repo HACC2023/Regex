@@ -1,13 +1,29 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
+/**
+ * Represents a collection for storing articles and related data within the Askus system.
+ * This collection is central to the Askus system, as it stores the articles that users
+ * can query against using the chatbot interface.
+ */
 class AskusCollection {
+  /**
+   * Initializes a new instance of the AskusCollection.
+   * Sets up the MongoDB collection, defines the schema for documents, and attaches the schema
+   * to the collection. It also defines publication names for user and admin roles.
+   */
   constructor() {
     // The name of this collection.
     this.name = 'AskusCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
-    // Define the structure of each document in the collection.
+    /**
+     * The schema defining the structure of each document in the collection.
+     * Documents in this collection represent individual articles, including metadata
+     * like filename and associated questions, as well as the article's text content.
+     * Embeddings, which are optional, are used for semantic similarity calculations.
+     * @type {SimpleSchema}
+     */
     this.schema = new SimpleSchema({
       filename: String,
       question: String,
