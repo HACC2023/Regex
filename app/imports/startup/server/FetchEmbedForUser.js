@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
+import { check } from 'meteor/check';
 import { Askus } from '../../api/askus/Askus.js';
 
 /**
@@ -182,25 +183,39 @@ const createOpenAICompletion = async (messages) => {
  */
 Meteor.methods({
   async getChatbotResponse(userMessage) {
-    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+    check(userMessage, String);
+    const greetings = ['hello', 'hi', 'how do you do', 'good day'];
+    let chatbotResponse;
+    let similarArticles;
 
-    const initialContext = [
-      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
-      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
-    ];
+    if (greetings.includes(userMessage.toLowerCase())) {
+      chatbotResponse = 'Hello! How can I assist you today?';
+      similarArticles = [];
+    } else {
+      const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+      const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
 
-    const messages = [
-      ...initialContext,
-      ...messagesForChatbot,
-      { role: 'user', content: `Can you answer the question: ${userMessage} based on the given IT articles?` },
-    ];
+      const initialContext = [
+        { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
+        { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
+        { role: 'assistant', content: 'Hello! How can I assist you today?' },
+      ];
 
-    const chatbotResponse = await createOpenAICompletion(messages);
+      const userQueryMessage = `${userMessage}`;
+
+      const messages = [
+        ...initialContext,
+        ...messagesForChatbot,
+        { role: 'user', content: userQueryMessage },
+      ];
+
+      chatbotResponse = await createOpenAICompletion(messages);
+      similarArticles = articlesForComponent;
+    }
 
     return {
       chatbotResponse,
-      similarArticles: articlesForComponent,
+      similarArticles,
     };
   },
 });
