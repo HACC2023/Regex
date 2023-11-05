@@ -130,7 +130,7 @@ function findMostSimilarArticles(userEmbedding) {
  * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
  */
 function getRelevantContextFromDB(userEmbedding) {
-  // console.log('User Embedding:', userEmbedding);
+  console.log('User Embedding:', userEmbedding);
   const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
 
   // console.log('Similar articles found:', similarArticles);
