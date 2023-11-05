@@ -88,12 +88,12 @@ const ChatBox = () => {
         <Col>
           <div className="chat-window">
             {chatHistory.map((message, index) => (
-              <>
+              <React.Fragment key={message.id || `message-${index}`}>
                 {chatSender(message)}
-                <div key={index} className={`chat-message ${message.sender}`}>
+                <div className={`chat-message ${message.sender}`}>
                   {message.text} {message.link}
                 </div>
-              </>
+              </React.Fragment>
             ))}
             {/* ChatLoading Circle is rendered here */}
             {loading && <ChatLoading />}
@@ -114,12 +114,12 @@ const ChatBox = () => {
       </Row>
       <Row className="mt-5">
         <h5 className="mb-3">Similar Articles</h5>
-        {similarArticles.slice(0, 3).map((article, index) => {
+        {similarArticles.slice(0, 3).map((article) => {
           // Truncating the article content to 200 characters for the excerpt
-          const truncatedContent = `${article.article_text.substring(0, 200)}...`;
+          const truncatedContent = `${article.article_text.substring(0, 500)}...`;
 
           return (
-            <Col key={index} md={4}>
+            <Col key={article.id} md={4}>
               <div className="card mb-3">
                 <div className="card-body">
                   <h5 className="card-title">{article.question}</h5>
