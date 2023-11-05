@@ -1,11 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import ChatLoading from './ChatLoading';
 import { AskUs } from '../../api/askus/AskUs';
 
-const ChatBox = () => {
-  const [userInput, setUserInput] = useState('');
+const ChatBox = (props) => {
+  const { input } = props;
+  const [userInput, setUserInput] = useState(input);
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
@@ -98,6 +100,15 @@ const ChatBox = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
 
+  const form = useRef();
+
+  useEffect(() => {
+    // console.log(input);
+    if (input !== '') {
+      alert('handle send here');
+    }
+  }, []);
+
   return (
     <Container className="mt-5">
       <Row>
@@ -117,7 +128,7 @@ const ChatBox = () => {
             <div ref={chatEndRef} />
           </div>
           {/* Input and submit */}
-          <Form onSubmit={handleSend} className="mt-3">
+          <Form onSubmit={handleSend} ref={form} className="mt-3">
             <div className="d-flex">
               <Form.Control
                 type="text"
@@ -152,6 +163,11 @@ const ChatBox = () => {
       </Row>
     </Container>
   );
+};
+
+// Requires a string to be passed from rendering page
+ChatBox.propTypes = {
+  input: PropTypes.string.isRequired,
 };
 
 export default ChatBox;
