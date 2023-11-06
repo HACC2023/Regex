@@ -18,15 +18,21 @@ const ChatBox = () => {
   // Load chat history from localStorage when the component mounts
   useEffect(() => {
     const savedChatHistory = JSON.parse(localStorage.getItem('chatHistory'));
+    const savedSimilarArticles = JSON.parse(localStorage.getItem('similarArticles'));
     if (savedChatHistory) {
       setChatHistory(savedChatHistory);
+    }
+    if (savedSimilarArticles) {
+      setSimilarArticles(savedSimilarArticles);
     }
   }, []);
 
   // Save chat history to localStorage whenever it updates
   useEffect(() => {
     localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
-  }, [chatHistory]);
+    localStorage.setItem('similarArticles', JSON.stringify(similarArticles));
+
+  }, [chatHistory, similarArticles]);
 
   // Function to handle sending user messages
   const handleSend = (e) => {
@@ -65,7 +71,7 @@ const ChatBox = () => {
   // Function to format chatbot's response
   const formatChatbotResponse = (text) => {
     const lines = text.split('\n');
-    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/;
+    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&;/~+#])?/;
     const formattedLines = lines.map((line, index) => {
       const linkMatch = line.match(linkRegex);
       if (linkMatch) {
