@@ -15,6 +15,14 @@ const ChatBox = () => {
   // Reference to scroll to the end of the chat
   const chatEndRef = useRef(null);
 
+  // Load chat history from localStorage when the component mounts
+  useEffect(() => {
+    const savedChatHistory = JSON.parse(localStorage.getItem('chatHistory'));
+    if (savedChatHistory) {
+      setChatHistory(savedChatHistory);
+    }
+  }, []);
+
   // Save chat history to localStorage whenever it updates
   useEffect(() => {
     localStorage.setItem('chatHistory', JSON.stringify(chatHistory));

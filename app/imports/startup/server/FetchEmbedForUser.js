@@ -11,8 +11,8 @@ const openai = new OpenAI({
 const MAX_ARTICLES = 5;
 const MAX_SIMILAR_ARTICLES = 3;
 const MAX_TOKENS_PER_ARTICLE = 1500; // Use the larger value from the new code
-const MAX_SESSION = 5;
-const MAX_TOKENS_PER_MESSAGE = 200;
+const MAX_SESSION = 3;
+const MAX_TOKENS_PER_MESSAGE = 400;
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -183,6 +183,13 @@ function getAverageEmbedding(messages) {
   return sumEmbedding.map(value => value / embeddings.length);
 }
 
+/** Meteor method to get the chatbot's response for a given user message.
+* This method fetches the user's embedding, retrieves relevant context from the database,
+* prepares messages for the OpenAI chatbot, and fetches a completion response.
+* @param {string} userMessage - The user's message/query.
+* @returns {Promise<Object>} An object containing the chatbot's response and similar articles.
+*
+*/
 // Define a global or persistent object to store session data
 const userSessions = {};
 
