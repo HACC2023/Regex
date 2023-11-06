@@ -22,3 +22,13 @@
   color: white;
 }
 
+.chat-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chat-list .list-item {
+  margin-left: 20px; /* Adjust indentation as needed */
+}
+
+

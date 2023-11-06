@@ -17,48 +17,68 @@ const ChatBox = () => {
   // Reference to scroll to the end of the chat
   const chatEndRef = useRef(null);
 
-  // Record the start time for measuring response time
-  const timeStart = (new Date()).getTime();
-
   // Function to handle sending user messages
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
-    // Add the user's message to the chat history
-    setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
-    // Placeholder user ID - you will need to replace this with the actual user ID
+    const timeStart = (new Date()).getTime(); // Moved inside the function to measure response time for each input
+
+    // Placeholder user ID - replace this with the actual user ID
     const userId = 'placeholderUserId';
 
-    // Simulate chatbot typing effect
+    // Simulate chatbot typing effect (with a non-zero delay for actual simulation)
     setTimeout(() => {
       Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
-            { sender: 'user', text: userInput },
+            { sender: 'user', text: userInput }, // Keep this as it is added after the response is received
             { sender: 'bot', text: result.chatbotResponse },
           ];
 
-          // Update chat history, similar articles, and clear the user input
-          setChatHistory([...chatHistory, ...newMessages]);
+          // Use functional update form for state updates
+          setChatHistory(prevChatHistory => [...prevChatHistory, ...newMessages]);
           setSimilarArticles(result.similarArticles);
           setUserInput('');
 
-          // Record the end time and calculate response time
           const timeEnd = (new Date()).getTime();
           const responseTimeMs = timeEnd - timeStart;
           console.log(`User Input: "${userInput}"`);
           console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
 
         } else {
-          // Handle an error response from the chatbot
-          setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
-          console.log(`User Input: ${userInput}`);
-          console.log('Request failed.');
+          // Error handling for failed chatbot response
+          setChatHistory(prevChatHistory => [...prevChatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
+          console.error('Error fetching chatbot response:', error);
         }
       });
-    }, 0); // simulate a 1-second delay for the typing effect
+    }, 1000); // Changed to 1-second delay for typing effect simulation
+  };
+
+  // Function to format chatbot's response
+  // Function to format chatbot's response
+  const formatChatbotResponse = (text) => {
+    // Check for various list markers and split the text into list items
+    const listMarkersRegex = /(\d+\.)|(\* )|(- )|(Step \d+:)|(Note:)/;
+    const lines = text.split('\n');
+    const formattedLines = lines.map((line, index) => {
+      if (listMarkersRegex.test(line)) {
+        return (
+          <li key={index} className="list-item">
+            {line}
+          </li>
+        );
+      }
+      return (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      );
+    });
+
+    return <ul className="chat-list">{formattedLines}</ul>;
   };
 
   // Function to determine the sender of a message
@@ -86,8 +106,7 @@ const ChatBox = () => {
               <React.Fragment key={message.id || `message-${index}`}>
                 {chatSender(message)}
                 <div className={`chat-message ${message.sender}`}>
-                  {message.text},
-                  {/* message.link */}
+                  {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}
                 </div>
               </React.Fragment>
             ))}
@@ -102,6 +121,7 @@ const ChatBox = () => {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
+                aria-label="User input" // Added for accessibility
               />
               <Button type="submit" className="ms-2" disabled={loading}>Send</Button>
             </div>
@@ -111,7 +131,7 @@ const ChatBox = () => {
       <Row className="mt-5">
         <h5 className="mb-3">Relevant Articles</h5>
         {similarArticles.slice(0, 3).map((article) => {
-          // Truncating the article content to 200 characters for the excerpt
+          // Truncating the article content to a longer length for the excerpt
           const truncatedContent = `${article.article_text.substring(0, 500)}...`;
 
           return (

@@ -17,7 +17,7 @@ const openai = new OpenAI({
  */
 const MAX_ARTICLES = 5; // Maximum number of articles to consider.
 const MAX_SIMILAR_ARTICLES = 3; // Maximum number of similar articles to return.
-const MAX_TOKENS_PER_ARTICLE = 600; // Maximum number of tokens per article to consider.
+const MAX_TOKENS_PER_ARTICLE = 1000; // Maximum number of tokens per article to consider.
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -173,8 +173,10 @@ const createOpenAICompletion = async (messages) => {
       model: 'gpt-3.5-turbo',
       messages: filteredMessages,
       temperature: 0.2,
-      max_tokens: 150,
+      max_tokens: 500,
     });
+
+    console.log('OpenAI API Response:', response);
 
     if (response && response.choices && response.choices[0]) {
       return response.choices[0].message.content;
