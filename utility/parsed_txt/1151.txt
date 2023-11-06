@@ -1,0 +1,2 @@
+Question: How do I edit an event in Google@UH Calendar?
+Article Text: To view or edit the details of an event, click on the event and then click on "edit event details." You can also click on the event’s title to go directly into the event details. Modify the options as you wish. After you've made your desired changes, click on "Save." Please note that you'll only be able to modify events on calendars you have permission to edit. For more information, visit http://www.google.com/support/calendar/bin/answer.py?hl=en&answer=37112

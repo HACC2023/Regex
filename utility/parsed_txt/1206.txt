@@ -1,0 +1,2 @@
+Question: How do I send a read/delivered receipt with a message?
+Article Text: Currently, read/delivered receipts are not supported by Gmail.

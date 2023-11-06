@@ -1,0 +1,2 @@
+Question: Known Problems with IMAP when using Google@UH
+Article Text: Currently known issues with IMAP: Non-English labels don't display properly in Outlook 2002, 2003, and Outlook Express Users with thousands of email messages may have problems with their email clients crashing Email clients may take a while to download email messages initially For more information on these issues, please visit http://mail.google.com/support/bin/answer.py?hl=en&answer=78771.

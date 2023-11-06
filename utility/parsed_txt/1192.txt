@@ -1,0 +1,2 @@
+Question: How do I get more help for Google@UH Calendar?
+Article Text: Google has extensive documentation on their calendar here: http://www.google.com/support/calendar If you need further assistance with Google@UH Calendar, please contact the ITS Help Desk.

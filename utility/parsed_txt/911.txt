@@ -1,0 +1,2 @@
+Question: Why does the message count in Google@UH Gmail differ from my IMAP email client?
+Article Text: Gmail counts the number of conversations which are in a mailbox. This differs from most IMAP email clients, which would count the actual messages that are present in a mailbox. So, if some of the email messages are grouped into conversations in Gmail, the message count reported by Gmail will be different than the message count you see through your IMAP email client.

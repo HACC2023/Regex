@@ -1,0 +1,2 @@
+Question: FileZilla Information
+Article Text: General Information FileZilla is a free, open source sFTP client that provides allows users to transfer files over the network securely via a graphical interface. Minimum System Requirements PC running Windows 10 or later Macintosh running Mac OS X 10.14* or later ITS Supported Version FileZilla 3.65+ Documentation FileZilla for Windows FileZilla for Mac Company Website https://filezilla-project.org/index.php

@@ -1,0 +1,2 @@
+Question: Managing course/workspace tabs in Laulima
+Article Text: You can reorder or customize how course or workspace tabs are listed in your Laulima account. We don't recommend removing spaces (unless you aren't registered for a course or were mistakenly added to a workspace) but you can hide them from view. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_coursetabs.htm (link opens in new window)

@@ -1,0 +1,2 @@
+Question: Everytime I restart my Macintosh, I lose my Internet Explorer favorites (bookmarks). How do I fix this?
+Article Text: Please verify the name of your Macintosh hard drive. Your hard drive name must have at least one alphanumeric character. If your hard drive name does not have at least one alphanumeric character please change it.

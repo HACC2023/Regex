@@ -1,0 +1,2 @@
+Question: Adding a Page Counter to your Personal Homepage
+Article Text: ITS has installed a simple system for tracking page visits, and for displaying visit counts. There are two steps: Add the string: <!--#exec cgi="/cgi-bin/counter"--> to your page. Set the "executable" permission on the page. This must be done at the UNIX shell prompt. chmod a+x page.html That's it. The above string will be replaced by a series of HTML IMG tags pointing to images of numerals.

@@ -1,0 +1,2 @@
+Question: Removing the Server/Host key for your sFTP client.
+Article Text: FileZilla Windows 1. Open FileZilla. 2. Under "Edit" menu, select "Settings. 3. In left column, under "Connection, select "SFTP." 4. In right window, highlight they key and click on "Remove key." 5. Click on "OK." Mac 1. Open FileZilla. 2. Under "FileZilla" menu, select "Preferences.". 3. In left column, under "Connection, select "SFTP." 4. In right window, highlight they key and click on "Remove key." 5. Click on "OK."

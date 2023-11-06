@@ -1,0 +1,2 @@
+Question: How do I login and logout of Google@UH Gmail?
+Article Text: To access Gmail, point your web browser to http://gmail.hawaii.edu. You will be prompted to enter your UH Username and Password. (To apply for a UH Username, visit this site: www.hawaii.edu/username.) If the UH Username and Password are entered successfully, you should now see the initial Google@UH Gmail screen. To end your email session, click on your selected image (or your initial, if you have not setup an image) in the upper right corner of the screen and select Sign out.

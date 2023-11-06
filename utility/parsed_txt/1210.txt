@@ -1,0 +1,2 @@
+Question: What is Offline mode in Google@UH Gmail?
+Article Text: Offline mode allows users to access their email with no or limited internet access. Any changes you make to your account or emails you send will take effect once you have a good and stable internet connection. In this mode you will not receive any messages. Turning this feature on requires the installation of Gears for Google. Click here to learn more about Offline mode.

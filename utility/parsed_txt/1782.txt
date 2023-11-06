@@ -1,0 +1,2 @@
+Question: How to use hard tokens for Multifactor Authentication
+Article Text: Login to your UH service, the MFA window will pop up(see below) Click on the "Enter a Passcode" option. Plug in hard token. Macintosh users may see a "Your keyboard cannot be identified" message, just close the window and continue. Press the gold center on the hard token with your finger, it should be lit up with a green light. A passcode will be populated into the text box The "Enter a Passcode" button will change to "Login", click on the Login button.

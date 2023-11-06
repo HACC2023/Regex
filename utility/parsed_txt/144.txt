@@ -1,0 +1,2 @@
+Question: I have a firewall and I can not connect to the SECE website, what do I do?
+Article Text: Adjust your firewall to allow the following ports through: 9442 and 9443.

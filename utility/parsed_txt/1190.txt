@@ -1,0 +1,2 @@
+Question: Getting Help for Google@UH Drive
+Article Text: Google has very detailed online help articles. In Google Drive, click on Settings in the upper right corner of the screen, then select Help. Alternatively, you can browse directly to https://support.google.com/drive/?hl=en&p=mktg_home. Known issues and recent fixes for Google docs can be found at https://support.google.com/drive/bin/static.py?hl=en&page=known_issues.cs. You may also contact the ITS Help Desk for support.

@@ -1,0 +1,2 @@
+Question: How can I find out what version of Internet Explorer I am using?
+Article Text: Open Internet Explorer, then click on "Help", then "About Internet Explorer."

@@ -1,0 +1,2 @@
+Question: Using Laulima's Modules tool
+Article Text: The Modules tool enables instructors to present/provide course content or materials with instructional context via modules. This tutorial shows how to create modules and sections in the tool: http://www.hawaii.edu/talent/laulimatutorials/laulima_editingmodule.htm (link opens in new window)

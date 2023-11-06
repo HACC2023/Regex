@@ -1,0 +1,2 @@
+Question: Weighing and categorizing grades in Laulima (using the Gradebook tool)
+Article Text: By default, grades are averaged with equal value when calculating the final course grade using Laulima's Gradebook tool. If needed, grades can be scaled to weigh more/less than others. Additionally, categories can also be added to organize gradebook entries. This tutorial provides guidance on the setup of categories and weighted grades in Laulima's Gradebook tool: http://www.hawaii.edu/talent/laulimatutorials/laulima_categoriesweighting.htm

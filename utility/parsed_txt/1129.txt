@@ -1,0 +1,2 @@
+Question: Uploading grade information from igrader to Laulima
+Article Text: If iclickers are used in a course, polling information can be uploaded to Laulima to track participation or attendance. The process involves using the igrader (i>grader) application. This tutorial details the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_igrader_upload.htm (link opens in new window)

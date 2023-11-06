@@ -1,0 +1,2 @@
+Question: Removing a student from a Laulima course space
+Article Text: You can take out any student that is listed in the Site Info tool. You should take care deleting a student and verify the students Username before proceeding. This tutorial can help guide you through the process: http://www.hawaii.edu/talent/laulimatutorials/laulima_removestudent.htm (link opens in new window)

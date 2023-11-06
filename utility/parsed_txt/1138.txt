@@ -1,0 +1,2 @@
+Question: Saving/Exporting your Gradebook to a Spreadsheet from Laulima
+Article Text: Using the Gradebook, you can export a list of student usernames, first and last name, as well as any Gradebook entries to a spreadsheet as a CSV file which can be saved to your computer. This tutorial which can help guide you through this process: http://www.hawaii.edu/talent/laulimatutorials/laulima_exortingroster.htm (this link opens in a new window)

@@ -1,0 +1,2 @@
+Question: What is the maximum email size that can be sent?
+Article Text: The maximum size email (including attachments) you may send is 25MB. http://support.google.com/mail/bin/answer.py?hl=en&answer=8770

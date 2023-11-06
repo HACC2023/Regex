@@ -1,0 +1,2 @@
+Question: How do I do a soft boot on a PC and what is it good for?
+Article Text: You can soft boot by holding down the shift key when restarting the computer. This is good when you have just installed software that requires you to restart the computer, the soft boot will just reload the software. This does not work when you have just updated drivers or any hardware component.

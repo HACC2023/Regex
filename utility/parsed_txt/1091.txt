@@ -1,0 +1,2 @@
+Question: I don't know who owns a particular LISTSERV list. How do I contact the owner?
+Article Text: To contact the owner(s) of a LISTSERV list, send an email to listname-request@lists.hawaii.edu, where listname is name of the list in question. For example if you want to contact the owner(s) of the list LISTSERV-L@lists.hawaii.edu, you would email LISTSERV-L-request@lists.hawaii.edu.

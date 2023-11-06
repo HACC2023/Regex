@@ -1,0 +1,2 @@
+Question: Where can I set up the questions so I can reset my password?
+Article Text: To configure your two questions and answers: Visit http://www.hawaii.edu/username. Click on the Login button and log in with your UH Username and UH Password. Select the Change Password Reset Questions link to set/change your security questions. Note: You will need to input your UH Password to save your new security questions.

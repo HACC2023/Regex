@@ -1,0 +1,2 @@
+Question: What address should be used on the PO?
+Article Text: Vendors will be created with remittance addresses. You should use the address that was specified on the vendor's IRS W-9 form. If you require an order address, contact Disbursing to have them add a PO type address.

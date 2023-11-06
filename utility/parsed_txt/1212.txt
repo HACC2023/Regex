@@ -1,0 +1,2 @@
+Question: Google Calendar access not working with UH email address.
+Article Text: If you're seeing an "Oops. A calendar already exists for [your email address]" error, it means that your email address is currently associated with a Google Apps Account as well as a regular Google Account. After you log into your account, you will need to select Change your Google Account email address. The page will display the current email address, and give you the option to change the email address. You must change this address to one which does not end with @hawaii.edu

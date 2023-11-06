@@ -1,0 +1,2 @@
+Question: What is lynx?
+Article Text: Lynx is a text based World Wide Web browser.

@@ -1,0 +1,2 @@
+Question: VirusScan detected infected files and moved them to quarantine. How do I delete the infected files in quarantine?
+Article Text: Temporarily disable VirusScan On-Access Scan. (Right click Vshield icon in system tray. Click Disable On-Access Scan.) Open My Computer and browse to C:Quarantine folder. Highlight the files you wish to delete. Hit the Delete key. Empty Recycle Bin. Make sure to enable VirusScan On-Access Scan. (Right click Vshield icon in system tray. Click Enable On-Access Scan.)
