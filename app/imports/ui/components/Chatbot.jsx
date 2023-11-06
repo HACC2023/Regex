@@ -27,41 +27,18 @@ const ChatBox = () => {
     // Add the user's message to the chat history
     setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
+    // Placeholder user ID - you will need to replace this with the actual user ID
+    const userId = 'placeholderUserId';
+
     // Simulate chatbot typing effect
     setTimeout(() => {
-      Meteor.call('getChatbotResponse', userInput, (error, result) => {
+      Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
             { sender: 'user', text: userInput },
             { sender: 'bot', text: result.chatbotResponse },
           ];
-
-          // Check if similarArticles is available and non-empty
-          if (result.similarArticles && result.similarArticles.length > 0) {
-            // const mostRelevantArticle = result.similarArticles[0];
-            // Create a link to the relevant article
-            /*
-            const articleLink = (
-              <a
-                href={`/article_html/${mostRelevantArticle.filename}`}
-                target="_blank"
-                rel="noreferrer"
-                className="chat-message bot"
-              >
-                {mostRelevantArticle.question}
-              </a>
-            );
-
-            // Create a message with the article link
-            const articleMessage = {
-              sender: 'bot',
-              text: 'Here is the most relevant article link:',
-              link: articleLink,
-            };
-            newMessages.push(articleMessage);
-            */
-          }
 
           // Update chat history, similar articles, and clear the user input
           setChatHistory([...chatHistory, ...newMessages]);

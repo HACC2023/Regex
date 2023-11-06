@@ -181,9 +181,32 @@ const createOpenAICompletion = async (messages) => {
  *   }
  * });
  */
+
+// Define a global or persistent object to store session data
+const userSessions = {};
 Meteor.methods({
-  async getChatbotResponse(userMessage) {
+  async getChatbotResponse(userId, userMessage) {
+    check(userId, String);
     check(userMessage, String);
+
+    // Retrieve or initialize the user's session
+    const userSession = userSessions[userId] || {
+      messages: [],
+    };
+
+    // Add the user's message to the session
+    userSession.messages.push({ role: 'user', content: userMessage });
+
+    // Ensure the session does not exceed the maximum length
+    const MAX_SESSION_LENGTH = 10; // Define the maximum length of the session history
+    if (userSession.messages.length > MAX_SESSION_LENGTH) {
+      // Keep only the most recent messages
+      userSession.messages = userSession.messages.slice(-MAX_SESSION_LENGTH);
+    }
+
+    // Store the user's session
+    userSessions[userId] = userSession;
+
     const greetings = ['hello', 'hi', 'how do you do', 'good day'];
     let chatbotResponse;
     let similarArticles;
@@ -201,17 +224,23 @@ Meteor.methods({
         { role: 'assistant', content: 'Hello! How can I assist you today?' },
       ];
 
-      const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?, if i say thank you say the appropriate response`;
+      // Log the session history before sending it to OpenAI
+      console.log('Session History:', userSession.messages);
 
+      // Include the user's session history when creating the OpenAI completion
       const messages = [
         ...initialContext,
+        ...userSession.messages, // Include the user's session history
         ...messagesForChatbot,
-        { role: 'user', content: userQueryMessage },
+        { role: 'user', content: userMessage },
       ];
 
       chatbotResponse = await createOpenAICompletion(messages);
       similarArticles = articlesForComponent;
     }
+
+    // Store the chatbot's response in the session
+    userSession.messages.push({ role: 'assistant', content: chatbotResponse });
 
     return {
       chatbotResponse,
