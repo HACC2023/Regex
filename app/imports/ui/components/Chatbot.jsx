@@ -1,83 +1,91 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import ChatLoading from './ChatLoading';
+import { AskUs } from '../../api/askus/AskUs';
 
-/**
- * The ChatBox component provides a chat interface where users can interact with a chatbot and receive responses.
- * It also displays a list of similar articles related to the conversation.
- */
-const ChatBox = () => {
-  // State variables for user input, chat history, loading state, and similar articles
-  const [userInput, setUserInput] = useState('');
+const ChatBox = (props) => {
+  const { input } = props;
+  const [userInput, setUserInput] = useState(input);
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
 
-  // Reference to scroll to the end of the chat
   const chatEndRef = useRef(null);
 
-  // Function to handle sending user messages
+  const timeStart = (new Date()).getTime();
+
+  // Increases the freq attribute in the Askus database for selected item.
+  const increaseFreq = (item, amount) => {
+    const { _id } = item;
+    const freq = item.freq + amount;
+    AskUs.collection.update(_id, { $set: { freq } }, (error) => (error ?
+      console.log('Error', error.message) :
+      console.log(/* 'Success', `increased ${filename} freq by ${amount}` */)));
+  };
+
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
+    setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
-    const timeStart = (new Date()).getTime();
-
-    const userId = 'placeholderUserId';
-
+    // Simulate chatbot typing effect
     setTimeout(() => {
-      Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
+      Meteor.call('getChatbotResponse', userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
             { sender: 'user', text: userInput },
-            { sender: 'bot', text: result.chatbotResponse }, // Ensure the chatbot's response includes the link if needed
+            { sender: 'bot', text: result.chatbotResponse },
           ];
 
-          setChatHistory((prevChatHistory) => [...prevChatHistory, ...newMessages]);
+          // Check if similarArticles is available and non-empty
+          if (result.similarArticles && result.similarArticles.length > 0) {
+            const mostRelevantArticle = result.similarArticles[0];
+            const articleLink = (
+              <a
+                href={`/article_html/${mostRelevantArticle.filename}`}
+                target="_blank"
+                rel="noreferrer"
+                className="chat-message bot"
+              >
+                {mostRelevantArticle.question}
+              </a>
+            );
+            const articleMessage = {
+              sender: 'bot',
+              text: 'Here is the most relevant article link:',
+              link: articleLink,
+            };
+            increaseFreq(mostRelevantArticle, 1);
+            newMessages.push(articleMessage);
+          }
+
+          for (let i = 1; i < 3; i++) {
+            if (result.similarArticles[i]) {
+              const runnerUpArticle = result.similarArticles[i];
+              increaseFreq(runnerUpArticle, 0.5);
+            }
+          }
+
+          setChatHistory([...chatHistory, ...newMessages]);
           setSimilarArticles(result.similarArticles);
           setUserInput('');
 
           const timeEnd = (new Date()).getTime();
           const responseTimeMs = timeEnd - timeStart;
-          console.log(`User Input: "${userInput}"`);
-          console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
+          console.log(`Response took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds. (User Input: "${userInput}")`);
+
         } else {
-          setChatHistory((prevChatHistory) => [
-            ...prevChatHistory,
-            { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' },
-          ]);
-          console.error('Error fetching chatbot response:', error);
+          setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
+          console.log(`Response failed. (User Input: "${userInput}")`);
         }
       });
-    }, 1000);
+    }, 0); // simulate a 1-second delay for the typing effect (changed from 1000 (1s) to 0 so there's no extra delay)
   };
 
-  // Function to format chatbot's response
-  const formatChatbotResponse = (text) => {
-    const lines = text.split('\n');
-    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/;
-    const formattedLines = lines.map((line, index) => {
-      const linkMatch = line.match(linkRegex);
-      if (linkMatch) {
-        const link = linkMatch[0];
-        const linkText = line.replace(link, '').trim() || 'Link';
-        return (
-          <p key={index}>
-            {linkText}
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              {link}
-            </a>
-          </p>
-        );
-      }
-      return <p key={index}>{line}</p>;
-    });
-    return <div>{formattedLines}</div>;
-  };
-
-  // Function to determine the sender of a message
+  // Helper function that provides message sender above messages that aren't chatbot links.
   const chatSender = (message) => {
     if (message.sender === 'user') {
       return <div>You</div>;
@@ -87,10 +95,22 @@ const ChatBox = () => {
     }
     return <div>ChatBot</div>;
   };
-  // Effect to scroll to the end of the chat when it updates
+
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
+
+  // Autosubmits the form if starting input is not empty (ie redirected from landing)
+  const form = useRef();
+  useEffect(() => {
+    // console.log(input);
+    // alert('handle submit');
+    if (input !== '') {
+      form.current.dispatchEvent(
+        new Event('submit', { cancelable: true, bubbles: true }),
+      );
+    }
+  }, []);
 
   return (
     <Container className="mt-5">
@@ -99,39 +119,40 @@ const ChatBox = () => {
         <Col>
           <div className="chat-window">
             {chatHistory.map((message, index) => (
-              <React.Fragment key={message.id || `message-${index}`}>
+              <>
                 {chatSender(message)}
-                <div className={`chat-message ${message.sender}`}>
-                  {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}
+                <div key={index} className={`chat-message ${message.sender}`}>
+                  {message.text} {message.link}
                 </div>
-              </React.Fragment>
+              </>
             ))}
             {/* ChatLoading Circle is rendered here */}
             {loading && <ChatLoading />}
             <div ref={chatEndRef} />
           </div>
-          <Form onSubmit={handleSend} className="mt-3">
+          {/* Input and submit */}
+          <Form onSubmit={handleSend} ref={form} className="mt-3">
             <div className="d-flex">
               <Form.Control
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
-                aria-label="User input" // Added for accessibility
               />
               <Button type="submit" className="ms-2" disabled={loading}>Send</Button>
             </div>
           </Form>
         </Col>
       </Row>
+      {/* Similar articles cards */}
       <Row className="mt-5">
-        <h5 className="mb-3">Relevant Articles</h5>
-        {similarArticles.slice(0, 3).map((article) => {
-          // Truncating the article content to a longer length for the excerpt
-          const truncatedContent = `${article.article_text.substring(0, 500)}...`;
+        <h5 className="mb-3">Similar Articles</h5>
+        {similarArticles.slice(0, 3).map((article, index) => {
+          // Truncating the article content to 200 characters for the excerpt
+          const truncatedContent = `${article.article_text.substring(0, 200)}...`;
 
           return (
-            <Col key={article.id} md={4}>
+            <Col key={index} md={4}>
               <div className="card mb-3">
                 <div className="card-body">
                   <h5 className="card-title">{article.question}</h5>
@@ -145,6 +166,11 @@ const ChatBox = () => {
       </Row>
     </Container>
   );
+};
+
+// Requires a string to be passed from rendering page
+ChatBox.propTypes = {
+  input: PropTypes.string.isRequired,
 };
 
 export default ChatBox;
