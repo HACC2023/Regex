@@ -17,7 +17,9 @@ const openai = new OpenAI({
  */
 const MAX_ARTICLES = 5; // Maximum number of articles to consider.
 const MAX_SIMILAR_ARTICLES = 3; // Maximum number of similar articles to return.
-const MAX_TOKENS_PER_ARTICLE = 1000; // Maximum number of tokens per article to consider.
+const MAX_TOKENS_PER_ARTICLE = 1500; // Maximum number of tokens per article to consider.
+const MAX_SESSION = 5; // Maximum number of messages to store in a session.
+const MAX_TOKENS_PER_MESSAGE = 200; // Maximum number of tokens per message to consider.
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -173,7 +175,7 @@ const createOpenAICompletion = async (messages) => {
       model: 'gpt-3.5-turbo',
       messages: filteredMessages,
       temperature: 0.2,
-      max_tokens: 500,
+      max_tokens: MAX_TOKENS_PER_MESSAGE,
     });
 
     console.log('OpenAI API Response:', response);
@@ -225,7 +227,7 @@ Meteor.methods({
     userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
 
     // Ensure the session does not exceed the maximum length
-    const MAX_SESSION_LENGTH = 10;
+    const MAX_SESSION_LENGTH = MAX_SESSION;
     if (userSession.messages.length > MAX_SESSION_LENGTH) {
       userSession.messages = userSession.messages.slice(-MAX_SESSION_LENGTH);
     }

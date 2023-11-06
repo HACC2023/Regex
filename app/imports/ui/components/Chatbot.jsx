@@ -22,23 +22,20 @@ const ChatBox = () => {
     e.preventDefault();
     setLoading(true);
 
-    const timeStart = (new Date()).getTime(); // Moved inside the function to measure response time for each input
+    const timeStart = (new Date()).getTime();
 
-    // Placeholder user ID - replace this with the actual user ID
     const userId = 'placeholderUserId';
 
-    // Simulate chatbot typing effect (with a non-zero delay for actual simulation)
     setTimeout(() => {
       Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
-            { sender: 'user', text: userInput }, // Keep this as it is added after the response is received
-            { sender: 'bot', text: result.chatbotResponse },
+            { sender: 'user', text: userInput },
+            { sender: 'bot', text: result.chatbotResponse }, // Ensure the chatbot's response includes the link if needed
           ];
 
-          // Use functional update form for state updates
-          setChatHistory(prevChatHistory => [...prevChatHistory, ...newMessages]);
+          setChatHistory((prevChatHistory) => [...prevChatHistory, ...newMessages]);
           setSimilarArticles(result.similarArticles);
           setUserInput('');
 
@@ -46,39 +43,38 @@ const ChatBox = () => {
           const responseTimeMs = timeEnd - timeStart;
           console.log(`User Input: "${userInput}"`);
           console.log(`Request took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds.`);
-
         } else {
-          // Error handling for failed chatbot response
-          setChatHistory(prevChatHistory => [...prevChatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' },
+          ]);
           console.error('Error fetching chatbot response:', error);
         }
       });
-    }, 1000); // Changed to 1-second delay for typing effect simulation
+    }, 1000);
   };
 
   // Function to format chatbot's response
-  // Function to format chatbot's response
   const formatChatbotResponse = (text) => {
-    // Check for various list markers and split the text into list items
-    const listMarkersRegex = /(\d+\.)|(\* )|(- )|(Step \d+:)|(Note:)/;
     const lines = text.split('\n');
+    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/;
     const formattedLines = lines.map((line, index) => {
-      if (listMarkersRegex.test(line)) {
+      const linkMatch = line.match(linkRegex);
+      if (linkMatch) {
+        const link = linkMatch[0];
+        const linkText = line.replace(link, '').trim() || 'Link';
         return (
-          <li key={index} className="list-item">
-            {line}
-          </li>
+          <p key={index}>
+            {linkText}
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {link}
+            </a>
+          </p>
         );
       }
-      return (
-        <React.Fragment key={index}>
-          {line}
-          <br />
-        </React.Fragment>
-      );
+      return <p key={index}>{line}</p>;
     });
-
-    return <ul className="chat-list">{formattedLines}</ul>;
+    return <div>{formattedLines}</div>;
   };
 
   // Function to determine the sender of a message
