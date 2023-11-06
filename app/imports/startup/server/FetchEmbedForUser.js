@@ -31,6 +31,24 @@ const throwError = (type, message) => {
 };
 
 /**
+ * Calculates the average embedding of the messages in a session.
+ * @param {Object[]} messages - An array of message objects.
+ * @returns {number[]} The average embedding.
+ */
+function getAverageEmbedding(messages) {
+  const embeddings = messages.map(msg => msg.embedding).filter(embedding => embedding);
+  if (embeddings.length === 0) {
+    console.error('No embeddings provided to calculate the average.');
+    // Handle the case where no embeddings are available (e.g., by returning a default embedding or null)
+    return null; // Example fallback
+  }
+
+  const sumEmbedding = embeddings.reduce((acc, embedding) => acc.map((value, index) => value + embedding[index]), new Array(embeddings[0].length).fill(0));
+
+  return sumEmbedding.map(value => value / embeddings.length);
+}
+
+/**
  * Computes the cosine similarity between two vectors.
  * @param {number[]} embedding1 - The first vector.
  * @param {number[]} embedding2 - The second vector.
@@ -148,9 +166,12 @@ function getRelevantContextFromDB(userEmbedding) {
  */
 const createOpenAICompletion = async (messages) => {
   try {
+    // Remove any properties from the messages that are not expected by the OpenAI API
+    const filteredMessages = messages.map(({ role, content }) => ({ role, content }));
+
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages: messages,
+      messages: filteredMessages,
       temperature: 0.2,
       max_tokens: 150,
     });
@@ -192,20 +213,20 @@ Meteor.methods({
     // Retrieve or initialize the user's session
     const userSession = userSessions[userId] || {
       messages: [],
+      currentTopicEmbedding: null, // Embedding representing the current topic
+      currentArticles: null, // Field to store the current articles
     };
 
-    // Add the user's message to the session
-    userSession.messages.push({ role: 'user', content: userMessage });
+    // Fetch and store the embedding for the user's message
+    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+    console.log('Fetched user embedding:', userEmbedding); // Log to confirm embedding is fetched
+    userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
 
     // Ensure the session does not exceed the maximum length
-    const MAX_SESSION_LENGTH = 10; // Define the maximum length of the session history
+    const MAX_SESSION_LENGTH = 10;
     if (userSession.messages.length > MAX_SESSION_LENGTH) {
-      // Keep only the most recent messages
       userSession.messages = userSession.messages.slice(-MAX_SESSION_LENGTH);
     }
-
-    // Store the user's session
-    userSessions[userId] = userSession;
 
     const greetings = ['hello', 'hi', 'how do you do', 'good day'];
     let chatbotResponse;
@@ -214,9 +235,30 @@ Meteor.methods({
     if (greetings.includes(userMessage.toLowerCase())) {
       chatbotResponse = 'Hello! How can I assist you today?';
       similarArticles = [];
+      userSession.currentTopicEmbedding = null; // Reset the topic when greeting
     } else {
-      const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-      const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+      // Check if the user's message is similar to the previous topic
+      const previousTopicEmbedding = userSession.currentTopicEmbedding;
+      let similarity = 1; // Default to 1 (max similarity) if no previous topic
+
+      if (previousTopicEmbedding) {
+        similarity = computeCosineSimilarity(userEmbedding, previousTopicEmbedding);
+      }
+
+      const TOPIC_SHIFT_THRESHOLD = 0.7; // Define a threshold for topic shift detection
+      if (similarity < TOPIC_SHIFT_THRESHOLD || !userSession.currentTopicEmbedding) {
+        // Topic has shifted significantly, or no topic yet determined
+        const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+        userSession.currentArticles = articlesForComponent;
+
+        // Check if messagesForChatbot have embeddings before calculating the average
+        if (messagesForChatbot.some(msg => msg.embedding)) {
+          userSession.currentTopicEmbedding = getAverageEmbedding(messagesForChatbot);
+        } else {
+          console.error('No embeddings found in messages for chatbot. Cannot calculate average embedding.');
+          // Handle the case where no embeddings are available (e.g., by setting a default embedding or throwing an error)
+        }
+      }
 
       const initialContext = [
         { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
@@ -224,23 +266,21 @@ Meteor.methods({
         { role: 'assistant', content: 'Hello! How can I assist you today?' },
       ];
 
-      // Log the session history before sending it to OpenAI
       console.log('Session History:', userSession.messages);
 
-      // Include the user's session history when creating the OpenAI completion
       const messages = [
         ...initialContext,
-        ...userSession.messages, // Include the user's session history
-        ...messagesForChatbot,
+        ...userSession.messages,
+        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({ role: 'system', content: `From ${article.filename}: ${article.article_text}` })) : []),
         { role: 'user', content: userMessage },
       ];
 
       chatbotResponse = await createOpenAICompletion(messages);
-      similarArticles = articlesForComponent;
+      similarArticles = userSession.currentArticles;
     }
 
-    // Store the chatbot's response in the session
     userSession.messages.push({ role: 'assistant', content: chatbotResponse });
+    userSessions[userId] = userSession; // Update the session
 
     return {
       chatbotResponse,
