@@ -5,6 +5,8 @@
 :root {
   --matr-navbar-bg: #ECECEC;
   --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-navbar-highlight-text: white;
+  --matr-navbar-text-color: white;
 }
 
 /* Change bootstrap variable values.
@@ -13,7 +15,14 @@
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: lightgray;
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: lightgray;
 
+}
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
@@ -34,4 +43,57 @@ body {
   border: 0 !important;
   font-family: 'Open Sans', Tahoma, sans-serif !important;
   padding: 8px 20px 10px !important;
+}
+/* Styling for UHNavbar below */
+.navbarColor {
+  background-color: #444444;
+}
+
+.siteSearch {
+  border: 2px solid #856404 !important; /* Change the border color */
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+.search {
+  color: #856404 !important; /* Change the color */
+}
+
+.department {
+  color: #1b1e21 !important; /* Change the color */
+}
+.bottom-nav {
+  color: var(--bs-dark);
+  padding-top: 10px;
+  padding-bottom: 20px;
+  --bs-nav-link-color: black !important;
+  --bs-nav-link-hover-color: black !important;
+}
+/* Styling for UHFooter below */
+#footer_top {
+  background-color: #fff;
+  padding: 0;
+}
+#footer_btm {
+  background-color: #222 !important;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  color: lightgray;
+}
+#footer_btm a {
+  color: white;
+}
+.footerIcons{
+  --bs-nav-link-color: white !important;
+  --bs-nav-link-hover-color: white !important;
+}
+.custom-navlink{
+  --bs-nav-link-padding-x: 5px;  /* Stylying for the padding of the icons */
+  --bs-nav-link-padding-y: 0px;
+}
+div {
+  display: block;
+}
+footer {
+  clear: both;
+  width: 100%;
+  margin: 0;
 }
