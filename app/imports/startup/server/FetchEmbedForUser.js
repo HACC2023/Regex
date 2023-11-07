@@ -13,6 +13,12 @@ const MAX_TOKENS_PER_ARTICLE = 1500; // Adjusted from new code
 const MAX_SESSION = 3; // New constant for session length
 const MAX_TOKENS_PER_MESSAGE = 400; // New constant for tokens per message
 
+/**
+ * Throws a formatted Meteor error and logs the message.
+ * @param {string} type - The error type.
+ * @param {string} message - The error message.
+ * @throws {Meteor.Error} Throws a Meteor.Error with the specified type and message.
+ */
 const throwError = (type, message) => {
   console.error(message);
   throw new Meteor.Error(type, message);
