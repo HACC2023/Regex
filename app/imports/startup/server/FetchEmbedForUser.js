@@ -70,6 +70,15 @@ function findMostSimilarArticles(userEmbedding) {
   return sortedArticles.map(item => item.article);
 }
 
+/**
+ * Gets the relevant context from the database based on the user's embedding.
+ * This function finds articles similar to the user's query, truncates them to a specified length,
+ * and prepares the context for the chatbot and the articles for the component.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object} An object containing two properties:
+ * - messagesForChatbot: An array of objects with 'role' and 'content' representing system messages.
+ * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
+ */
 function getRelevantContextFromDB(userEmbedding) {
   console.log('User Embedding:', userEmbedding);
   const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
@@ -94,10 +103,8 @@ function getRelevantContextFromDB(userEmbedding) {
 
   // Return articles in the expected format
   const articlesForComponent = truncatedArticles.map((article) => ({
-    _id: article._id,
     filename: article.filename,
     question: article.question,
-    freq: article.freq,
     article_text: article.article_text,
   }));
 
@@ -106,6 +113,7 @@ function getRelevantContextFromDB(userEmbedding) {
     articlesForComponent: articlesForComponent,
   };
 }
+
 const createOpenAICompletion = async (messages) => {
   try {
     const response = await openai.chat.completions.create({
