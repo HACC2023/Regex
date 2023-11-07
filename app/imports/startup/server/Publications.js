@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
+import { AskUs } from '../../api/askus/AskUs';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -17,6 +18,23 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 Meteor.publish(Stuffs.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.collection.find();
+  }
+  return this.ready();
+});
+
+// Publishes the top 8 most frequently visited sites.
+Meteor.publish(AskUs.userPublicationName, function () {
+  return AskUs.collection.find(
+    {},
+    { sort: { freq: -1 }, limit: 8 },
+  );
+});
+
+// Admin-level publication.
+// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
+Meteor.publish(AskUs.adminPublicationName, function () {
+  if (Roles.userIsInRole(this.userId, 'admin')) {
+    return AskUs.collection.find();
   }
   return this.ready();
 });

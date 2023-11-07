@@ -1,12 +1,16 @@
 import { Meteor } from 'meteor/meteor';
+import jsxToString from 'jsx-to-string';
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Form, Container, Row, Col } from 'react-bootstrap';
-import ChatLoading from './ChatLoading';
-import { Askus } from '../../api/askus/Askus';
-import TypingAnimation from "./TypingAnimation";
+import { Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import { AskUs } from '../../api/askus/AskUs';
+import ChatWindow from './ChatWindow';
+import ChatInput from './ChatInput';
+import SimilarArticles from './SimilarArticles';
 
-const ChatBox = () => {
-  const [userInput, setUserInput] = useState('');
+const ChatBox = (props) => {
+  const { input } = props;
+  const [userInput, setUserInput] = useState(input);
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
@@ -19,7 +23,7 @@ const ChatBox = () => {
   const increaseFreq = (item, amount) => {
     const { _id } = item;
     const freq = item.freq + amount;
-    Askus.collection.update(_id, { $set: { freq } }, (error) => (error ?
+    AskUs.collection.update(_id, { $set: { freq } }, (error) => (error ?
       console.log('Error', error.message) :
       console.log(/* 'Success', `increased ${filename} freq by ${amount}` */)));
   };
@@ -29,9 +33,16 @@ const ChatBox = () => {
     setLoading(true);
     setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
+    const userId = 'placeholderUserId'; // Placeholder, replace with actual userId if available
+    if (!userInput.trim()) {
+      // Handle the case when userInput is empty or just whitespace
+      setLoading(false);
+      console.error('User input is empty.');
+      return; // Exit early to prevent calling the method with an empty message
+    }
     // Simulate chatbot typing effect
     setTimeout(() => {
-      Meteor.call('getChatbotResponse', userInput, (error, result) => {
+      Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
@@ -81,9 +92,33 @@ const ChatBox = () => {
           console.log(`Response failed. (User Input: "${userInput}")`);
         }
       });
-    }, 0); // simulate a 1-second delay for the typing effect
+    }, 0); // simulate a 1-second delay for the typing effect (changed from 1000 (1s) to 0 so there's no extra delay)
   };
 
+  // Function to format chatbot's response
+  const formatChatbotResponse = (text) => {
+    const lines = text.split('\n');
+    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&;/~+#])?/;
+    const formattedLines = lines.map((line, index) => {
+      const linkMatch = line.match(linkRegex);
+      if (linkMatch) {
+        const link = linkMatch[0];
+        const linkText = line.replace(link, '').trim() || 'Link';
+        return (
+          <p key={index}>
+            {linkText}
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {link}
+            </a>
+          </p>
+        );
+      }
+      return <p key={index}>{line}</p>;
+    });
+    return <div>{formattedLines}</div>;
+  };
+
+  // Helper function that provides message sender above messages that aren't chatbot links.
   const chatSender = (message) => {
     if (message.sender === 'user') {
       return <div>You</div>;
@@ -98,59 +133,50 @@ const ChatBox = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
 
+  // Autosubmits the form if starting input is not empty (ie redirected from landing)
+  const form = useRef();
+  useEffect(() => {
+    // console.log(input);
+    // alert('handle submit');
+    if (input !== '') {
+      form.current.dispatchEvent(
+        new Event('submit', { cancelable: true, bubbles: true }),
+      );
+    }
+  }, []);
+
   return (
     <Container className="mt-5">
       <Row>
         {/* Chatbot Conversation Column */}
         <Col>
-          <div className="chat-window">
-            {chatHistory.map((message, index) => (
-              <>
-                {chatSender(message)}
-                <div key={index} className={`chat-message ${message.sender}`}>
-                  {message.sender === 'bot' ? <TypingAnimation text={message.text} delay={20}/> : message.text }
-                  {message.link}
-                </div>
-              </>
-            ))}
-            {/* ChatLoading Circle is rendered here */}
-            {loading && <ChatLoading />}
-            <div ref={chatEndRef} />
-          </div>
-          <Form onSubmit={handleSend} className="mt-3">
-            <div className="d-flex">
-              <Form.Control
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Ask something..."
-              />
-              <Button type="submit" className="ms-2" disabled={loading}>Send</Button>
-            </div>
-          </Form>
+          <ChatWindow
+            chatHistory={chatHistory}
+            chatSender={chatSender}
+            formatChatbotResponse={formatChatbotResponse}
+            loading={loading}
+            chatEndRef={chatEndRef}
+          />
+          <ChatInput
+            userInput={userInput}
+            setUserInput={setUserInput}
+            handleSend={handleSend}
+            loading={loading}
+          />
         </Col>
       </Row>
+      {/* Similar articles cards */}
       <Row className="mt-5">
-        <h5 className="mb-3">Similar Articles</h5>
-        {similarArticles.slice(0, 3).map((article, index) => {
-          // Truncating the article content to 200 characters for the excerpt
-          const truncatedContent = `${article.article_text.substring(0, 200)}...`;
-
-          return (
-            <Col key={index} md={4}>
-              <div className="card mb-3">
-                <div className="card-body">
-                  <h5 className="card-title">{article.question}</h5>
-                  <p className="card-text">{truncatedContent}</p>
-                  <a href={`/article_html/${article.filename}`} className="card-link" target="_blank" rel="noopener noreferrer">Read full article</a>
-                </div>
-              </div>
-            </Col>
-          );
-        })}
+        <h5 className="mb-3">Relevant Articles</h5>
+        <SimilarArticles similarArticles={similarArticles} />
       </Row>
     </Container>
   );
+};
+
+// Requires a string to be passed from rendering page
+ChatBox.propTypes = {
+  input: PropTypes.string.isRequired,
 };
 
 export default ChatBox;

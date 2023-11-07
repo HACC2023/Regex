@@ -1,13 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAIApi from 'openai';
-import { Askus } from '../../api/askus/Askus.js';
+import { AskUs } from '../../api/askus/AskUs.js';
 
 const openai = new OpenAIApi(process.env.OPENAI_API_KEY);
 const MAX_TOKENS = 8192; // Max tokens allowed by the model
 
 Meteor.methods({
   generateAndStoreEmbeddings: async function () {
-    const articles = Askus.collection.find({ embedding: { $exists: false } }).fetch();
+    const articles = AskUs.collection.find({ embedding: { $exists: false } }).fetch();
 
     // eslint-disable-next-line no-restricted-syntax
     for (const article of articles) {
@@ -32,7 +32,7 @@ Meteor.methods({
         } else {
           const embedding = response.data[0].embedding;
 
-          Askus.collection.update(article._id, {
+          AskUs.collection.update(article._id, {
             $set: {
               embedding: embedding,
             },

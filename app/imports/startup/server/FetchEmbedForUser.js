@@ -1,15 +1,25 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
-import { Askus } from '../../api/askus/Askus.js';
+import { check, Match } from 'meteor/check';
+import { AskUs } from '../../api/askus/AskUs.js';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Constants
 const MAX_ARTICLES = 5;
 const MAX_SIMILAR_ARTICLES = 3;
-const MAX_TOKENS_PER_ARTICLE = 600;
+const MAX_TOKENS_PER_ARTICLE = 1500; // Adjusted from new code
+const MAX_SESSION = 3; // New constant for session length
+const MAX_TOKENS_PER_MESSAGE = 400; // New constant for tokens per message
 
+/**
+ * Throws a formatted Meteor error and logs the message.
+ * @param {string} type - The error type.
+ * @param {string} message - The error message.
+ * @throws {Meteor.Error} Throws a Meteor.Error with the specified type and message.
+ */
 const throwError = (type, message) => {
   console.error(message);
   throw new Meteor.Error(type, message);
@@ -49,7 +59,7 @@ const getEmbeddingFromOpenAI = async (text) => {
 };
 
 function findMostSimilarArticles(userEmbedding) {
-  const articles = Askus.collection.find({}).fetch();
+  const articles = AskUs.collection.find({}).fetch();
 
   const similarities = articles.map(article => ({
     article: article,
@@ -61,6 +71,15 @@ function findMostSimilarArticles(userEmbedding) {
   return sortedArticles.map(item => item.article);
 }
 
+/**
+ * Gets the relevant context from the database based on the user's embedding.
+ * This function finds articles similar to the user's query, truncates them to a specified length,
+ * and prepares the context for the chatbot and the articles for the component.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object} An object containing two properties:
+ * - messagesForChatbot: An array of objects with 'role' and 'content' representing system messages.
+ * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
+ */
 function getRelevantContextFromDB(userEmbedding) {
   console.log('User Embedding:', userEmbedding);
   const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
@@ -85,10 +104,8 @@ function getRelevantContextFromDB(userEmbedding) {
 
   // Return articles in the expected format
   const articlesForComponent = truncatedArticles.map((article) => ({
-    _id: article._id,
     filename: article.filename,
     question: article.question,
-    freq: article.freq,
     article_text: article.article_text,
   }));
 
@@ -97,14 +114,26 @@ function getRelevantContextFromDB(userEmbedding) {
     articlesForComponent: articlesForComponent,
   };
 }
+
+/**
+ * Creates a completion using OpenAI based on the provided messages.
+ * @param {Object[]} messages - An array of message objects to provide context.
+ * @returns {Promise<string>} The response content from the chatbot.
+ * @throws {Meteor.Error} Throws an error if the OpenAI API call fails or the response format is unexpected.
+ */
 const createOpenAICompletion = async (messages) => {
   try {
+    // Remove any properties from the messages that are not expected by the OpenAI API
+    const filteredMessages = messages.map(({ role, content }) => ({ role, content }));
+
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages: messages,
+      messages: filteredMessages,
       temperature: 0.2,
-      max_tokens: 150,
+      max_tokens: MAX_TOKENS_PER_MESSAGE,
     });
+
+    console.log('OpenAI API Response:', response);
 
     if (response && response.choices && response.choices[0]) {
       return response.choices[0].message.content;
@@ -116,93 +145,120 @@ const createOpenAICompletion = async (messages) => {
   }
 };
 
+/**
+ * Calculates the average embedding of the messages in a session.
+ * @param {Object[]} messages - An array of message objects.
+ * @returns {number[]} The average embedding.
+ */
+function getAverageEmbedding(messages) {
+  const embeddings = messages.map(msg => msg.embedding).filter(embedding => embedding);
+  if (embeddings.length === 0) {
+    console.error('No embeddings provided to calculate the average.');
+    // Handle the case where no embeddings are available (e.g., by returning a default embedding or null)
+    return null; // Example fallback
+  }
+
+  const sumEmbedding = embeddings.reduce((acc, embedding) => acc.map((value, index) => value + embedding[index]), new Array(embeddings[0].length).fill(0));
+
+  return sumEmbedding.map(value => value / embeddings.length);
+}
+
+// Define a global or persistent object to store session data
+const userSessions = {};
+
 Meteor.methods({
-  async getChatbotResponse(userMessage) {
+  async getChatbotResponse(receivedUserId, userMessage) {
+    // Validate receivedUserId and userMessage before using them
+    check(receivedUserId, Match.Maybe(String));
+
+    // If userMessage is undefined, log an error and throw a Meteor error
+    if (typeof userMessage !== 'string') {
+      const errorMessage = `Expected userMessage to be a string but got ${typeof userMessage}`;
+      console.error(errorMessage);
+      throw new Meteor.Error('validation-error', errorMessage);
+    }
+
+    // Use a default value for userId if receivedUserId is not provided
+    const userId = receivedUserId || 'testUserId';
+
+    // Log the values to check what is received
+    console.log('userId:', userId);
+    console.log('userMessage:', userMessage);
+
+    // Retrieve or initialize the user's session
+    const userSession = userSessions[userId] || {
+      messages: [],
+      currentTopicEmbedding: null, // Embedding representing the current topic
+      currentArticles: null, // Field to store the current articles
+    };
+
+    // Fetch and store the embedding for the user's message
     const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+    console.log('Fetched user embedding:', userEmbedding); // Log to confirm embedding is fetched
+    userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
 
-    const initialContext = [
-      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
-      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
-    ];
+    // Ensure the session does not exceed the maximum length
+    if (userSession.messages.length > MAX_SESSION) {
+      userSession.messages = userSession.messages.slice(-MAX_SESSION);
+    }
 
-    const messages = [
-      ...initialContext,
-      ...messagesForChatbot,
-      { role: 'user', content: `Can you answer the question: ${userMessage} based on the given IT articles?` },
-    ];
+    const greetings = ['hello', 'hi', 'how do you do', 'good day'];
+    let chatbotResponse;
+    let similarArticles;
 
-    const chatbotResponse = await createOpenAICompletion(messages);
+    if (greetings.includes(userMessage.toLowerCase())) {
+      chatbotResponse = 'Hello! How can I assist you today?';
+      similarArticles = [];
+      userSession.currentTopicEmbedding = null; // Reset the topic when greeting
+    } else {
+      // Check if the user's message is similar to the previous topic
+      const previousTopicEmbedding = userSession.currentTopicEmbedding;
+      let similarity = 1; // Default to 1 (max similarity) if no previous topic
+
+      if (previousTopicEmbedding) {
+        similarity = computeCosineSimilarity(userEmbedding, previousTopicEmbedding);
+      }
+
+      const TOPIC_SHIFT_THRESHOLD = 0.7; // Define a threshold for topic shift detection
+      if (similarity < TOPIC_SHIFT_THRESHOLD || !userSession.currentTopicEmbedding) {
+        // Topic has shifted significantly, or no topic yet determined
+        const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+        userSession.currentArticles = articlesForComponent;
+
+        // Check if messagesForChatbot have embeddings before calculating the average
+        if (messagesForChatbot.some(msg => 'embedding' in msg)) {
+          userSession.currentTopicEmbedding = getAverageEmbedding(messagesForChatbot);
+        } else {
+          console.error('No embeddings found in messages for chatbot. Cannot calculate average embedding.');
+          // Handle the case where no embeddings are available (e.g., by setting a default embedding or throwing an error)
+        }
+      }
+
+      const initialContext = [
+        { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
+        { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
+        { role: 'assistant', content: 'Hello! How can I assist you today?' },
+      ];
+
+      console.log('Session History:', userSession.messages);
+
+      const messages = [
+        ...initialContext,
+        ...userSession.messages,
+        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({ role: 'system', content: `From ${article.filename}: ${article.article_text}` })) : []),
+        { role: 'user', content: userMessage },
+      ];
+
+      chatbotResponse = await createOpenAICompletion(messages);
+      similarArticles = userSession.currentArticles;
+    }
+
+    userSession.messages.push({ role: 'assistant', content: chatbotResponse });
+    userSessions[userId] = userSession; // Update the session
 
     return {
       chatbotResponse,
-      similarArticles: articlesForComponent,
+      similarArticles,
     };
   },
 });
-
-/*
-########################################################
-# Use this method for a stricter IT related chatbot
-########################################################
-  Meteor.methods({
-  async getChatbotResponse(userMessage) {
-    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
-
-    const initialContext = [
-      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
-      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
-    ];
-
-    const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?`;
-
-    const messages = [
-      ...initialContext,
-      ...messagesForChatbot,
-      { role: 'user', content: userQueryMessage },
-    ];
-
-    const chatbotResponse = await createOpenAICompletion(messages);
-
-    return {
-      chatbotResponse,
-      similarArticles: articlesForComponent,
-    };
-  },
-});
-########################################################
-*/
-
-/*
-########################################################
-# Need to test this method
-########################################################
-  Meteor.methods({
-  async getChatbotResponse(userMessage) {
-    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-    const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
-
-    const initialContext = [
-      { role: 'system', content: 'You are a chatbot that can only answer questions based on the following IT articles provided and nothing else.' },
-      { role: 'system', content: 'I can only answer IT-related problems based on our embedded knowledge base.' },
-    ];
-
-    const userQueryMessage = `Can you answer the question: ${userMessage} based on the given IT articles?`;
-
-    const messages = [
-      ...initialContext,
-      ...messagesForChatbot,
-      { role: 'user', content: userQueryMessage },
-    ];
-
-    const chatbotResponse = await createOpenAICompletion(messages);
-
-    return {
-      chatbotResponse,
-      similarArticles: articlesForComponent,
-    };
-  },
-});
-########################################################
-*/
