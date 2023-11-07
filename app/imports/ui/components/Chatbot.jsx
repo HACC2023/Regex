@@ -157,6 +157,7 @@ const ChatBox = (props) => {
             chatEndRef={chatEndRef}
           />
           <ChatInput
+            ref={form}
             userInput={userInput}
             setUserInput={setUserInput}
             handleSend={handleSend}
