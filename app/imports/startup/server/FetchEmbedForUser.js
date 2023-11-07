@@ -1,17 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
-import { check, Match } from 'meteor/check';
-import { AskUs } from '../../api/askus/AskUs.js';
+import { check } from 'meteor/check';
+import { AskUs } from '../../api/askus/AskUs.js'; // Make sure to use the correct collection name
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 // Constants
+const MAX_ARTICLES = 5;
 const MAX_SIMILAR_ARTICLES = 3;
-const MAX_TOKENS_PER_ARTICLE = 2000; // Adjusted from new code
-const MAX_SESSION = 3; // New constant for session length
-const MAX_TOKENS_PER_MESSAGE = 400; // New constant for tokens per message
+const MAX_TOKENS_PER_ARTICLE = 1500; // Use the larger value from the new code
+const MAX_SESSION = 3;
+const MAX_TOKENS_PER_MESSAGE = 400;
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -24,7 +25,14 @@ const throwError = (type, message) => {
   throw new Meteor.Error(type, message);
 };
 
-const computeCosineSimilarity = (embedding1, embedding2) => {
+/**
+ * Computes the cosine similarity between two vectors.
+ * @param {number[]} embedding1 - The first vector.
+ * @param {number[]} embedding2 - The second vector.
+ * @returns {number} The cosine similarity.
+ * @throws {Error} Throws an error if the inputs are not arrays or if their lengths do not match.
+ */
+function computeCosineSimilarity(embedding1, embedding2) {
   if (!Array.isArray(embedding1) || !Array.isArray(embedding2)) {
     throw new Error('Both embeddings must be arrays.');
   }
@@ -37,15 +45,15 @@ const computeCosineSimilarity = (embedding1, embedding2) => {
   const magnitude1 = Math.sqrt(embedding1.reduce((sum, value) => sum + value * value, 0));
   const magnitude2 = Math.sqrt(embedding2.reduce((sum, value) => sum + value * value, 0));
 
-  // Avoid division by zero
-  if (magnitude1 === 0 || magnitude2 === 0) {
-    throw new Error('One of the embeddings is a zero vector, cannot compute cosine similarity.');
-  }
-
   return dotProduct / (magnitude1 * magnitude2);
-};
+}
 
-// Function to get embedding from OpenAI
+/**
+ * Fetches the embedding from OpenAI for a given text.
+ * @param {string} text - The text to get the embedding for.
+ * @returns {Promise<number[]>} The embedding vector.
+ * @throws {Meteor.Error} Throws an error if the OpenAI API call fails or the response format is unexpected.
+ */
 const getEmbeddingFromOpenAI = async (text) => {
   try {
     const response = await openai.embeddings.create({
@@ -56,29 +64,32 @@ const getEmbeddingFromOpenAI = async (text) => {
     if (response && response.data) {
       return response.data[0].embedding;
     }
-    // Throw an error if the response format is not as expected
-    throw new Error('Unexpected OpenAI API response format');
+    return throwError('embedding-error', 'Unexpected OpenAI API response format');
+
   } catch (error) {
-    // Log the error and throw it to be handled by the caller
-    console.error('Error in getEmbeddingFromOpenAI:', error);
-    throw error;
+    return throwError('embedding-error', `Failed to fetch embedding from OpenAI: ${error.message}`);
   }
 };
 
-// Function to find the most similar articles based on user's embedding
-const findMostSimilarArticles = (userEmbedding) => {
-  // Ensure that MongoDB uses indexes for this query to improve performance
-  const articles = AskUs.collection.find({}).fetch(); // This line would benefit from indexing
+/**
+ * Finds the most similar articles to the user's embedding.
+ * This function calculates the cosine similarity between the user's embedding and the embedding of each article,
+ * sorts the articles by similarity, and returns the top articles.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object[]} An array of the most similar articles.
+ */
+function findMostSimilarArticles(userEmbedding) {
+  const articles = AskUs.collection.find({}).fetch();
 
-  // Compute the similarity of each article to the user embedding
-  return articles
-    .map(article => ({
-      article,
-      similarity: computeCosineSimilarity(userEmbedding, article.embedding),
-    }))
-    .sort((a, b) => b.similarity - a.similarity)
-    .slice(0, MAX_SIMILAR_ARTICLES);
-};
+  const similarities = articles.map(article => ({
+    article: article,
+    similarity: computeCosineSimilarity(userEmbedding, article.embedding),
+  }));
+
+  const sortedArticles = similarities.sort((a, b) => b.similarity - a.similarity).slice(0, MAX_ARTICLES);
+
+  return sortedArticles.map(item => item.article);
+}
 
 /**
  * Gets the relevant context from the database based on the user's embedding.
@@ -89,37 +100,42 @@ const findMostSimilarArticles = (userEmbedding) => {
  * - messagesForChatbot: An array of objects with 'role' and 'content' representing system messages.
  * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
  */
-// Remove the throwError function and throw errors directly
+function getRelevantContextFromDB(userEmbedding) {
+  console.log('User Embedding:', userEmbedding);
+  const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
 
-// Function to get relevant context from the database
-// Function to get relevant context from the database
-const getRelevantContextFromDB = (userEmbedding) => {
-  // Find the most similar articles and get a truncated version for the chatbot
-  const similarArticlesWithSimilarity = findMostSimilarArticles(userEmbedding);
+  console.log('Similar articles found:', similarArticles);
 
-  const messagesForChatbot = similarArticlesWithSimilarity.map(({ article }) => {
-    const tokens = article.article_text.split(' '); // Tokenization by spaces
+  // Truncate each article to maxTokensPerArticle tokens
+  const truncatedArticles = similarArticles.map(article => {
+    const tokens = article.article_text.split(' '); // naive tokenization by spaces
     const truncatedText = tokens.slice(0, MAX_TOKENS_PER_ARTICLE).join(' ');
     return {
-      role: 'system',
-      content: `From ${article.filename}: ${truncatedText}`,
+      ...article,
+      article_text: truncatedText,
     };
   });
 
-  // Include article_text for the articlesForComponent array, as it's required by the SimilarArticles component
-  const articlesForComponent = similarArticlesWithSimilarity.map(({ article }) => ({
+  // Return messages for the chatbot
+  const messages = truncatedArticles.map((article) => ({
+    role: 'system',
+    content: `From ${article.filename}: ${article.article_text}`,
+  }));
+
+  // Return articles in the expected format
+  const articlesForComponent = truncatedArticles.map((article) => ({
     _id: article._id,
     filename: article.filename,
     question: article.question,
-    article_text: article.article_text, // Include the full article text
+    article_text: article.article_text,
     freq: article.freq,
   }));
 
   return {
-    messagesForChatbot,
-    articlesForComponent,
+    messagesForChatbot: messages,
+    articlesForComponent: articlesForComponent,
   };
-};
+}
 
 /**
  * Creates a completion using OpenAI based on the provided messages.
@@ -129,6 +145,7 @@ const getRelevantContextFromDB = (userEmbedding) => {
  */
 const createOpenAICompletion = async (messages) => {
   try {
+    // Remove any properties from the messages that are not expected by the OpenAI API
     const filteredMessages = messages.map(({ role, content }) => ({ role, content }));
 
     const response = await openai.chat.completions.create({
@@ -155,142 +172,112 @@ const createOpenAICompletion = async (messages) => {
  * @param {Object[]} messages - An array of message objects.
  * @returns {number[]} The average embedding.
  */
-/**
- * Calculates the average embedding of the messages in a session.
- * @param {Object[]} messages - An array of message objects.
- * @returns {number[] | null} The average embedding or null if no valid embeddings are present.
- */
-const getAverageEmbedding = (messages) => {
-  const embeddings = messages.map(msg => msg.embedding).filter(Boolean);
-
-  // If no valid embeddings are present, return null.
+function getAverageEmbedding(messages) {
+  const embeddings = messages.map(msg => msg.embedding).filter(embedding => embedding);
   if (embeddings.length === 0) {
-    console.warn('No valid embeddings provided to calculate the average.');
-    return null;
+    console.error('No embeddings provided to calculate the average.');
+    // Handle the case where no embeddings are available (e.g., by returning a default embedding or null)
+    return null; // Example fallback
   }
 
-  // Calculate the sum of each dimension of the embeddings.
-  const sumEmbedding = embeddings.reduce(
-    (acc, embedding) => acc.map((value, index) => value + embedding[index]),
-    new Array(embeddings[0].length).fill(0),
-  );
+  const sumEmbedding = embeddings.reduce((acc, embedding) => acc.map((value, index) => value + embedding[index]), new Array(embeddings[0].length).fill(0));
 
-  // Calculate the average of each dimension of the embeddings.
   return sumEmbedding.map(value => value / embeddings.length);
-};
+}
 
+/** Meteor method to get the chatbot's response for a given user message.
+ * This method fetches the user's embedding, retrieves relevant context from the database,
+ * prepares messages for the OpenAI chatbot, and fetches a completion response.
+ * @param {string} userMessage - The user's message/query.
+ * @returns {Promise<Object>} An object containing the chatbot's response and similar articles.
+ *
+ */
 // Define a global or persistent object to store session data
-// Improved session management with session cleanup
 const userSessions = {};
-const sessionTimeouts = {}; // Keep track of session timeouts
-
-const cleanupSession = (userId) => {
-  delete userSessions[userId];
-  delete sessionTimeouts[userId];
-};
-const TOPIC_SHIFT_THRESHOLD = 0.7;
-
-const getInitialContext = () => ([
-  { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
-  { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
-  { role: 'assistant', content: 'Hello! How can I assist you today?' },
-]);
-
-const greetings = ['hello', 'hi', 'how do you do', 'good day'];
 
 Meteor.methods({
-  async getChatbotResponse(receivedUserId, userMessage) {
-    check(receivedUserId, Match.Maybe(String));
+  async getChatbotResponse(userId, userMessage) {
+    check(userId, String);
+    check(userMessage, String);
 
-    if (typeof userMessage !== 'string') {
-      return throwError('validation-error', `Expected userMessage to be a string but got ${typeof userMessage}`);
+    // Retrieve or initialize the user's session
+    const userSession = userSessions[userId] || {
+      messages: [],
+      currentTopicEmbedding: null, // Embedding representing the current topic
+      currentArticles: null, // Field to store the current articles
+    };
+
+    // Fetch and store the embedding for the user's message
+    const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
+    console.log('Fetched user embedding:', userEmbedding); // Log to confirm embedding is fetched
+    userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
+
+    // Ensure the session does not exceed the maximum length
+    if (userSession.messages.length > MAX_SESSION) {
+      userSession.messages = userSession.messages.slice(-MAX_SESSION);
     }
-    check(userMessage, String); // Check that userMessage is a string
 
-    try {
-      const userId = receivedUserId || 'defaultUserId';
-      console.log('userId:', userId);
-      console.log('userMessage:', userMessage);
+    const greetings = ['hello', 'hi', 'how do you do', 'good day'];
+    let chatbotResponse;
+    let similarArticles;
 
-      // Session cleanup logic
-      clearTimeout(sessionTimeouts[userId]); // Clear any existing timeout
-      sessionTimeouts[userId] = setTimeout(() => cleanupSession(userId), 1000 * 60 * 30); // Cleanup after 30 minutes of inactivity
+    if (greetings.includes(userMessage.toLowerCase())) {
+      chatbotResponse = 'Hello! How can I assist you today?';
+      similarArticles = [];
+      userSession.currentTopicEmbedding = null; // Reset the topic when greeting
+    } else {
+      // Check if the user's message is similar to the previous topic
+      const previousTopicEmbedding = userSession.currentTopicEmbedding;
+      let similarity = 1; // Default to 1 (max similarity) if no previous topic
 
-      const userSession = userSessions[userId] ?? {
-        messages: [],
-        currentTopicEmbedding: null,
-        currentArticles: null,
-      };
-
-      const userEmbedding = await getEmbeddingFromOpenAI(userMessage).catch((error) => {
-        console.error('Error when getting embedding:', error);
-        return null; // Return null if there's an error
-      });
-
-      if (userEmbedding) {
-        userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
-      } else {
-        // Decide how to handle cases where the embedding is not available
-        // For example, you could skip adding this message to the session or add it with a null embedding
+      if (previousTopicEmbedding) {
+        similarity = computeCosineSimilarity(userEmbedding, previousTopicEmbedding);
       }
 
-      if (userSession.messages.length > MAX_SESSION) {
-        userSession.messages = userSession.messages.slice(-MAX_SESSION);
-      }
+      const TOPIC_SHIFT_THRESHOLD = 0.7; // Define a threshold for topic shift detection
+      if (similarity < TOPIC_SHIFT_THRESHOLD || !userSession.currentTopicEmbedding) {
+        // Topic has shifted significantly, or no topic yet determined
+        const { messagesForChatbot, articlesForComponent } = getRelevantContextFromDB(userEmbedding);
+        userSession.currentArticles = articlesForComponent;
 
-      let chatbotResponse;
-      let similarArticles;
-
-      // Check for greetings and respond accordingly
-      if (greetings.includes(userMessage.toLowerCase())) {
-        chatbotResponse = 'Hello! How can I assist you today?';
-        similarArticles = [];
-        userSession.currentTopicEmbedding = null;
-      } else {
-        // If not a greeting, handle the user message
-        const previousTopicEmbedding = userSession.currentTopicEmbedding;
-        const similarity = previousTopicEmbedding ? computeCosineSimilarity(userEmbedding, previousTopicEmbedding) : 1;
-
-        // Avoid recomputation of embeddings
-        if (!userSession.currentTopicEmbedding || similarity < TOPIC_SHIFT_THRESHOLD) {
-          // Only update context if the topic has shifted significantly
-          const context = getRelevantContextFromDB(userEmbedding);
-          userSession.currentArticles = context.articlesForComponent;
-          userSession.currentTopicEmbedding = getAverageEmbedding(context.messagesForChatbot);
+        // Check if messagesForChatbot have embeddings before calculating the average
+        if (messagesForChatbot.some(msg => msg.embedding)) {
+          userSession.currentTopicEmbedding = getAverageEmbedding(messagesForChatbot);
+        } else {
+          console.error('No embeddings found in messages for chatbot. Cannot calculate average embedding.');
+          // Handle the case where no embeddings are available (e.g., by setting a default embedding or throwing an error)
         }
-
-        // Check if the currentTopicEmbedding is null before using it
-        if (userSession.currentTopicEmbedding === null) {
-          // Handle the case where there is no valid average embedding
-          // For example, you might skip certain operations or use a default value
-        }
-
-        const initialContext = getInitialContext();
-        const messages = [
-          ...initialContext,
-          ...userSession.messages,
-          ...(userSession.currentArticles || []).map(article => ({
-            role: 'system',
-            _id: article._id,
-            freq: article.freq,
-            content: `From ${article.filename}: ${article.article_text}`,
-          })),
-          { role: 'user', content: userMessage },
-        ];
-
-        chatbotResponse = await createOpenAICompletion(messages);
-        similarArticles = userSession.currentArticles;
       }
 
-      userSession.messages.push({ role: 'assistant', content: chatbotResponse });
-      userSessions[userId] = userSession;
+      const initialContext = [
+        { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
+        { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
+        { role: 'assistant', content: 'Hello! How can I assist you today?' },
+      ];
 
-      // Return the response and any similar articles found
-      return { chatbotResponse, similarArticles };
-    } catch (error) {
-      // If an error occurs, log it and throw a Meteor error
-      console.error('Error in getChatbotResponse:', error);
-      throw new Meteor.Error('getChatbotResponse-failure', 'An error occurred while getting the chatbot response.');
+      console.log('Session History:', userSession.messages);
+
+      const messages = [
+        ...initialContext,
+        ...userSession.messages,
+        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({
+          role: 'system',
+          _id: article._id,
+          freq: article.freq,
+          content: `From ${article.filename}: ${article.article_text}` })) : []),
+        { role: 'user', content: userMessage },
+      ];
+
+      chatbotResponse = await createOpenAICompletion(messages);
+      similarArticles = userSession.currentArticles;
     }
+
+    userSession.messages.push({ role: 'assistant', content: chatbotResponse });
+    userSessions[userId] = userSession; // Update the session
+
+    return {
+      chatbotResponse,
+      similarArticles,
+    };
   },
 });
