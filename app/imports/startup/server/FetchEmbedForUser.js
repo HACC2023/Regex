@@ -8,7 +8,6 @@ const openai = new OpenAI({
 });
 
 // Constants
-const MAX_ARTICLES = 5;
 const MAX_SIMILAR_ARTICLES = 3;
 const MAX_TOKENS_PER_ARTICLE = 2000; // Adjusted from new code
 const MAX_SESSION = 3; // New constant for session length
@@ -46,6 +45,7 @@ const computeCosineSimilarity = (embedding1, embedding2) => {
   return dotProduct / (magnitude1 * magnitude2);
 };
 
+// Function to get embedding from OpenAI
 const getEmbeddingFromOpenAI = async (text) => {
   try {
     const response = await openai.embeddings.create({
@@ -56,26 +56,28 @@ const getEmbeddingFromOpenAI = async (text) => {
     if (response && response.data) {
       return response.data[0].embedding;
     }
-    return throwError('embedding-error', 'Unexpected OpenAI API response format');
+    // Throw an error if the response format is not as expected
+    throw new Error('Unexpected OpenAI API response format');
   } catch (error) {
-    // If an error occurs, log it and return a default value or error object
-    console.error('Error in getChatbotResponse:', error);
-    return { error: 'An error occurred while getting the chatbot response.' };
+    // Log the error and throw it to be handled by the caller
+    console.error('Error in getEmbeddingFromOpenAI:', error);
+    throw error;
   }
-
 };
 
+// Function to find the most similar articles based on user's embedding
 const findMostSimilarArticles = (userEmbedding) => {
-  const articles = AskUs.collection.find({}).fetch();
+  // Ensure that MongoDB uses indexes for this query to improve performance
+  const articles = AskUs.collection.find({}).fetch(); // This line would benefit from indexing
 
+  // Compute the similarity of each article to the user embedding
   return articles
     .map(article => ({
       article,
       similarity: computeCosineSimilarity(userEmbedding, article.embedding),
     }))
     .sort((a, b) => b.similarity - a.similarity)
-    .slice(0, MAX_ARTICLES)
-    .map(item => item.article);
+    .slice(0, MAX_SIMILAR_ARTICLES);
 };
 
 /**
@@ -87,36 +89,34 @@ const findMostSimilarArticles = (userEmbedding) => {
  * - messagesForChatbot: An array of objects with 'role' and 'content' representing system messages.
  * - articlesForComponent: An array of articles, each containing 'filename', 'question', and 'article_text'.
  */
+// Remove the throwError function and throw errors directly
+
+// Function to get relevant context from the database
+// Function to get relevant context from the database
 const getRelevantContextFromDB = (userEmbedding) => {
-  console.log('User Embedding:', userEmbedding);
-  const similarArticles = findMostSimilarArticles(userEmbedding).slice(0, MAX_SIMILAR_ARTICLES);
+  // Find the most similar articles and get a truncated version for the chatbot
+  const similarArticlesWithSimilarity = findMostSimilarArticles(userEmbedding);
 
-  console.log('Similar articles found:', similarArticles);
-
-  const truncatedArticles = similarArticles.map(article => {
-    const tokens = article.article_text.split(' '); // naive tokenization by spaces
+  const messagesForChatbot = similarArticlesWithSimilarity.map(({ article }) => {
+    const tokens = article.article_text.split(' '); // Tokenization by spaces
     const truncatedText = tokens.slice(0, MAX_TOKENS_PER_ARTICLE).join(' ');
     return {
-      ...article,
-      article_text: truncatedText,
+      role: 'system',
+      content: `From ${article.filename}: ${truncatedText}`,
     };
   });
 
-  const messages = truncatedArticles.map(article => ({
-    role: 'system',
-    content: `From ${article.filename}: ${article.article_text}`,
-  }));
-
-  const articlesForComponent = truncatedArticles.map(article => ({
+  // Include article_text for the articlesForComponent array, as it's required by the SimilarArticles component
+  const articlesForComponent = similarArticlesWithSimilarity.map(({ article }) => ({
     _id: article._id,
     filename: article.filename,
     question: article.question,
-    article_text: article.article_text,
+    article_text: article.article_text, // Include the full article text
     freq: article.freq,
   }));
 
   return {
-    messagesForChatbot: messages,
+    messagesForChatbot,
     articlesForComponent,
   };
 };
@@ -155,24 +155,39 @@ const createOpenAICompletion = async (messages) => {
  * @param {Object[]} messages - An array of message objects.
  * @returns {number[]} The average embedding.
  */
+/**
+ * Calculates the average embedding of the messages in a session.
+ * @param {Object[]} messages - An array of message objects.
+ * @returns {number[] | null} The average embedding or null if no valid embeddings are present.
+ */
 const getAverageEmbedding = (messages) => {
   const embeddings = messages.map(msg => msg.embedding).filter(Boolean);
 
+  // If no valid embeddings are present, return null.
   if (embeddings.length === 0) {
-    console.error('No embeddings provided to calculate the average.');
+    console.warn('No valid embeddings provided to calculate the average.');
     return null;
   }
 
+  // Calculate the sum of each dimension of the embeddings.
   const sumEmbedding = embeddings.reduce(
     (acc, embedding) => acc.map((value, index) => value + embedding[index]),
     new Array(embeddings[0].length).fill(0),
   );
 
+  // Calculate the average of each dimension of the embeddings.
   return sumEmbedding.map(value => value / embeddings.length);
 };
 
 // Define a global or persistent object to store session data
+// Improved session management with session cleanup
 const userSessions = {};
+const sessionTimeouts = {}; // Keep track of session timeouts
+
+const cleanupSession = (userId) => {
+  delete userSessions[userId];
+  delete sessionTimeouts[userId];
+};
 const TOPIC_SHIFT_THRESHOLD = 0.7;
 
 const getInitialContext = () => ([
@@ -197,14 +212,27 @@ Meteor.methods({
       console.log('userId:', userId);
       console.log('userMessage:', userMessage);
 
+      // Session cleanup logic
+      clearTimeout(sessionTimeouts[userId]); // Clear any existing timeout
+      sessionTimeouts[userId] = setTimeout(() => cleanupSession(userId), 1000 * 60 * 30); // Cleanup after 30 minutes of inactivity
+
       const userSession = userSessions[userId] ?? {
         messages: [],
         currentTopicEmbedding: null,
         currentArticles: null,
       };
 
-      const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-      userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
+      const userEmbedding = await getEmbeddingFromOpenAI(userMessage).catch((error) => {
+        console.error('Error when getting embedding:', error);
+        return null; // Return null if there's an error
+      });
+
+      if (userEmbedding) {
+        userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
+      } else {
+        // Decide how to handle cases where the embedding is not available
+        // For example, you could skip adding this message to the session or add it with a null embedding
+      }
 
       if (userSession.messages.length > MAX_SESSION) {
         userSession.messages = userSession.messages.slice(-MAX_SESSION);
@@ -223,10 +251,18 @@ Meteor.methods({
         const previousTopicEmbedding = userSession.currentTopicEmbedding;
         const similarity = previousTopicEmbedding ? computeCosineSimilarity(userEmbedding, previousTopicEmbedding) : 1;
 
-        if (similarity < TOPIC_SHIFT_THRESHOLD || !userSession.currentTopicEmbedding) {
+        // Avoid recomputation of embeddings
+        if (!userSession.currentTopicEmbedding || similarity < TOPIC_SHIFT_THRESHOLD) {
+          // Only update context if the topic has shifted significantly
           const context = getRelevantContextFromDB(userEmbedding);
           userSession.currentArticles = context.articlesForComponent;
           userSession.currentTopicEmbedding = getAverageEmbedding(context.messagesForChatbot);
+        }
+
+        // Check if the currentTopicEmbedding is null before using it
+        if (userSession.currentTopicEmbedding === null) {
+          // Handle the case where there is no valid average embedding
+          // For example, you might skip certain operations or use a default value
         }
 
         const initialContext = getInitialContext();
