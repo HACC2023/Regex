@@ -14,8 +14,6 @@ const ChatBox = (props) => {
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
 
-  const chatEndRef = useRef(null);
-
   const timeStart = (new Date()).getTime();
 
   // Increases the freq attribute in the Askus database for selected item.
@@ -109,9 +107,10 @@ const ChatBox = (props) => {
     return <div>ChatBot</div>;
   };
 
+  const chat = useRef();
   /* useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [chatHistory]); */ // Make this just the chatbox and not entire page
+    chat.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [chatHistory]); */
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();
@@ -131,11 +130,11 @@ const ChatBox = (props) => {
         {/* Chatbot Conversation Column */}
         <Col>
           <ChatWindow
+            ref={chat}
             chatHistory={chatHistory}
             chatSender={chatSender}
             formatChatbotResponse={formatChatbotResponse}
             loading={loading}
-            chatEndRef={chatEndRef}
           />
           <ChatInput
             ref={form}
