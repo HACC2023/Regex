@@ -24,7 +24,7 @@ const SimilarArticles = ({ similarArticles }) => (
 
 SimilarArticles.propTypes = {
   similarArticles: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
     article_text: PropTypes.string.isRequired,
     question: PropTypes.string.isRequired,
     filename: PropTypes.string.isRequired,
