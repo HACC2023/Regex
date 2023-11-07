@@ -30,9 +30,16 @@ const ChatBox = (props) => {
     setLoading(true);
     setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
+    const userId = 'placeholderUserId'; // Placeholder, replace with actual userId if available
+    if (!userInput.trim()) {
+      // Handle the case when userInput is empty or just whitespace
+      setLoading(false);
+      console.error('User input is empty.');
+      return; // Exit early to prevent calling the method with an empty message
+    }
     // Simulate chatbot typing effect
     setTimeout(() => {
-      Meteor.call('getChatbotResponse', userInput, (error, result) => {
+      Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
         setLoading(false);
         if (!error) {
           const newMessages = [
