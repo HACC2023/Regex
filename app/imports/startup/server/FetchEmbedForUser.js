@@ -8,7 +8,7 @@ const openai = new OpenAI({
 });
 
 // Constants
-const MAX_ARTICLES = 5;
+const MAX_ARTICLES = 3;
 const MAX_SIMILAR_ARTICLES = 3;
 const MAX_TOKENS_PER_ARTICLE = 1500; // Use the larger value from the new code
 const MAX_SESSION = 3;
