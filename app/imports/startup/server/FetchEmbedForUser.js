@@ -144,6 +144,25 @@ const createOpenAICompletion = async (messages) => {
   }
 };
 
+/**
+ * Calculates the average embedding of the messages in a session.
+ * @param {Object[]} messages - An array of message objects.
+ * @returns {number[]} The average embedding.
+ */
+function getAverageEmbedding(messages) {
+  const embeddings = messages.map(msg => msg.embedding).filter(embedding => embedding);
+  if (embeddings.length === 0) {
+    console.error('No embeddings provided to calculate the average.');
+    // Handle the case where no embeddings are available (e.g., by returning a default embedding or null)
+    return null; // Example fallback
+  }
+
+  const sumEmbedding = embeddings.reduce((acc, embedding) => acc.map((value, index) => value + embedding[index]), new Array(embeddings[0].length).fill(0));
+
+  return sumEmbedding.map(value => value / embeddings.length);
+}
+
+
 Meteor.methods({
   async getChatbotResponse(userMessage) {
     const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
