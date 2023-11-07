@@ -6,9 +6,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Constants
 const MAX_ARTICLES = 5;
 const MAX_SIMILAR_ARTICLES = 3;
-const MAX_TOKENS_PER_ARTICLE = 600;
+const MAX_TOKENS_PER_ARTICLE = 1500; // Adjusted from new code
+const MAX_SESSION = 3; // New constant for session length
+const MAX_TOKENS_PER_MESSAGE = 400; // New constant for tokens per message
 
 const throwError = (type, message) => {
   console.error(message);
