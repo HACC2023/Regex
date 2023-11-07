@@ -75,7 +75,7 @@ const UHNavbar = () => (
 
       <Container id="dev-tools">
         <Nav className="me-auto justify-content-end">
-          <Nav.Link id="chatbot-nav" as={NavLink} to="/" key="chatbot">Landing</Nav.Link>
+          <Nav.Link id="landing" as={NavLink} to="/" key="landing">Landing</Nav.Link>
           <Nav.Link id="chatbot-nav" as={NavLink} to="/chatbot" key="chatbot">Chatbot</Nav.Link>
           <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
         </Nav>

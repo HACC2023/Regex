@@ -24,7 +24,7 @@ const ChatBox = (props) => {
     const freq = item.freq + amount;
     AskUs.collection.update(_id, { $set: { freq } }, (error) => (error ?
       console.log('Error', error.message) :
-      console.log(/* 'Success', `increased ${filename} freq by ${amount}` */)));
+      console.log(/* 'Success', `increased ${item.filename} freq by ${amount} (from ${item.freq} to ${freq})` */)));
   };
 
   const handleSend = (e) => {

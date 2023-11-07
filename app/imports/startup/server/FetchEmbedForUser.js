@@ -108,7 +108,7 @@ function getRelevantContextFromDB(userEmbedding) {
     filename: article.filename,
     question: article.question,
     article_text: article.article_text,
-    freq: 0,
+    freq: article.freq,
   }));
 
   return {
