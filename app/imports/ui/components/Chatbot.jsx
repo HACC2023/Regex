@@ -15,9 +15,6 @@ const ChatBox = (props) => {
   const [similarArticles, setSimilarArticles] = useState([]);
 
   const chatEndRef = useRef(null);
-
-  const timeStart = (new Date()).getTime();
-
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
     const { _id } = item;
@@ -39,42 +36,45 @@ const ChatBox = (props) => {
       console.error('User input is empty.');
       return; // Exit early to prevent calling the method with an empty message
     }
-    // Simulate chatbot typing effect
-    setTimeout(() => {
-      Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
-        setLoading(false);
-        if (!error) {
-          const newMessages = [
-            { sender: 'user', text: userInput },
-            { sender: 'bot', text: result.chatbotResponse },
-          ];
 
-          if (result.similarArticles[0]) {
-            increaseFreq(result.similarArticles[0], 1);
-          }
-          for (let i = 1; i < 3; i++) {
-            if (result.similarArticles[i]) {
-              const runnerUpArticle = result.similarArticles[i];
-              increaseFreq(runnerUpArticle, 0.5);
-            }
-          }
+    // Record the start time just before making the Meteor call
+    const timeStart = (new Date()).getTime();
 
-          setChatHistory([...chatHistory, ...newMessages]);
-          setSimilarArticles(result.similarArticles);
-          setUserInput('');
+    // Meteor.call is executed immediately here without the setTimeout
+    Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
+      setLoading(false);
+      if (!error) {
+        const newMessages = [
+          { sender: 'user', text: userInput },
+          { sender: 'bot', text: result.chatbotResponse },
+        ];
 
-          const timeEnd = (new Date()).getTime();
-          const responseTimeMs = timeEnd - timeStart;
-          console.log(`Response took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds. (User Input: "${userInput}")`);
-
-        } else {
-          setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
-          console.log(`Response failed. (User Input: "${userInput}")`);
+        // Update the frequency of similar articles
+        if (result.similarArticles[0]) {
+          increaseFreq(result.similarArticles[0], 1);
         }
-      });
-    }, 0); // simulate a 1-second delay for the typing effect (changed from 1000 (1s) to 0 so there's no extra delay)
-  };
+        for (let i = 1; i < 3; i++) {
+          if (result.similarArticles[i]) {
+            const runnerUpArticle = result.similarArticles[i];
+            increaseFreq(runnerUpArticle, 0.5);
+          }
+        }
 
+        setChatHistory([...chatHistory, ...newMessages]);
+        setSimilarArticles(result.similarArticles);
+        setUserInput('');
+
+        // Log the response time
+        const timeEnd = (new Date()).getTime();
+        const responseTimeMs = timeEnd - timeStart;
+        console.log(`Response took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds. (User Input: "${userInput}")`);
+
+      } else {
+        setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
+        console.error(`Response failed. (User Input: "${userInput}")`);
+      }
+    });
+  };
   // Function to format chatbot's response
   const formatChatbotResponse = (text) => {
     const lines = text.split('\n');
