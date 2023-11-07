@@ -114,14 +114,25 @@ function getRelevantContextFromDB(userEmbedding) {
   };
 }
 
+/**
+ * Creates a completion using OpenAI based on the provided messages.
+ * @param {Object[]} messages - An array of message objects to provide context.
+ * @returns {Promise<string>} The response content from the chatbot.
+ * @throws {Meteor.Error} Throws an error if the OpenAI API call fails or the response format is unexpected.
+ */
 const createOpenAICompletion = async (messages) => {
   try {
+    // Remove any properties from the messages that are not expected by the OpenAI API
+    const filteredMessages = messages.map(({ role, content }) => ({ role, content }));
+
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages: messages,
+      messages: filteredMessages,
       temperature: 0.2,
-      max_tokens: 150,
+      max_tokens: MAX_TOKENS_PER_MESSAGE,
     });
+
+    console.log('OpenAI API Response:', response);
 
     if (response && response.choices && response.choices[0]) {
       return response.choices[0].message.content;
