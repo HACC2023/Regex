@@ -104,9 +104,11 @@ function getRelevantContextFromDB(userEmbedding) {
 
   // Return articles in the expected format
   const articlesForComponent = truncatedArticles.map((article) => ({
+    _id: article._id,
     filename: article.filename,
     question: article.question,
     article_text: article.article_text,
+    freq: 0,
   }));
 
   return {
@@ -245,7 +247,7 @@ Meteor.methods({
       const messages = [
         ...initialContext,
         ...userSession.messages,
-        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({ role: 'system', content: `From ${article.filename}: ${article.article_text}` })) : []),
+        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({ role: 'system', _id: article._id, freq: article.freq, content: `From ${article.filename}: ${article.article_text}` })) : []),
         { role: 'user', content: userMessage },
       ];
 

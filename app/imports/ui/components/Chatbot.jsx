@@ -49,28 +49,9 @@ const ChatBox = (props) => {
             { sender: 'bot', text: result.chatbotResponse },
           ];
 
-          // Check if similarArticles is available and non-empty
-          if (result.similarArticles && result.similarArticles.length > 0) {
-            const mostRelevantArticle = result.similarArticles[0];
-            const articleLink = (
-              <a
-                href={`/article_html/${mostRelevantArticle.filename}`}
-                target="_blank"
-                rel="noreferrer"
-                className="chat-message bot"
-              >
-                {mostRelevantArticle.question}
-              </a>
-            );
-            const articleMessage = {
-              sender: 'bot',
-              text: 'Here is the most relevant article link:',
-              link: articleLink,
-            };
-            increaseFreq(mostRelevantArticle, 1);
-            newMessages.push(articleMessage);
+          if (result.similarArticles[0]) {
+            increaseFreq(result.similarArticles[0], 1);
           }
-
           for (let i = 1; i < 3; i++) {
             if (result.similarArticles[i]) {
               const runnerUpArticle = result.similarArticles[i];
