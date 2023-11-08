@@ -19,7 +19,7 @@ const EmbeddingButton = () => {
   };
 
   return (
-    <Button variant="link" onClick={handleGenerateEmbeddings} disabled={loading} style={{ color: 'black', textDecoration: 'none' }}>
+    <Button variant="link" onClick={handleGenerateEmbeddings} disabled={loading} style={{ textDecoration: 'none' }}>
       {loading ? 'Generating Embeddings...' : 'Generate Embeddings'}
     </Button>
   );

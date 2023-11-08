@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button, Col, Container, Image, Nav, Navbar, Row, NavDropdown } from 'react-bootstrap';
 import { Facebook, Instagram, Search, Twitter, Youtube } from 'react-bootstrap-icons';
+import { NavLink } from 'react-router-dom';
+// import EmbeddedButton from './EmbeddedButton'; // TODO: Remove this line when you remove the EmbeddedButton component.
 
 const UHNavbar = () => (
   <div>
-    <Navbar className="navbarColor" expand="lg" >
+    <Navbar className="navbarColor" expand="lg">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav variant="underline" className="me-auto justify-content-start" >
+          <Nav variant="underline" className="me-auto justify-content-start">
             <Nav.Link href="https://www.hawaii.edu/">UH Home</Nav.Link>
             <Nav.Link href="https://www.hawaii.edu/directory/">Directory</Nav.Link>
             <Nav.Link href="https://myuh.hawaii.edu/">MyUH</Nav.Link>
@@ -68,6 +70,14 @@ const UHNavbar = () => (
           </NavDropdown>
           <Nav.Link href="https://www.hawaii.edu/askus/">ASK US</Nav.Link>
           <Nav.Link href="https://www.hawaii.edu/its/contact/">CONTACT ITS</Nav.Link>
+        </Nav>
+      </Container>
+
+      <Container id="dev-tools">
+        <Nav className="me-auto justify-content-end">
+          <Nav.Link id="landing" as={NavLink} to="/" key="landing">Landing</Nav.Link>
+          <Nav.Link id="chatbot-nav" as={NavLink} to="/chatbot" key="chatbot">Chatbot</Nav.Link>
+          <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
         </Nav>
       </Container>
     </div>

@@ -1,18 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAI from 'openai';
-import { check, Match } from 'meteor/check';
-import { AskUs } from '../../api/askus/AskUs.js';
+import { check } from 'meteor/check';
+import { AskUs } from '../../api/askus/AskUs.js'; // Make sure to use the correct collection name
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 // Constants
-const MAX_ARTICLES = 5;
+const MAX_ARTICLES = 3;
 const MAX_SIMILAR_ARTICLES = 3;
-const MAX_TOKENS_PER_ARTICLE = 1500; // Adjusted from new code
-const MAX_SESSION = 3; // New constant for session length
-const MAX_TOKENS_PER_MESSAGE = 400; // New constant for tokens per message
+const MAX_TOKENS_PER_ARTICLE = 800; // Use the larger value from the new code
+const MAX_SESSION = 2;
+const MAX_TOKENS_PER_MESSAGE = 400;
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -25,6 +25,13 @@ const throwError = (type, message) => {
   throw new Meteor.Error(type, message);
 };
 
+/**
+ * Computes the cosine similarity between two vectors.
+ * @param {number[]} embedding1 - The first vector.
+ * @param {number[]} embedding2 - The second vector.
+ * @returns {number} The cosine similarity.
+ * @throws {Error} Throws an error if the inputs are not arrays or if their lengths do not match.
+ */
 function computeCosineSimilarity(embedding1, embedding2) {
   if (!Array.isArray(embedding1) || !Array.isArray(embedding2)) {
     throw new Error('Both embeddings must be arrays.');
@@ -41,6 +48,12 @@ function computeCosineSimilarity(embedding1, embedding2) {
   return dotProduct / (magnitude1 * magnitude2);
 }
 
+/**
+ * Fetches the embedding from OpenAI for a given text.
+ * @param {string} text - The text to get the embedding for.
+ * @returns {Promise<number[]>} The embedding vector.
+ * @throws {Meteor.Error} Throws an error if the OpenAI API call fails or the response format is unexpected.
+ */
 const getEmbeddingFromOpenAI = async (text) => {
   try {
     const response = await openai.embeddings.create({
@@ -58,6 +71,13 @@ const getEmbeddingFromOpenAI = async (text) => {
   }
 };
 
+/**
+ * Finds the most similar articles to the user's embedding.
+ * This function calculates the cosine similarity between the user's embedding and the embedding of each article,
+ * sorts the articles by similarity, and returns the top articles.
+ * @param {number[]} userEmbedding - The embedding of the user's query.
+ * @returns {Object[]} An array of the most similar articles.
+ */
 function findMostSimilarArticles(userEmbedding) {
   const articles = AskUs.collection.find({}).fetch();
 
@@ -104,9 +124,11 @@ function getRelevantContextFromDB(userEmbedding) {
 
   // Return articles in the expected format
   const articlesForComponent = truncatedArticles.map((article) => ({
+    _id: article._id,
     filename: article.filename,
     question: article.question,
     article_text: article.article_text,
+    freq: article.freq,
   }));
 
   return {
@@ -163,27 +185,20 @@ function getAverageEmbedding(messages) {
   return sumEmbedding.map(value => value / embeddings.length);
 }
 
+/** Meteor method to get the chatbot's response for a given user message.
+ * This method fetches the user's embedding, retrieves relevant context from the database,
+ * prepares messages for the OpenAI chatbot, and fetches a completion response.
+ * @param {string} userMessage - The user's message/query.
+ * @returns {Promise<Object>} An object containing the chatbot's response and similar articles.
+ *
+ */
 // Define a global or persistent object to store session data
 const userSessions = {};
 
 Meteor.methods({
-  async getChatbotResponse(receivedUserId, userMessage) {
-    // Validate receivedUserId and userMessage before using them
-    check(receivedUserId, Match.Maybe(String));
-
-    // If userMessage is undefined, log an error and throw a Meteor error
-    if (typeof userMessage !== 'string') {
-      const errorMessage = `Expected userMessage to be a string but got ${typeof userMessage}`;
-      console.error(errorMessage);
-      throw new Meteor.Error('validation-error', errorMessage);
-    }
-
-    // Use a default value for userId if receivedUserId is not provided
-    const userId = receivedUserId || 'testUserId';
-
-    // Log the values to check what is received
-    console.log('userId:', userId);
-    console.log('userMessage:', userMessage);
+  async getChatbotResponse(userId, userMessage) {
+    check(userId, String);
+    check(userMessage, String);
 
     // Retrieve or initialize the user's session
     const userSession = userSessions[userId] || {
@@ -226,7 +241,7 @@ Meteor.methods({
         userSession.currentArticles = articlesForComponent;
 
         // Check if messagesForChatbot have embeddings before calculating the average
-        if (messagesForChatbot.some(msg => 'embedding' in msg)) {
+        if (messagesForChatbot.some(msg => msg.embedding)) {
           userSession.currentTopicEmbedding = getAverageEmbedding(messagesForChatbot);
         } else {
           console.error('No embeddings found in messages for chatbot. Cannot calculate average embedding.');
@@ -245,7 +260,11 @@ Meteor.methods({
       const messages = [
         ...initialContext,
         ...userSession.messages,
-        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({ role: 'system', content: `From ${article.filename}: ${article.article_text}` })) : []),
+        ...(userSession.currentArticles ? userSession.currentArticles.map(article => ({
+          role: 'system',
+          _id: article._id,
+          freq: article.freq,
+          content: `From ${article.filename}: ${article.article_text}` })) : []),
         { role: 'user', content: userMessage },
       ];
 

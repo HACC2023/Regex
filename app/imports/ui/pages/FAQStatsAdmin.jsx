@@ -5,6 +5,7 @@ import { Col, Container, Row, Table } from 'react-bootstrap';
 import { AskUs } from '../../api/askus/AskUs';
 import StatItemAdmin from '../components/StatItemAdmin';
 import LoadingSpinner from '../components/LoadingSpinner';
+import EmbeddedButton from '../components/EmbeddedButton';
 
 /* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
 const FAQStatsAdmin = () => {
@@ -28,6 +29,7 @@ const FAQStatsAdmin = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>Admin Stats</h2>
+            <EmbeddedButton />
           </Col>
           <Table striped bordered hover>
             <thead>

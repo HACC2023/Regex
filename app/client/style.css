@@ -36,7 +36,7 @@ body .navbar {
   padding-bottom: 20px;
 }
 
-/* Styling for landing (LandingSearch and FAQCards) below */
+/* Styling for landing (LandingSearch and FAQCards) */
 .landingSearchButton {
   white-space: nowrap !important;
   background: #907139 !important;
@@ -44,6 +44,7 @@ body .navbar {
   font-family: 'Open Sans', Tahoma, sans-serif !important;
   padding: 8px 20px 10px !important;
 }
+
 /* Styling for UHNavbar below */
 .navbarColor {
   background-color: #444444;
