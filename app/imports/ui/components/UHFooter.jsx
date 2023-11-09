@@ -56,11 +56,11 @@ const UHFooter = () => (
           </Col>
           <Col>
             <Nav className="footerIcons">
-              <Nav.Link className="custom-navlink" href="https://twitter.com/UHawaiiNews"><Twitter/></Nav.Link>
-              <Nav.Link className="custom-navlink" href="https://www.facebook.com/universityofhawaii"><Facebook/></Nav.Link>
-              <Nav.Link className="custom-navlink" href="https://www.instagram.com/uhawaiinews/"><Instagram/></Nav.Link>
+              <Nav.Link className="custom-navlink" href="https://twitter.com/UHawaiiNews"><Twitter /></Nav.Link>
+              <Nav.Link className="custom-navlink" href="https://www.facebook.com/universityofhawaii"><Facebook /></Nav.Link>
+              <Nav.Link className="custom-navlink" href="https://www.instagram.com/uhawaiinews/"><Instagram /></Nav.Link>
               <Nav.Link className="custom-navlink" href="https://www.flickr.com/photos/uhawaii"><Image src="/images/icon-flickr.png" width={15} /> </Nav.Link>
-              <Nav.Link className="custom-navlink mb-3" href="https://www.youtube.com/user/uhmagazine"><Youtube/></Nav.Link>
+              <Nav.Link className="custom-navlink mb-3" href="https://www.youtube.com/user/uhmagazine"><Youtube /></Nav.Link>
             </Nav>
             <a href="https://www.hawaii.edu/contact/">Contact UH</a>
             <br />

@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import jsxToString from 'jsx-to-string';
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';

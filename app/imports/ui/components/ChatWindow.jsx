@@ -4,13 +4,14 @@ import ChatLoading from './ChatLoading';
 // import TypingAnimation from './TypingAnimation';
 
 const ChatWindow = React.forwardRef((props, ref) => {
+  // eslint-disable-next-line no-unused-vars
   const { chatHistory, chatSender, formatChatbotResponse, loading } = props;
 
   return (
     <div className="chat-window" ref={ref}>
       {chatHistory.map((message, index) => (
         <React.Fragment key={message.id || `message-${index}`}>
-          <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}> {chatSender(message)} </div>
+          { /* <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}> {chatSender(message)} </div> */ }
           <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}>
             <div className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`} style={{ width: 'fit-content' }}>
               {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}

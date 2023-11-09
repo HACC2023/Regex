@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import LandingSearch from '../components/LandingSearch';
 import FAQCards from '../components/FAQCards';
-import { NavLink } from 'react-router-dom';
 
 /* A simple component to render the landing page. */
 const Landing = () => (
