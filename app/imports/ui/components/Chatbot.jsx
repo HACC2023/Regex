@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import jsxToString from 'jsx-to-string';
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -111,9 +110,11 @@ const ChatBox = (props) => {
   };
 
   const chat = useRef();
-  /* useEffect(() => {
-    chat.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  }, [chatHistory]); */
+  useEffect(() => {
+    setTimeout(() => {
+      chat.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 1000);
+  }, [chatHistory]);
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();

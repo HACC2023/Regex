@@ -103,7 +103,7 @@ footer {
   --r: 25px; /* the radius */
   --t: 30px; /* the size of the tail */
 
-  max-width: 700px;
+  max-width: 60%; /* max width of the chat bubble */
   padding: calc(2*var(--r)/3);
   -webkit-mask:
     radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%)
