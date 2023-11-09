@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Col, Container, Image, Nav, Navbar, Row, NavDropdown } from 'react-bootstrap';
 import { Facebook, Instagram, Search, Twitter, Youtube } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
-import EmbeddedButton from './EmbeddedButton';
 
 const UHNavbar = () => (
   <div>
