@@ -15,6 +15,10 @@ class AskUsCollection {
       freq: Number,
       embedding: { type: Array, optional: true }, // Add this line
       'embedding.$': Number, // Each item in the embedding array is a Number
+      textHash: {
+        type: String,
+        optional: true, // This field is optional because it may not exist until the first embedding is generated.
+      },
       // Add more fields if necessary
     });
     // Attach the schema to the collection.

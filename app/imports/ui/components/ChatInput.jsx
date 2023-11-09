@@ -15,7 +15,7 @@ const ChatInput = React.forwardRef((props, ref) => {
           placeholder="Ask something..."
           aria-label="User input" // Added for accessibility
         />
-        <Button type="submit" className="ms-2" disabled={loading}>Send</Button>
+        <Button type="submit" className="ms-2" style={{ backgroundColor: '#907139' }}  disabled={loading}>Send</Button>
       </div>
     </Form>
   );

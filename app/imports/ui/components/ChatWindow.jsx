@@ -31,7 +31,6 @@ ChatWindow.propTypes = {
   chatSender: PropTypes.func.isRequired, // For chatSender function
   formatChatbotResponse: PropTypes.func.isRequired, // For formatChatbotResponse function
   loading: PropTypes.bool.isRequired, // For loading state
-  chatEndRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired, // For chatEndRef ref
 };
 
 export default ChatWindow;
