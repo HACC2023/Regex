@@ -25,7 +25,7 @@ const FAQCards = () => {
   return (ready ? (
     <Container>
       <h4 style={{ textAlign: 'left' }}>Frequently Asked Questions</h4>
-      <Row xs={2} md={3} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4">
         {articles.map((article, index) => (<Col key={index}><FAQCard article={article} /></Col>))}
       </Row>
     </Container>
