@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+// !! Remove line below and add props when this function is final !!
+// eslint-disable-next-line react/prop-types
 const TypingAnimation = ({ text, delay }) => {
   const [currentText, setCurrentText] = useState('');
 
