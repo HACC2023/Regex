@@ -7,10 +7,11 @@ const ChatWindow = ({ chatHistory, chatSender, formatChatbotResponse, loading, c
   <div className="chat-window">
     {chatHistory.map((message, index) => (
       <React.Fragment key={message.id || `message-${index}`}>
-        {chatSender(message)}
-        <div className={`chat-message ${message.sender}`}>
-           <!-- // problem that formatChatbotResponse returns an object and the typing animation doesn't know how to render that -->
-          {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}
+        { /* <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}> {chatSender(message)} </div> */ }
+        <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}>
+          <div className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`} style={{width: 'fit-content'}}>
+            {message.sender === 'bot' ? formatChatbotResponse(message.text): message.text}
+          </div>
         </div>
       </React.Fragment>
     ))}

@@ -98,6 +98,7 @@ const ChatBox = (props) => {
     return <div>{formattedLines}</div>;
   };
 
+
   // Helper function that provides message sender above messages that aren't chatbot links.
   const chatSender = (message) => {
     if (message.sender === 'user') {
