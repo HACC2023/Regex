@@ -1,7 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChatLoading from './ChatLoading';
-// import TypingAnimation from './TypingAnimation';
+import { motion, AnimatePresence } from 'framer-motion'
+import TypingAnimation from './TypingAnimation';
+
+const transition = {
+  type: 'spring',
+  stiffness: 200,
+  mass: 0.2,
+  damping: 20,
+}
+
+const variants = {
+  initial: {
+    opacity: 0,
+    y: 300,
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition,
+  },
+}
 
 const ChatWindow = React.forwardRef((props, ref) => {
   // eslint-disable-next-line no-unused-vars
@@ -9,20 +29,28 @@ const ChatWindow = React.forwardRef((props, ref) => {
 
   return (
     <div className="chat-window" ref={ref}>
+    <AnimatePresence>
       {chatHistory.map((message, index) => (
         <React.Fragment key={message.id || `message-${index}`}>
           { /* <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start px-5' : 'justify-content-end px-5'}`}> {chatSender(message)} </div> */ }
           <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}>
-            <div className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`} style={{ width: 'fit-content' }}>
-              {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}
-            </div>
+            <motion.div
+              className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`}
+              style={{width: 'fit-content'}}
+              initial="initial"
+              animate="enter"
+              variants={variants}
+            >
+              {message.sender === 'bot' ? formatChatbotResponse(message.text): message.text}
+            </motion.div>
           </div>
         </React.Fragment>
       ))}
-      {/* ChatLoading Circle is rendered here */}
-      {loading && <ChatLoading />}
-      <div />
-    </div>
+    </AnimatePresence>
+    {/* ChatLoading Circle is rendered here */}
+    {loading && <ChatLoading />}
+    <div ref={chatEndRef} />
+  </div>
   );
 });
 
