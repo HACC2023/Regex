@@ -8,7 +8,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import EmbeddedButton from '../components/EmbeddedButton';
 
 /* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
-const FAQStatsAdmin = () => {
+const AdminPage = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, pages } = useTracker(() => {
     // Get access to Stuff documents.
@@ -26,11 +26,8 @@ const FAQStatsAdmin = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
-          <Col className="text-center">
-            <h2>Admin Stats</h2>
-            <EmbeddedButton />
-          </Col>
+        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>Admin Stats</h2>
+        <Col md={6}>
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -44,9 +41,12 @@ const FAQStatsAdmin = () => {
             </tbody>
           </Table>
         </Col>
+        <Col className="text-center">
+          <EmbeddedButton props={pages[0]} />
+        </Col>
       </Row>
     </Container>
   ) : <LoadingSpinner />);
 };
 
-export default FAQStatsAdmin;
+export default AdminPage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/** Renders a single row in the FAQStats (Admin) table. See pages/FAQStatsAdmin.jsx. */
+/** Renders a single row in the FAQStats (Admin) table. See pages/AdminPage.jsx. */
 const StatItemAdmin = ({ page }) => (
   <tr>
     <td>{page.filename}</td>
