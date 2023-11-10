@@ -8,3 +8,4 @@ app/.deploy/settings.json
 training/constants.py
 config/settings.development.json
 
+/.env
