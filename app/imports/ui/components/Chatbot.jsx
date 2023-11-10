@@ -109,9 +109,11 @@ const ChatBox = (props) => {
   };
 
   const chat = useRef();
-  /* useEffect(() => {
-    chat.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  }, [chatHistory]); */
+  useEffect(() => {
+    // const height = document.documentElement.scrollTop;
+    chat.current.scrollIntoView({ behavior: 'smooth' });
+    // document.documentElement.scrollTop = height;
+  }, [chatHistory]); // Someone please make the entire screen not scroll down for the love of god
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();

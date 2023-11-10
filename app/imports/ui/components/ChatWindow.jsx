@@ -27,7 +27,7 @@ const ChatWindow = React.forwardRef((props, ref) => {
   const { chatHistory, chatSender, formatChatbotResponse, loading } = props;
 
   return (
-    <div className="chat-window" ref={ref}>
+    <div className="chat-window">
       <AnimatePresence>
         {chatHistory.map((message, index) => (
           <React.Fragment key={message.id || `message-${index}`}>
@@ -54,7 +54,7 @@ const ChatWindow = React.forwardRef((props, ref) => {
       </AnimatePresence>
       {/* ChatLoading Circle is rendered here */}
       {loading && <ChatLoading />}
-      <div />
+      <div ref={ref} />
     </div>
   );
 });
