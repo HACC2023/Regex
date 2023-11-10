@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Spinner } from 'react-bootstrap';
+// eslint-disable-next-line no-unused-vars
+import { Container, Spinner, Image } from 'react-bootstrap';
 
 const ChatLoading = () => (
-  <Container className="d-flex align-items-center px-1 pt-2">
+  <Image src="/images/loading.gif" width="120em" className="px-2" />
+  /* <Container className="d-flex align-items-center px-1 pt-2">
     <Spinner animation="border" variant="primary" />
     <div className="mx-2">Loading...</div>
-  </Container>
+  </Container> */
 );
 
 export default ChatLoading;
