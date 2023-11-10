@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 import ChatLoading from './ChatLoading';
-import { motion, AnimatePresence } from 'framer-motion'
-import TypingAnimation from './TypingAnimation';
 
 const transition = {
   type: 'spring',
   stiffness: 200,
   mass: 0.2,
   damping: 20,
-}
+};
 
 const variants = {
   initial: {
@@ -21,7 +20,7 @@ const variants = {
     y: 0,
     transition,
   },
-}
+};
 
 const ChatWindow = React.forwardRef((props, ref) => {
   // eslint-disable-next-line no-unused-vars
@@ -29,28 +28,34 @@ const ChatWindow = React.forwardRef((props, ref) => {
 
   return (
     <div className="chat-window" ref={ref}>
-    <AnimatePresence>
-      {chatHistory.map((message, index) => (
-        <React.Fragment key={message.id || `message-${index}`}>
-          { /* <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start px-5' : 'justify-content-end px-5'}`}> {chatSender(message)} </div> */ }
-          <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}>
+      <AnimatePresence>
+        {chatHistory.map((message, index) => (
+          <React.Fragment key={message.id || `message-${index}`}>
             <motion.div
-              className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`}
-              style={{width: 'fit-content'}}
+              className={`d-flex ${message.sender === 'bot' ? 'justify-content-start px-5' : 'justify-content-end px-5'}`}
               initial="initial"
               animate="enter"
               variants={variants}
-            >
-              {message.sender === 'bot' ? formatChatbotResponse(message.text): message.text}
+            > {chatSender(message)}
             </motion.div>
-          </div>
-        </React.Fragment>
-      ))}
-    </AnimatePresence>
-    {/* ChatLoading Circle is rendered here */}
-    {loading && <ChatLoading />}
-    <div ref={chatEndRef} />
-  </div>
+            <div className={`d-flex ${message.sender === 'bot' ? 'justify-content-start' : 'justify-content-end'}`}>
+              <motion.div
+                className={`${message.sender === 'bot' ? 'bubble left' : 'bubble right'} chat-message ${message.sender}`}
+                style={{ width: 'fit-content' }}
+                initial="initial"
+                animate="enter"
+                variants={variants}
+              >
+                {message.sender === 'bot' ? formatChatbotResponse(message.text) : message.text}
+              </motion.div>
+            </div>
+          </React.Fragment>
+        ))}
+      </AnimatePresence>
+      {/* ChatLoading Circle is rendered here */}
+      {loading && <ChatLoading />}
+      <div />
+    </div>
   );
 });
 
