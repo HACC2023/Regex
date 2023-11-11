@@ -7,9 +7,12 @@ let jsonData = [];
 // Load the JSON data on server startup
 Meteor.startup(() => {
   try {
-    const data = Assets.getText('data/challenge_one.json');
-    jsonData = JSON.parse(data);
-    console.log('JSON data loaded successfully.');
+    const files = ['data/challenge_one.json', 'data/challenge_three.json']; // Add more filenames as needed
+    jsonData = files.flatMap(file => {
+      const data = Assets.getText(file);
+      return JSON.parse(data);
+    });
+    console.log('JSON data loaded successfully from all files.');
   } catch (error) {
     console.error('Error loading JSON data:', error);
   }

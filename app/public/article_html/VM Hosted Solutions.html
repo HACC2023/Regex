@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services Catalog :: ITS, UH System</title>
+  <link href="//www.hawaii.edu/its/template/system_2020i/style.css" rel="stylesheet" type="text/css" />
+<!-- add your CSS and JS here -->
+  <link rel="stylesheet" type="text/css" href="services.css">
+</head>
+<body>
+<header>
+<div id="header_div">
+  <a href="https://www.hawaii.edu/"><img id="header_img" src="//www.hawaii.edu/its/template/system_2020i/uhlogo.png" alt="University of Hawaii Logo" /></a>
+  <nav id="header_menu" role="navigation">
+<!-- BEGIN::Ask Us -->
+  <form id="ask-us-form" name="askus" action="http://www.hawaii.edu/askus/" method="post"><input id="action" name="action" type="hidden" value="search" /><input id="prevSearch_id" name="prevSearch_id" type="hidden" value="" /><input onClick="this.select();" id="searchstring" name="searchstring" type="text" placeholder="Have a question?" required> <button type="submit">Ask Us</button></form>
+<!-- END::Ask Us -->
+  </nav>
+</div>
+</header>
+<main role="main">
+  <p><a id="spotlight1" href="services.php">Services Catalog</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;Data Center Services</p>
+
+<h1>Data Center Services</h1>
+
+<!-- <h2>Virtual Server Services</h2>  -->
+<p>The UH IT Center offers virtual server (VMware) and co-location services for University of Hawaii departments. The following is a list of service options available that are available.  For more information, please contact the ITS data center team at <a href="mailto:itsdc@hawaii.edu">itsdc@hawaii.edu</a> </p>
+
+	
+<div id="colo">
+<table class="bluetable">
+    <tr>
+        <th style="text-align: center;" colspan="3">Standard data center features</th>
+				
+    </tr>
+    <tr>
+        <td valign="top">
+            <ul>
+                <li>Static, Public IP address </li>
+                <li>DNS Management</li>
+                <li>Access Security</li>
+            </ul>
+        </td>
+        <td valign="top">
+            <ul>
+                <li>1000 Mbps non- dedicated Network Connection</li>
+                <li>24 x 7 x 365 Facility Access</li>
+                <li>Firewall</li>
+            </ul>
+        </td>
+        <td valign="top">
+            <ul>
+                <li>UPS Power</li>
+                <li>Central Cooling</li>
+                <li>Central Generator</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</div>
+
+<h2>ITS Vmware Hosted Solutions</h2>
+<!-- <table class="bluetable">
+    <tr>
+        <th colspan="2">Standard Virtual Server</th>
+    </tr>
+    <tr>
+        <td>Services
+            <ul>
+                <li>Initial setup and configuration</li>
+                <li>Dedicated IP address</li>
+                <li>DNS Management</li>
+                <li>1000 Mbps Network Connection - non dedicated</li>
+            </ul>
+        </td>
+        <td>Good For
+            <ul>
+                <li>Basic web hosting</li>
+                <li>Development</li>
+                <li>Simple application</li>
+                <li>ROR/PHP/Java Web Applications</li>
+                <li>Windows or Unix Server Application</li>
+            </ul>
+        </td>
+    </tr>
+</table> -->
+
+<table class="bluetable">
+<!-- <tr>
+    <th>Services</th>
+    <th class="th_ctr">Cost</th>
+</tr> -->
+<tr>
+    <td>Standard Virtual Server:
+        <ul>
+            <li>75 GB System Disk</li>
+            <li>4 GB Ram</li>
+            <li>1 Virtual CPU<a href="#notes"><sup>1, 2</sup></li></a>
+            <li>Operating System(Red Hat Linux or Microsoft Windows Server)</li>
+            <li>Optional daily offsite backup </li>
+            <li>Optional Monthly security scan</li>
+            <li>1000 Mbps network connection (non-dedicated)</li>
+        </ul>
+    </td>
+    <td class="td_ctr" valign="top">$280/Server/Year
+ 		   		<br />&nbsp; 		   		<br />
+ 		   		<br />&nbsp;
+ 		   		<br />&nbsp;
+ 		   		<br /&nbsp;>
+ 		   		<br />$0.30/GB/yr&nbsp;
+ 		   		<br />&nbsp;
+    	
+    	</td>
+</tr>
+<tr>
+    <td>Setup:
+        <ul>
+            <li>Setup of VM</li>
+            <li>Installation of Operating System (RHEL or Windows)</li>
+            <li>Configuration of Network</li>
+            <li>DNS setup</li>
+            <!-- <li>Installation and configuration of backup client</li> -->
+            <li>Setting up additional file systems (if purchasing additional disk space)</li>
+            <li>Firewall rules configuration</li>
+        </ul>
+    </td>
+    <td class="td_ctr" valign="top">No charge</td>
+</tr>
+
+<tr>
+    <td><b>To order a VM visit our VM Request page(UH Login required):</b></td>
+    <td class="td_ctr">
+<a href="https://services.its.hawaii.edu/CherwellPortal">Order VM</a><br>(Click on "Virtual Server (VS)")
+    </td>
+</tr>
+
+<tr>
+    <td>Additional Virtual CPU</td>
+    <td class="td_ctr">$170/CPU/Year</td>
+</tr>
+<tr>
+    <td>Additional Memory</td>
+    <td class="td_ctr"> $11/GB/Year</td>
+</tr>
+<tr>
+    <td>Additional Data Storage(minimum 25GB increments)
+    	    <ul>
+            <li>500GB High Performance SAS<a href="#notes"><sup>3</sup></a></li>
+            <li>500GB Economy SATA<a href="#notes"><sup>4</sup></a></li>
+          </ul></td>
+    <td class="td_ctr"><br>
+    	$400.00/yr(0.80/GB/yr)<br>
+    	$65.00/yr(0.13/GB/yr)<br>
+    	</td>
+</tr>
+
+<!-- <tr>
+    <td>Windows Server Enterprise or Enterprise Red Hat Linux</td>
+    <td class="td_ctr">$185 <font color=red>should we offer </font></td>
+</tr> -->
+
+
+<tr>
+    <td>SSL Certificate</td>
+    <td class="td_ctr"><a href="http://www.hawaii.edu/sitelic/incommon/vm_ssl.html">Free</a><a href="#notes">&nbsp;&nbsp;<sup>5</sup></a></td>
+</tr>
+
+<!-- <tr>
+    <td>VPN Client License</td>
+    <td class="td_ctr">$30.00</td>
+</tr> -->
+
+<!-- <tr>
+    <td>Additional Backup Services</td>
+    <td class="td_ctr">Available May 2014</td>
+</tr> -->
+</table>
+<div id="colo2">
+	<P>&nbsp;</P>
+<h2>ITS Co-Location Service</h2>
+
+<table class="bluetable"> 
+
+<!--    <tr>
+        <th style="text-align: center;" colspan="3">Colocation Services</th>
+
+    </tr> -->
+    <tr>
+        
+        <td valign="top"><strong>IT Center Colocation Service</strong>
+        	<p>The IT Center data center is located on the UH Manoa campus
+        		
+        		</p>
+            <ul>
+                <li>One 1GB public network port per server</li>
+                <li>Provide "remote hands" service under customer supervision<a href="#notes"><sup>6</sup>, <sup>8</sup></a></li>
+            </ul>
+        </td>
+      </tr>
+      <!--<tr>
+      	<td style="border-right: 1px solid #cccccc;"><strong>$3,300</strong> per year <strong>per cabinet</strong> at Keller Data Center</td> 
+      	<td><strong>$125</strong> per year <strong>per rack unit</strong> at IT Data Center<br/>
+      		<strong>$3,700</strong> per year <strong>full cabinet</strong> pricing.
+      		</td>
+      </tr> -->
+</table>
+</div>
+
+
+
+<table class="bluetable">
+<tr>
+    <th>Services</th>
+    <th class="th_ctr">Cost</th>
+</tr>
+<tr>
+    <td>Per Rack Unit(RU) charge per year</td>
+    <td class="td_ctr">$125</td>
+</tr>
+<tr>
+    <td>1 Cabinet full cabinet charge per year</td>
+    <td class="td_ctr">$3,700</td>
+</tr>
+<tr>
+    <td>Setup:
+        <ul>
+            <li>Configuration of Network</li>
+            <li>DNS setup</li>
+            <li>Installation and configuration of backup client</li>
+            <li>Firewall rules configuration</li>
+        </ul>
+    </td>
+    <td class="td_ctr" valign="top">No charge</td>
+</tr>
+
+<tr>
+    <td>SSL Certificate</td>
+    <td class="td_ctr">Free</td>
+</tr>
+<!-- <tr>
+    <td>Backup Services</td>
+    <td class="td_ctr">Available May 2014</td>
+</tr> -->
+<!-- <tr>
+    <td>Static, Public IP addresses subnet, 15 hosts (/28)</td>
+    <td class="td_ctr">$???</td>
+</tr> -->
+</table>
+<h4>Notes</h4>
+<div id="notes"><a href="notes"></a>
+<sup>1</sup>Virtual CPU(vCPU) is roughly equal to 1 microprocessor core.<br />
+<sup>2</sup>Maximum number of vCPUs is two. Please consult with our <a href="mailto:itscs@hawaii.edu">data center support</a> for further options if you need additional processing power.<br />
+<sup>3</sup>Serially Attached SCSI (SAS), 15,000rpm, good for high performance needs such as databases.<br />
+<sup>4</sup>Serial Advanced Technology Attachment (SATA), 7,500rpm, good for basic storage such as file sharing, web.<br />
+<sup>5</sup>Departments/programs are provided 1 free SSL certicate to enourage SSL use.  Additional certicates are charged at regular price.<br />
+<sup>6</sup>Departments are required to have an IT Specialist to maintain their VM or colocated equipment.  Premium support charges are assessed as a penalty for departments violating this policy.<br />
+<!-- <sup>6</sup>10 Power cords (max) or 12 amps (max) per cabinet<br /> -->
+<sup>7</sup>Remote hands: view/report device status lights, power on/off, etc.<br />
+<sup>8</sup>Does not apply to protected information systems, i.e., FERPA, HIPAA, etc.<br />
+<sup>9</sup><a href="http://www.hawaii.edu/askus/1577">Cabinet Technical Specifications</a> <br />
+&nbsp;<br />
+
+<p><h4>Terms</h4></p>
+<ul>
+    <li><a href="http://www.hawaii.edu/its/docs/CoLocationSLA.pdf">Colocation Service Level Agreement(PDF, 153kb)</a></li>
+    <li><a href="http://www.hawaii.edu/askus/1852">Virtual Server Service Level Agreement</a></li>
+    <li>Pricing is subject to change each fiscal year.</li>
+    <!-- <li>&quot;For a limited time only, ITS is waiving the $500/year fee for the first year&quot; - Subject to terms and conditions.</li> -->
+    <li>Facilities are generally available 24x7; however, due to unavoidable circumstances (i.e. weather or emergencies), there may occasionally be periods in which services and/or access is not immediately available.</li>
+   <li>Departments are required to have a qualified IT Specialist to manage their systems in the ITC or Keller data centers.</li>
+   <li>Power costs are not currently charged, but will become a charge in the future.</li>
+    <li>If expanding to larger subnet, re-addressing is REQUIRED.</li>
+</ul>
+</div>
+<!-- BEGIN::Links -->
+<div id="links">
+  <div id="links-wrapper">
+<!--#include virtual="/its/lib/quicklinks.new.html" -->
+  </div>
+</div>
+<!-- END::Links -->
+</main>
+</body>
+</html>
