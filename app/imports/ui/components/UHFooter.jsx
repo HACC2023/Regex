@@ -29,19 +29,23 @@ const UHFooter = () => (
     <div id="footer_btm">
       <Container>
         <Row>
-          <Col>
+          <Col sm={6} lg={3}>
             <Image className="pb-2" src="/images/footer-logo.png" />
             <br />
             2444 Dole Street
             <br />
             Honolulu, HI 96822
+            <br />
+            <br />
           </Col>
-          <Col>
-            An <a href="https://www.hawaii.edu/offices/eeo/policies/">equal opportunity/affirmative<br />action institution</a><br />
-            Use of this site implies consent<br /> with our <a href="https://www.hawaii.edu/policy/docs/temp/ep2.210.pdf">Usage Policy</a><br />
-            copyright © 2018 <a href="https://www.hawaii.edu/">University of<br /> Hawaiʻi</a>
+          <Col sm={6} lg={3}>
+            An <a href="https://www.hawaii.edu/offices/eeo/policies/">equal opportunity/affirmative action institution</a>
+            Use of this site implies consent with our <a href="https://www.hawaii.edu/policy/docs/temp/ep2.210.pdf">Usage Policy</a>
+            copyright © 2018 <a href="https://www.hawaii.edu/">University of Hawaiʻi</a>
+            <br />
+            <br />
           </Col>
-          <Col>
+          <Col sm={6} lg={3}>
             <a href="https://www.hawaii.edu/calendar/">Calendar</a>
             <br />
             <a href="https://www.hawaii.edu/directory/">Directory</a>
@@ -53,8 +57,10 @@ const UHFooter = () => (
             <a href="https://www.hawaii.edu/privacy/">Privacy Statement</a>
             <br />
             <a href="https://www.schooljobs.com/careers/hawaiiedu">Work at UH</a>
+            <br />
+            <br />
           </Col>
-          <Col>
+          <Col sm={6} lg={3}>
             <Nav className="footerIcons">
               <Nav.Link className="custom-navlink" href="https://twitter.com/UHawaiiNews"><Twitter /></Nav.Link>
               <Nav.Link className="custom-navlink" href="https://www.facebook.com/universityofhawaii"><Facebook /></Nav.Link>
