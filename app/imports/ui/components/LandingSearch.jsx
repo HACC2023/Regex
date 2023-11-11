@@ -14,25 +14,41 @@ const LandingSearch = () => {
   };
 
   return (
-    <Container className="landingSearchContainer px-5 pt-3 pb-5">
-      <Row>
-        <Col xs={3} />
-        <Col xs={6}>
-          <Form onSubmit={redirect} className="mt-3">
-            <div className="d-flex">
-              <Form.Control
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Have a question?"
-                required
-              />
-              <Button type="submit" className="landingSearchButton ms-2">Ask Us</Button>
-            </div>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    // This is for mobile view
+    <div>
+      <Form onSubmit={redirect} className="d-block d-sm-none mt-3">
+        <div className="d-flex">
+          <Form.Control
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Have a question?"
+            required
+          />
+          <Button type="submit" className="landingSearchButton ms-2">Ask Us</Button>
+        </div>
+      </Form>
+      {/* This is for desktop view */}
+      <Container className="landingSearchContainer pt-3 pb-5 px-sm-5">
+        <Row>
+          <Col xs={12} sm={3} />
+          <Col xs={12} sm={6}>
+            <Form onSubmit={redirect} className="d-none d-sm-block mt-3">
+              <div className="d-flex">
+                <Form.Control
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  placeholder="Have a question?"
+                  required
+                />
+                <Button type="submit" className="landingSearchButton ms-2">Ask Us</Button>
+              </div>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
