@@ -43,8 +43,12 @@ const AdminPage = () => {
           </Table>
         </Col>
         <Col className="text-center">
-          <EmbeddedButton props={pages[0]} />
-          <UpdateDatabaseButton />
+          <Row>
+            <EmbeddedButton props={pages[0]} />
+          </Row>
+          <Row>
+            <UpdateDatabaseButton />
+          </Row>
         </Col>
       </Row>
     </Container>
