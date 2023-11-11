@@ -6,6 +6,7 @@ import { AskUs } from '../../api/askus/AskUs';
 import StatItemAdmin from '../components/StatItemAdmin';
 import LoadingSpinner from '../components/LoadingSpinner';
 import EmbeddedButton from '../components/EmbeddedButton';
+import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 
 /* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
 const AdminPage = () => {
@@ -41,8 +42,13 @@ const AdminPage = () => {
             </tbody>
           </Table>
         </Col>
-        <Col className="text-center">
-          <EmbeddedButton props={pages[0]} />
+        <Col>
+          <Col className="text-center">
+            <EmbeddedButton props={pages[0]} />
+          </Col>
+          <Col>
+            <UpdateDatabaseButton />
+          </Col>
         </Col>
       </Row>
     </Container>

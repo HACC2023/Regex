@@ -1,0 +1,413 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Administrative Procedures
+
+
+
+Administrative Procedure 8.710
+Administrative Procedure 8.710
+
+	document.title = "UH PPIS - AP 8.710";
+
+   Title
+
+   Credit Card Administration
+
+   Header
+
+   Administrative Procedure Chapter 8, Business and Finance 
+
+Administrative Procedure AP 8.710, Credit Card Administration
+
+Effective Date:   September 2021 
+
+Prior Dates Amended:  June 1992, July 2001, April 2005, March 2015, January 2020
+
+Responsible Office: Office of the Vice President for Budget and Finance/Chief Financial Officer
+
+Governing Board and/or Executive Policy: EP 1.102, Authority to Manage and Control the Operations of the Campus
+
+Review Date:  September 2023
+
+   I. Purpose
+
+   This policy applies to credit card payments processed by the University designated as the merchant of record.  The purpose of this policy is to outline the responsibilities of departments that accept credit card payments and to provide procedures for these departments to follow. 
+
+To safeguard the University’s information technology resources and to protect the confidentiality of cardholder data, adequate security measures must be taken.  Credit card data stored, processed, or transmitted by the University merchant accounts must be protected and must conform to the Payment Card Industry Data Security Standard (PCI DSS).
+
+The University requires that all departments that accept credit card payments comply with applicable PCI DSS requirements and related University policies and procedures.
+
+Departments that fail to comply with PCI DSS and University policies and procedures may have their ability to accept credit cards suspended or revoked.  In addition, they may face penalties, fines, or restrictions.
+
+   II. Definitions
+
+Contractor – The vendor contracted by the University to provide merchant processing services, including authorization, processing, settlement and reporting of credit and debit card transactions.  The Contractor also provides equipment, software, training and support necessary to process these transactions.
+Merchant Department – A University department that is approved to accept credit cards as a form of payment.  It is also referenced as the Merchant in this Administrative Procedure.
+Merchant Account Contact – A regular, full-time employee that has been designated as the primary contact of the merchant and who coordinates and attests to the merchant’s compliance with PCI DSS and related University policies and procedures.  The Merchant Account Contact shall be appointed by the Dean/Director or Department Head of the unit.
+Merchant Fee – The service fee paid to the contractor by the Merchant based on the terms of the University’s merchant contract.
+Merchant Identification Number (MID) - A unique identification number established and issued by the contractor that identifies the department as a merchant.
+Merchant Information Technology (IT) Contact – The department’s designated IT staff member that works with the Merchant Account Contact on implementing required safeguards related to the merchant’s technical PCI DSS requirements.
+Minimum Security Standards (MSS) – A prioritized set of standards that collectively form a defense-in-depth set of best practices to mitigate the most common attacks against systems and networks.  These standards are to be followed to safeguard against the inadvertent exposure and inappropriate disclosure of University Institutional Data.
+Payment Card – For purposes of PCI DSS, payment cards includes any credit, debit or prepaid cards used in financial transactions that bear the logo of the five major card associations (Visa, MasterCard, American Express, Discover and JCB).  In this Administrative Procedure, the term credit card may be used in lieu of Payment Card. 
+Payment Card Industry (PCI) – Includes Payment Card brands, issuing and acquiring banks, independent sales organizations, service providers and merchants who accept Payment Cards.
+PCI Security Standards Council (SSC) – A council comprised of the five major card associations including, Visa, MasterCard, American Express, Discover and JCB International.  The council is responsible for the development, management, education and awareness of the PCI DSS.
+PCI DSS – A set of twelve technical and operational requirements set by the PCI SSC to protect cardholder data and reduce credit card fraud.  These standards apply to all entities that store, process or transmit cardholder data.  The Merchant Department is required to meet the applicable requirements for their payment processing method/merchant environment.  
+Payment Processing Method – How a credit card transaction is processed, which includes:
+In-Person/Card Present – in person transactions where the cardholder presents their credit card to make a payment.
+eCommerce – a non-face-to-face, on-line transaction using electronic media over a public or private network.  Refers to all forms of business activities conducted over computer networks such as the Internet.
+Mail order/telephone order (MOTO) – cardholder data is provided to the merchant by the cardholder via mail, facsimile or through the phone.  Credit card information sent via other electronic methods (e.g. email, text, UH File Drop, etc.) is prohibited.
+Third-Party Payment Processing Service Provider – A third-party that provides connectivity among merchants, customers and financial networks to process authorization and payments and securely stores Payment Card data.   The provider must be a PCI DSS validated third-party.
+Self-Assessment Questionnaire (SAQ) – An annual self-assessment and attestation intended to demonstrate compliance with PCI DSS.
+
+   III. Administrative Procedure
+
+Roles and Responsibilities
+Treasury Office
+Establish and document policies and procedures related to University’s credit card administration.
+Establish merchant accounts.  This includes approval or disapproval of requests to accept credit card payments, including requests to use a third party payment processing service.
+Create the Credit Card Vendor Number in the University’s financial system.
+Close merchant accounts.
+Establish and maintain relationships with Contractor and other entities related to credit card processing.
+Coordinate review for new merchant requests and modifications to existing merchant set up, including review and verification of third-party service providers, and collaborate with Information and Technology Services (ITS), as needed, for review of network segmentation configuration and other technical safeguards.
+Coordinate University PCI compliance process, including overview of merchant SAQ submissions, coordinating training and distribution of information notifications to University merchant personnel.
+As part of Incident Response Team (IRT), coordinate communication between University staff and Contractor.Merchant Department
+Protect credit card data by complying with security requirements and safeguard of cardholder data as set forth by the PCI DSS.  Failure to comply may increase the University’s exposure to increased fraudulent activity.
+Comply with University policies and procedures and with terms of the University’s contract for credit card processing.
+Comply with any Merchant Department specific procedures.
+Fiscal Staff
+Make timely payment of all merchant fees, rental costs of equipment or software, dedicated analog lines and data costs.
+Respond to chargeback notices in timely manner.
+Dean/Director or Department Head
+Appoint Merchant Account Contact.
+Understand responsibilities with compliance related to accepting credit card payments for the Campus/School or department.
+Accept responsibility for any fines, fees, or penalties assessed for data breaches due to merchant’s non-compliance of PCI DSS requirements.
+Ensure Merchant Account Contact is completing the required documentation.
+Merchant Account Contact
+Notify the Treasury Office by completing and submitting the Credit Card Administration – Participation and Change Request Form (Appendix B) for establishment of a new MID and for any changes to the existing merchant environment (changes to contact information, payment processing method, payment processing device, third party service provider, etc.) prior to implementing change.
+Coordinate with department and information technology (IT) staff as needed for PCI DSS compliance program process.
+Review the PCI DSS requirements for the merchant and compile and maintain merchant documentation, as required.
+On an annual basis, complete the applicable merchant SAQ and attestation.  Failure to submit the SAQ will cause the Merchant to be out of compliance.
+Leads Merchant Department incident response and remediation procedures for merchant’s unit, to include but not limited to, reporting incidents to the UH Chief Information Security Officer  (CISO) & IRT and conduct incident handling and remediation as directed by CISO and IRT.
+Coordinate PCI DSS security activities, to include but not limited to information and physical security.
+Merchant IT Support Staff/Department
+Supports and implements PCI DSS, the ITS MSS, and processes, to include but not limited to internal vulnerability scanning, developing and maintaining secure systems and applications, protection of systems (e.g. anti-malware), and maintaining properly configured firewalls in consultation with ITS Information Security Team as necessary.
+Support Merchant for IT security-related incident response and remediation.
+ITS Information Security Team
+Collaborate with UH Treasury Office on technical requirements and coordinates policies and procedures related to the University’s PCI DSS security.
+Assist UH Treasury Office with review and approval of Appendix B requests submitted and SAQ submissions, as applicable.  
+Assist merchant departments with PCI DSS technical training, technical guidance, and compliance services.
+As part of the IRT, direct and coordinate technical investigation for security-related incidents.
+Provide technical guidance to merchant as needed.
+Procedure to Accept Credit Card Payments
+Merchant Account Contact submits a Credit Card Administration – Participation and Change Request Form to the UH Treasury Officer.  Among other information, the request shall include the following:
+The justification for accepting credit card payments;
+The legal authority that permits the campus/department to collect and deposit receipts (Consult with FMO Tax Services for review of any Unrelated Business Income Tax considerations, as necessary);
+For eCommerce payment processing:
+The University has implemented a third party (TouchNet Information Systems, Inc. (TouchNet)) secure, PCI DSS compliant, hosted eCommerce management system that supports payment processing for a variety of eCommerce applications. Merchant departments shall use the designated eCommerce system, unless an exception is granted.
+Exceptions may be granted if:
+TouchNet cannot meet the business needs of the merchant
+The alternate system is in compliance with PCI DSS.
+The alternate system must be able to process credit card transactions utilizing the Contractor’s processor (i.e. FISERV (FKA First Data)).
+The information about the proposed alternate system must be included on the Credit Card Administration – Participation and Change Request Form.
+Departments granted an exception to use an alternate system will be responsible for any costs to operate and maintain the system.              Departments granted such exceptions also assume all responsibility and liability for the security of all transactions and data, including any monetary loss suffered by the University due to theft or improper use of credit card numbers and data breach remediation costs from failure to comply with PCI DSS.
+The Credit Card Administration – Participation and Change Request Form must be signed by the Merchant Account Contact, merchant department IT contact, fiscal administrator, and Dean/Director or Department Head.
+Once approved, the Treasury Office will submit the request to the Contractor for MID application process.
+Contractor will provide MID once application is approved.
+Departments are prohibited from contracting directly for credit card services from the Contractor or any other entity.
+Receipting, Recording and Reconciling
+Refer to Administrative Procedure 8.701, Receipting and Depositing Funds Received by the University, Section III.E. for procedures on receipting, recording and reconciling credit card transactions.   
+Responding to Dispute Notifications
+Should a cardholder dispute a credit card transaction, a dispute notice will be provided to the merchant’s fiscal administrator.
+A response must be submitted by the merchant for all dispute notifications to the processor as directed on the chargeback notice.
+The merchant will receive an invoice from the Contractor for the chargeback amount, regardless of the outcome of the dispute decision.  The merchant shall promptly process payment to the Contractor.
+Should the dispute be decided in favor of the University and the chargeback reversed, the UH Treasury Office will notify the merchant contact and the merchant will record the receipt of the funds in the University’s financial system. 
+Procedures to Close Merchant Account
+Submit written request to the Treasury Office to close merchant account, including reason to close account.
+Upon approval, the UH Treasury Office shall coordinate the closing procedures with merchant department and Contractor.
+Any equipment obtained from the Contractor must be promptly returned.
+University PCI DSS Compliance Process
+Background
+The PCI SSC set forth PCI DSS, a set of twelve technical and operational requirements to protect cardholder data and reduce credit card fraud.  
+The PCI DSS requirements apply to all organizations that store, process or transmit credit card data, thus, as such an organization, the University is required to comply with PCI DSS.
+Each University Merchant is required to comply with University policies and procedures and the applicable PCI DSS requirements based on their payment processing method/merchant environment.
+University policies and procedures and PCI DSS requirements apply to all University Merchant personnel involved with University merchant operations that could affect the security of cardholder data.
+
+The SAQ is an annual PCI-mandated attestation intended to demonstrate compliance with PCI DSS.  Depending on the payment processing method/ merchant environment, a specific set of PCI DSS requirements are applicable and are detailed in the applicable SAQ.  Failure to meet the PCI DSS requirements may increase exposure to fraudulent activity.  In addition, failure of the Merchant Account Contact to submit the SAQ on an annual basis will cause the University to be out of compliance.   
+
+Descriptions for each SAQ type are provided below: SAQ TypeDescriptionACard not present (eCommerce) merchants that have fully outsourced all cardholder data functions to PCI DSS compliant third-party service providers with no electronic storage, processing, or transmission of any cardholder data on the merchant’s systems or premise.  This SAQ is applicable for the University merchants utilizing TouchNet.A-EPeCommerce merchant who outsources all payment processing to a PCI DSS validated third party, but whose website may impact the security of the payment transaction.  No electronic storage, processing or transmission of cardholder data on merchant’s systems or premises.BCard-present merchant that uses a standalone dial-out terminal (analog phone line) to process credit cards or imprint machines; no electronic cardholder data storage.B-IPMerchants using only standalone, PIN Transaction Security (PTS) approved payment terminals with an Internet Protocol (IP) connection to the payment processor with no electronic cardholder data storage. This includes card-present machine that uses a standalone dial-out terminal via cellular phone line connection.   CMerchants with payment application systems connected to the Internet, no electronic cardholder data storage.C-VTMerchants that manually enter a single transaction at a time via keyboard into an internet-based virtual terminal solution that is provided and hosted by a PCI-DSS validated third-party service provided.  The terminal used shall only process payments. No electronic cardholder data storage.P2PEMerchants using only hardware payment terminals included in and managed via a validated, PCI SSC-listed Point-to-Point Encryption (P2PE) solution (the P2PE solution must be listed at: https://www.pcisecuritystandards.org/assessors_and_solutions/point_to_point_encryption_solutions) with no electronic cardholder data storage.DAll merchants not included in descriptions for the above SAQ types.  Applies to merchants that electronically store cardholder data.     Electronic storage of cardholder data is not allowed at the University.
+PCI DSS Requirements
+PCI DSS is comprised of 6 primary goals with 12 requirements.  These goals and requirements were designed to ensure safe-handling of sensitive information related to credit card transactions.  The goals and requirements are listed below.  To see the complete PCI DSS requirements and additional information on PCI DSS, see the PCI SSC website at:  https://www.pcisecuritystandards.org/
+
+Goal - Build and Maintain a Secure Network and Systems
+Requirement #1 – Install and maintain a firewall configuration to protect cardholder data
+
+Firewalls are devices that control computer traffic allowed between the University’s networks (internal) and untrusted networks (external), as well as traffic into and out of more sensitive areas within an entity’s internal trusted networks. The cardholder data environment is an example of a more sensitive area within an entity’s trusted network.  A firewall examines all network traffic and blocks those transmissions that do not meet the University’s specified security criteria.
+
+All systems must be protected from unauthorized access from untrusted networks, whether entering the system via the Internet as e-commerce, employee Internet access through desktop browsers, employee e-mail access, dedicated connections such as business-to-business connections, via wireless networks, or via other sources. Often, seemingly insignificant paths to and from untrusted networks can provide unprotected pathways into key systems. Firewalls are a key protection mechanism for any computer network.
+
+Other system components may provide firewall functionality, as long as they meet the minimum requirements for firewalls as defined in this requirement. Where other system components are used within the cardholder data environment to provide firewall functionality, these devices must be included within the scope and assessment of requirement 1.
+Requirement # 2- Do not use vendor-supplied defaults for system passwords and other security parameters
+
+System components used in sensitive networks often will come with default vendor settings (usernames, passwords, configuration settings, etc.).  Vendor-supplied defaults for system passwords and other security parameters must be changed before systems are installed in the secure network environment (cardholder data network).
+
+Individuals with malicious intent (external and internal to an entity) often use vendor default passwords and other vendor default settings to compromise systems. These passwords and settings are well known by hacker communities and are easily determined via public information.
+Goal - Protect Cardholder Data
+Requirement #3 – Protect cardholder data
+
+All cardholder data must be securely handled and protected against unauthorized use at all times.
+
+Cardholder data is defined as:
+
+•    Primary Account Number (PAN)
+
+•    Card Validation Code (CVV, CVV2, and CVC2)
+
+•    Credit Card Personal Identification Number (PIN)
+
+•    Any form of magnetic stripe data from the card (Track 1, Track 2)
+
+It is strictly prohibited to store:
+
+•    The contents of the payment card magnetic stripe (track data) on any media 
+
+•    The  PIN or CVV/CVC on any media
+
+PAN is to be masked when displayed (first six and last four digits are the maximum number of digits to be displayed). Access to sensitive cardholder information such as PANs is restricted to employees that have a legitimate need to view such information.
+
+Cardholder data must be protected when stored or in transit over public (or untrusted) networks.  Strong industry standard encryption methodologies must be used to protect data stored on hard drives, removable media, backups, etc.  
+
+Protection methods such as encryption, truncation, masking, and hashing are critical components of cardholder data protection. If an intruder circumvents other network security controls and gains access to encrypted data, without the proper cryptographic keys, the sensitive data is unreadable and unusable to that person.
+
+Any sensitive cardholder data that is no longer required for business reasons must be discarded in a secure and irrecoverable manner.
+Requirement #4 – Encrypt transmission of cardholder data across open, public networks
+
+Cardholder data must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments.
+
+Goal - Maintain a Vulnerability Program
+Requirement #5 – Protect all systems against malware and regularly update anti-virus software or programs
+
+System components within the cardholder data network must be part of an active vulnerability maintenance program.  This program will control the existence of malicious software (e.g., anti-virus software) and provide policies covering development efforts and system or software updates/upgrades such that security is maintained. 
+
+Malicious software, commonly referred to as “malware”—including viruses, worms, and Trojans—enters a sensitive network segment during many business approved activities, including employees’ e-mail and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities. Anti-virus software must be used on all systems commonly affected by malware to protect systems from current and evolving malicious software threats.
+Requirement #6 – Develop and maintain secure systems and applications
+
+Unscrupulous individuals use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendor-provided security patches, which must be installed by the entities that manage the systems. All systems must have all appropriate software patches to protect against the exploitation and compromise of cardholder data by malicious individuals and malicious software.
+
+Note: Appropriate software patches are those patches that have been evaluated and tested sufficiently to determine that the patches do not conflict with existing security configurations.
+Goal - Implement Strong Access Control Measures
+Requirement #7 – Restrict access to cardholder data by business need to know
+
+Access to system components and software within the cardholder data network must be controlled and restricted to those with a business need for that access.  This is achieved using active access control systems, strong controls on user and password management, and restricting physical access to critical or sensitive components and software to individuals with a “need to know.”
+
+Systems and processes must be in place to limit access to critical data and systems based on an individual’s need to know and according to job responsibilities.
+
+Need to know is when access rights are granted to the least amount of data and privileges needed to perform a job.
+Requirement #8 - Identify and authenticate access to system components
+
+It is critical to assign a unique identification (ID) to each person with access to critical systems or software. This ensures that each individual is uniquely accountable for his or her actions. When such accountability is in place, actions taken on critical data and systems are performed by, and can be traced to, known and authorized users.
+Requirement #9 – Restrict physical access to cardholder data
+
+Media is defined as any printed or handwritten paper, received faxes, external storage or back-up tapes, computer hard drive, etc.  Media containing sensitive cardholder information must be handled and distributed in a secure manner.   Strict control must be maintained over the external or internal distribution of any media containing cardholder data and over the storage and accessibility of media.  The transportation of media containing sensitive cardholder data to another location must be authorized by appropriate personnel, logged and inventoried before leaving the premises.  
+
+Any physical access to data or systems that house cardholder data provide the opportunity for individuals to access devices or data and to remove systems or hardcopies, and should be appropriately restricted.
+
+Visitors must always be escorted by an employee in areas that hold sensitive cardholder information.
+
+Disposal of cardholder data:
+All data must be securely disposed of when no longer required, regardless of the media on which it is stored
+Hard copy materials must be crosscut shredded or incinerated such that they cannot be reconstructed
+All cardholder data on electronic media must be rendered unrecoverable when deleted
+All cardholder information awaiting destruction must be held in lockable storage containers and access to these containers must be restricted
+Goal - Regularly Monitor and Test Networks
+Requirement #10 – Track and monitor all access to network resources and cardholder data
+
+Logging mechanisms and the ability to track user activities are critical in preventing, detecting, or minimizing the impact of a data compromise. The presence of logs in all environments allows thorough tracking, alerting, and analysis when something does go wrong. Determining the cause of a compromise is very difficult without system activity logs.  Detailed monitoring procedures should be developed and documented.
+Requirement #11 – Regularly test security systems and processes
+
+Vulnerabilities are continually being discovered in current, and introduced by new software. System components, processes, and custom software must be tested frequently to ensure security controls continue to reflect a changing environment. Detailed testing procedure should be developed and documented.
+Goal - Maintain an Information Security Policy
+Requirement #12 – Maintain a policy that addresses information security for all personnel
+
+Consistent policies and procedures are required to be practiced and followed at all times.
+
+All employees should be aware of the sensitivity of data and their responsibilities for protecting it.  The University’s information security policy and procedures apply to all employees (full-time, part-time, casual hires, student employees) and others (i.e. volunteers) that work within the University’s cardholder data environment.  
+
+If cardholder data is shared with a 3rd party Service Provider:
+
+•    A list of such Service Providers must be maintained.
+
+•    There shall be a written agreement with the Service Provider.
+
+•    The Service Provider shall be monitored for PCI DSS compliance.
+
+If a merchant department believes it may have a breach of cardholder information or of systems related to the PCI environment, refer to Appendix C for University’s PCI Incident Response Plan Guidelines.
+Applicable University Policies 
+The Information Security Governance Leadership Group ensures that all information security policies, procedures and other initiatives are implemented and maintained within their authorities.
+University policies related to Information Security are available at https://www.hawaii.edu/infosec/policies/ and include the following, but are not limited to:
+EP 2.210 – Use and Management of Information Technology Resources Policy
+EP 2.214 – Institutional Data Classification Categories and Information Security Guidelines
+Credit card information is categorized as “Regulated.”  This means that inadvertent disclosures or inappropriate access requires breach notification in accordance with HRS §487N and is subject to financial fines.
+Refer to  ITS Minimum Security Standards at 
+https://www.hawaii.edu/infosec/minimum-standards/ and EP 2.215 – UH Institutional Data Governance Policy
+EP 8.200 – Policy on Contracts and Signing Authority
+AP 2.215 – Mandatory Training and Continued Education Requirements for Data Users on Data Privacy and Security
+All personnel that handle cardholder data are required to meet requirements of AP 2.215, including:
+Submission of General Confidentiality Notice (GCN)Completion of Information Security Awareness Training (ISAT)
+EP 2.216 – Institutional Records Management
+External standards and regulations include:
+HRS 487N – Security Breach of Personal Information (https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0476-0490/HRS0487N/HRS_0487N-.htm)
+PCI  DSS – Payment Card Industry Data Security Standard https://www.pcisecuritystandards.org/pci_security/
+The University’s policies and procedures related to the University’s PCI DSS compliance process is reviewed at least annually.  Merchant departments that establish supplemental procedures for their departments should annually review their procedures to reflect changes to business objectives or risk environment. 
+All University personnel involved in credit card operations (i.e.  access to credit card information or  involved with credit card systems or processing credit card transactions) must complete the Information Security Policy Acknowledgment online via the Acknowledgments and Certifications (ACER) Service (https://www.hawaii.edu/its/acer/) form on an annual basis.
+Merchant PCI DSS Compliance Process
+The Merchant determines the applicable SAQ type required for the MID based on the payment processing method/merchant environment as described in the table in Section F.2. above.  Whenever there is a change in the merchant’s processing method or environment, the Merchant Account Contact must complete the Credit Card Administration – Participation and Change Request Form before any change is implemented, and the merchant’s SAQ type should be re-evaluated.  The SAQ type will govern the PCI DSS requirements applicable to the Merchant.
+At least annually,  or whenever there is a change in the Merchant’s processing method or environment, the Merchant Account Contact shall review compliance with PCI DSS and University requirements.  
+To provide Merchant Departments with assistance on technical requirements, refer to the UH ITS PCI Technical Guidelines document (Appendix A).
+The Merchant Account Contact shall compile and maintain documentation to support applicable PCI DSS compliance.   
+All merchants must be compliant with PCI DSS.  Any non-complying requirements identified must be remediated or brought to the attention of the UH Treasury Office for assistance in resolution.   
+On an annual basis, each Merchant Account Contact shall complete the SAQ and attestation.
+The Treasury Office and/or ITS Information Security may request information to review and validate SAQ responses. Required PCI DSS supporting documents shall be maintained and may be requested in this validation process.
+
+   IV. Delegation of Authority
+
+   There is no administrative specific delegation of authority.
+
+   V. Contact Information
+
+   Treasury Office, 956-7638, or jyama@hawaii.edu
+
+Website: http://www.fmo.hawaii.edu/cash_handling/index.html#tab1
+
+   VI. References
+
+   PCI Security Standards Council:  https://www.pcisecuritystandards.org/pci_security/
+
+PCI DSS validated payment applications: https://www.pcisecuritystandards.org/assessors_and_solutions/payment_applications?agree=true.
+
+Visa Global Registry of Service Providers: https://www.visa.com/splisting/searchGrsp.do
+
+ITS Minimum Security Standards: https://www.hawaii.edu/infosec/minimum-standards/
+
+   VII. Exhibits and Appendices
+
+   Appendix A – UH PCI Technical Guidelines
+
+    
+
+Appendix B - Credit Card Administration – Participation and Change Request Form
+
+    
+
+Appendix C – UH PCI Incident Response Plan Guidelines
+
+   Approved
+
+    Signed        Kalbert Young        November 02, 2021        Date        Vice Pres for Budget & Fin/CFO
+
+	Topics
+
+Credit Card ; Confidentiality ; Security ; Data
+
+Attachments
+
++ Form Fillable Attachment(s)
+
+					Appendix B
+					(2021-10)
+
+				
+
++ Non-Fillable Attachment(s)
+
+					AP 8.710 Appendix A 09202021
+					(2023-10)
+
+				
+
+					Appendix C 
+					(2021-10)
+
+				
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

@@ -1,0 +1,195 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Administrative Procedures
+
+
+
+Administrative Procedure 2.215
+Administrative Procedure 2.215
+
+	document.title = "UH PPIS - AP 2.215";
+
+   Title
+
+   Mandatory Training on Data Privacy and Security
+
+   Header
+
+   Administrative Procedure Chapter 2, Administration
+
+Administrative Procedure AP 2.215, Mandatory Training on Data Privacy and Security
+
+Effective Date:  September 2021
+
+Prior Dates Amended:  N/A
+
+Responsible Office:  Office of the Vice President for Information Technology & Chief Information Officer
+
+Governing Board of Regents Policy:  RP 2.202 Duties of the President
+
+Review Date:  September 2023
+
+   I. Purpose
+
+To establish a mandatory training (see exemptions to this policy in Section III.A. below) program that increases the knowledge and awareness of the University community in managing and protecting data subject to security and privacy considerations (referred to as “Protected Data”). The goal is to reduce the risk of inadvertent exposures or inappropriate disclosures of Protected Data under the University’s stewardship.
+To ensure compliance with federal and state laws, rules, regulations, and industry standards (see list below) as well as all applicable University policies (e.g., Executive Policies EP 2.215, Institutional Data Governance and EP 2.214, Institutional Data Classification Categories and Information Security Guidelines).
+Family Educational Rights and Privacy Act (FERPA)Higher Education Act (HEA)Gramm-Leach-Bliley Act (GLBA)Health Insurance Portability and Accountability Act (HIPAA)General Data Protection Regulation (GDPR)Hawai‘i Revised Statutes, Chapter 487N – Security Breach of Personal InformationChapter 92F – Uniform Information Practices ActPCI-DSS (Payment Card Industry Data Security Standard)NIST SP 800-171 (National Institute of Standards and Technology Special Programs)National Industrial Security Program (NISPOM)Bioterrorism Special Agent Program
+
+   II. Definitions
+
+“General Confidentiality Notice” (“GCN”) – The GCN is completed as part of the onboarding process for new UH employees and outlines the responsibilities of Data Users with access to Protected Data. http://www.hawaii.edu/its/acer/
+“Information Security Awareness Training” (“ISAT”) – The ISAT covers best practices for protecting the privacy and security of Protected Data and applicable federal and state laws and regulations and related UH policies and procedures.
+http://www.hawaii.edu/its/acer/
+“Institutional Data Systems” – They are UH systemwide repositories that collect and store data that are created, received, maintained and/or transmitted by the University of Hawai’i in the course of meeting its administrative and academic requirements (e.g., Banner Student Information System, PeopleSoft, Kuali Financial System, STAR, Laulima, etc.).
+
+A listing of Institutional Data Systems and associated System Executive Data Stewards is available at the following site. Note the list is not intended to be all-inclusive of the University’s Institutional Data Systems, but rather, represents Institutional Data Systems that most likely contain Protected Data.
+http://go.hawaii.edu/ueP
+“Protected Data” – These are data that are subject to security and privacy considerations (i.e., all non-public data). They fall under the Institutional Data Classification Categories of “restricted,” “sensitive,” and “regulated.” For more information, refer to Executive Policy EP2.214, Institutional Data Classification Categories and Information Security Guidelines.
+
+   III. Administrative Procedure
+
+APPLICABILITY
+
+Mandatory training requirements consist of acknowledging the General Confidentiality Notice (GCN) and completing the Information Security Awareness Training (ISAT). 
+
+These training requirements apply to all UH employees except for employees who meet all three criteria below: 
+Their duties are not office- or classroom-based;Their duties do not involve working with Protected Data; and,They have limited access to technology at work.
+
+Supervisors are responsible for determining whether employees within their unit are exempt and should consult with their departmental HR office if they need guidance and/or assistance.
+
+TRAINING AND CONTINUING EDUCATION REQUIREMENTS BY EMPLOYEE TYPE
+UH New Hires
+As part of the onboarding process, all newly hired UH employees, including student employees and graduate assistants, and excluding exempt employees (refer to section A), are required to acknowledge the GCN and complete the ISAT within the first two weeks of employment. 
+
+A UH username and password are required to access the GCN and ISAT at www.hawaii.edu/its/acer.
+If a UH employee transfers to another unit within UH, the employee is not required to re-acknowledge the GCN and will not need to re-take the ISAT (i.e., the ISAT annual renewal date will remain unchanged).
+Completion of the GCN and ISAT will be required before access privileges to Institutional Data Systems are granted.
+Current UH Employees
+All UH employees are required to re-take the ISAT annually, based on the anniversary date the ISAT was last completed.
+An email notification will be sent 30 and 7 days in advance to employees when an ISAT renewal is required. Another email will be sent on the expiration date.
+A valid ISAT must be maintained for continued access privileges to Institutional Data Systems.
+UH Affiliates
+Research Corporation of the University of Hawai‘i (RCUH) employees whose responsibilities involve working with UH principal investigators are required to comply with the same requirements as UH employees. 
+All UH Foundation (UHF) employees are required to comply with the same requirements as UH employees.
+
+TRACKING / MANAGING COMPLIANCE
+Each Vice President/Provost/Chancellor shall designate a primary individual responsible for coordinating and ensuring compliance with mandatory training and continuing education requirements for his or her respective unit/campus. This includes the acknowledgement of the GCN and completion of the ISAT within the first two weeks of employment. The ISAT will be completed annually thereafter.
+The primary designee may further designate the task of monitoring compliance. The primary designee and all individuals responsible for monitoring compliance for their units/campuses will have access to a web application that will provide them with GCN and ISAT completion statuses and reports.
+Employees designated as exempt from the training by their supervisors should be excluded from the web application that tracks GCN and ISAT compliance.
+Failure to complete the requirements by the specified due date shall be reported to the supervisor. Extenuating circumstances affecting an employee’s ability to complete the requirements on time shall be taken into consideration by the supervisor. A reasonable timeframe to complete the requirements will be set by the supervisor and communicated to the employee. Department chairs may assist faculty with temporary workload adjustments, as needed, to accommodate the completion of their training requirements.
+Access privileges to Institutional Data Systems shall be revoked upon failure to comply with the training requirements.
+Repeated non-compliance of mandatory training and continuing education requirements will follow University policies and procedures as well as applicable collective bargaining agreements, and may be subject to disciplinary actions up to, and including, termination.
+Compliance requirements for student employees and graduate assistants will be monitored by the unit where they are employed.
+
+   IV. Delegation of Authority
+
+   No Delegation of Authority found
+
+   V. Contact Information
+
+   Data Governance Office
+
+Sandra Furuto, 956-7487, yano@hawaii.edu
+
+   VI. References
+
+   The following site lists the University of Hawai‘i executive policies, State of Hawai‘i Revised Statutes, and external regulations that relate to data governance and have information security implications. 
+https://www.hawaii.edu/infosec/policies/
+
+   VII. Exhibits and Appendices
+
+   No Exhibits and Appendices found
+
+   Approved
+
+    Signed        David Lassner        October 01, 2021        Date        President
+
+	Topics
+
+No Topics found.
+
+Attachments
+None
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

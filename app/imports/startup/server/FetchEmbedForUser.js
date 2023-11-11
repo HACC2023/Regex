@@ -10,9 +10,9 @@ const openai = new OpenAI({
 // Constants
 const MAX_ARTICLES = 4;
 const MAX_SIMILAR_ARTICLES = 3;
-const MAX_TOKENS_PER_ARTICLE = 5000; // Use the larger value from the new code
-const MAX_SESSION = 4;
-const MAX_TOKENS_PER_MESSAGE = 4000;
+const MAX_TOKENS_PER_ARTICLE = 4000; // Use the larger value from the new code
+const MAX_SESSION = 3;
+const MAX_TOKENS_PER_MESSAGE = 2000;
 
 /**
  * Throws a formatted Meteor error and logs the message.
@@ -155,7 +155,7 @@ const createOpenAICompletion = async (messages) => {
       max_tokens: MAX_TOKENS_PER_MESSAGE,
     });
 
-    console.log('OpenAI API Response:', response);
+    // console.log('OpenAI API Response:', response);
 
     if (response && response.choices && response.choices[0]) {
       return response.choices[0].message.content;
@@ -206,12 +206,13 @@ Meteor.methods({
       currentTopicEmbedding: null, // Embedding representing the current topic
       currentArticles: null, // Field to store the current articles
     };
+    console.log('Current Session State after retrieval for user', userId, ':', userSession);
 
     // Fetch and store the embedding for the user's message
     const userEmbedding = await getEmbeddingFromOpenAI(userMessage);
-    console.log('Fetched user embedding:', userEmbedding); // Log to confirm embedding is fetched
+    // console.log('Fetched user embedding:', userEmbedding); // Log to confirm embedding is fetched
     userSession.messages.push({ role: 'user', content: userMessage, embedding: userEmbedding });
-
+    console.log('Session State after adding user message for user', userId, ':', userSession);
     // Ensure the session does not exceed the maximum length
     if (userSession.messages.length > MAX_SESSION) {
       userSession.messages = userSession.messages.slice(-MAX_SESSION);
@@ -243,6 +244,7 @@ Meteor.methods({
         // Check if messagesForChatbot have embeddings before calculating the average
         if (messagesForChatbot.some(msg => msg.embedding)) {
           userSession.currentTopicEmbedding = getAverageEmbedding(messagesForChatbot);
+          console.log('Session State after context update for user', userId, ':', userSession);
         } else {
           console.error('No embeddings found in messages for chatbot. Cannot calculate average embedding.');
           // Handle the case where no embeddings are available (e.g., by setting a default embedding or throwing an error)
@@ -273,7 +275,9 @@ Meteor.methods({
     }
 
     userSession.messages.push({ role: 'assistant', content: chatbotResponse });
+    console.log('Session State after adding assistant response for user', userId, ':', userSession);
     userSessions[userId] = userSession; // Update the session
+    console.log('Final Session State before response for user', userId, ':', userSession);
 
     return {
       chatbotResponse,

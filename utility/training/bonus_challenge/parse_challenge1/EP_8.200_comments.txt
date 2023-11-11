@@ -1,0 +1,662 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Executive Policies
+
+
+
+Executive Policy 8.200
+Executive Policy 8.200
+
+	document.title = "UH PPIS - EP 8.200";
+
+   Title
+
+   Policy on Contracts and Signing Authority
+
+   Header
+
+   Executive Policy Chapter 8, Business and Finance
+
+Executive Policy 8.200, Policy on Contracts and Signing Authority
+
+Effective Date: November 2023
+
+Prior Dates Amended: November 1, 2017, November 1, 2018, November 1, 2019, November 1, 2020, November 2, 2021, November 1, 2022
+
+Responsible Office: Office of the Vice President for Legal Affairs and University General Counsel
+
+Governing Board of Regents Policy RP 8.201, Contracts and Official Documents
+
+Review Date: October 2024
+
+   I. Purpose
+
+   This Policy makes uniform for the University (1) standard contractual provisions that should be in University contracts, (2) the approvals and signing authority required to enter written contracts which the Board of Regents has delegated authority to the President to execute on behalf of the University, and (3) the priority contracts that require additional scrutiny and review. This Policy supersedes any conflicting practice, policy, delegations or guidelines.
+
+This Policy covers all written contracts between the University and non-University entities, including but not limited to county, state, federal, and foreign governments, educational institutions, financial institutions, vendors, contractors, consultants, and non-profit entities. This Policy does not apply to memoranda of understanding or similar agreements that govern internal relationships between University campuses or between colleges, schools, departments, institutes, centers, or other units within a University campus.
+
+Note: Appendices are only available to current University employees and students, and can be accessed at: http://www.hawaii.edu/offices/legal/contractspolicy/appendices
+
+   II. Definitions
+
+   “Contract” means any document intended to set forth an agreement or arrangement between the University and an outside party. A document need not be labeled “contract” to be covered by this Policy. A document labeled “contract,” “agreement,” “memorandum of understanding,” “MOU”, “memorandum of agreement,” “MOA”, “lease,” “license,” “permit,” “letter of intent,” and even a letter, or any other similar written item indicating or implying a legally enforceable document, is deemed a “Contract” under this Policy if it describes an obligation of the University, either to do or not do something or to pay money. A purchase order is considered a Contract as it is intended to govern the obligations between the University and a vendor. A Contract can be in electronic form, as electronic signatures are permitted under certain circumstances and copies of fully executed agreements that are electronically transmitted can be considered legally binding. Any question as to whether a document should be considered a Contract should be referred to the University’s Office of General Counsel (OGC).
+
+“Counterparty” means any person or entity that is a party to a Contract with the University.
+
+“Deans” are defined at UH Mānoa as the Deans of (1) the College of Arts, Languages & Letters, (2) the School of Architecture, (3) the Shidler College of Business, (4) the College of Education, (5) the College of Engineering, (6) Hawaiʻinuiākea School of Hawaiian Knowledge, (7) College of Natural Sciences (8) Nancy Atmospera-Walch School of Nursing, (9) the Outreach College, (10) the College of Social Sciences (11) Thompson School of Social Work & Public Health, (12) College of Tropical Agriculture and Human Resources, (13) John A. Burns School of Medicine, (14) William S. Richardson School of Law, (15) Graduate Division, (16) School of Ocean and Earth Science and Technology. As defined in this Policy, the University Librarian is also included in this group as well as the Directors of (1) the UH Cancer Center, (2) Waikiki Aquarium, (3) Lyon Arboretum, (4) Institute for Astronomy, and (5) Athletics. The term “Deans” does not include deans other than those listed above, Center directors, or assistant or associate deans, assistant or associate directors, or assistant or associate vice chancellors.
+
+“Fiscal Administrators” and “Assistant Fiscal Administrators” refer to that group or class of persons who perform the business and fiscal administration functions for a particular University unit and are subject to specified purchasing authority and purchasing dollar limits. The appropriate Vice Chancellor for Administration/Chancellor/UH Mānoa Provost/UH Mānoa Chief Business Officer/Vice President shall approve Fiscal Administrator appointments and requests for delegation of purchasing authority and purchasing dollar limits.
+
+“Officers” mean all persons defined as officers of the University pursuant to Board of Regents Policy RP 2.201.
+
+“Significant Commitment” is an obligation that meets any one of the following criteria:
+
+Board of Regents action. Board of Regents’ approval is required (see table in Appendix 1).International/out of state operations. Involves international or out of state operations or establishment of a University office or corporation, joint venture or partnership in a foreign country (other than study abroad or individual, intermittent faculty research). Multi-Campus Agreement. Involves more than a single campus of the University in an agreement. “Multi-Campus Agreement” does not refer to an agreement between campuses or different offices of the University. Potential controversy. Has the potential to generate significant internal or external publicity or controversy. Potential significant liability. Has the potential to result in unusual or significant risk or liability. Formation of a joint venture, subsidiary, or partnership. Involves forming a joint venture, subsidiary or formal partnership of any kind with another entity, profit or non-profit, including academic affiliations (except those limited to medical resident or medical/nursing student placements or routine student exchanges). Substantial gift. Creates a gift or pledge of at least $1 million or the donor is a Regent, but not including reoccurring or smaller gifts such as donor society memberships and benefit sponsorships. Significant expenditure. Involves a significant expenditure of funds or one that is otherwise unusual in terms of the relevant budget – an expenditure of $1 million or more in one year under a Contract is presumed to be significant, although lesser sums in context may also qualify as significant. For example, in a school or division with an annual budget of $9 million, a non-recurring expenditure of $900,000 would be considered a significant expenditure. This example is intended as a guide, not to be a rigid 10%-of-budget rule.
+
+"Template Agreement(s)" are written form agreements that have been approved by OGC for a specific purpose. Any material changes to a Template Agreement, or using a Template Agreement for other than its specified purpose, requires OGC approval.
+
+“University” includes the University of Hawaiʻi and all of its constituent campuses, colleges, departments, institutes, centers, and units.
+
+   III. Executive Policy
+
+A. Requirements for All Contracts
+1. Requisite Authority and Delegations of Authority
+a. Requisite Authority
+
+Existing board and executive policies and administrative procedures identify proper approval and signing authority for different kinds of contracts. Appendix 1 identifies by category of contract those policies and procedures currently in existence, and who must approve and sign various types of common obligations or contracts (except in cases of unavailability, when any University Officer may sign.) An exception to this exists as to the Community College Chancellors as noted in Section III.A.1.(b)(3) below.
+
+Others may not sign unless they are University Officers or unless they have been delegated authority elsewhere in this Policy or other University board or executive policy or administrative procedure, or in a written document on file with OGC. A listing of the delegations of authority on file with OGC is available to current University employees and students, and can be accessed at: http://www.hawaii.edu/offices/legal/contractspolicy/appendices. The table also identifies the appropriate review and approval process required for each type of Contract before signature. If a Contract does not appear on the table, consult OGC to determine the appropriate review and approval process.
+
+Faculty, staff, students, consultants, and independent contractors do not have authority to sign Contracts that bind the University.
+
+Signing a Contract on behalf of the University is an important responsibility and should be done only by someone with the proper authority and an understanding of the obligations being undertaken. A person who signs a Contract on behalf of the University knowing he/she lacks authority or in reckless disregard of obtaining proper authority, will be in violation of this Policy. In addition, a person who signs without authority in some cases may even be personally liable for the obligations, debts and risks under that Contract, including any payment obligations. The University will not be bound by the terms of a Contract signed by an individual without authority unless the University, through an Officer of the University with authority to commit a sufficient amount of available funding to meet the Contract obligations, subsequently agrees that the University will honor the Contract.
+
+b. Delegation of Authority
+(1) The President
+
+The President of the University must be informed in advance about all Significant Commitments, before any Significant Commitment is confirmed. Contracts containing Significant Commitments must be: (a) reviewed and signed by an Officer of the University or as otherwise authorized by the President and (b) reviewed by OGC.
+
+(2)  Officers
+
+Generally, as noted in Appendix 1, Officers have authority to approve and sign Contracts except those reserved to the President and the Board of Regents. The President also may delegate authority to University employees other than Officers to sign Contracts on behalf of the University. It is expected that Officers and other authorized University signatories will only sign Contracts within their general areas of authority, except in cases of unavailability.
+
+(3) Community College Chancellors
+
+Authority to sign contracts for the community colleges has been delegated to the Vice President for Community Colleges. The Vice President for Community Colleges will delegate as appropriate the signing authority for the community colleges to the community college chancellors. These delegations will be given in the manner specified in subparagraph (7) below, and these delegations supersede the authority given to community college chancellors where “chancellor” is mentioned in Appendix 1.
+
+(4) Deans
+
+Deans have authority to approve and sign Contracts that:
+
+Impact program only. Impact solely the programs and budgets they oversee; and Fall within expenditure threshold. Involve total expenditures (including any renewal or option terms) that do not exceed $25,000, except for Letters of Hire and Offer Letters that comply with Section III.B.4.e. of this Policy; andNo central system impact. Do not affect central systems or budgets, or those of other divisions or units of the University, e.g., do not affect facilities, position counts of other units; andNo unusual risk or liability. Do not contain terms that could result in unusual risk or liability for the University such as and only by way of example: (a) requiring insurance in excess of normal University policies (see Appendix 2) or (b) obligating the University for more than five years in the future.
+
+This section of the Contracts Policy does not modify nor affect the delegation of signing authority as provided by other Executive Policies with respect to the University’s procurement of goods, services and/or construction.
+
+(5) Fiscal Administrators/Assistant Fiscal Administrators
+
+Generally, as noted in Appendix 1, Fiscal Administrators and Assistant Fiscal Administrators have authority to approve and sign Contracts for procuring goods, services, and construction within the limits of their delegated purchasing authority.
+
+(6) Department Chair, Unit Head, Administrators and Individual Faculty Members
+(a) Department Chair/Unit Head. The Department Chair or head of the Unit whose budget will bear an expense does not have authority to sign Contracts by virtue of the budgetary effect alone. Contracts can be signed only by the administrators who are named elsewhere in this Policy or by administrators who have been delegated authority to sign that kind of Contract by a delegation on file with Office of General Counsel. A listing of the delegations of authority on file with OGC is available to current University employees and students, and can be accessed at: http://www.hawaii.edu/offices/legal/contractspolicy/appendices.
+
+ (b) Faculty Members. While individual faculty members may be essential to the existence of certain Contracts, they do not have authority to sign Contracts that bind the University.
+
+ (c) Exception. At UH Mānoa in the Office of the Vice Provost for Student Success (OVPSS), an exception to subparagraphs (6)(a) and (6)(b) above exist for faculty who are hired as faculty directors that lead specific units within OVPSS. These faculty directors have signing authority with the same limits as the UH Mānoa deans.
+(7) Further Delegation
+
+Those who are authorized by policy or procedure to approve and sign Contracts may further delegate their authority, provided that such authority to delegate is described in a policy or procedure other than this EP 8.200. Delegation must be in writing and specifically limited by agreement type and dollar amount. (See Appendix 3 for Sample Delegation Document). A person to whom authority is delegated cannot then further delegate that authority to another, without the written approval of the person who made the original delegation. The person who delegates authority retains responsibility for the actions of the person to whom authority is delegated.
+
+A copy of all delegations, re-delegations, or revocation of delegations of authority to approve and sign Contracts must be kept by the Administration of respective campuses, and if executed at the System level, a copy must be sent to OGC to be effective and honored by the University. A listing of the delegations of authority on file with OGC is available to current University employees and students, and can be accessed at: http://www.hawaii.edu/offices/legal/contractspolicy/appendices.
+
+Copies of delegations that are temporary or personal, e.g., delegation only while delegator is out of the office on travel, do not have to be sent to and acknowledged by OGC to be effective. This includes delegations that are less than 2 months in duration.
+
+2. Due Diligence, Adherence to Policies, and Confirmation of Funding
+
+Employees who execute Contracts have the responsibility to personally, or assign appropriately experienced staff to: (a) review and understand the terms of the Contract, (b) verify that the business terms of the Contract are fair and reasonable to the University, (c) confirm that the Contract is processed in accordance with this Policy and the normal business practices and policies of the University relating to initiating a business relationship or transaction, including adherence to applicable procurement requirements, (d) confirm the counterparty business registration and signatory authority (see Section III.D. Execution of the Contract), and (e) confirm the availability and commitment of sufficient funding to meet the University's obligations set forth in the Contract.1
+
+3. Prohibition Against Conflicts of Interest
+
+In addition, under Hawaiʻi law2 and the University’s policies on conflict of interest,3 a University employee who has a conflict of interest with respect to any given Contract does not have authority to sign the Contract and should not be involved in the negotiation of or approval process with respect to the Contract. This applies whether the subject of the Contract is commercial or academic.
+
+4. Requirement of a Written Agreement
+
+All University Contracts must be in writing, which may include electronic (but not email) form. No contract will bind the University unless in writing and signed in accordance with this Policy. This Policy applies equally to amendments and terminations of Contracts.
+
+B. Contracts Review Process
+
+The Contracts Review Process set forth in this Section III.B. applies to all Contracts that are not already subject to review pursuant to a separate policy or procedure. Examples of Contracts excluded from this Contracts Review Process (shown also in Appendix 1) include the following:
+
+Collective bargaining agreements;Procurement-related Contracts that already undergo review by the University’s Office of Procurement (OPM), except for contracts relating to information technology commitments (as described in Section III.B.4.f.) and contracts relating to data commitments (as described in Section III.B.4.g.); Contracts that are reviewed and processed through RCUH unless RCUH is entering into a Contract with the University; andResearch-related agreements that are processed by the Office of the Vice President for Research and Innovation, such as sponsored and unsponsored (non-funded) research agreements, material transfer agreements, confidentiality and non-disclosure agreements in anticipation of collaborative research, or technology transfer agreements such as patent licenses.
+
+If there are particular aspects of these agreements that involve significant commitments or carry inherent risks, the unit designated as the primary reviewer may seek additional review or guidance.
+
+1. Review By Office of General Counsel
+
+The following Contracts require OGC review before they can be signed, except if Template Agreements are used:
+
+Use of University Facilities by outsiders;Real estate (including but not limited to leases, easements, purchase/sale, and licenses); Employment Contracts for coaches and senior administrators; Endorsements of products/services; Contracts involving Significant Commitments; Settlements; andFinancing contracts/commitments, including bonds, loans and guarantees.
+
+Except for the types of Contracts listed above, OGC review is not required for Contracts involving expenditures (including any renewal or option terms) that do not exceed $25,000, whether it is over a single year or multiple years.
+
+OGC review is not required if a Template Agreement is used for the purpose specified and no substantive deviations or changes are made to the form template. If substantive deviations or changes are proposed, OGC review will be required for those changes only.
+
+In general, OGC review is limited to assessing the legality of each Contract and the terms affecting such assessment. It does not usually include a review and evaluation of the business terms or whether the University should enter into the Contract based on such business terms, with the University signatories remaining ultimately responsible for such decisions. The University unit which desires to enter into the Contract or which is responsible for initiating or implementing the Contract, has the primary responsibility to negotiate and review the overall Contract to make sure that it is in the best business interests of the University and consistent with University policies, including this Policy, to ensure that a risk analysis has been performed and any identified risks mitigated, and to confirm the counterparty business registration and signatory authority.
+
+Contracts can include terms that may seem innocuous or insignificant to the University units, but may be legally important. All personnel are encouraged to consult with the OGC if they have any questions about this Policy, the Contract Review Process, a Contract, and/or the interpretation of any provisions within a Contract.
+
+Use of standard University Contract terms (see Section III.C.) and Template Agreements will expedite Contract execution, including when necessary, OGC review. Contracts under $25,000 do not require OGC's review unless there are specific questions that require legal consultation, and any legal service request seeking OGC review of a Contract under $25,000 should be accompanied by a completed checklist found in Appendix 11. If units identify inconsistencies between the Contract language proposed by counterparties and this Policy, e.g., regarding indemnification, the unit should begin to negotiate with the counterparty to resolve those inconsistencies in the University’s favor to the greatest extent possible, prior to or during OGC's review of the Contract. If the inconsistencies cannot be resolved then units should seek higher campus level authorization for answers to policy questions, appropriate risk tolerance, or business decisions.
+
+2. Early Reviews of Significant Commitments By Administration
+
+Anyone that initiates or becomes involved in a potential Significant Commitment on behalf of the University should report the Significant Commitment to appropriate University Officers and/or top campus administration officials even before a memorandum of understanding, letter of intent, or a Contract is prepared.
+
+3. Review of Insurance Terms
+a. Contracts Requiring Proof of Other Party Insurance
+
+The University has standard insurance requirements that generally apply to other entities doing business with the University (see Appendix 2). If the counterparty(ies) cannot or will not meet University’s insurance requirements, consideration should be given to selecting another alternative. Waivers of or changes to the standard insurance requirements must be approved by the office authorized to sign the particular Contract and the University’s Office of Risk Management (ORM), with input from OGC.
+
+b. Contracts Requiring Proof of University Insurance
+
+Contracts often require the University to maintain and show proof of certain types and amounts of insurance coverage. In general, the University does not purchase insurance to cover the University’s performance under the Contracts. The University is considered a “self-insured” entity and certificates to this effect may be obtained from the State of Hawaiʻi’s risk management office. Please consult with ORM with respect to obtaining such certificates.
+
+Some Contracts also require the other party to be named as “additional insured” under University insurance policies. In virtually all situations, naming the counterparty(ies) as additional insured under any University insurance policy will not be feasible or possible. Appendix 2 describes the representations that can be made in a Contract about the University’s insurance coverage, without further review by OGC. Contracts that require the University to provide insurance of different types or specific amounts must be reviewed by ORM, with input from OGC, who may recommend approval by appropriate Officers.
+
+4. Priority Agreements
+
+The University believes that certain Contracts carry inherent risk such that additional scrutiny and controls are warranted. For purposes of this Policy, these Contracts are referred to as “Priority Agreements.” Priority Agreements must be signed by a UH Officer or by a delegated authority in accordance with this Policy. The following are “Priority Agreements.”
+
+a. Affiliation/Student Field Experience Agreements 
+
+The University enters into numerous affiliation agreements, the purpose of which is to make available to students a broad range of short-term field and clinical experience opportunities.
+
+Appendix 4 contains eleven (11) affiliation agreement templates:
+
+Four (4) Outbound Affiliation Agreement (Healthcare Facilities) templates. These templates should be used when placing University students in third-party facilities for a clinical experience, rotation, clerkship or internship in health-related services or care, (e.g., medicine, nursing, dental, mental health, counseling, athletic training). There are four (4) types of Outbound Affiliation Agreement (Healthcare Facilities) templates depending on the nature of the third-party facility (private, state, county, federal).
+Four (4) Outbound Affiliation Agreement (Educational Fieldwork Experience) templates. These templates are for limited use in placing University students in practicum settings that are low risk and that do not involve students providing health-related services or care. There are four (4) types of Outbound Affiliation Agreement (Educational Fieldwork Experience) templates depending on the nature of the third-party facility (private, state, county, federal).
+Two (2) Inbound Affiliation Agreement (Educational Fieldwork Experience) templates. These templates are for limited use in placing students from another academic institution in a University unit for practicum settings that are low risk and that do not involve students providing health-related services or care. There are two (2) types of Inbound Affiliation Agreement (Educational Fieldwork Experience) templates depending on the nature of the participating student’s home institution (private, state).
+ One (1) Inbound Affiliation Agreement (Health-related Services) template. This template is for limited use in placing students from another academic institution in a University unit for a clinical experience, rotation, clerkship or internship in health-related services or care, (e.g., medicine, nursing, dental, mental health, counseling, athletic training).
+
+If the template agreements are completed without any material changes, they need not be submitted to
+OGC for review. Any material changes to the template agreements require OGC review before execution.
+
+Appendix 4 also includes a template for authorization and consent for disclosure of personal information for students participating in an educational fieldwork or clinical experience under an affiliation agreement. All students participating in an educational fieldwork or clinical experience through the University (including University students participating in an educational fieldwork or clinical experience at a third-party facility and non-University students participating in an educational fieldwork or clinical experience at a University facility) will be required to sign an authorization and consent form.
+
+b. Facilities Use Agreements
+
+Each campus of the University enters into numerous facilities use agreements granting permission to use or rent University facilities for a broad range of functions. Appendix 5 contains nine (9) standard facilities use agreement templates:
+
+two (short form and long form) for UH affiliated users,two (short form and long form) for non-UH userstwo (short form and long form) for State of Hawaiʻi government userstwo (short form and long form( for Federal government usersone (1) for non-UH users engaged in filming activities
+Appendix 13 (Guidelines regarding UH users and Non-UH Users) sets forth guidelines and factors for determining whether a prospective user is a UH user or a non-UH user.
+
+Unless a prospective user is able to show that it is officially affiliated with the University or a State of Hawaiʻi government entity, the non-UH user facilities use agreement templates should be used. UH affiliated users include (i) the Board of Regents or a UH System chartered organization; (ii) registered student, faculty, or staff organizations; (iii) UH Campus chartered organizations; (iv) University of Hawaiʻi Foundation; (v) ʻAhahui Koa Ānuenue; (vi) University Clinical, Education, and Research Associates dba University Health Partners of Hawaiʻi; and (vii) Hawaiʻi State Cancer Consortium. RCUH should use the template for State of Hawaiʻi government users.
+
+Facilities use agreements should be used when the use of University property/facilities by a non-UH user is a one-time, sporadic, occasional, or periodic use, i.e., less than 30 consecutive days or 30 days per fiscal or calendar year. If the contemplated use exceeds these timeframes, use and occupancy agreements, right of entry agreements, leases or other similar rental agreements should be used (see Section III.B.7.). All of these agreements allowing entry onto and/or use and occupancy of University owned, leased, or controlled property are considered real property documents and are covered by Board of Regents Policy RP 10.201. Real property agreements at least require the approval of the Vice President for Budget and Finance or his/her designee, if not the President or the Board, as well as the approval of the Office of the Vice President for Legal Affairs and University General Counsel as to form.
+
+If the template facilities use agreements are completed without any material changes, they need not be submitted to OGC for review prior to execution. Any material changes to the template agreements require OGC review before execution.
+
+(1) Long and Short Form Agreements in General
+
+Both long and short form agreements require consideration of use of appropriate waiver and release forms in connection with the activities or events conducted on University property/facilities. See template facilities use agreements and Section III.B.6.a. (Waiver and Release Forms) below for descriptions and samples of waiver and release forms.
+
+The long form agreement templates should be used when: (a) expected attendance is more than 200 people, (b) the time of use is more than seven (7) days, or (c) the rental or use fee is greater than $5,000. Conversely, the short form agreement templates should be used when: (a) expected attendance is 200 people or fewer, (b) the time of use is (7) seven days or fewer, and (c) the rental or use fee is $5,000 or less.
+
+To the extent that any changes are sought to the standard insurance provisions in any of the long form facilities use agreements, approval must be obtained from ORM.
+
+Both long form facilities use agreements contain: (a) a requirement to obtain pollution liability insurance unless the UH Campus determines that hazardous materials will not be used in connection with the event and (b) optional provisions which specify the conditions under which food and alcohol may be served at the event.
+
+The long form agreement for non-UH users also contain the following optional provisions:
+
+ (a) Optional fees/charges. Charge the non-UH user: (1) a percentage of the gross revenues received by the non-UH user for the event, i.e., participation fee, and/or (2) a ticketing fee if the University would like to require the non-UH user to use the University’s ticketing system for the event.
+
+(b) Guarantor. Require the non-UH user to have another person or entity commit to guarantee that the non-UH user will perform and complete its obligations under the facilities use agreement. A guarantor is required when: (1) expected attendance is more than 500 people, (2) time of use exceeds fourteen (14) days, or (3) the Rental Fee exceeds $50,000.
+
+Both short form facilities use agreements contain provisions that the University may elect to include, such as provisions under which: (i) food and alcohol may be served at the event and (ii) standard insurance coverage could be required. In addition, if the UH Campus determines that hazardous materials may or could be used in connection with the event, the University could elect to require the user to comply with certain standard hazardous materials provisions, including obtaining pollution liability insurance.
+
+(2) State of Hawai’i Government Users
+
+The facilities use agreement templates (long and short form) for State of Hawaiʻi government users should be used when the non-UH user is any of the State of Hawaiʻi government entities, including but not limited to, the RCUH, the Department of Education (including individual public schools and/or complexes), the Hawaiʻi Community Development Authority, and the Office of Hawaiian Affairs.
+
+The primary differences with the State government user facilities use agreement template include: (1) replacing the indemnity requirement with the standard State of Hawaiʻi responsibility obligation and (2) allowing the State to satisfy the insurance requirement through its self-insurance program.
+
+(3) Federal Government Users
+
+The facilities use agreement templates (long and short form) for federal government users should be used when the non-UH user is an office, agency or bureau of a United States federal government entity, such as the Natural Resources Conservation Service or the National Oceanic and Atmospheric Administration.
+
+The primary differences with the federal government user facilities use agreement template include: (1) replacing the indemnity requirement with a statement on the federal government user’s liability under the United States Federal Tort Claims Act, (2) allowing the federal government user to satisfy the insurance requirement through a Proof of Insurance and Liability of the Government certificate, and (3) an acknowledgement that the federal government user’s obligation to perform, make payments and/or assume liability under the agreement is subject to funds being properly appropriated for such purpose.
+
+(4) Facilities Use Agreement for Filiming
+
+A facilities use agreement for filming has been developed specifically for use when a non-UH user requests to use or rent University facilities to conduct filming activities, on either a commercial or not-for-profit basis. The facilities use agreement for filming is similar to the standard facilities use agreement templates, but includes provisions that grant the user the right to use and distribute photographs, video and sound recordings generated by its filming activities on University facilities under certain conditions.
+
+c. International Agreements.
+
+The additional review and signing authority requirements set forth in this Section III.B.4.c. applies to all international agreements that are not already reviewed pursuant to a separate policy or procedure, namely (1) those research agreements processed in accordance with EP 12.102, Authority to Sign and Execute Extramural Research and Training Contracts/Grants, Agreements and Contract Assignments and Releases, and (2) agreements with foreign entities for the procurement of goods and/or services that are reviewed by OPM. In other words, agreements reviewed by the Office of the Vice President for Research and Innovation, the Office of Research Services or OPM do not need to follow this section of the Contracts Policy since those agreements are already subject to review pursuant to a separate policy or procedure.
+
+Because of the unusual compliance and risk issues associated with transactions involving a foreign party, all international agreements under the purview of this Policy section (i) must be reviewed by the appropriate campus and System offices as specified below, (ii) screened by the Office of Export Controls ("OEC") for export control concerns, and (iii) signed on behalf of the University by the President or designee. A copy of the fully executed international agreement must be sent to the Office of the Vice President for Academic Strategy ("OVPAS").
+
+Early Campus Internal Vetting. Each campus must have an internal vetting process for international agreements in which there are early reviews of the draft agreement by the campus Provost and/or Vice Provost (in the case of UH Mānoa) or Chancellor or Vice Chancellor Offices, and other appropriate campus, college and/or department offices as determined by each campus. These reviews must be completed and any issues identified addressed prior to the forwarding of these agreements to the other System Offices for review.
+
+Accreditation. At the earliest stage of discussions concerning an initiative involving a foreign party, the campus must determine how the initiative could impact its U.S. accreditation and whether the initiative will trigger the requirement of notices to or requests for approval from the accrediting body. To ensure all parties involved in the negotiation have realistic expectations about the timing and nature of the collaboration, the campus should be very clear with the foreign party about U.S. accreditation requirements.
+
+Physical Presence. Where a draft agreement requires that an office, other physical presence, or operations will be maintained by or on behalf of the University in other countries, whether by University employees or agents, the draft should be reviewed as early as possible by campus administration, including the UH Mānoa Provost or Chancellor, as applicable, as well as President and appropriate Vice Presidents. OGC must review all international agreements that send UH employees to work in another country as part of their UH work.
+
+Additional contracting terms. When contracting with foreign entities to conduct research or academic programs abroad, the University may require in the agreement that the foreign party make various certifications and representations regarding its compliance with applicable law and regulations, including federal sponsor terms and conditions where applicable, trade controls, and anti-corruption laws.
+
+Participant Waivers. Given the potential risks to personal health and safety associated with out-of-state, international, and overseas travel and residence in another state, territory, or foreign country, consideration should be given to using student participation agreements that include an assumption of risk, consent, waiver, release, and indemnity. Two (2) template participation, waiver and release forms for students participating in an out-of-state or international exchange or study abroad program are found in Appendix 6, one for use by University students participating in an out-of-state or international exchange or study abroad program (outbound students), and the other for students from out-of-state or international institutions who will be participating in an international exchange program at a University campus (inbound students).
+
+UHM Study Abroad Center. At UH Mānoa, any UH Mānoa credit course that is offered abroad must also be reviewed and recommended for approval by the Council on Study Abroad (the policy advisory body of the UHM Study Abroad Center). The Study Abroad Center has been identified as the UH Mānoa unit that specializes in minimizing the risk and liability to the University, e.g., health, safety and security, while delivering academic programs to the University’s students at overseas locations. The Study Abroad Center also provides training to faculty members in health, safety, risk, and liability areas as well as conducts pre-departure cross-cultural training for UHM students.
+
+Individual students or faculty intermittent travel contracts are outside the scope of this Policy.
+
+Appendix 6 contains the following international agreement templates:
+
+Memorandum of Understanding for Cooperation and Exchange (MOU). The MOU should be used for establishing a broad context and intent for inter-institutional cooperation through the exchange of faculty, scholars, students, academic information and materials.
+Service Agreement. The Service Agreement should be used for retaining the services of an international representative to provide information about educational opportunities at a University campus and to recruit prospective international students to attend a University campus or program.
+Memorandum of Agreement (Customized Programs). The Memorandum of Agreement should be used to formalize an arrangement where a University campus, college, school, department or unit plans, implements and/or coordinates a customized, short-term, non-credit program for a group of international students or professionals.
+Memorandum of Agreement (Student Exchange). The Memorandum of Agreement should be used to formalize an arrangement where a University campus and another institution agree to an exchange of students.
+Memorandum of Agreement (3+2 Program). The Memorandum of Agreement should be used to formalize an arrangement between a University campus and an institution in China where students pursuing a bachelor’s degree at the Chinese institution may have an opportunity for an early start in pursuing a master’s degree at the University campus. 
+Transfer and Articulation Agreement (2+2 Program). The Transfer and Articulation Agreement should be used to formalize an arrangement between a University campus and a foreign institution where students who complete the prescribed course of study at the foreign institution may be eligible for acceptance to a bachelor’s degree program at the University campus.
+Memorandum of Agreement for UHCCs (Student, Faculty, Scholar, Staff and/or Administrator Exchange). The Memorandum of Agreement should be used to formalize an arrangement where the UH Community Colleges system office or an individual UH Community College campus and another institution agree to an exchange of students, faculty, scholars, staff and/or administrators.
+ Memorandum of Agreement (International Visiting Students). The Memorandum of Agreement should be used to formalize an arrangement where qualified, non-degree seeking visiting students from a foreign institution may take courses at a University campus for one or two semesters at a special tuition rate with the intent of fulfilling some of the visiting students’ degree requirements at their home institution and/or earning an academic certificate or other qualification from the University campus (when available).
+Participation, Assumption of Risk, Consent, Waiver, Release and Indemnity Agreement (Outbound Students). Consideration should be given to using the Participation, Assumption of Risk, Consent, Waiver, Release and Indemnity Agreement for University students participating in an out-of-state or international exchange or study abroad program.
+ Participation, Assumption of Risk, Consent, Waiver, Release and Indemnity Agreement (Inbound Students). A Participation, Assumption of Risk, Consent, Waiver, Release and Indemnity Agreement for Inbound Students should be required of students from out-of-state or international institutions who will be participating in an international exchange program at a University campus.
+
+If a University template agreement in Appendix 6 is used without any material changes, no further OGC review is required. Any material deviations or changes require OGC review before execution.
+
+d. Minors on Campus 
+
+Colleges and schools of each campus of the University host and are part of programs that involve minors. The University as a post-secondary institution is generally geared to working with students aged 18 and older. Thus, special attention needs to be given to arrangements and agreements that involve minors. Thus, these agreements must be reviewed by OVPAS and OGC, and must be signed by the President as the chief executive officer of UH Mānoa , Chancellor of the other 4-year University campuses, or the Vice President for Community Colleges, as applicable, or their respective designees, and the student affairs office of the appropriate campus. The agreements must also comply with Executive Policy EP 2.202, Safety and Protection of Minors, and Administrative Procedure AP 2.202, Background Check Process for University Community Members and Non-UH Volunteers.
+
+In agreements that have minors dually enrolled as students in a University program and a K-12 school, e.g. Early College, there should be provisions that delineate the responsibilities of each institution in the event that the dually enrolled student or employee in the joint program violates either institution’s policies. Appendix 16 contains a recommended sample provision.
+
+(1) Waiver and Release Forms
+
+Consideration should be given to using parental/guardian waiver and release forms in connection with events involving minors. See Section III.B.6.a. (Waiver and Release Forms) below for descriptions and samples of waiver and release forms.
+
+(2) Screening of Employees 
+
+Consideration should be given to further screening employees who will possibly work with minors. All University instructors who work directly with State of Hawaiʻi Department of Education (DOE) students through the Early College, Dual Credit, Running Start and other P-20 Programs shall be subject to DOE’s background check procedures.
+
+e. Letters of Hire for Employees
+
+Colleges and schools of each campus of the University issue numerous letters of hire. No other employment contracts are allowed unless they are specifically provided for and in compliance with applicable University policies and procedures.
+
+(1) Offer Letter Templates
+
+The University System Office of Human Resources has developed Offer Letter Templates that can be used and/or adapted to fit most employment situations, found in Appendix 8. The intent is to streamline and expedite the processing of offer letters in part by exempting from further review the use of templates that do not deviate from or change the template terms and are in compliance with the University’s policies on compensation and hiring.
+
+(2) Authority to Approve and Execute Letters of Hire
+
+Any deviations or changes to the Offer Letter Templates and the University’s policies must be reviewed and approved by the appropriate Vice Chancellor, or UH Mānoa Vice Provost, or if at the System, by the Director of the Office of Human Resources. Any Letters of Hire or offer letters that do not conform to the following conditions must be reviewed and approved by the appropriate Vice Chancellor, or UH Mānoa Vice Provost or if at the System, by the Vice President for Administration.
+
+(3) Mandatory Conditions for Letters of Hire
+
+Letters of Hire must comply with the following:
+
+ 1) Program-only impact. Impact solely the programs and budgets overseen by the issuer of the Letter of Hire;
+
+2) No central system impact. Do not affect central systems or budgets, or those of other divisions or units of the University, e.g., do not affect facilities or involve alteration to existing space or creation of new space, and position counts of other units, unless prior approval has been obtained from the appropriate Chancellor or Vice Chancellor, UH Mānoa Provost or Vice Provost, and Vice President (or VP’s respective designee);
+
+3) No unusual risk or liability. Do not contain terms that could result in unusual risk or substantial liability for the University. ORM should be consulted with if any questions arise regarding the nature of the risk or liability.
+
+4) Conforming employee workload. Involve faculty workload or staff assignments that are in conformance with the collective bargaining agreements, University policies, and the policy of the specific University unit.
+
+5) No start-up costs or special arrangements. For UH Mānoa, letters of hire shall not include: (a) “Start-up Costs” (as defined below) in excess of $250,000, unless higher authority has been specifically approved by the Provost and appropriate Vice Provost, or (b) other special arrangements, e.g., reduced teaching load beyond two years. Start-up Costs shall not be considered or treated as wages or as terms or conditions of employment or involving any other issue that might be covered by the collective bargaining agreement or otherwise require consultation with the relevant labor union.
+
+For UH West Oʻahu, UH Hilo and all Community Colleges, no Start-Up Costs will be included in any Letters of Hire, unless prior approval has been obtained from the (1) Chancellor of UH West Oʻahu for UH West Oʻahu letters; (2) Chancellor of UH Hilo for UH Hilo letters; and (3) Vice President for Community Colleges for any Community College letters.
+
+“Start-up Costs” are costs to the University beyond the normal salary for faculty to help them with their work. These costs can include but are not limited to funds for laboratory supplies, equipment, support staff, facilities, laboratory space, office space, computers and software, travel support and submission and publication fees. Support staff can include administrative/clerical support, students and postdocs.
+
+(4) Conditions for Accepted Letters of Hire
+
+Letters of Hire involving an employee in Bargaining Unit 07 must comply with Article III, Conditions of Service, Paragraph I, Letters of Hire, of the 2021-2025 Unit 7 Agreement.
+
+f. Information Technology Purchases
+
+The Office of the Vice President for Information Technology and/or Chief Information Officer (“OVPIT/CIO”) is required to review and approve the following types of proposed contracts and transactions, in accordance with the processes described below:
+
+(1) Purchases of electronic equipment, hardware, software, and related services.:
+
+ (a) Proposed contracts (including purchase orders) relating to the purchase of electronic equipment, hardware, software, and/or related services that either exceeds $25,000 in the aggregate, whether it is over a single year or multiple years; or
+
+(b) Electronic equipment or hardware that will be connected to the UH network, regardless of the dollar value. This includes, but is not limited to, servers, desktop computers, laptops, printers, smart TVs, video cameras, or other Internet connected devices that has the potential to be remotely accessed.
+
+These purchases must be processed through the “Request OVPIT approval for IT procurement” form available at: https://www.hawaii.edu/its/support-tools/.
+
+This OVPIT/CIO process is separate and apart from and in addition to the OPM review process. Any questions regarding the process or variations from standard contracting practices should be referred to the appropriate unit fiscal administrator, OPM or OGC.
+
+Contracts that involve integration with centrally-managed University information systems, and/or transmission of Protected Data over the University’s centrally managed network infrastructure are managed by a different process (see Section III.B.4.g. below).
+(2) Software/subscriptions between $2,500-$25,000. Purchases of software/subscriptions in this dollar range that do not involve Protected Data (see definition in Section III.B.4.g. below) are not subject to any OVPIT/CIO process. Requesting units should work with their fiscal authorities to modify or remove noncompliant or unfavorable procurement terms.
+
+(3) Shrink-wrapped software/subscriptions (less than $2,500). Small purchase transactions (P-card) relating to the purchase of “shrink-wrapped” software and software subscriptions that:
+
+ (a) do not exceed $2,500 in the aggregate, whether it is over a single year or multiple years; and
+
+(b) contain “click-to-accept” terms required by the vendor during the purchase process and do not allow for modification by the University; and
+
+(c) contain terms that are inconsistent with this Policy, e.g., regarding indemnification, governing law and jurisdiction.
+
+These purchases must be processed through the “Request OVPIT  approval for non-compliant terms (shrinkwrap terms) waiver” available at: https://www.hawaii.edu/its/support-tools/.
+
+Requesting units are generally required to attempt negotiations with the vendor to modify or remove inconsistent terms prior to submitting a request for the review and approval of OVPIT/CIO. Agreements that require signatures should not be run through the shrink-wrapped software/subscriptions process. Requesting units should work with their fiscal authorities to negotiate terms before signing.
+
+g. Data Commitments Involving Software and/or Services
+
+The UH System Data Governance Office (“DGO”) reviews proposed contracts for software and/or services from parties outside of the University that involve the collection, management, sharing, exchange, use and/or release of Protected Data (as defined below), regardless of the dollar value of the contract. This review process applies to software and services being purchased for both institutional (academic and administrative) purposes and research projects, regardless of dollar value of the contract. Software to which this Policy applies includes, without limitation, software that is hosted on a UH server or a non-UH server. Services to which this Policy applies includes, without limitation, outsourced institutional functions, education-related studies, and cloud-related services.
+
+“Protected Data” refers to data subject to privacy and/or security considerations, i.e., data that is not public. This includes Restricted, Sensitive, and Regulated data as defined by Executive Policy EP 2.214, Institutional Data Classification Categories and Information Security Guidelines.
+
+Additionally, any contracts for information technology products or services, including cloud-based applications that require integration with any centrally-managed UH information system, such as Banner, Peoplesoft, and the Kuali Financial System are subject to this provision. This includes, without limitation, any type of data activity involving UH information systems.
+
+The following table summarizes the types of contracts reviewed by DGO and the signature authorities for those software and service contracts. Other types of agreements are also reviewed by DGO but are outside the scope of this section. For more information, go to https://datagov.intranet.hawaii.edu/dgp/
+
+Type of software and/or services involving Protected DataWhere to submitWho signs
+Purchases or service contracts
+DGO via Data Governance Process available at https://datagov.intranet.hawaii.edu/dgp/
+OVPIT
+Services with educational institutions or national education related non-profit organizations 
+DGO via Data Governance Process available at https://datagov.intranet.hawaii.edu/dgp/ 
+OVPAS 
+
+In approving any of the foregoing contracts, OVPIT and/or UH DGO may require the inclusion of appropriate contractual provisions, including, without limitation, all or a portion of the sample provisions contained in Appendix 9A (Data Sharing Protections and Requirements for Identified Data) and Appendix 9B (Data Sharing Protections and Requirements for De-Identified Data).
+
+The review and approval process in this Section III.B.4.g. should be done concurrently with the OPM and OGC review process (when applicable).
+
+5. Records 
+
+Contracts as defined in this Policy are University records. Retention of contract documents, including keeping the original signed Contract, should follow EP 2.216 Institutional Records Management and Electronic Approvals/Signatures and AP 8.450 Records Management.
+
+6. Template Agreements
+
+In addition to the Template Agreements attached as Appendices 4, 5, 6 and 8, the following templates have been approved by OGC:
+
+a. Waiver and Release Forms
+Appendix 7 contains the following waiver and release templates for use in connection with the types of events and activities described below. These waiver and release forms supersede and replace the waiver and release forms contained in AP 8.400.
+
+University-Sponsored One-Time Events. Template waiver and release forms appropriate for adults (aged 18 years or older) (Appendix 7) and minors (aged 17 years or younger) (Appendix 7A) participating in one-time events sponsored by a University unit, irrespective of whether such events take place on or off University-owned or controlled property. The waiver and release forms contained in Appendices 7 and 7A should be required of all participants (other than University employees participating in connection with their employment) for events that involve potentially or inherently hazardous and dangerous activities and/or conditions.
+Non-University Events. Template waiver and release forms appropriate for individual adults (aged 18 years or older) (Appendix 7B), individual minors (aged 17 years or younger) (Appendix 7C), multiple adults (aged 18 years or older) (Appendix 7D) and multiple minors (aged 17 years or younger) (Appendix 7E) participating in one-time events taking place on University-owned or controlled property and sponsored by a non-University entity. The waiver and release forms contained in Appendices 7B through 7E are intended for use in conjunction with events conducted pursuant to facilities use agreements (see Section III.B.4.b. above) in situations where (1) participants are required to register to attend the event and/or sign a waiver and release form due to the potentially or inherently hazardous and dangerous activities and/or conditions involved with the event, and (2) the University, in consultation with the sponsoring entity, elects to require the sponsoring entity to use the applicable waiver and release form contained in Appendices 7B through 7E.
+Online Learning Activities. Template authorization and release forms appropriate for adults (aged 18 years or older) (Appendix 7F) and minors (aged 17 years or younger) (Appendix 7G) participating in online learning activities sponsored by a University unit. The authorization and release forms contained in Appendices 7F and 7G should be required of all participants (other than University employees participating in connection with their employment) of online learning activities that involve class sessions and projects being photographed, video-recorded and/or audio-recorded for rebroadcast, retransmission or publication.
+Media Release Form. Template authorization and release form (Appendix 7H) for individuals (adults or minors) participating in activities conducted by a University unit or student that involve participants being photographed, video-recorded and/or audio-recorded for rebroadcast, retransmission or publication.
+b. Mutual Non-Disclosure Agreement
+
+The template Mutual Non-Disclosure Agreement (NDA) contained in Appendix 14 may be used when the University and a third party wish to exchange and protect confidential information to facilitate discussions and negotiations leading to possible collaborative research or other business arrangements, and where neither party pays a fee for the exchange and safeguarding of confidential information. The template includes optional acknowledgments for situations in which University principal investigator(s) and/or students will be provided access to the confidential information governed by an NDA.
+
+If the template NDA is used without any material changes, no further OGC review is required. Any material deviations or changes require OGC review before execution. A complex real property or commercial transaction may require a more involved NDA, and consultation with OGC is encouraged.
+
+c.  U.S. Transfer and Articulation Agreement
+
+The Transfer and Articulation Agreement contained in Appendix 17 should be used to formalize an arrangement between a University campus and another U.S. institution (“US Affiliate”) where US Affiliate students who successfully complete specified courses or a prescribed course of study at the US Affiliate will receive credit hours at the University campus and/or may be eligible for acceptance to a bachelor’s degree program at the University campus.
+
+7. Right of Entry and Use and Occupancy Agreement Templates
+
+The following real property agreement templates have been approved by OGC and included in Appendix 15 (Template Property Agreements). The Template Property Agreements are considered forms pre-approved by OGC consistent with the requirements contained in RP 10.201. Therefore, no “approved as to form” signature blocks for OGC are included on the Template Property Agreements.
+
+To the extent that there are any additional conditions or requirements, such conditions may be added as a separate Exhibit C (Special Conditions) to the applicable right of entry agreement or use and occupancy agreement. Such conditions could include designating specific access routes, limiting activities to certain hours, and implementing measures to protect or reduce any specific adverse impacts on facilities, significant campus features, utility systems or adjacent use areas (such as noise, dust, and vandalism and damage). Adding special conditions would require OGC review prior to submission to the Vice President for Budget and Finance/Chief Financial Officer (VPBF) or the Director of Strategic Development and Partnership (OSDP Director), as appropriate. OGC will insert an OGC approved as to form signature block for such Template Property Agreement.
+
+If a Template Property Agreement is used for its specified purpose without any material changes, no further OGC review is required. Such Template Property Agreement, however, must be signed by either the VPBF or the OSDP Director, as such authority has been delegated under Board of Regents Policy RP 10.201.
+
+a. Right of Entry Agreements for Non-Invasive/Investigative Work
+
+This set of templates provides a third party (usually consultants retained by a prospective developer or government entity interested in a specific project) the ability to enter University property to conduct limited non-invasive investigative/due diligence work:
+
+ (1) Consultant Non-Invasive Right of Entry Agreement.
+
+(2) State of Hawaii Government Non-Invasive Right of Entry Agreement.
+
+(3) County Government Non-Invasive Right of Entry Agreement.
+b. Use and Occupancy Agreements for Nearby Construction Projects
+
+This second set of templates authorizes a third party (usually a contractor or a government agency) to use and occupy University property to support nearby construction projects. Examples of such uses are to access the project construction area, store construction materials, dry out dredged sludge, and park/stage vehicles and equipment:
+
+ (1) Private Party Construction Support Use and Occupancy Agreement.
+
+(2) State of Hawaii Government Construction Support Use and Occupancy Agreement.
+
+(3) County Government Construction Support Use and Occupancy Agreement.
+C. Specific Provisions in Contracts
+
+When preparing contracts involving the University as a party, there are a number of common legal issues that may need to be addressed. To assist you in your review of contract provisions, a contract issue checklist has been prepared and is attached as Appendix 11. The following section also provides guidelines for addressing some of these common legal issues. OGC may always be consulted on issues or concerns beyond the scope of this Policy and these guidelines, or when the third party rejects the University’s standard provisions or its Template Agreements.
+
+1. Proper Party.
+
+The University of Hawaiʻi is the State university and a body corporate of the State of Hawaiʻi. In all agreements involving the University of Hawaiʻi as a party, the University should be named as follows: “University of Hawaiʻi, the state university and body corporate of the State of Hawaiʻi.” The University of Hawaiʻi is the only legal entity that is capable of contracting as a party, and the individual campuses are not separate legal entities.
+
+2. Address.
+
+The address designated in the Contract for the University of Hawaiʻi should be Bachman Hall, 2444 Dole Street, Honolulu, Hawaiʻi. The address of the responsible campus/department/unit/administrator may be added in the manner described in the next paragraph.
+
+3. Identify Responsible Campus/Department/Unit/Administrator.
+
+The specific campus/department/unit/administrator responsible for administration of the Contract should be identified in the Contract. The following can be added after the identification of the University of Hawaiʻi as the contracting party: “for the benefit of [Name of University of Hawaiʻi campus, college, school, institute, center, department, office, or other unit], whose business address is [appropriate address of the University of Hawaiʻi campus, college, school, institute, center, department, office, or other unit].”
+
+4. Contract Scope, Deliverables and Deadlines.
+
+It is critical that each Contract identify and describe with sufficient particularity and detail the subject matter of the Contract, including the goods, services, and/or benefits that the University will be receiving, the obligations the University is being required to commit to perform, the obligations to be performed by other parties to the Contract, the payment amounts, and the time frame/deadlines for performance. For Contracts having extended terms, consideration should be given to establishing certain performance milestones that need to be achieved before the counterparty(ies) would be entitled to payment for such milestone or milestones so achieved. Some of the more specific issues to check in your review include:
+
+ a. Consideration. Determine the consideration or items of value being provided by each party, e.g., cash payment for a product/service or a promise to do or refrain from doing an action.
+
+ b. Term or Duration of Contract. Identify the term/duration of the Contract, including a specific beginning and end date and whether there are options to renew. Automatic renewals without end, or “evergreen” contracts, are prohibited. If the Contract is for a multi-year term, the University’s standard “subject to funding” provision (below) covering future years should be inserted as the University is usually only able to commit to funding the current year of the Contract.
+5. Payment Terms.
+
+The Contract should accurately describe with sufficient detail the payment terms, including the payment amounts and the time frame/ deadlines/ requirements for payment. Clearly identify the amount and extent of the party’s responsibility to pay for costs associated with contract performance.
+
+ a. Reimbursement of Expenses. If expense reimbursement is required by the University, the other party should be required to submit documentation, e.g., receipts, acceptable to the University as a precondition to being reimbursed. A ceiling or maximum limit should be established for any expense reimbursement obligation of the University.
+
+b. Sharing monies collected. If the other party is collecting money and paying a portion to the University, e.g., a concession agreement, the amounts (whether or not based on a percentage of the monies collected) should be clear. The Contract should include the University’s right to review and audit the records of the other party to verify that the University has received the correct amount.
+6. Indemnification.
+
+Except for four (4) limited circumstances, the University is not legally authorized or permitted to indemnify, defend or hold harmless other parties to a Contract (“Other Parties”) against claims by a third party (not a party to the Contract) for damage or injuries resulting from the acts or omissions of the University. To agree to such obligations would require the University to: (1) defend the Other Parties against third party claims, which includes paying for the Other Parties’ defense costs, including attorneys’ fees; and (2) pay for any monetary judgment obtained against the Other Parties by third party claimants. Appendix 12 (Guidelines re Indemnification Issues) sets forth additional guidelines regarding the University’s authority to indemnify Other Parties against third party claims.
+
+7. Subject to Funding.
+
+University employees are not legally permitted to commit the University to obligations in excess of available and authorized funding. Because of this, unless all of the funding necessary to meet or satisfy all obligations under the Contract has been approved, authorized, and made available for payment under the Contract, the following condition should be included to qualify the University’s obligation to perform any obligations for which funding has not yet been obtained:
+
+“Subject to Funding. To the extent that the University is: (1) obligated to perform under this Agreement, (2) obligated to make any payments under this Agreement, or (3) deemed liable under this Agreement, the University’s ability to satisfy such obligations or liabilities, particularly any obligations requiring the payment of any amount of monies, is limited to that which is permitted by law and is subject to the condition that funds are properly appropriated, allotted, or otherwise properly made available for the purpose of satisfying such obligations or liabilities.
+
+a. University Limitations. [Name of other contracting party] and the University acknowledge and agree that paragraphs ___ (University Responsibility) and ___ (Subject to Funding) are hereafter collectively the “University Limitations.”
+
+b. University obligations subject to University Limitations. Notwithstanding and superseding anything to the contrary contained in this Agreement (and any exhibits attached to this Agreement), any and all obligations, duties, responsibilities, and liabilities of the University under this Agreement are expressly subject to and limited by the University Limitations set forth and defined herein.”
+
+This is a standard version of the University Limitations provision, but if a Contract is high risk or there are specific, unique limitations on University obligations that should be identified specifically, please consult with OGC as to whether a more detailed University Limitations provision would be appropriate.
+
+8. Common Beneficial Terms.
+ a. Indemnity. While the University may not agree to indemnify, defend, or hold harmless a counterparty (except for certain limited circumstances), this should not discourage the University from requiring the counterparty(ies) to indemnify, defend, and hold harmless the University against claims and/or actions arising from the Contract, particularly those attributable to the acts or omissions of the counterparty(ies).
+
+b. Insurance. Insurance coverage in favor of or also protecting the University should be requested. This is usually accomplished by naming the University as an additional insured under the applicable insurance policies obtained by the counterparty.
+
+c. Assignment. The University should have the right to approve any assignment or other transfer of the counterparty’s interest in the Contract, with one of the conditions being that the counterparty is not released from liability under the Contract, particularly for acts, omissions, events, or incidents occurring prior to any assignment.
+9. Confidentiality.
+
+Absent extraordinary circumstances, the University will not be able to promise that the existence of a Contract or its terms can be kept confidential. The University, like other State government entities, is subject to applicable public disclosure laws, primarily Hawaiʻi Revised Statutes chapter 92F. There may be some exceptions to the public disclosure laws that allow state governmental entities to withhold disclosure of a Contract or one or more of its specific terms, e.g., proprietary business information. Generally, however, a copy of the fully executed Contract would be disclosable to a requesting person or entity, particularly the portions pertaining to the amounts, fees, and/or prices to be paid by the University under the Contract. The University has occasionally agreed in the past to a provision under which neither party would proceed with a public announcement regarding the Contract without coordinating/obtaining approval of the other party prior to making such an announcement. Appendix 10 (Sample Contract Provisions) contains a recommended contractual provision covering the issue of confidentiality.
+
+a. Proprietary business information. The University is subject to open records laws. A blanket assertion, without limitation as to time, that all of the other party’s proprietary information submitted is confidential is not acceptable. At a minimum, the other party should be required to clearly mark and designate that portion of the information submitted to the University that the other party deems confidential.
+
+b. Other party advised of University constraints. The other party should be advised that the University’s ability and authority to agree to express confidentiality obligations is constrained, the University cannot promise confidentiality, and the University will, upon receiving a disclosure request, disclose or release the Contract, its terms, and such other related and supporting documents that the University deems responsive to such request.
+
+c. University may notify but not obtain consent. The other party may request that the University obtain the other party’s approval before releasing or disclosing any confidential information. Rather than agree to obtain such prior consent, the University has in the past agreed to notify the other party of a disclosure request to allow the other party time to seek a protective order or take other action to restrict or prevent disclosure.
+
+d. University to be protected in disclosure contest. The other party should agree to pay for any costs the University may incur due to the other party’s efforts to prevent or restrict disclosure together with indemnifying and defending the University against any claims or actions arising from such efforts to prevent or restrict disclosure.
+10. Data handling and security.
+
+If University data will be furnished to the other party, the University shall require that the other party have data handling, privacy, and security policies in place, consistent with applicable federal and state privacy laws, to protect against the disclosure, release or exposure of University data, including non-public personal information.
+
+Executive Policies EP 2.214 and EP 2.215 set forth data governance and security policies applicable to the handling of University data. Obligations to transmit University data to the other party or to third parties must be carefully reviewed, particularly if PII will be included. Appendices 9A and 9B (Data Sharing Protections and Requirements) contains recommended contractual provisions covering the data handling and security issues.
+
+11. University Representations and Warranties.
+
+The University may not agree to grant or provide warranties to others as they are in the nature of an indemnity and hold harmless obligation. The University may make representations within the Contract provided or to the extent that a University employee is able to confirm the accuracy of the representation and/or is in a position to cause the representation to be accurate or monitor the University’s performance with respect to that representation. The University should limit the number and extent of any representations it is required to make.
+
+12. No Arbitration.
+
+Contracts usually contain proposed dispute resolution procedures that include non-binding mediation and binding arbitration options. While non-binding mediation is acceptable, binding arbitration is not. Except in very limited circumstances (such as the collective bargaining process and lease rent re-openings for the use of State of Hawaiʻi land), the University does not generally agree to submit itself to binding arbitration. By submitting to a binding arbitration process, instead of pursuing litigation in court to resolve a dispute, the University waives some protections that it would otherwise be entitled to if it litigated the dispute in court.
+
+13. Attorneys' Fees.
+
+Contracts often contain provisions that call for the non-prevailing party in a dispute or legal action to pay for the other party’s attorneys’ fees and costs incurred in connection with the dispute or legal action. The University usually requests that the provision be revised to require that each party bear their own attorneys' fees and costs incurred in connection with any dispute, legal action, or any performance under the Contract.
+
+14. Governing Law and Jurisdiction.
+
+In negotiating with other contracting parties who are based in other states and/or countries, there are frequent disputes over which laws govern the interpretation and enforcement of the Contract terms. The laws of the State of Hawaiʻi should govern. If the other contracting party declines and insists that the laws of their state or country govern, the University has compromised in the past by proposing and agreeing to have the Contract remain silent on which laws govern.
+
+Contracting parties based in other states and countries prefer to have their courts adjudicate any legal actions involving the Contract. The University generally identifies State of Hawaiʻi courts as having jurisdiction over legal actions involving the Contract. If the other contracting party is not willing to subject itself to the jurisdiction of the State of Hawaiʻi courts, the University has agreed to remain silent on which courts will adjudicate any legal actions involving the Contract.
+
+15. Supplemental Terms and Conditions.
+
+Vendor contracts may try to incorporate by reference terms and conditions that are contained on their website, include a link to their website in the Contract, and reserve the right to change such terms and conditions.
+
+Identify and review any terms or conditions that are being incorporated into the Contract but are not physically attached to or included in the body of the Contract. These should be printed and attached to the Contract. Further, the other party should be required to: (a) provide the University with written notification of any changes prior to the effective date of such changes (preferably at least 30 days) and (b) grant to the University the right to terminate the contract if the parties are unable to resolve any disputes relating to such changes by the effective date of such changes. Appendix 10 (Sample Contract Provisions) contains a recommended contractual provision covering this issue of supplemental terms and conditions.
+
+16. Force Majeure.
+
+Contracts often contain a “force majeure” provision which allows either party to excuse, delay, or suspend performance of the Contract when their performance is prevented by certain types of catastrophic events that are beyond the control of the parties. Appendix 10 (Sample Contract Provisions) contains a recommended force majeure provision.
+
+17. Faculty Workload.
+
+Some academic and instructional contracts may affect an individual faculty member’s workload. In those instances, the University’s collective bargaining agreement with University of Hawaii Professional Assembly (CBA) should be reviewed to ensure that the Contract is consistent with the provisions of the CBA. For example, the CBA (2021-2025 Unit 7 Agreement) states that, “[u]sing the planned professional objectives and activities of the Faculty Member, and the objectives of the division or the department, the Chair and the Faculty Member will determine the Faculty Member's instructional workload in accordance with Board of Regents Policy.” Art. IV.B.3. of the 2021-2025 Unit 7 Agreement.
+
+18. Contract Modification.
+
+The University should have the right to approve any modification, alteration, amendment, change, or extension of any term, provision, or condition of the Contract. Further, the Contract should require that any modification, alteration, amendment, change, or extension of the Contract be in writing and signed by all parties to the Contract.
+
+19. Compliance with Laws.
+
+The Contract should include a provision that requires the parties to a Contract to comply with applicable laws and University rules and policies in connection with the Contract. The Template Agreements include provisions addressing this issue. Appendix 10 (Sample Contract Provisions) contains a recommended basic contractual provision requiring compliance with applicable laws for use with other Contracts, i.e., non-Template Agreements.
+
+20. Nondiscrimination Provision for Affiliation Agreements.
+
+If a Contract involves the placement of a University student in a work-based learning environment with an external, non-University agency e.g., educational fieldwork experience, internship, clinical placement, cooperative educational experience, the Contract should include a provision that requires the parties to comply with applicable laws prohibiting discrimination. The affiliation agreement templates include provisions addressing this issue. Appendix 10 (Sample Contract Provisions) contains a recommended basic contractual provision requiring no unlawful discrimination.
+
+D. Execution of the Contract
+1. Authority.
+
+The Contract should be executed by the University employee who has the authority to so sign on behalf of the University. The President has the authority to sign any Contract on behalf of the University. All other University employees should be able to identify the document by which authority was delegated to him/her to sign the Contract. Such delegation could have been made through the President’s executive policies or specific delegation of authority memoranda. Delegation of authority to sign Contracts is described in more detail above in Section III.A.1.b. (Delegation of Authority).
+
+2. Notarization.
+
+Signatures on a Contract (except for certain real property-related documents) usually do not need to be notarized. The counterparty(ies) may prefer to have the signatures notarized, particularly if such counterparty(ies) are based in another state or country. The University itself might prefer that signatures on certain contracts be notarized, e.g., initial Contract with a new vendor, in order to confirm the identity of the persons signing on behalf of the counterparty(ies). Notary assistance is available in OGC.
+
+3. Evidence of Authority to Sign.
+
+Confirmation should be obtained that the person executing the Contract on behalf of any counterparty is in fact or has been duly authorized by such counterparty to sign the Contract. Such confirmation could be in the form of a document evidencing or verifying the authority of the signatory to bind the counterparty, e.g., corporate resolution or certified letter.
+
+4. Evidence of Business Registration of the Counterparty.
+
+Confirmation should be obtained that the Contracting Party is a validly registered business by researching the business registration where the business was formed and/or is registered for business (for Hawaiʻi registration see State of Hawaiʻi Department of Commerce and Consumer Affairs at http://cca.hawaii.gov/breg/) and verifying the legal name of the counterparty and its registered officers. Note: tradename entities do not have the legal capacity to be a contracting party.
+
+1Under Hawaiʻi law, no person may obligate the University to commitments beyond that which can be met with authorized funding. See Article VII, Section 5 of the Hawaiʻi State Constitution.↵  
+
+2 See Hawaiʻi State Constitution, Art. XIV, “Code of Ethics”; Hawaiʻi Revised Statutes Ch. 84, “Standards of Conduct”.↵
+
+3 See, e.g., EP 12.214, Conflicts of Interest and Commitment; AP 5.504, Procedures for Disclosing and Addressing Conflicts of Interest and Commitment; AP 12.304, Procedures for Disclosing and Addressing Conflicts of Interest Related with Extramurally-Funded Activities.↵
+
+   IV. Delegation of Authority
+
+   There is no policy-specific delegation of authority.
+
+   V. Contact Information
+
+   Office of the Vice President for Legal Affairs and University General Counsel (808) 956-2211
+
+   VI. References
+
+Link to superseded policies: None
+List of sources which relate to or impact the policy:
+Hawaiʻi State Constitution, Article VII, Section 5 and Article XIV.Hawaiʻi Revised Statutes Chapter 84. Hawaiʻi Revised Statutes Chapter 304A, including but not limited to: Sections 304A-103, 304A-105, 304A-108, 304A-110, 304A-111, 304A-112, 304A-113, 304A-2274, 304A-2681, 304A-2688.Board of Regents Policies, Executive Policies and Administrative Procedures referenced in Appendix 1. 
+
+   VII. Exhibits and Appendices
+
+Appendix 1: Table of different kinds of contracts and applicable Board of Regents’ and Executive policies.Appendix 2: Insurance Coverage. Appendix 3: Sample Delegation of Authority. Appendix 4: Template Agreements – Affiliation Agreements (Healthcare Clinical Experience); Affiliation Agreements for Educational Fieldwork Experience; Inbound Affiliation Agreements (Educational Fieldwork Experience, Healthcare Clinical Experience); Authorization and Consent for Disclosure of Personal Information by Program Participant. Appendix 5: Template Agreements – Facilities Use Agreements (UH Affiliated User (Short Form, Long Form); Non UH User (Short Form, Long Form) State of Hawai’i Government User); Facilities Use Agreement for Filming. Appendix 6: Template Agreements -- International Agreements (MOU for Cooperation and Exchange; Service Agreement for recruiting agents; MOA for Customized Programs; MOA for Student Exchange; MOA for 3+2 Program; Transfer and Articulation Agreement (2+2 Program); MOA for UHCCs for Student, Faculty, Scholar, Staff and/or Administrator Exchange); Participation, Assumption of Risk, Consent, Waiver, Release and Indemnity Agreements (Outgoing Students, Incoming Students); MOA for International Visiting Students.Appendix 7: Template Agreements – Waiver and Release Forms (Minors; Adults). Appendix 8: Template Agreements – Offer Letter Templates. Appendix 9: Data Sharing Protections and Requirements.Appendix 10: Sample Contract Provisions. Appendix 11: Contract Review Checklist. Appendix 12: Additional Guidelines regarding Indemnification Issues.Appendix 13: Guidelines regarding UH Users and Non-UH Users. Appendix 14: Template Agreements – Non-Disclosure Agreement. Appendix 15: Template Agreements -Template Property Agreements (Non-Invasive Right of Entry Agreements; Construction Support Use and Occupancy Agreements). Appendix 16: Recommended sample provisions regarding institutional responsibilities relating to Early College programs.Appendix 17: Template Agreements – U.S. Articulation and Transfer Agreement.
+
+   Approved
+
+    Signed        David Lassner        October 31, 2023        Date        President
+
+	Topics
+
+Contracts; signing authority; official documents
+
+Attachments
+None
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

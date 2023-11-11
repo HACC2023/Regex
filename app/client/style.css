@@ -61,6 +61,16 @@ body .navbar {
 }
 .search {
   color: #856404 !important; /* Change the color */
+  --bs-btn-color: #856404 !important;
+  --bs-btn-bg: trasparent !important;
+  --bs-btn-border-color: trasparent !important;
+  --bs-btn-hover-color: trasparent !important;
+  --bs-btn-hover-bg: trasparent !important;
+  --bs-btn-hover-border-color: trasparent !important;
+
+}
+.search-boarder {
+  border: transparent !important;
 }
 
 .department {
@@ -72,6 +82,27 @@ body .navbar {
   padding-bottom: 20px;
   --bs-nav-link-color: black !important;
   --bs-nav-link-hover-color: black !important;
+  --bs-navbar-active-color: black !important;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  color: black !important;
+  text-decoration: none;
+  background-color: #EDEDED !important;
+}
+.toggler-bottom {
+  color: black !important;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
+}
+.dropdown-item {
+  white-space: normal !important;
 }
 /* Styling for UHFooter below */
 #footer_top {
