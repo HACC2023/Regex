@@ -27,8 +27,8 @@ const UpdateDatabaseButton = () => {
   };
 
   return (
-    <Button onClick={handleUpdateClick}>
-      Update AskUs Database
+    <Button variant="secondary" onClick={handleUpdateClick} style={{ textDecoration: 'none' }}>
+      Update Database
     </Button>
   );
 };
