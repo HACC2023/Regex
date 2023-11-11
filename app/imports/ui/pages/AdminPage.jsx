@@ -42,13 +42,13 @@ const AdminPage = () => {
             </tbody>
           </Table>
         </Col>
-        <Col className="text-center">
-          <Row>
+        <Col>
+          <Col className="text-center">
             <EmbeddedButton props={pages[0]} />
-          </Row>
-          <Row>
+          </Col>
+          <Col>
             <UpdateDatabaseButton />
-          </Row>
+          </Col>
         </Col>
       </Row>
     </Container>

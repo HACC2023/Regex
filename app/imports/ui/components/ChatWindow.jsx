@@ -32,7 +32,7 @@ const ChatWindow = React.forwardRef((props, ref) => {
         {chatHistory.map((message, index) => (
           <React.Fragment key={message.id || `message-${index}`}>
             <motion.div
-              className={`d-flex ${message.sender === 'bot' ? 'justify-content-start px-5' : 'justify-content-end px-5'}`}
+              className={`d-flex ${message.sender === 'bot' ? 'justify-content-start px-2' : 'justify-content-end px-2'}`}
               initial="initial"
               animate="enter"
               variants={variants}

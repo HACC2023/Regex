@@ -94,8 +94,8 @@ const UHNavbar = () => (
                 <NavDropdown.Item href="https://www.hawaii.edu/its/about/information-security/index.html">Technology Infrastructure</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="ASK US">
-                <NavDropdown.Item href="https://www.hawaii.edu/askus/">Ask Us</NavDropdown.Item>
-                <NavDropdown.Item id="landing" as={NavLink} to="/" key="landing">Landing</NavDropdown.Item>
+                { /* <NavDropdown.Item href="https://www.hawaii.edu/askus/">Ask Us</NavDropdown.Item> */ }
+                <NavDropdown.Item id="landing" as={NavLink} to="/" key="landing">Home</NavDropdown.Item>
                 <NavDropdown.Item id="chatbot-nav" as={NavLink} to="/chatbot" key="chatbot">Chatbot</NavDropdown.Item>
                 <NavDropdown.Item id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</NavDropdown.Item>
               </NavDropdown>

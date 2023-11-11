@@ -36,6 +36,11 @@ body .navbar {
   padding-bottom: 20px;
 }
 
+.square {
+  height: 50px;
+  width: 50px;
+}
+
 /* Styling for landing (LandingSearch and FAQCards) */
 .landingSearchButton {
   white-space: nowrap !important;
@@ -83,7 +88,7 @@ body .navbar {
 .dropdown-item:active {
   color: black !important;
   text-decoration: none;
-  background-color: #856404 !important;
+  background-color: #EDEDED !important;
 }
 .toggler-bottom {
   color: black !important;
