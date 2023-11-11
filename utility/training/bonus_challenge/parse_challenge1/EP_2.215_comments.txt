@@ -1,0 +1,281 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Executive Policies
+
+
+
+Executive Policy 2.215
+Executive Policy 2.215
+
+	document.title = "UH PPIS - EP 2.215";
+
+   Title
+
+   Institutional Data Governance
+
+   Header
+
+   Executive Policy Chapter 2, Administration
+
+Executive Policy EP 2.215, Institutional Data Governance
+
+Effective Date:  August 2019
+
+Prior Dates Amended:  February 2018, September 2012
+
+Responsible Office:  Office of the Vice President for Academic Planning and Policy
+
+Governing Board of Regents Policy:  RP 2.202, Duties of the President
+
+Review Date:  August 2021
+
+   I. Purpose
+
+   The objectives of this policy are to:
+
+Establish fundamental principles governing the management and use of data and information at the University, including, but not limited to, the collection and creation, privacy and security, and integrity and quality of that data and information;
+To ensure compliance with federal and state laws, rules, and regulations, including, but not limited to:
+Family Educational Rights and Privacy Act (FERPA)Higher Education Act (HEA)Gramm-Leach-Bliley Act (GLBA)Health Insurance Portability and Accountability Act (HIPAA)General Data Projection Regulation (GDPR)Hawai‘i Revised Statutes, Chapter 487N – Security Breach of Personal InformationChapter 92F – Uniform Information Practices ActPCI-DSS (Payment Card Industry Data Security Standard)NIST SP 800-171 (National Institute of Standards and Technology Special Programs)National Industrial Security Program (NISPOM)Bioterrorism Special Agent ProgramSet forth best practices for effective data management with ongoing objectives of increasing efficiencies, managing and mitigating information privacy and security risks, and promoting data quality;
+Establish clear lines of accountability and decision rights through the definition of roles and responsibilities related to data management;
+Establish a set of standardized terms and definitions to promote consistent interpretations and implementations of policies, procedures, and practices related to data management.
+
+   II. Definitions
+
+“Data Sharing Request Process” – A process that governs the release of Institutional Data and provides an understanding of how the data is being used, by whom, and where it is being copied and stored.
+“Data Users” – All UH employees, students, and affiliates who, in order to fulfill their job duties and responsibilities, require access to UH Institutional Data.
+“Departmental/Unit/Local Data Repositories” – Various UH academic and administrative departments or units copy Institutional Data from Institutional Data Systems into their own departmental, unit, or local data repositories. Any Departmental/Unit/Local Data Repository that contains a copy of Institutional Data are subject to the same policies and procedures which govern the use of Institutional Data.  This policy applies to all repositories of Institutional Data, irrespective of where the repository is maintained (for example, a department may contract for cloud storage services to maintain its data repository).
+
+“Departmental/Unit/Local Data Repositories” – Various UH academic and administrative departments or units copy Institutional Data from Institutional Data Systems into their own departmental, unit, or local data repositories. Any Departmental/Unit/Local Data Repository that contains a copy of Institutional Data are subject to the same policies and procedures which govern the use of Institutional Data.  This policy applies to all repositories of Institutional Data, irrespective of where the repository is maintained (for example, a department may contract for cloud storage services to maintain its data repository).
+“Institutional Data” – Data elements which are created, received, maintained and/or transmitted by the University of Hawai‘i in the course of meeting its administrative and academic requirements.
+
+Institutional Data may be
+contained in any form, including but not limited to documents, databases, spreadsheets, email, and websites;
+represented in any form, including but not limited to letters, numbers, words, pictures, videos, sounds, symbols, or any combination thereof;
+communicated in any form, including but not limited to handwriting, printing, photocopying, photographing, and web publishing; and
+recorded upon any form, including but not limited to papers, maps, films, prints, discs, drives, memory sticks, and other information systems.
+“Institutional Data Systems” – UH systemwide data repositories that collect and store both transactional (operational) and reporting types of Institutional Data, including Systems of Record. In some cases, Institutional Data may be purged on a regular basis from an Institutional Data System. Institutional Data Systems are subject to the same policies and procedures that govern the use of Institutional Data. Examples of Institutional Data Systems are the Banner Student Information System, PeopleSoft, Kuali Financial System, STAR, Laulima, etc.
+
+A list of Institutional Data Systems and associated System Executive Data Stewards is available on the UH data governance website. Note the list is not intended to be all-inclusive of the University’s Institutional Data Systems, but rather, represents Institutional Data Systems that are most likely to contain Protected Data.
+“Protected Data” – Institutional Data that are subject to security and privacy considerations that range from moderate to very high (i.e., all non-public data). These data fall under the Institutional Data Classification Categories of “restricted,” “sensitive,” and “regulated.” For more information, refer to Executive Policy EP 2.214, Institutional Data Classification Categories and Information Security Guidelines.
+“System of Record” – Institutional Data that are designated by a Data Steward as representing official values of the University. Official values are the data designated as the most accurate representation of the meaning and context of Institutional Data elements, which are recorded as facts. Official values are not necessarily the originally entered values, and as such, a System of Record may not necessarily be the system where values are originally entered. When questions arise over the meaning or interpretation of data elements or their values, the System of Record is used to resolve discrepancies.
+
+   III. Executive Policy
+
+POLICY STATEMENTThe University holds itself accountable for the privacy and security of its Institutional Data and other data under its stewardship while keeping that data accessible for appropriate use. The data governance program strives to achieve this by fostering a culture of shared responsibility and active participation among members of the University community.
+GOALSThe goals of data governance at the University are to:
+
+Protect the privacy and security of data and information under the stewardship of the University;
+Support a culture of responsible data use for informed and actionable decision making;
+Establish systemwide standards that enable holistic understanding of data across institutional boundaries;
+Promote the efficient use of resources to meet the data and information needs of the University community;
+Increase the University’s transparency and accountability to external stakeholders and the public by promoting access to relevant information.SCOPEThe scope of this institutional data governance policy applies to the following:
+
+Individuals employed by the University or any affiliates (including external agencies such as RCUH, Sodexo, third party vendors, etc.) with access to University-related data and information (i.e., Institutional Data);
+All Institutional Data created, collected, analyzed, and reported on by UH units as part of their administrative and academic functions, regardless of where they are located and in what medium they are stored (e.g., physical or electronic), how they are accessed, and how they are transmitted;
+Institutional Data, such as student demographics, used in surveys or studies
+Protected Data that has been created, collected, or analyzed for the purpose of research.
+
+This policy recognizes the legal responsibilities of individual campuses to protect the privacy and security of their students’ data according to FERPA requirements.PRINCIPLESThe following principles are set forth as minimum standards to govern the appropriate use and management of Institutional Data.
+
+Institutional Data is the property of the University of Hawai‘i and shall be managed as a key asset through defined governance standards, policies, and procedures.
+Institutional Data will be safeguarded and protected according to security, privacy, and compliance rules and regulations established by the federal and state government (see section I-B), and University of Hawai‘i policies. This University of Hawai‘i executive policy is not intended to supercede federal and state rules and regulations, but to promote and reinforce them.
+Access to Institutional Data will be based on defined roles. Users deemed to have a legitimate educational interest will be assigned appropriate access based on their roles.
+Institutional representatives will be held accountable to their roles and responsibilities. Roles and responsibilities involving the management and use of Institutional Data will be clearly defined, and individuals assigned to specific roles will be held accountable for their data management responsibilities.
+The use, storage, and exposure of protected data will be minimized whenever possible.
+The University strives to ensure the safety and security of its employees and its data assets. It will employ strategies in multiple ways, including the use of technology, physical space, etc. The strategies will take into consideration the privacy of individuals and the protection of data based on the level of sensitivity.
+The University’s technical resources will be used for institutional purposes only and not for personal and/or private gain or for malicious intent.BEST PRACTICESMinimal access will be granted to Data Users. Individuals, including non-UH personnel (e.g., third party contractors), will be granted the most restrictive set of permissions and privileges based on feasibility and a need-to-know. Not only will the minimal level of access to perform an operation be granted, that access will be granted only for the duration of time necessary to complete the operation.
+Disclosure of Institutional Data that are considered protected and personally identifiable will be based on a need to know. When possible, Institutional Data being disclosed will be de-identified.
+Quality standards for Institutional Data will be defined, implemented, monitored, and communicated by System Executive Data Stewards of Institutional Data Systems (defined in sections II, Definitions and III-F, Roles and Responsibilities). Examples of data quality standards include: data validation rules, timeliness of updates, defined error rates, etc.
+Unnecessary duplication of Institutional Data is discouraged. Maintaining repositories of redundant data increases the risk of inadvertent disclosure or inappropriate access to Institutional Data. Executive Data Stewards and Data Custodians (defined in section III-F, Roles and Responsibilities) will exercise responsible records management practices, including minimizing redundant storage where reasonable and appropriate.
+Data Users will complete mandatory training requirements on the appropriate handling of Protected Data before they are allowed access. For more information, refer to AP 2.215, Mandatory Training and Continuing Education Requirements for Data Users.
+Resolution of issues related to Institutional Data will follow consistent and public processes. The Data Governance Committee (DGC) will coordinate the resolution of issues related to risks, costs, access, management, and use of Institutional Data with the appropriate Data Stewards and with UH leadership.
+Institutional Data will only be released for student surveys that are being administered for institutional purposes (such as improving services for students) and/or for the benefit students. Campuses make the final decision on which surveys student contact information will be released.
+
+As part of the Data Sharing Request Process, requests involving the release of Institutional Data for student surveys will require an affirmative response from each Campus Executive Data Steward.
+Institutional Data that was requested through the Data Sharing Request Process for a specific purpose cannot be used for another purpose.
+UH data agreements involving software and/or services and the collection, management, sharing, exchange, use and/or release of Protected Data must meet the principles and best practices set forth in this policy, along with provisions in EP 8.200, Policy on Contracts and Signing Authority. Such agreements include, but are not limited to, vendor contracts, subscriptions, and memoranda of agreements/understanding. Appendix 9 of EP 8.200 features a template “Data Sharing Protections and Requirements” that can be incorporated into data agreements, as needed.
+Guidelines and procedures for the effective management of Institutional Data throughout its lifecycle (from creation to destruction) will be established. Guidelines and procedures involving the creation or acquisition, storage and maintenance, use, archival, and destruction of Institutional Data will be available to direct Data Users and Data Custodians in their data management practices.
+Activities that reduce the potential exposure of sensitive information will be implemented through an information security program. The University will establish an information security program that addresses the following areas, including, but not limited to, governance structures, security audits, risk assessments, identity management, access controls, education and training, and network monitoring. The program will perform ongoing audits of high risk areas and enforce remediation measures, as necessary.
+Contingency plans for managing security breaches and disaster recovery will be established. The process for managing security breaches and other inappropriate uses of Institutional Data will be addressed in University policy. Types of information included will be a definition of a security breach, guidelines on the timing, contents, and means of notice to affected parties, etc. Disaster recovery plans will include contingencies for the physical security of affected sites containing Protected Data.
+Accessing Institutional Data remotely (for example, off-campus) will be done in a secure manner. Individuals who will be electronically accessing Institutional Data from a location other than their usual work areas will ensure they are not using unprotected or public wireless connections.ROLES AND RESPONSIBILITIESThe following roles and responsibilities are defined, for both individuals and groups, for the purpose of establishing clear governance and accountabilities over Institutional Data. The terms and conditions for appointments and assignments are outlined for each. Note that for University employees whose duties and responsibilities fall within a controlled access environment, this policy should not impact their daily activities, but rather, should clarify and formalize their roles and responsibilities.
+
+Vice President for Academic Planning and Policy (VPAPP) – The lead institutional officer responsible for developing and implementing the University’s data governance program. Authority and responsibility resides with the VPAPP on policy and system (multi-campus) issues. The VPAPP is the University’s authority to approve data commitments involving student success initiatives with other educational institutions or national education related non-profit organizations that require the collection, management, sharing, exchange, use and/or release of Protected Data.
+Vice President for Information Technology and Chief Information Officer (VPIT/CIO) – The officer responsible for setting and enforcing standards and guidelines for data management technologies and systems related to computing infrastructures, data processing performance, data delivery and integration, data architectures and structures, metadata repositories, and access control mechanisms. The VPIT/CIO has custodial authority over centralized Institutional Data Systems, including the student, financial, and human resources databases. The VPIT/CIO is the University’s authority to approve software purchases or service contracts involving Protected Data and/or any type of data activity touching UH information systems. VPIT/CIO approval must be granted prior to the procurement process.
+Chancellors and System Vice Presidents – Chancellors and system vice presidents (collectively referred to as “UH Leadership”) have authority and responsibility over policies and procedures regarding access and usage of data within their delegations of authority. The VPAPP will consult with UH leadership on strategic matters and conflict resolution issues. The DGC serves in an advisory capacity to UH leadership, providing recommendations for actions. Data Governance Committee (DGC) – A systemwide group dedicated to implementing a data governance program at the University. Committee members are invited by the VPAPP to join. 
+
+The DGC’s charges are to: 
+
+revise, recommend, and develop policies and standards that govern the University’s data and information management practices at the direction of UH leadership;
+define clear and consistent structures, models, and processes that promote the efficient use of resources to meet the information needs of the University community;
+provide guidance and recommendations concerning the University’s Institutional Data, including expanding access, improving quality, ensuring data security, and improving performance;
+provide recommendations to UH leadership as part of a formal appeal process involving disputes around Institutional Data and Institutional Data Systems.
+Student Data Oversight Committee (SDOC) – A DGC subcommittee focused on improving data quality and access and providing guidance on future directions, priorities, and uses of student Institutional Data Systems. The SDOC has the authority to make decisions on student data issues and may recommend to the DGC policies and principles on data management and use.
+Institutional Research and Analysis Office (IRAO) Director – A member of the DGC, the IRAO Director oversees the office that is the official reporting entity for student-related data and information for the University of Hawai‘i. The IRAO Director coordinates the cross-functional reporting and analysis of student, finance, and human resource data. The IRAO Director leads the University’s efforts around data quality and works collaboratively with system and campus leadership to improve the consistency and accuracy of data residing within the University’s Institutional Data Systems. The IRAO Director is the System Executive Data Steward for Banner (student module) and its operational data store (ODS).
+UH System Chief Information Security Officer (CISO) – A member of the DGC, the CISO leads the University’s Information Security Program. The Information Security Team reports to the CISO  within Information Technology Services (ITS), and works with system and campus leadership to improve the security posture of the University. 
+
+To meet the requirements of the Information Security Program, ITS has the authority to require that all servers be registered and to implement standard security controls, such as network and server scanning, to identify security weaknesses in any University information system or network that may compromise protected data or the operations and availability of institutional services. 
+
+Likewise, ITS has the authority to enforce technical measures to ensure the protection of Protected Data that are stored or transmitted, whether intentionally or unintentionally, on University systems and networks, including but not limited to the immediate disconnection of compromised systems from the University network. 
+
+The CISO convenes the systemwide Data Security Leadership Council and the UH Information Technology Security Leads group and updates the DGC on security and privacy issues.
+Campus FERPA Officer – The campus registrar serves as a campus-wide technical resource and subject matter expert on FERPA issues, and provides interpretation as needed.
+Data Stewards – Data Stewards act in accordance and ensure compliance with applicable federal and state rules and regulations and University policies involving Institutional Data. Data Stewards are responsible for minimizing the use, storage, and exposure of Protected Data, particularly personally identifiable information. They are expected to limit the exposure of such data to only situations that are deemed essential and appropriate. 
+
+There are two levels of Data Stewards at the University of Hawai‘i: executive and functional.
+
+Executive Data Stewards are accountable for the use and management of Institutional Data at their respective campus or within the Institutional Data System under their purview.
+
+Campus Executive Data Stewards
+
+These Data Stewards are vice chancellors or appropriate administrators responsible for the major functional areas within a campus including, but not limited to, student affairs, academic affairs, and administration. They have the authority to govern the use of Institutional Data within their respective areas.
+Campus Executive Data Stewards for student data have the responsibility of reviewing and approving data sharing requests within their respective campuses. As part of the review process, a Campus Executive Data Steward will notify relevant parties of data sharing requests for student-related data through an inclusive and open communication process. Human resource and financial data sharing requests are managed centrally by the UH System Offices of Human Resources and Financial Management.
+System Executive Data Stewards
+
+These Data Stewards are primarily system level executives with functional responsibility for Institutional Data Systems (see section II, Definitions). They have the authority to govern the use of Institutional Data within these Institutional Data Systems.
+System Executive Data Stewards review and approve Data Sharing Requests involving multiple campuses, external parties, and/or electronic linkages to Institutional Data Systems. As part of the review process, the System Executive Data Steward will notify relevant parties of Data Sharing Requests through an inclusive and open communication process.
+System Executive Data Stewards also have the authority to grant access to Institutional Data Systems for system and campus personnel.
+System Executive Data Stewards have the additional responsibility of responding to the data and information needs of the University community through the Institutional Data Systems they oversee. They sponsor and promote a shared understanding of data through clear data element definitions, and oversee data quality and performance improvements within these systems.
+
+Refer to the UH Data Governance website for a listing of Institutional Data Systems and associated Executive Data Stewards.
+Functional Data Stewards are responsible for the day-to-day use, management, and distribution of Institutional Data. Functional Data Stewards exist among all levels and across all units within the University. Registrars, financial aid officers, fiscal managers, human resources specialists, and institutional researchers are among those considered Data Stewards. 
+
+Functional Data Stewards engage in the following types of data related activities:
+
+Ensure Institutional Data is managed appropriately, according to policies and procedures;
+Recommend enhancements for their respective program areas to improve data quality, access, security, performance, and reporting;
+Serve as a conduit between functional and technical personnel to promote communication and a shared understanding of requirements;
+Fulfill Data Sharing Requests.
+Data Custodians – Data Custodians are the managers and/or administrators of systems or media on which protected data reside, including, but not limited to, personal computers, laptop computers, PDAs, smartphones, departmental servers, enterprise databases, storage systems, magnetic tapes, CDs/DVDs, USB drives, paper files, and any other removable or portable devices or off-site storage technologies. These may include, but are not limited to, cloud storage or cloud services. Information technology personnel are commonly regarded as Data Custodians, however, any authorized individual who downloads or stores sensitive information onto a computer or other storage device becomes a Data Custodian through that act.
+
+Data Custodians are responsible for the technical safeguarding of protected data, including implementing and administering controls that ensure the transmission of those protected data are secure and access controls are in place to prevent inappropriate disclosure. This can be as simple as utilizing UH FileDrop to transfer Protected Data.
+Data Users – UH employees, students, and affiliates who, in order to fulfill their job duties and responsibilities, require access to protected data as defined in Executive Policy EP 2.214, Institutional Data Classification Categories and Information Security Guidelines. Data Users are responsible for understanding and complying with applicable University policies and procedures and all recognized federal and state laws for dealing with protected data.
+
+To ensure compliance and to meet the objectives of this policy, individuals must complete training requirements as outlined in AP 2.215, Mandatory Training and Continuing Education Requirements for Data Users. Those who do not comply will be denied access. Specific questions about the appropriate handling or usage of Institutional Data should be directed to the Executive Data Steward responsible for that area.
+
+   IV. Delegation of Authority
+
+   There is no policy-specific delegation of authority.
+
+   V. Contact Information
+
+		Subject Matter Experts
+	
+
+		 Office of the Vice President for Academic Planning and Policy
+		
+
+			 ovpaa@hawaii.edu
+
+		 956-6897
+		
+
+		 
+	
+
+   Data Governance Office
+
+Sandra Furuto, 956-7487, yano@hawaii.edu
+
+www.hawaii.edu/uhdatagov
+
+   VI. References
+
+   Executive Policy EP 2.215, Institutional Data Governance, provides the overall structure for the University’s data governance program. Other University of Hawai‘i executive policies, State of Hawai‘i Revised Statutes, and external regulations that relate to data governance and Institutional Data classification categories are available at: www.hawaii.edu/infosec/policies.
+
+   VII. Exhibits and Appendices
+
+   No Exhibits and Appendices found
+
+   Approved
+
+    Signed        David Lassner        August 26, 2019        Date        President
+
+	Topics
+
+data governance; security
+
+Attachments
+None
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

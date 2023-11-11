@@ -1,0 +1,189 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Executive Policies
+
+
+
+Executive Policy 2.219
+Executive Policy 2.219
+
+	document.title = "UH PPIS - EP 2.219";
+
+   Title
+
+   Student Online Data Protection Requirements for Third Party Vendors
+
+   Header
+
+   Executive Policy Chapter 2, Administration
+
+Executive Policy Section EP 2.219, Student Online Data Protection Requirements for Third Party Vendors
+
+Effective Date:  June 2021
+
+Prior Dates Amended:  None
+
+Responsible Office:   Office of the Vice President for Information Technology
+
+Governing Board of Regents Policy:  RP 2.202, Duties of the President
+
+Review Date:  June 2023
+
+   I. Purpose
+
+   The University recognizes the use of online instructional materials, such as e-textbooks and software tools and services, can enhance and provide better educational experiences for students. These products and services, however, may require the sharing of Student Data with Third Party Vendors whose treatment of the data may raise potential privacy concerns. As a result, this Policy sets forth the University’s expectations of how our Student Data shall be managed by external parties.
+
+In response to concerns over student data privacy principles and practices, this Policy: (1) establishes institutional requirements that limit the ways in which Third Party Vendors who enter into contracts with the University can use Student Data as part of the delivery of good and services; (2) makes it easier for faculty and staff to determine whether a Third Party Vendor’s terms of use may potentially violate students’ privacy. This Policy is applicable to any formal or informal agreements made by faculty that require students to purchase products directly from Third Party Vendors for school purposes. This policy is not intended to prohibit students from entering into third party contracts independently for products they deem appropriate for their studies.
+
+   II. Definitions
+
+“Student Data” means personally identifiable information, or information that is linked or related to personally identifiable information, in any media or format that is not publicly available, and is:
+
+Created by or provided to a Third Party Vendor by a student, or the student’s parent or legal guardian, in the course of the student’s, parent’s, or legal guardian’s use of the Third Party Vendor’s website, service, or application for School Purposes;
+Created by or provided to a Third Party Vendor by an employee or agent of the University for School Purposes; or
+Gathered by a Third Party Vendor through the operation of its website, service, or application for School Purposes and personally identifies a student, including, without limitation, information in the student’s educational record, email address, names, geographic information, phone number or other information that allows physical or electronic contact, discipline records, test results, grades, evaluations, social security number, socioeconomic information, political or religious affiliation, photos, voice recordings, or geolocation information.
+“De-Identified Student Data” means Student Data that excludes all personal identifiers, including, without limitation, names, geographic information, phone numbers, email addresses, social security numbers, account numbers, license numbers, device IDs and serial numbers, URLs, IP addresses, biometric identifiers, full face photos and comparable images, and any other unique numbers, characteristics, or codes, such that the identity of any individual is not recognizable and that such Student Data cannot be reconstructed or re-identified, whether intentionally or inadvertently.
+“Third Party Vendor” means a private, non-University, operator of a website, online service, online application, or mobile application that is providing goods or services to University students under any kind of agreement with the University, including contracts, invoices, memoranda of understanding, terms of service, and other similar arrangements.
+“School Purposes” means purposes that are directed by or that customarily take place at the direction of the University; that aid in the administration of University activities, including, without limitation, classroom or online instruction, administrative activities, and/or communication between faculty, students, or other University officials, employees, or agents; or that are otherwise for the benefit of the University and/or University students. 
+“Targeted Advertising” means presenting advertisements to a student where the advertisement is selected based on information obtained or inferred from that student’s online behavior, usage of applications, or other information. “Targeted advertising” does not include advertising to a student at an online location based upon that student’s current visit to that location, or in response to that student’s request for information or feedback, without the retention of that student’s online activities or requests over time for the purpose of targeting subsequent advertisements.
+
+   III. Executive Policy
+
+A Third Party Vendor shall not knowingly do any of the following:
+
+Engage in Targeted Advertising based upon Student Data that the Third Party Vendor has acquired for School Purposes;
+Use Student Data to amass a profile about a student except in furtherance of School Purposes.  As used herein, “amass a profile” does not include the collection and retention of account information that remains under the control of the student, the student’s parent or guardian, or the University;
+Sell or rent access to Student Data at any time for any reason;
+Disclose Student Data, unless the disclosure is made for the following purposes:
+
+In furtherance of School Purposes, if the recipient of the Student Data is contractually bound not to disclose such information under terms and conditions consistent with those contained in this Policy;
+To ensure legal and regulatory compliance;
+To respond to or participate in the judicial process;
+To protect the safety or integrity of University students; or
+For an educational or employment purpose requested by the student or the student’s parent or guardian, provided that the Student Data is not further disclosed for any other purpose; or
+Update or alter the terms of any contract or agreement governing the collection and control of Student data without the prior written consent of the University.
+To be eligible to sell through the University bookstore, Third Party Vendors are expected to meet and follow best practices for handling student data as outlined in Appendix A.
+Nothing herein shall prohibit a Third Party Vendor from doing any of the following:
+
+Using De-Identified Student Data to improve educational products;
+Recommending to a student additional content relating to School Purposes as long as the recommendation is not based, in whole or in part, upon payment or other consideration;
+Merging or otherwise being acquired by another entity provided that the successor entity is required by agreement to comply with all of the terms and conditions herein.
+For products that prescribe the submission of Student Data, programs shall only authorize products that are compliant with this Policy. If the product terms are inconsistent with the Policy, programs will attempt to negotiate out those terms or choose another Third Party Vendor’s product with consistent terms.
+
+   IV. Delegation of Authority
+
+   There is no policy specific delegation of authority.
+
+   V. Contact Information
+
+   Data Governance Office
+
+Sandra Furuto, 956-7487, yano@hawaii.edu
+
+   VI. References
+
+   No References found
+
+   VII. Exhibits and Appendices
+
+   No Exhibits and Appendices found
+
+   Approved
+
+    Signed        David Lassner        July 19, 2021        Date        President
+
+	Topics
+
+No Topics found.
+
+Attachments
+
++ Non-Fillable Attachment(s)
+
+					Appendix A
+					(2021-07)
+
+				
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

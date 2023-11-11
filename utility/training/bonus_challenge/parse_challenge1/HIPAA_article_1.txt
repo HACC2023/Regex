@@ -1,0 +1,37 @@
+Title: Article 1
+
+To improve the efficiency and effectiveness of the health care system, the
+Health Insurance Portability and Accountability Act of 1996 (HIPAA)
+, Public Law 104-191, included Administrative Simplification provisions that required HHS to adopt national standards for electronic health care transactions and code sets, unique health identifiers, and security. At the same time, Congress recognized that advances in electronic technology could erode the privacy of health information. Consequently, Congress incorporated into HIPAA provisions that mandated the adoption of Federal privacy protections for individually identifiable health information.
+HHS published a final
+Privacy Rule
+in December 2000, which was later modified in August 2002. This Rule set national standards for the protection of individually identifiable health information by three types of covered entities: health plans, health care clearinghouses, and health care providers who conduct the standard health care transactions electronically.  Compliance with the Privacy Rule was required as of April 14, 2003 (April 14, 2004, for small health plans).
+HHS published a final
+Security Rule
+in February 2003. This Rule sets national standards for protecting the confidentiality, integrity, and availability of electronic protected health information. Compliance with the Security Rule was required as of April 20, 2005 (April 20, 2006 for small health plans).
+The
+Enforcement Rule
+provides standards for the enforcement of all the Administrative Simplification Rules.
+HHS enacted a
+final Omnibus rule
+that implements a number of provisions of the HITECH Act to strengthen the privacy and security protections for health information established under HIPAA, finalizing the
+Breach Notification Rule
+.
+View the Combined Regulation Text
+(as of March 2013). This is an unofficial version that presents all the HIPAA regulatory standards in one document. The official version of all federal regulations is published in the Code of Federal Regulations (CFR). View the official versions at 45 C.F.R.
+Part 160
+,
+Part 162
+, and
+Part 164
+.
+Other HIPAA Administrative Simplification Rules are administered and enforced by the Centers for Medicare & Medicaid Services, and include:
+Transactions
+and
+Code Sets
+Standards
+Employer Identifier Standard
+National Provider Identifier Standard
+Want to learn more about the HIPAA Privacy & Security Rules?
+Sign Up for the OCR Privacy & Security Listservs
+OCR has established two listservs to inform the public about health information privacy and security FAQs, guidance, and technical assistance materials. We encourage you to sign up and stay informed!

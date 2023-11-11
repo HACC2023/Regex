@@ -1,0 +1,231 @@
+Title: UH Systemwide Policies and Procedures Information System (PPIS) - Executive Policies
+
+
+
+Executive Policy 2.216
+Executive Policy 2.216
+
+	document.title = "UH PPIS - EP 2.216";
+
+   Title
+
+   Institutional Records Management
+
+   Header
+
+   Executive Policy Chapter 2, Administration
+
+Executive Policy Section EP2.216, Institutional Records Management 
+
+Effective Date:  June 2020
+
+Prior Dates Amended:  October 2014, August 2013
+
+Responsible Office:   Office of the Vice President for Academic Planning and Policy
+
+Governing Board of Regents Policy:  RP2.202, Duties of the President
+
+Review Date:  June 2022
+
+   I. Purpose
+
+   To establish institutional requirements for responsible records management.
+
+   II. Definitions
+
+Litigation Hold - An act by a University unit to preserve records relevant to a lawsuit or government investigation, including steps to prevent spoliation, destruction or alteration of records needed for on-going or pending legal actions and /or audits.
+Records Management – The administration, management, maintenance, and supervision of the life cycle of records, to ensure adequate and proper documentation of business matters and compliance with State and Federal laws, regulations, and policies.
+Retention Period - The minimum length of time which records shall be maintained by the University unit for operational, legal, or institutional purposes.  Retention periods are based on legal and institutional requirements, standard practices, and the administrative, fiscal, legal and institutional value of the content.
+University Unit – For purposes of this policy, University unit means any campus, college, school, department, or unit of the University of Hawai‘i.
+
+   III. Executive Policy
+
+PolicyThe University is committed to effective records management to meet legal and institutional requirements, optimize space usage, minimize the risk of unauthorized exposure of information, and minimize the cost of record retention.
+ScopeThis policy applies to all records, regardless of medium or characteristics, that are owned, created, or produced by the University in the conduct of official business of the University.
+ResponsibilitiesEach University unit responsible for records management is required to:
+Manage and store records in a safe, stable, and secure manner that facilitates timely and accurate retrieval, establishes appropriate controls on accessibility, and adheres to applicable laws, regulations, and policies;
+Evaluate records for their administrative, organizational, legal, fiscal, historical, or archival value to ensure the appropriate retention period is applied to University records;
+Determine the confidentiality and privacy status of records and ensure proper security measures based upon the level of confidentiality and privacy involved;
+Allow only those with proper authority to access records;
+Conduct periodic reviews and evaluations of records management, storage, and security systems;
+Know, document, and inventory the location of all records and security procedures applicable thereto;
+Comply with applicable laws, regulations, and policies regarding records management;
+Annually update the State of Hawai‘i Records Report System (RRS) administered by the State of Hawai‘i Office of Information Practices (OIP) in accordance with HRS 92F-18(b); and
+Designate an individual within the University unit that is the keeper (i.e., custodian) of the official University record to assist the unit in fulfilling its records management responsibilities.
+Electronic Records ConversionEach University unit is encouraged to convert hard copy records to electronic records where practicable; provided, however, that original documents deemed to contain intrinsic value by the University archivist may need to be retained in original paper format.
+When creating an electronic version of an original paper document, a University Unit shall ensure that the electronic version accurately reflects the information set forth in the original paper document.
+Recommended scanning specifications for documents are located at https://datagov.intranet.hawaii.edu/records-management/.
+The electronic version of an original paper document, once scanned, shall be recognized by the University as an official business record. The electronic copy shall be deemed to be an original record for all purposes, pursuant to HRS §92-30.
+Original paper documents may be destroyed after scanning, provided the scanned document has been verified as accurate, readable, and retrievable for later reference. Considerations for digitizing paper documents are located at https://datagov.intranet.hawaii.edu/records-management/.
+Records Retention and DispositionRecords shall be retrievable and accessible in a timely manner throughout their retention period.
+Retention concepts for electronic records are the same as those for non-electronic records.
+Retention concepts are inapplicable to duplicates.  Duplicates of original records shall be disposed of at the end of their useful life, regardless of whether the minimum retention periods set forth in records retention schedules have been met.  Any University unit retaining duplicates should be aware that it must still comply with applicable records storage and protection responsibilities as set forth in Section III.C of this Policy.
+When records have satisfied their required period of retention, they shall be disposed of in an appropriate and secure manner that does not allow for reconstruction or re-identification of such records. Guidelines for disposal are available at: https://www.hawaii.edu/infosec/techguidelines/disposal/.
+Records transmitted pursuant to an agreement, including, without limitation, any Hawai‘i Data Exchange Partnership agreements, shall be disposed of pursuant to the terms and conditions of such agreement.
+Records covered by the State General Records Schedules (GRS) shall be disposed of without further concurrence from the State Comptroller as long as the minimum retention periods set forth in the schedules have been met.  The GRS is located at http://ags.hawaii.gov/wp-content/uploads/2012/09/GRS-2002-revised-5-06.pdf.
+Records covered by the following records schedules, which have been approved by the State Comptroller pursuant to HRS §94-3, shall be disposed of without further concurrence from the State Comptroller as long as the minimum retention periods set forth in the schedules have been met:
+Student Records Schedule (Appendix 1)Children’s Centers Schedule (Appendix 2)
+
+These retention schedules are also located at https://datagov.intranet.hawaii.edu/records-management/.
+Records not covered by an approved records retention schedule will not be disposed of without the prior approval of the State Comptroller as prescribed in HRS §94-3. The Records Inventory Form (Form ARM-6) shall be submitted to the State Records Center director who will then review and recommend approval to the State Comptroller.
+Records to be transferred to other state agencies or the State Archives shall be transferred in accordance with applicable rules, policies, and procedures of the State Records Center and/or the Archives Division, Records Management Branch, Department of Accounting and General Services.
+Records shall be subject to a litigation hold when the University is aware of pending or threatened litigation or audits involving the University. Records with a litigation hold shall not be destroyed until the legal action or audit is completed, regardless of whether the retention period has expired. The unit that is the keeper (i.e., custodian) of the official University record shall be responsible for ensuring litigation holds are imposed and appropriate action is taken to prevent spoliation, destruction or alteration of records.
+Record retention for extramurally financed research and training programs/activities shall be in accordance with AP 8.926.
+The Data Governance Office may be contacted for assistance in determining the applicable records retention schedule or for other assistance regarding records management.
+Electronic Approval/SignaturePursuant to HRS 489E-7, a record or signature shall not be denied legal effect or enforceability solely because it is in electronic form.
+Where a University policy requires that a record or electronic document have the approval/signature of a responsible person, that requirement is met when the electronic record has associated with it an electronic signature.
+
+Electronic authentication occurs when an electronic document is associated with an electronic signature or when a record is associated with a unique identifier such as a UH Username.  Electronic authentication is required for establishing nonrepudiation (a guarantee that the owner of the signature cannot deny responsibility for the activity).
+Electronic signatures shall meet the following requirements:
+Unique to person using the electronic signature, i.e., Personal Digital Certificate or Login ID/Password.
+Capable of verification (Part of record’s data structure).
+Under the sole control of person using the electronic signature.
+Sufficient controls shall be in place to provide an audit trail and to ensure that the electronic signature and their link to the respective record cannot be removed, copied, or otherwise manipulated to falsify an electronic record.
+An electronic signature used outside of its limitations will not be considered valid by the University.
+Any individual that makes inappropriate or illegal use of electronic signatures and/or records shall be subject to sanctions as provided by applicable law, rule, policy, or collective bargaining agreement.
+Public Inspection of University RecordsIssues relating to the required disclosure or nondisclosure of University records are governed by Chapter 92F, Hawai‘i Revised Statues (Uniform Information Practices Act or UIPA), and certain federal laws and regulations.
+Each University campus shall designate a coordinator responsible for receiving, managing, and responding to records requests made to units within the campus (Campus Coordinator). The Campus Coordinator shall be knowledgeable regarding UIPA and any implementing regulations of the State Office of Information Practices (OIP). The Campus Coordinator’s contact information (including email address, phone number, and physical mailing address) shall be posted on the website of each University campus and shall be provided to the UH Communications Office and updated no less than annually. The UH Communications Office shall be responsible for providing updated Campus Coordinator information to OIP and otherwise satisfying any other reporting requirements related to UIPA.
+The Campus Coordinator may seek legal assistance from the Office of the Vice President for Legal Affairs and University General Counsel in determining whether a record is subject to public disclosure.
+Records requests related in any way to threatened, pending, or existing litigation matters shall be directed to the Office of the Vice President for Legal Affairs and University General Counsel.
+Retention of Personally Identifiable InformationNothing in this Procedure shall require, promote or support the retention of sensitive personally identifiable information (PII) such as credit card information and social security numbers in University records. In accordance with Executive Policy EP 2.214 (Institutional Data Classification Categories and Information Security Guidelines), PII may be collected only when necessary to meet specific institutional requirements and shall be maintained in secured areas with access limited to authorized users. All PII shall be removed or redacted from University records once the requirements for having collected that information have been met.
+
+   IV. Delegation of Authority
+
+   There is no policy specific delegation of authority.
+
+   V. Contact Information
+
+		Subject Matter Experts
+	
+
+		 Sandra Furuto
+		
+
+			 yano@hawaii.edu
+
+		 956-7487
+		
+
+		 
+	
+
+   Data Governance Office at 956-7487 or yano@hawaii.edu.
+
+   VI. References
+
+   State of Hawai‘i General Records Schedule - http://ags.hawaii.gov/wp-content/uploads/2012/09/GRS-2002-revised-5-06.pdf
+
+EP2.215 – Institutional Data Governance, http://www.hawaii.edu/apis/ep/e2/e2215.pdf
+
+EP2.214 – Institutional Data Classification Categories and Information Security Guidelines, http://www.hawaii.edu/apis/ep/e2/e2214.pdf
+
+   VII. Exhibits and Appendices
+
+   No Exhibits and Appendices found
+
+   Approved
+
+    Signed        David Lassner        July 23, 2020        Date        President
+
+	Topics
+
+No Topics found.
+
+Attachments
+
++ Non-Fillable Attachment(s)
+
+					Appendix 1 - Student Records Retention Schedule
+					(2020-06)
+
+				
+
+					Appendix 2 - Children's Centers Retention Schedule
+					(2020-06)
+
+				
+
+ 
+
+			Adobe Reader
+
+		|
+
+		
+
+		Help
+
+		|
+
+		PPIS email
+
+ END::Content
+ END::Links 
+ BEGIN::Footer 
+  main-wrapper 
+
+  $('#top-nav-mobile-icon').click(function(){
+
+    $('#top-nav-mobile-icon').toggleClass('closed open');
+
+    if ($('#top-nav').is(":hidden")) { window.scrollTo(0,0); }
+
+    $('#top-nav').slideToggle('fast');
+
+  });
+
+  $('.submenu').click(function(event){
+
+      if ($(event.target).is('div')) {
+
+        submenuIcon = $(event.target).children('span');
+
+        submenuTitle = $(event.target);
+
+        submenu = $(event.target).parent('li').children('ul');
+
+      } else {
+
+        submenuIcon = $(event.target);
+
+        submenuTitle = $(event.target).parent('div');
+
+        submenu = $(event.target).parent('div').parent('li').children('ul');
+
+      }
+
+      submenuIcon.replaceWith("<span>["+(submenuTitle.is('.closed')?'-':'+')+"]</span>");
+
+      submenuTitle.toggleClass('closed open');
+
+      submenu.slideToggle('fast');
+
+  });
+
+ #content 
+ #container 
+
+2444 Dole StreetHonolulu, HI 96822
+         
+
+            An equal opportunity/affirmative action institution
+            Use of this site implies consent with our Usage Policy
+            copyright © 2018 University of Hawaiʻi
+
+Calendar
+Directory
+Emergency Information
+MyUH
+Privacy Statement
+Work at UH
+
+Twitter   
+Facebook   
+Instagram   
+Flickr   
+Youtube
+
+Contact UH
+            If required, information contained on this website can be made available in an alternative format upon request.
+Get Adobe Acrobat Reader
+

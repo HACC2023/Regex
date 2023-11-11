@@ -1,0 +1,95 @@
+EExxeeccuuttiivvee PPoolliiccyy,, EEPP 2.218
+OOnnlliinnee AApppprroovvaallss ooff IInntteerrnnaall
+UUnniivveerrssiittyy TTrraannssaaccttiioonnss
+Page 1 of 3
+Executive Policy Chapter 2, AAddmmiinniissttrraattiioonn
+Executive Policy EP 2.218, OOnnlliinnee Approvals ooff IInntteerrnnaall UUnniivveerrssiittyy TTrraannssaaccttiioonnss
+Effective Date: August 28, 22001177
+Prior Dates Amended: NA
+RReessppoonnssiibbllee OOffffiiccee:: OOffffiiccee ooff tthhee VViiccee PPrreessiiddeenntt ffoorr IInnffoorrmmaattiioonn TTeecchhnnoollooggyy aanndd CChhiieeff
+Information Officer
+Review Date: August 2020
+I. PURPOSE AND AAUUTTHHOORRIITTYY
+This Executive Policy (EP) 2.218 sets forth iinnssttiittuuttiioonnaall rreeqquuiirreemmeennttss regarding
+the use of online aapppprroovvaallss aanndd signatures in conducting aa bbrrooaadd rraannggee ooff
+ttrraannssaaccttiioonnss iinntteerrnnaall ttoo tthhee University. Thhee UUnniivveerrssiittyy aannttiicciippaatteess tthhaatt tthhee uussee ooff
+online approvals and//oorr eelleeccttrroonniicc signatures will greatly iimmpprroovvee tthhee eeffffiicciieennccyy ooff
+internal Univerrssiittyy ooppeerraattiioonnss by reducing its rreelliiaannccee oonn ppaappeerr aanndd ppaappeerr-based
+ppprrroooccceeesssssseeesss,,, eeennnaaabbbllliiinnnggg eeexxxpppeeedddiiitttiiiooouuusss cccooommmmmmuuunnniiicccaaatttiiiooonnnsss aaannnddd dddeeeccciiisssiiiooonnn-making
+prroocceesssseess,, aanndd rreedduucciinngg tthhee ccoosstt of operations.
+WWhheenneevveerr rreeaassoonnaabbllee aanndd pprraaccttiiccaall,, tthhee University will utilize oonnlliinnee approvals
+and/or electronic ssiiggnnaattuurreess to conduct internal transsaaccttiioonnss tthhaatt hhaavvee hhiissttoorriiccaallllyy
+required manual aapppprroovvaallss oorr ssiiggnnaattuurreess oonn pphhyyssiiccaall ppaappeerr ddooccuummeennttss..
+EEEmmmpppllloooyyyeeeeeesss mmmuuusssttt hhhaaavvveee aaauuuttthhhooorrriiitttyyy iiinnn ooorrrdddeeerrr tttooo aaapppppprrrooovvveee UUUnnniiivvveeerrrsssiiitttyyy tttrrraaannnsssaaaccctttiiiooonnnsss,,, aaannnddd
+nnootthhiinngg iinn tthhiiss PPoolliiccyy aauutthhoorriizzeess ssoommeeoonnee wwhhoo llaacckkss tthhaatt aauutthhoorriittyy tthhee aabbiilliittyy ttoo
+vvaalliiddllyy aapppprroovvee UUnniivveerrssiittyy ttrraannssaaccttiioonnss..
+II. DEFINITIONS
+A. Authentication –– Authentication iss tthhee pprroocceessss ooff sseeccuurreellyy vveerriiffyyiinngg tthhee
+iiddeennttiittyy ooff aann iinnddiivviidduuaall pprriioorr ttoo aalllloowwiinngg aacccceessss ttoo aann oonnlliinnee University
+service. AAuutthheennttiiccaattiioonn eennssuurreess tthhaatt tthhee individual wwhhoo aatttteemmppttss ttoo
+ppeerrffoorrmm tthhee ffuunnccttiioonn ooff aann online approval or ssiiggnnaattuurree iiss iinn ffaacctt wwhhoo tthheeyy
+say they are, aalllloowwiinngg the individual ttoo rreepprreesseenntt tthhaatt tthheeyy aarree aauutthhoorriizzeedd
+to approve thee ddooccuummeenntt or transaction.
+B. OOnnlliinnee AApppprroovvaall – An Online Approval iiss aa pprroocceessss aassssoocciiaatteedd wwiitthh aann
+eelleeccttrroonniicc rreeccoorrdd tthhaatt iiss eexxeeccuutteedd oorr aaddoopptteedd bbyy aann iinnddiivviidduuaall with the
+iinntteenntt aanndd aauutthhoorriittyy ttoo aauutthhoorriizzee oorr aapppprroovvee aa ttrraannssaaccttiioonn..
+EP 2.218
+Page 2 of 3
+III. EXECUTIVE POLICY
+A. SCOPE
+This policy applies to all internal University approvals and internal
+authorizations of documents or transactions, where all parties are
+University employees, and have a current, valid University username and
+password <ref. EP 2.210>. This policy does not apply to any contracts or
+agreements with third parties who are not employees of the University.
+B. POLICY
+1. All University employees shall, wherever reasonable and
+practicable, where other policies or procedures do not require “wet”
+signatures, and where online systems are available, use Online
+Approvals and/or electronic signatures to authorize and approve all
+University documents and transactions.
+2. Where a University policy requires that a record or electronic
+document have the approval or authorization of a responsible
+person, that requirement shall be met if the document contains an
+Online Approval by the required approver(s) or authority(ies).
+3. Any requirement that a signed document be presented or retained
+in its original form is satisfied by the electronically signed document
+in electronic form.
+4. For purposes of this policy, the University accepts electronic
+signatures as binding and equivalent to manual or handwritten
+signatures.
+5. Online Approvals and/or electronic signatures must be
+Authenticated by reasonable security measures. Authentication
+occurs when an electronic document is associated with an Online
+Approval or electronic signature and the individual approving or
+authorizing the document or transaction is Authenticated by a
+unique identifier such as a University username.
+6. Any ultra vires use of electronic signatures, e.g., without proper
+Authentication or by an individual without the proper authority to
+approve or execute the transaction, shall not be considered valid by
+the University.
+C. IMPLEMENTATION AND SECURITY
+1. Online Approvals and/or electronic signatures may be implemented
+using various methodologies depending on the nature of the
+EP 2.218
+Page 3 of 3
+transaction, and all applicable University policies. The Vice
+President for Information Technology and Chief Information Officer
+is responsible for setting, approving, and enforcing standards and
+guidelines for Online Approval and electronic signature
+methodologies and implementations.
+2. The Vice President for Information Technology and Chief
+Information Officer shall adopt security procedures for Online
+Approvals and electronic signatures that are reasonable, practical,
+and secure. Further, that the security procedures and
+implementations appropriately balance risk and cost to the
+University.
+IV. CONTACT INFORMATION
+Garret T. Yoshimi, Vice President for Information Technology and Chief
+Information Officer, at (808) 956-3501 or gyoshimi@hawaii.edu
+V. REFERENCES
+A. EP 2.210
+Approved:
+Signed August 28, 2017
+David Lassner Date
+President
