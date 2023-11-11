@@ -108,12 +108,14 @@ const ChatBox = (props) => {
     return <div>ChatBot</div>;
   };
 
+  // Scrolls to bottom of chat window when chatHistory is updated
   const chat = useRef();
   useEffect(() => {
-    // const height = document.documentElement.scrollTop;
-    chat.current.scrollIntoView({ behavior: 'smooth' });
-    // document.documentElement.scrollTop = height;
-  }, [chatHistory]); // Someone please make the entire screen not scroll down for the love of god
+    const chatContainer = document.querySelector('.chat-window');
+    if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }, [chatHistory]);
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();
