@@ -17,7 +17,6 @@ if (Stuffs.collection.find().count() === 0) {
     Meteor.settings.defaultData.forEach(data => addData(data));
   }
 }
-/*
 const addMessage = (data) => {
   console.log(`  Adding: ${data.message} (${data.sender})`);
   Messages.collection.insert(data);
@@ -29,4 +28,3 @@ if (Messages.collection.find().count() === 0) {
     Meteor.settings.defaultMessage.forEach(data => addMessage(data));
   }
 }
-*/
