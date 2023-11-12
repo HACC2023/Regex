@@ -34,6 +34,8 @@ const throwError = (type, message) => {
  */
 function computeCosineSimilarity(embedding1, embedding2) {
   if (!Array.isArray(embedding1) || !Array.isArray(embedding2)) {
+    console.log('embedding 1: ' + typeof(embedding1));
+    console.log('embedding 2: ' + typeof(embedding2));
     throw new Error('Both embeddings must be arrays.');
   }
 

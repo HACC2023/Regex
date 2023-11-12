@@ -11,8 +11,10 @@ class ChatsCollection {
     this.schema = new SimpleSchema({
       sender: String,
       message: String,
-      sessionId: String,
-      userId: String,
+      // sessionId and userId will be used later when we store multiple instances of chats?
+      // sessionId: String,
+      // userId: String,
+      sentAt: Date,
       // Add more fields if necessary
     });
     // Attach the schema to the collection.
@@ -24,7 +26,7 @@ class ChatsCollection {
 }
 
 /**
- * The singleton instance of the AskUsCollection.
- * @type {AskUsCollection}
+ * The singleton instance of the ChatsCollection.
+ * @type {ChatsCollection}
  */
-export const Chats = new ChatsCollection();
+export const Messages = new ChatsCollection();

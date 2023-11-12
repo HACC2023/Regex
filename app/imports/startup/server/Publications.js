@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { AskUs } from '../../api/askus/AskUs';
+import { Messages } from '../../api/messages/Messages';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -46,4 +47,12 @@ Meteor.publish(null, function () {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
   }
   return this.ready();
+});
+
+// Return all the chats in the database sorted by date
+Meteor.publish(Messages.userPublicationName, function () {
+  return Messages.collection.find(
+    {},
+    { sort: { sentAt: 1 } },
+  );
 });
