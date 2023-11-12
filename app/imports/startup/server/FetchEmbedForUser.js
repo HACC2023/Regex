@@ -138,6 +138,27 @@ function getRelevantContextFromDB(userEmbedding) {
 }
 
 /**
+//#################################################################################
+// The following code is for the token counting logic
+//#################################################################################
+
+// Function to estimate the number of tokens in the messages
+function estimateTokenCount(messages) {
+  // Implement token counting logic here
+}
+
+// Function to choose the appropriate model based on token count
+function chooseModelForTokenCount(tokenCount) {
+  if (tokenCount <= 16000) {
+    return 'gpt-3.5-turbo-1106'; // Your default model
+  }
+  return 'alternative-model'; // A different model that handles larger requests
+
+}
+//#################################################################################
+ */
+
+/**
  * Creates a completion using OpenAI based on the provided messages.
  * @param {Object[]} messages - An array of message objects to provide context.
  * @returns {Promise<string>} The response content from the chatbot.
@@ -148,7 +169,12 @@ const createOpenAICompletion = async (messages) => {
     // Remove any properties from the messages that are not expected by the OpenAI API
     const filteredMessages = messages.map(({ role, content }) => ({ role, content }));
 
+    // Estimate the number of tokens in the messages
+    // const tokenCount = estimateTokenCount(filteredMessages); // uncomment this line to use the token counting logic
+    // const chosenModel = chooseModelForTokenCount(tokenCount); // uncomment this line to use the token counting logic
+
     const response = await openai.chat.completions.create({
+      // model: chosenModel,
       model: 'gpt-3.5-turbo-1106',
       messages: filteredMessages,
       temperature: 0.2,
