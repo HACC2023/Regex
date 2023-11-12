@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Chatbot from '../components/Chatbot';
 
 /* Page that contains the chatbot */
