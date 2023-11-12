@@ -6,21 +6,11 @@ import { AskUs } from '../../api/askus/AskUs';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 import SimilarArticles from './SimilarArticles';
-import {Messages} from "../../api/messages/Messages";
-
-/*
-const formSchema = new SimpleSchema({
-    sender: PropTypes.string,
-    message: PropTypes.string,
-    sentAt: PropTypes.instanceOf(Date),
-});
-
-const bridge = new SimpleSchema2Bridge(formSchema);
-*/
 
 const ChatBox = (props) => {
   const { input } = props;
   const [userInput, setUserInput] = useState(input);
+  const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
 
@@ -36,19 +26,16 @@ const ChatBox = (props) => {
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
+    setChatHistory([...chatHistory, { sender: 'user', text: userInput }]);
 
     const userId = 'placeholderUserId'; // Placeholder, replace with actual userId if available
-    if (typeof userInput !== 'string' || !userInput.trim()) {
+    if (!userInput.trim()) {
       // Handle the case when userInput is empty or just whitespace
       setLoading(false);
       console.error('User input is empty.');
       return; // Exit early to prevent calling the method with an empty message
     }
 
-    let sentAt = new Date();
-    Messages.collection.insert(
-      { sender: 'user', message: userInput, sentAt: sentAt }
-    );
     // Record the start time just before making the Meteor call
     const timeStart = (new Date()).getTime();
 
@@ -56,6 +43,10 @@ const ChatBox = (props) => {
     Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
       setLoading(false);
       if (!error) {
+        const newMessages = [
+          { sender: 'user', text: userInput },
+          { sender: 'bot', text: result.chatbotResponse },
+        ];
 
         // Update the frequency of similar articles
         if (result.similarArticles[0]) {
@@ -68,10 +59,7 @@ const ChatBox = (props) => {
           }
         }
 
-        sentAt = new Date();
-        Messages.collection.insert(
-           { sender: 'bot', message: result.chatbotResponse, sentAt: sentAt }
-        );
+        setChatHistory([...chatHistory, ...newMessages]);
         setSimilarArticles(result.similarArticles);
         setUserInput('');
 
@@ -81,10 +69,7 @@ const ChatBox = (props) => {
         console.log(`Response took ${responseTimeMs}ms, or ${responseTimeMs / 1000} seconds. (User Input: "${userInput}")`);
 
       } else {
-        sentAt = new Date();
-        Messages.collection.insert(
-           { sender: 'bot', message: 'Sorry, I encountered an error. Please try again later.', sentAt: sentAt }
-        );
+        setChatHistory([...chatHistory, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again later.' }]);
         console.error(`Response failed. (User Input: "${userInput}")`);
       }
     });
@@ -117,11 +102,9 @@ const ChatBox = (props) => {
     if (message.sender === 'user') {
       return <div>You</div>;
     }
-    /*
     if (message.link != null) {
       return ('');
     }
-    */
     return <div>ChatBot</div>;
   };
 
@@ -132,7 +115,7 @@ const ChatBox = (props) => {
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-  }, []);
+  }, [chatHistory]);
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();
@@ -144,7 +127,7 @@ const ChatBox = (props) => {
         new Event('submit', { cancelable: true, bubbles: true }),
       );
     }
-  },[]);
+  }, []);
 
   return (
     <Container className="mt-5">
@@ -153,6 +136,7 @@ const ChatBox = (props) => {
         <Col>
           <ChatWindow
             ref={chat}
+            chatHistory={chatHistory}
             chatSender={chatSender}
             formatChatbotResponse={formatChatbotResponse}
             loading={loading}
