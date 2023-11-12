@@ -7,7 +7,7 @@ import FAQCards from '../components/FAQCards';
 const Landing = () => (
   <Container id="landing-page" fluid>
     <Container className="px-3">
-      <p><a href="https://www.hawaii.edu/its">Home</a> &gt; Ask Us</p>
+      <p><a href="https://askuh.info">Home</a> &gt; Ask Us</p>
     </Container>
     <LandingSearch />
     <FAQCards />

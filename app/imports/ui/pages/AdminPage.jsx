@@ -38,6 +38,9 @@ const AdminPage = () => {
 
   return (ready ? (
     <Container className="py-3">
+      <Container>
+        <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
+      </Container>
       <Row className="justify-content-center">
         <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>Admin Stats</h2>
 

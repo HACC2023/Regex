@@ -76,22 +76,22 @@ const UHNavbar = () => (
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler-bottom">MENU<List className="pb-1" /></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav variant="underline" className="justify-content-start bottom-nav ms-2">
-              <Nav.Link href="https://www.hawaii.edu/its/help-desk/index.html">HELP DESK</Nav.Link>
-              <Nav.Link href="https://www.hawaii.edu/its/services/">ITS Services</Nav.Link>
-              <Nav.Link href="https://www.hawaii.edu/infosec/">INFORMATION SECURITY</Nav.Link>
-              <Nav.Link href="https://www.hawaii.edu/its/alerts/">ALERTS</Nav.Link>
+              <Nav.Link href="https://www.hawaii.edu/its/help-desk/index.html" target="_blank">HELP DESK</Nav.Link>
+              <Nav.Link href="https://www.hawaii.edu/its/services/" target="_blank">ITS Services</Nav.Link>
+              <Nav.Link href="https://www.hawaii.edu/infosec/" target="_blank">INFORMATION SECURITY</Nav.Link>
+              <Nav.Link href="https://www.hawaii.edu/its/alerts/" target="_blank">ALERTS</Nav.Link>
               <NavDropdown align="end" title="ABOUT" id="basic-nav-dropdown">
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/">About</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/about-cio/index.html">
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/" target="_blank">About</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/about-cio/index.html" target="_blank">
                   VP for Information Technology and Chief Information Officer
                 </NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/academic-development-and-technology-adt/index.html">Academic Development and Technology (ADT)</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/academic-technologies/index.html">Academic Technologies</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/csoc/index.html">Client Service and Operations Center (CSOC)</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/cyberinfrastructure/index.html">Cyberinfrastructure</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/enterprise-systems/index.html">Enterprise Systems</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/information-security/index.html">Information Security</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.hawaii.edu/its/about/information-security/index.html">Technology Infrastructure</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/academic-development-and-technology-adt/index.html" target="_blank">Academic Development and Technology (ADT)</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/academic-technologies/index.html" target="_blank">Academic Technologies</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/csoc/index.html" target="_blank">Client Service and Operations Center (CSOC)</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/cyberinfrastructure/index.html" target="_blank">Cyberinfrastructure</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/enterprise-systems/index.html" target="_blank">Enterprise Systems</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/information-security/index.html" target="_blank">Information Security</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.hawaii.edu/its/about/information-security/index.html" target="_blank">Technology Infrastructure</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="ASK US">
                 { /* <NavDropdown.Item href="https://www.hawaii.edu/askus/">Ask Us</NavDropdown.Item> */ }

@@ -11,7 +11,7 @@ const FAQCard = ({ article }) => {
     <Card className="h-100">
       <Card.Header>
         <Card.Title style={{ textAlign: 'left' }}>
-          <Link to={`/article_html/${article.filename}`} style={{ color: 'black', textDecoration: 'none' }}>
+          <Link to={`/article_html/${article.filename}`} className="card-link" target="_blank" rel="noopener noreferrer" style={{ color: 'black', textDecoration: 'none' }}>
             {article.question}
           </Link>
         </Card.Title>
