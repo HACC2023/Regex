@@ -6,8 +6,7 @@ import { AskUs } from '../../api/askus/AskUs';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 import SimilarArticles from './SimilarArticles';
-import { Messages } from '../../api/messages/Messages';
-import { useTracker } from 'meteor/react-meteor-data';
+import {Messages} from "../../api/messages/Messages";
 
 /*
 const formSchema = new SimpleSchema({
@@ -126,29 +125,14 @@ const ChatBox = (props) => {
     return <div>ChatBot</div>;
   };
 
-    const { ready, messages } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Messages.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Message documents
-    const messageItems = Messages.collection.find({}).fetch();
-    return {
-      messages: messageItems,
-      ready: rdy,
-    };
-    }, []);
   // Scrolls to bottom of chat window when chatHistory is updated
-
   const chat = useRef();
   useEffect(() => {
     const chatContainer = document.querySelector('.chat-window');
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-  }, [messages]);
+  }, []);
 
   // Autosubmits the form if starting input is not empty (ie redirected from landing)
   const form = useRef();
