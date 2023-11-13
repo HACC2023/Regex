@@ -39,11 +39,7 @@ const AdminPage = () => {
   }, [pages, ready]); // Add dependencies to useEffect
 
   return (ready ? (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <h2 className="text-center pb-3">Admin Stats</h2>
-        <BarChartComponent data={chartData} />
-      </Row>
+    <Container>
       <Container>
         <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
       </Container>
@@ -83,6 +79,9 @@ const AdminPage = () => {
           </Row>
         </Col>
 
+      </Row>
+      <Row className="justify-content-center py-5">
+        <BarChartComponent data={chartData} />
       </Row>
     </Container>
   ) : <LoadingSpinner />);
