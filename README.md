@@ -10,6 +10,8 @@ npm install openai
 ## 2. Meteor Application Template React
 For details, please see http://ics-software-engineering.github.io/meteor-application-template-react/
 
+First, install Meteor. Then, in the directory of your local clone:
+
 ```bash
 $ cd app/
 $ meteor npm install
