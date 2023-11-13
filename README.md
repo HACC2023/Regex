@@ -30,7 +30,7 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
     * [Installation](#installation)
 * [OpenAI API Key Environment Set Up](#openai-api-key-environment-set-up)
 * [License](#license)
-* 
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Leveraging the OpenAI API, our chatbot is trained to interpret and extract pertinent information from the ITS Ask Us database articles. By synthesizing content from these articles, the chatbot can address queries with information that may not be explicitly detailed within the articles themselves, showcasing a nuanced understanding and application of the knowledge base.
