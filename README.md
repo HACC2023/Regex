@@ -8,7 +8,7 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
 
 
   <p align="center">
-    Welcome to Ask Us!
+    Welcome to Ask UH!
     <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
