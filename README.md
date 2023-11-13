@@ -56,9 +56,8 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 * Meteor
-  ```sh
   install meteor according to https://docs.meteor.com/install.html
-  ```
+  
 ### Installation
 
 1. Get a free API Key at [https://platform.openai.com/](https://platform.openai.com/)
