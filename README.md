@@ -13,7 +13,7 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://askus.info">View Demo</a>
+    <a href="https://askuh.info">View Demo</a>
     ·
     <a href="https://github.com/HACC2023/Regex/issues">Report Bug</a>
     ·
