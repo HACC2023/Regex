@@ -2,7 +2,7 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
 
 # Environment Setup
 
-## 1. Install Meteor
+## 1. Install OpenAI
 ```bash
 npm install openai
 ```
