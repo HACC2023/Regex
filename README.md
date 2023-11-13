@@ -6,10 +6,9 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
   
 <img src="https://regex-ics314.github.io/docs/logo.png" alt="Logo" width="80" height="80">
 
-<h3 align="center">Best-README-Template</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Welcome to Ask Us!
     <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
