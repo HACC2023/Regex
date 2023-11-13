@@ -55,12 +55,11 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* Meteor
-  install meteor according to https://docs.meteor.com/install.html
+* Install Meteor according to https://docs.meteor.com/install.html
   
 ### Installation
 
-1. Get a free API Key at [https://platform.openai.com/](https://platform.openai.com/)
+1. Get your OPENAI API Key at [https://platform.openai.com/](https://platform.openai.com/)
 2. Clone the repo
    ```sh
    git clone https://github.com/HACC2023/Regex.git
