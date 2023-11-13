@@ -4,8 +4,8 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
 
 ## 1. Install Meteor
 ```bash
+npm install meteor
 npm install openai
-place holder for now
 ```
 
 ## 2. Meteor Application Template React
