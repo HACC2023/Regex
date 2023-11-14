@@ -54,7 +54,7 @@ body .navbar {
   padding: 8px 20px 10px !important;
 }
 
-/* Styling for Navbar below */
+/* Styling for UHNavbar below */
 .navbarColor {
   background-color: #444444;
 }
@@ -108,7 +108,7 @@ body .navbar {
 .dropdown-item {
   white-space: normal !important;
 }
-/* Styling for Footer below */
+/* Styling for UHFooter below */
 #footer_top {
   background-color: #fff;
   padding: 0;
