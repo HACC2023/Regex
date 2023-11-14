@@ -3,14 +3,14 @@ import { Col, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SimilarArticles = ({ similarArticles }) => (
+const SimilarArticles = ({ similarArticles, opacity }) => (
   <>
-    <h5 className="mb-3">Relevant Articles</h5>
+    ${opacity === 0 ? </> : <h5 className="mb-3" style={{ opacity: opacity }}>Relevant Articles</h5>}
     {similarArticles.slice(0, 3).map((article) => {
       const truncatedContent = `${article.article_text.substring(0, 500)}...`;
       return (
         <Col key={article._id} md={4}> {/* Ensure the key here is unique for each article */}
-          <Card className="card mb-3, h-100">
+          <Card className="card mb-3, h-100" style={{ opacity: opacity }}>
             <Card.Body className="card-body">
               <Card.Title className="card-title">{article.question}</Card.Title>
               <Card.Text className="card-text">{truncatedContent}</Card.Text>
@@ -37,6 +37,7 @@ SimilarArticles.propTypes = {
     question: PropTypes.string.isRequired,
     filename: PropTypes.string.isRequired,
   })).isRequired,
+  opacity: PropTypes.number.isRequired,
 };
 
 export default SimilarArticles;
