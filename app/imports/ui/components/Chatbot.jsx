@@ -116,7 +116,7 @@ const ChatBox = (props) => {
   // Fades in cards
   useEffect(() => {
     if (opacity < 100 && similarArticles[0]) {
-      setInterval(setOpacity(opacity + 1), 2);
+      setInterval(setOpacity(opacity + 1), 3);
     }
   }, [opacity]);
 
