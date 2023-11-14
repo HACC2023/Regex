@@ -11,7 +11,7 @@ const EmbeddingButton = () => {
 
     Meteor.call('generateAndStoreEmbeddings', (err) => {
       if (err) {
-        swal('Error', `Error: ${err.reason}`, 'error');
+        swal('Error', `${err.reason}`, 'error');
       } else {
         swal('Success', 'Embeddings generated and stored successfully', 'success');
       }
