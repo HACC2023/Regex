@@ -4,7 +4,7 @@ import { Facebook, Instagram, List, Search, Twitter, Youtube } from 'react-boots
 import { NavLink } from 'react-router-dom';
 // import EmbeddedButton from './EmbeddedButton'; // TODO: Remove this line when you remove the EmbeddedButton component.
 
-const UHNavbar = () => (
+const Navbar = () => (
   <div>
     <Navbar className="navbarColor" expand="lg">
       <Container>
@@ -108,4 +108,4 @@ const UHNavbar = () => (
   </div>
 );
 
-export default UHNavbar;
+export default Navbar;
