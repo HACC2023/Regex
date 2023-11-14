@@ -3,9 +3,16 @@ import { Col, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+const helper = (opacity) => {
+  if (opacity !== 0) {
+    return (<h5 className="mb-3" style={{ opacity: opacity }}>Relevant Articles</h5>);
+  }
+  return ('');
+};
+
 const SimilarArticles = ({ similarArticles, opacity }) => (
   <>
-    ${opacity === 0 ? </> : <h5 className="mb-3" style={{ opacity: opacity }}>Relevant Articles</h5>}
+    {helper(opacity)}
     {similarArticles.slice(0, 3).map((article) => {
       const truncatedContent = `${article.article_text.substring(0, 500)}...`;
       return (
