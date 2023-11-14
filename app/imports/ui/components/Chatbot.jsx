@@ -152,7 +152,6 @@ const ChatBox = (props) => {
       </Row>
       {/* Similar articles cards */}
       <Row className="mt-5">
-        <h5 className="mb-3">Relevant Articles</h5>
         <SimilarArticles similarArticles={similarArticles} />
       </Row>
     </Container>

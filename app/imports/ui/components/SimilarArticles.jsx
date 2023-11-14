@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SimilarArticles = ({ similarArticles }) => (
   <>
+    <h5 className="mb-3">Relevant Articles</h5>
     {similarArticles.slice(0, 3).map((article) => {
       const truncatedContent = `${article.article_text.substring(0, 500)}...`;
       return (
