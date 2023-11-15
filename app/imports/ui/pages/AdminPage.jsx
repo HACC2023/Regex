@@ -5,6 +5,7 @@ import { Col, Container, Row, Table } from 'react-bootstrap';
 import { AskUs } from '../../api/askus/AskUs';
 import StatItemAdmin from '../components/StatItemAdmin';
 import LoadingSpinner from '../components/LoadingSpinner';
+import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 
@@ -39,7 +40,7 @@ const AdminPage = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>Admin Stats</h2>
+        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
 
         <Col lg={6}>
           <Table striped bordered hover>
@@ -59,17 +60,22 @@ const AdminPage = () => {
         <Col lg={1} />
 
         <Col className="justify-content-md-center" lg={5}>
-          <Row className="text-center g-0">
+          <Row className="g-0"><h5>Startup Features</h5></Row>
+          <Row className="text-center g-0 mb-1">
             <Col>
               <EmbeddedButton />
             </Col>
             <Col>
-              {complete ? <div className="square" style={{ backgroundColor: 'lightgreen' }}>&#x2713;</div> : <div className="square" style={{ backgroundColor: 'red' }}>X</div>}
+              <StatusSquare complete={complete} />
             </Col>
           </Row>
-          <Row className="text-center g-0 mt-1" style={{ marginRight: '-1.4em' }}>
-            <Col lg={5}>
+
+          <Row className="text-center g-0 mb-1">
+            <Col>
               <UpdateDatabaseButton />
+            </Col>
+            <Col>
+              <StatusSquare complete={false} />
             </Col>
           </Row>
         </Col>
