@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { AskUs } from '../../api/askus/AskUs';
 
 export const useChartData = () => {
-  const { ready, chartData } = useTracker(() => {
+  const { chartReady, chartData } = useTracker(() => {
     const subscription = Meteor.subscribe(AskUs.userPublicationName);
     const items = AskUs.collection.find().fetch();
 
@@ -15,9 +15,9 @@ export const useChartData = () => {
 
     return {
       chartData: processedData,
-      ready: subscription.ready(),
+      chartReady: subscription.ready(),
     };
   }, []);
 
-  return { ready, chartData };
+  return { chartReady, chartData };
 };
