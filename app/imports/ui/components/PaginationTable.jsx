@@ -4,12 +4,11 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Table } from 'react-bootstrap';
 import StatItemAdmin from './StatItemAdmin';
-import LoadingBar from './LoadingBar';
+import LoadingSpinner from './LoadingSpinner';
 import { AskUs } from '../../api/askus/AskUs';
 
 const PaginationTable = ({ itemsPerPage }) => {
-  // We start with an empty list of items.
-  const [currentItems, setCurrentItems] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
@@ -21,7 +20,8 @@ const PaginationTable = ({ itemsPerPage }) => {
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
     const tableItems = AskUs.collection.find().fetch();
-    setPageCount(Math.ceil(items.length / itemsPerPage));
+    setTotalCount(tableItems.totalCount);
+    setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
       ready: subscription.ready(),
@@ -30,7 +30,7 @@ const PaginationTable = ({ itemsPerPage }) => {
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % totalCount;
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
@@ -41,7 +41,6 @@ const PaginationTable = ({ itemsPerPage }) => {
         <Table striped bordered hover className="items">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Filename</th>
               <th>Question</th>
               <th>Frequency</th>
@@ -72,7 +71,7 @@ const PaginationTable = ({ itemsPerPage }) => {
           renderOnZeroPageCount={null}
         />
       </Container>
-    ) : <LoadingBar now={100 * (pages.length / maxArticles)} size={7} />
+    ) : <LoadingSpinner />
   );
 };
 
