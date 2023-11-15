@@ -12,9 +12,15 @@ Meteor.publish(AskUs.userPublicationName, function () {
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
-Meteor.publish(AskUs.adminPublicationName, function () {
+Meteor.publish(AskUs.adminPublicationName, function (start, number) {
   if (Roles.userIsInRole(this.userId, 'admin')) {
-    return AskUs.collection.find();
+    const totalCount = AskUs.collection.find().count();
+    const dataCursor = AskUs.collection.find({}, { skip: start, limit: number });
+
+    // Add a property 'totalCount' to the cursor with the total database size
+    dataCursor.totalCount = totalCount;
+
+    return dataCursor;
   }
   return this.ready();
 });
