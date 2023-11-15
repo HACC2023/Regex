@@ -11,6 +11,7 @@ import LoadingBar from '../components/LoadingBar';
 import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
+import PaginationTable from '../components/PaginationTable';
 
 /* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
 const AdminPage = () => {
@@ -51,7 +52,7 @@ const AdminPage = () => {
         <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
 
         <Col lg={6}>
-          {ready ? (
+          {false ? (
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -64,7 +65,8 @@ const AdminPage = () => {
                 {pages.map((page) => <StatItemAdmin key={page._id} page={page} />)}
               </tbody>
             </Table>
-          ) : <LoadingBar now={100 * (pages.length / maxArticles)} size={7} />}
+          ) : /* <LoadingBar now={100 * (pages.length / maxArticles)} size={7} /> */
+            <PaginationTable itemsPerPage={10} />}
 
         </Col>
 
