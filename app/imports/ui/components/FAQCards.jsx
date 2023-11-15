@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Row, Col } from 'react-bootstrap';
 import { AskUs } from '../../api/askus/AskUs';
 import FAQCard from './FAQCard';
-import FAQLoading from './FAQLoading';
+import LoadingBar from './LoadingBar';
 
 /** Renders the top 8 most frequently asked (answered) questions */
 const FAQCards = () => {
@@ -31,7 +31,7 @@ const FAQCards = () => {
         {articles.map((article, index) => (<Col key={index}><FAQCard article={article} /></Col>))}
       </Row>
     </Container>
-  ) : <FAQLoading now={100 * (articles.length / maxArticles)} />);
+  ) : <LoadingBar now={100 * (articles.length / maxArticles)} size={1} />);
 };
 
 export default FAQCards;

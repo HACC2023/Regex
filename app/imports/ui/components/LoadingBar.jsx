@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Row, Col, ProgressBar } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const FAQLoading = (props) => {
-  const { now } = props;
+const LoadingBar = (props) => {
+  const { now, size } = props;
 
   return (
     <Container className="pt-4 pb-5">
@@ -11,7 +11,7 @@ const FAQLoading = (props) => {
         Loading...
       </Row>
       <Row className="justify-content-md-center pt-2">
-        <Col xs={1}>
+        <Col xs={size}>
           <ProgressBar now={now} label={`${now}%`} animated striped />
         </Col>
       </Row>
@@ -19,8 +19,9 @@ const FAQLoading = (props) => {
   );
 };
 
-FAQLoading.propTypes = {
+LoadingBar.propTypes = {
   now: PropTypes.number.isRequired,
+  size: PropTypes.number.isRequired,
 };
 
-export default FAQLoading;
+export default LoadingBar;
