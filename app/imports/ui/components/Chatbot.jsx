@@ -114,7 +114,7 @@ const ChatBox = (props) => {
     return <div>ChatBot</div>;
   };
 
-  // Fades in cards
+  // Fades in similar article cards when they are rendered
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (opacity < 100 && similarArticles[0]) {
@@ -122,7 +122,7 @@ const ChatBox = (props) => {
       }
     }, 3);
 
-    // Clear the interval when the component unmounts
+    // Clears the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [opacity, similarArticles]);
 
