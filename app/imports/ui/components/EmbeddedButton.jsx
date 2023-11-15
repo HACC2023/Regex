@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
 
 const EmbeddingButton = () => {
   const [loading, setLoading] = useState(false);
@@ -10,9 +11,9 @@ const EmbeddingButton = () => {
 
     Meteor.call('generateAndStoreEmbeddings', (err) => {
       if (err) {
-        alert('Error:', err.reason);
+        swal('Error', `${err.reason}`, 'error');
       } else {
-        alert('Embeddings generated and stored successfully');
+        swal('Success', 'Embeddings generated and stored successfully', 'success');
       }
       setLoading(false);
     });

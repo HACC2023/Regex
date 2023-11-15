@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { AskUs } from '../../api/askus/AskUs';
+import { useChartData } from '../components/ChartDataHook';
+import BarChartComponent from '../components/AdminBarChart';
 import StatItemAdmin from '../components/StatItemAdmin';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusSquare from '../components/StatusSquare';
@@ -12,19 +14,19 @@ import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 /* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
 const AdminPage = () => {
   const [complete, setComplete] = useState(false);
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+
+  // Fetch and prepare data for the table
   const { ready, pages } = useTracker(() => {
-    // Get access to Stuff documents.
     const subscription = Meteor.subscribe(AskUs.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Stuff documents
     const items = AskUs.collection.find().fetch();
     return {
       pages: items,
-      ready: rdy,
+      ready: subscription.ready(),
     };
   }, []);
+
+  // Fetch and prepare data for the chart using useChartData hook
+  const { chartData } = useChartData(); // Use the custom hook
 
   // Checks if embeddings (for top 8 freq articles) exist
   useEffect(() => {
@@ -34,11 +36,14 @@ const AdminPage = () => {
         val = false;
       }
     }
-    setComplete(true);
-  });
+    setComplete(val);
+  }, [pages, ready]); // Add dependencies to useEffect
 
   return (ready ? (
-    <Container className="py-3">
+    <Container>
+      <Container>
+        <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
+      </Container>
       <Row className="justify-content-center">
         <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
 
@@ -80,6 +85,9 @@ const AdminPage = () => {
           </Row>
         </Col>
 
+      </Row>
+      <Row className="justify-content-center py-5">
+        <BarChartComponent data={chartData} />
       </Row>
     </Container>
   ) : <LoadingSpinner />);

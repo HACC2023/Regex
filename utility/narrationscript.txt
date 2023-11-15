@@ -1,0 +1,30 @@
+Have you ever navigated the IT website? The experience of searching for solutions often involves sifting through a barrage of articles. However, if you're like me and lack the energy to sift through all this information, the next best alternative is reaching out to the help desk. Unfortunately, the current setup of the Ask us page Is not ideal because it can overwhelm support staff, resulting in slower response times and an increased workload for everyone involved. To enhance efficiency and user experience, improvements to this system are necessary.
+
+It’s much more convenient to get a response than to read through a wall of articles, so our solution is an AI-powered conversational chatbot. 
+
+
+When you first arrive on our version of the Ask us page, based on the more modern looking you h IT help desk page, there are two main elements to note. One is the frequently asked questions section, where the eight most frequently asked questions are displayed, dynamically updated by the chatbot queries, so that navigating to the most commonly asked questions will be even easier for users. Each card contains the article title and a brief snippet of the answer, where they can visit the page by clicking the card title. Of course, if you can’t find your answer there, there is also a search bar where you can ask a question, which upon submission will redirect you to our chatbot page, where it will attempt to answer your question.
+
+
+This intuitive system is designed to offer quick, accurate responses and direct users to relevant articles. Utilizing the OpenAI model, our chatbot will serve as a friendly virtual assistant that will answer any questions related to the ITS articles. Our chatbot will also be able to extend their response about information not explicitly said in the articles.
+
+For instance, take our original question: (how to connect to you h wifi)
+
+
+As you can see it returned
+And if you look down here in the relevant articles section we can see a link in which we can click that leads to the article where the can see the whole article
+
+The chatbot also retains context from previous messages.
+
+
+But what if someone asks a question that is not in the database, such as (where can I get food on the campus)
+
+It is still able to respond to their question …..
+even though such information may not be an explicit part of the IT database.
+
+
+Additionally, the chatbot can also respond to questions about the IT infosec guidelines, (infosec Site Licensing)
+
+The last page in our system is the admin page, accessible only through admin credentials initialized as part of the system. The main purpose of this page is to allow the server to generate embeddings for the chatbot, a process which enables the chatbot’s responses. Due to time constraints, we won’t show that process here, but it only takes a few minutes when the server is first booted up. It also shows a brief snippet of the database that is used to render the FAQ cards, to make sure that said system is working.
+
+But we're not stopping there. Our vision includes features such as refining the AI to summarize information and a special feature - user-based chat history. This means every user has a unique, personal experience with the chatbot.  For admins we plan to offer data analytics on chatbot performance and a comprehensive interface for database management. With this innovative chatbot, we're not just answering questions. We're creating a smarter, more connected you h IT experience. Thank you for watching.

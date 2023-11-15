@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <title>NIST Risk Management Framework | CSRC</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-config" content="/CSRC/Media/images/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="google-site-verification" content="xbrnrVYDgLD-Bd64xHLCt4XsPXzUhQ-4lGMj4TdUUTA" />
+    
+
+        <meta name="description" content="Recent Updates      November 7, 2023:&#160; NIST issues SP 800-53 Release 5.1.1 in the Cybersecurity and Privacy Reference Tool (CPRT).&#160; The corresponding assessment procedures in SP 800-53A have also been updated , and the SP 800-53A assessment procedures..." />
+
+    <!-- dcterms meta information -->
+    <meta name="dcterms.title" content="NIST Risk Management Framework | CSRC | CSRC" />
+    <meta name="dcterms.description" content="Recent Updates      November 7, 2023:&#160; NIST issues SP 800-53 Release 5.1.1 in the Cybersecurity and Privacy Reference Tool (CPRT).&#160; The corresponding assessment procedures in SP 800-53A have also been updated , and the SP 800-53A assessment procedures..." />
+    <meta name="dcterms.creator" content="Computer Security Division, Information Technology Laboratory, National Institute of Standards and Technology, U.S. Department of Commerce" />
+    <meta name="dcterms.date.created" scheme="ISO8601" content="2016-11-30" />
+    <meta name="dcterms.date.reviewed" scheme="ISO8601" content="2023-11-08" />
+    <meta name="dcterms.language" scheme="DCTERMS.RFC1766" content="EN-US" />
+
+    <!-- Facebook OpenGraph Tags -->
+    <meta name="og:site_name" content="CSRC | NIST" />
+    <meta name="og:type" content="article" />
+    <meta name="og:url" content="https://csrc.nist.gov/Projects/risk-management" />
+    <meta name="og:title" content="NIST Risk Management Framework | CSRC | CSRC" />
+    <meta name="og:description" content="Recent Updates      November 7, 2023:&#160; NIST issues SP 800-53 Release 5.1.1 in the Cybersecurity and Privacy Reference Tool (CPRT).&#160; The corresponding assessment procedures in SP 800-53A have also been updated , and the SP 800-53A assessment procedures and SP 800-53B control baselines are also now available in the CPRT.&#160; For more information, see: CSRC News Article and the SP 800-53 Release 5.1.1 FAQ&#160;(updated). A detailed listing of the changes is also available for SP 800-53 and SP 800-53A.  Thank you to those who submitted comments using the&#160;NIST SP 800-53 Public Comment Website.&#160;&#160;  November 1, 2023:&#160;The expedited 2-week public comment period is closed.&#160; NIST is adjudicating comments and plans to issue SP 800-53 Release 5.1.1 in November 2023.&#160;  October 17, 2023:&#160;NIST opens a 2-week expedited public comment period on draft controls for October 17–31, 2023, and plans to issue SP 800-53 Patch Release 5.1.1 in November 2023. Please review and submit comments on the proposed new control, control enhancements..." />
+
+    <meta name="article:tag" content="general security &amp; privacy; privacy; risk management; security measurement; security programs &amp; operations; E-Government Act; Federal Information Security Modernization Act" />
+    <meta name="article:published_time" content="2016-11-30" />
+        <meta name="article:modified_time" content="2023-11-08" />
+    <meta name="og:image" content="https://csrc.nist.gov/CSRC/media/images/CSRC-logo-open-graph.png" />
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/images/icons/manifest.json" />
+    <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#000000" />
+    <link href="/CSRC/Media/images/favicons/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link href="/CSRC/Media/images/favicons/favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="/dist/app.css" rel="stylesheet" />
+
+    <!-- reCAPTCHA v3 -->
+    <style>
+    .grecaptcha-badge {
+        visibility: hidden;
+    }
+    </style>
+
+    
+
+
+    <script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff"></script>
+    <style id="antiClickjackCss">
+        body > * {
+            display: none !important;
+        }
+        #antiClickjack {
+            display: block !important;
+        }
+    </style>
+    <noscript>
+        <style id="antiClickjackNoScript">
+            body > * { display: block !important; }
+            #antiClickjack {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script type="text/javascript" id="antiClickjackScript">
+        if (self === top) {
+            // no clickjacking
+            var antiClickjack = document.getElementById("antiClickjackCss"); antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            setTimeout(tryForward(), 5000);
+        }
+        function tryForward() {
+            top.location = self.location;
+        }
+    </script>
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSQ0PLGJZP"></script> 
+    <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-TSQ0PLGJZP'); </script>
+</head>
+<body>
+    <div id="antiClickjack" style="display: none;">
+        <strong style="font-size: 1.6rem;">You are viewing this page in an unauthorized frame window.</strong>
+        <p>This is a potential security issue, you are being redirected to <a href="https://csrc.nist.gov">https://csrc.nist.gov</a>.</p>
+    </div>
+
+    <section class="usa-banner" aria-label="Official government website">
+    <div class="usa-accordion container">
+        <header class="usa-banner__header">
+            <noscript>
+                <p style="font-size: 0.85rem; font-weight: bold;">You have JavaScript disabled. This site requires JavaScript to be enabled for complete site functionality.</p>
+            </noscript>
+            <img class="usa-banner__header-flag" src="/images/usbanner/us_flag_small.png" alt="U.S. flag">
+            &nbsp;
+            <span class="usa-banner__header-text">An official website of the United States government</span>
+            
+            <button id="gov-banner-button" class="usa-accordion__button usa-banner__button" data-toggle="collapse" data-target="#gov-banner" aria-expanded="true" aria-controls="gov-banner">
+                <span class="usa-banner__button-text">Here's how you know</span>
+            </button>
+        </header>
+        <div class="usa-banner__content usa-accordion__content collapse in" role="tabpanel" id="gov-banner" aria-expanded="true">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <img class="usa-banner__icon usa-media-block__img" src="/images/usbanner/icon-dot-gov.svg" alt="Dot gov">
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                            <p>
+                                <strong>Official websites use .gov</strong>
+                                <br>
+                                A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <img class="usa-banner__icon usa-media-block__img" src="/images/usbanner/icon-https.svg" alt="Https">
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                        <p>
+                            <strong>Secure .gov websites use HTTPS</strong>
+                            <br>
+                            A <strong>lock</strong> (<img class="usa-banner__lock" src="/images/usbanner/lock.svg" alt="Dot gov">) or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <nav id="navbar" class="navbar">
+    <div id="nist-menu-container" class="container">
+        <div class="row">
+            <!-- Brand -->
+            <div class="col-xs-6 col-md-4 navbar-header">
+                <a class="navbar-brand" href="https://www.nist.gov" target="_blank" id="navbar-brand-image">
+                    <img src="/CSRC/media/images/svg/nist-logo.svg" alt="National Institute of Standards and Technology" width="110" height="30">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-8 navbar-nist-logo">
+                <div class="form-inline hidden-sm hidden-xs">
+                    <form name="site-search" id="site-search-form" action="/search" method="GET">
+                        <label for="search-csrc-query" class="element-invisible">Search</label>
+                        <input autocomplete="off" class="form-control" id="search-csrc-query" name="keywords" type="text" size="15" maxlength="128" placeholder="Search CSRC" />
+                        <input type="hidden" name="ipp" value="25" />
+                        <input type="hidden" name="sortBy" value="relevance" />
+                        <input type="hidden" name="showOnly" value="publications,projects,news,events,presentations,glossary,topics" />
+                        <input type="hidden" name="topicsMatch" value="ANY" />
+                        <input type="hidden" name="status" value="Final,Draft" />
+                        <button type="submit" id="search-csrc-submit-btn" class="form-submit">
+                            <span class="element-invisible">Search</span>
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <span id="nvd-menu-button" class="pull-right">
+                    <a href="#" id="nvd-menu-button-link">
+                        <span class="fa fa-bars"></span>
+                        <span id="nvd-menu-full-text">CSRC MENU</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-inline hidden-md hidden-lg">
+        <form name="site-search-mobile" id="site-search-form-mobile" action="/search" method="GET">
+            <label for="search-csrc-query-mobile" class="element-invisible">Search</label>
+            <input autocomplete="off" class="form-control" id="search-csrc-query-mobile" name="keywords" type="text" size="15" maxlength="128" placeholder="Search CSRC" />
+            <button type="submit" id="search-csrc-submit-btn-mobile" class="form-submit">
+                <span class="element-invisible">Search</span>
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <div class="main-menu-row container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="main-menu-drop" class="col-lg-12" style="display: none;">
+            <ul>
+                <li><a href="/projects">Projects</a></li>
+                <li>
+                    <a href="/publications">
+                        Publications
+                        <span class="expander fa fa-plus" id="main-menu-pubs-expander" data-expander-name="publications" data-expanded="false">
+                            <span class="element-invisible">Expand or Collapse</span>
+                        </span>
+                    </a>
+                    <div style="display: none;" class="sub-menu" data-expander-trigger="publications" id="main-menu-pubs-expanded">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p><a href="/publications/drafts-open-for-comment">Drafts for Public Comment</a></p>
+                                <p><a href="/publications/draft-pubs">All Public Drafts</a></p>
+                                <p><a href="/publications/final-pubs">Final Pubs</a></p>
+                                <p><a href="/publications/fips">FIPS <small>(standards)</small></a></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><a href="/publications/sp">Special Publications (SP<small>s</small>)</a></p>
+                                <p><a href="/publications/ir">IR <small>(interagency/internal reports)</small></a></p>
+                                <p><a href="/publications/cswp">CSWP <small>(cybersecurity white papers)</small></a></p>
+                                <p><a href="/publications/itl-bulletin">ITL Bulletins</a></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><a href="/publications/project-description">Project Descriptions</a></p>
+                                <p><a href="/publications/journal-article">Journal Articles</a></p>
+                                <p><a href="/publications/conference-paper">Conference Papers</a></p>
+                                <p><a href="/publications/book">Books</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/topics">
+                        Topics
+                        <span class="expander fa fa-plus" id="main-menu-topics-expander" data-expander-name="topics" data-expanded="false">
+                            <span class="element-invisible">Expand or Collapse</span>
+                        </span>
+                    </a>
+                    <div style="display: none;" class="sub-menu" data-expander-trigger="topics" id="main-menu-topics-expanded">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p><a href="/Topics/Security-and-Privacy">Security & Privacy</a></p>
+                                <p><a href="/Topics/Applications">Applications</a></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><a href="/Topics/Technologies">Technologies</a></p>
+                                <p><a href="/Topics/Sectors">Sectors</a></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><a href="/Topics/Laws-and-Regulations">Laws & Regulations</a></p>
+                                <p><a href="/Topics/Activities-and-Products">Activities & Products</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/news">News & Updates</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/glossary">Glossary</a></li>
+                <li>
+                    <a href="/about">
+                        About CSRC
+                        <span class="expander fa fa-plus" id="main-menu-about-expander" data-expander-name="about" data-expanded="false">
+                            <span class="element-invisible">Expand or Collapse</span>
+                        </span>
+                    </a>
+                    <div style="display: none;" class="sub-menu" data-expander-trigger="about" id="main-menu-about-expanded">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>
+                                    <strong><a href="/Groups/Computer-Security-Division">Computer Security Division</a></strong><br />
+                                    <ul>
+                                        <li><a href="/Groups/Computer-Security-Division/Cryptographic-Technology">Cryptographic Technology</a></li>
+                                        <li><a href="/Groups/Computer-Security-Division/Secure-Systems-and-Applications">Secure Systems and Applications</a></li>
+                                        <li><a href="/Groups/Computer-Security-Division/Security-Components-and-Mechanisms">Security Components and Mechanisms</a></li>
+                                        <li><a href="/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management">Security Engineering and Risk Management</a></li>
+                                        <li><a href="/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement">Security Testing, Validation, and Measurement</a></li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>
+                                    <strong><a href="/Groups/Applied-Cybersecurity-Division">Applied Cybersecurity Division</a></strong><br />
+                                    <ul>
+                                        <li><a href="/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications">Cybersecurity and Privacy Applications</a></li>
+                                        <li><a href="/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence">National Cybersecurity Center of Excellence (NCCoE)</a></li>
+                                        <li><a href="https://www.nist.gov/nice/">National Initiative for Cybersecurity Education (NICE)</a></li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <a href="/contact">
+                                        Contact Us
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- /#mobile-nav-container -->
+    </div>
+
+</nav>
+
+    <section id="itl-header" class="has-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    <div class="hidden-xs hidden-sm" id="itl-header-lg">
+                        <a href="https://www.nist.gov/itl" target="_blank" id="itl-header-link">Information Technology Laboratory</a>
+                    </div>
+                    <div class="hidden-xs hidden-sm" id="csrc-header-lg">
+                        <a href="/" id="csrc-header-link-lg">Computer Security Resource Center</a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="hidden-xs hidden-sm hidden-md">
+                        <a id="logo-csrc-lg" href="/"><img id="img-logo-csrc-lg" src="/CSRC/Media/images/nist-logo-csrc-white.svg" alt="CSRC Logo" class="csrc-header-logo"></a>
+                    </div>
+                    <div class="hidden-lg">
+                        <a id="logo-csrc-sm" href="/"><img id="img-logo-csrc-sm" src="/CSRC/Media/images/nist-logo-csrc-white.svg" alt="CSRC Logo" class="csrc-header-logo"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="body-section" class="container">
+        
+        
+
+
+
+
+<div class="breadcrumb">
+        <a href="/projects" class="breadcrumb-link">Projects</a>
+</div>
+
+
+    <h1 id="projectName">NIST Risk Management Framework <small id="project-acronym">RMF</small></h1>
+
+
+<div class="page-social-buttons" id=&quot;news-social-buttons&quot;>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontent.csrc.e1c.nist.gov%2Fprojects%2Frisk-management" class="social-facebook"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i><span class="sr-only">Share to Facebook</span></a>
+    <a href="https://twitter.com/share?url=https%3A%2F%2Fcontent.csrc.e1c.nist.gov%2Fprojects%2Frisk-management" class="social-twitter"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i><span class="sr-only">Share to Twitter</span></a>
+</div>
+
+
+<div class="row visible-sm visible-xs visible-md">
+	<div class="col-sm-12">
+        <div class="bs-callout bs-callout-subnav" id="projectLinksContainer-sm">
+            <h4><i class="fa fa-link"></i> Project Links</h4>
+            <div class="project-icons-container">
+                <span>
+                    <a href="/projects/risk-management" id="NavOverviewLink-sm">
+                        <i class="fa fa-info-circle"></i> Overview
+                    </a>
+                </span>
+                <span>
+                    <a href="/Projects/risk-management/faqs" id="NavFaqsLink-sm">
+                        <i class="fa fa-question-circle"></i> FAQs
+                    </a>
+                </span>
+                                <span>
+                    <a href="/Projects/risk-management/news" id="NavNewsLink-sm" data-count="21">
+                        <i class="fa fa-newspaper-o"></i> News &amp; Updates
+                    </a>
+                </span>
+                                <span>
+                    <a href="/Projects/risk-management/events" id="NavEventsLink-sm" data-count="4">
+                        <i class="fa fa-calendar-o"></i> Events
+                    </a>
+                </span>
+                                <span>
+                    <a href="/Projects/risk-management/publications" id="NavPubsLink-sm" data-count="27">
+                        <i class="fa fa-file-text"></i> Publications
+                    </a>
+                </span>
+                                <span>
+                    <a href="/Projects/risk-management/presentations" id="NavPresLink-sm" data-count="18">
+                        <i class="fa fa-desktop"></i> Presentations
+                    </a>
+                </span>
+            </div>
+        </div>
+	</div>
+</div>
+<div class="row">
+
+
+        <div class="col-lg-8 col-sm-12">
+<h3>Overview</h3>
+
+<div id="overview">
+    <div aria-multiselectable="true" class="panel-group" id="collapse1699457381876" role="tablist">
+<div class="panel panel-default">
+<div class="panel-heading" id="heading1699457381876_0" role="tab">
+<div class="panel-title"><a aria-controls="collapse1699457381876_0" aria-expanded="false" class="collapsed" data-parent="#collapse1699457381876" data-target="#collapse1699457381876_0" data-toggle="collapse" href="javascript:void(0)">Recent Updates </a></div>
+</div>
+
+<div aria-labelledby="heading1699457381876_0" class="collapse in panel-collapse" id="collapse1699457381876_0" role="tabpanel">
+<div class="panel-body">
+<p><strong>November 7, 2023:&nbsp;</strong> NIST issues SP 800-53 Release 5.1.1 in the <a href="/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home">Cybersecurity and Privacy Reference Tool (CPRT)</a>.&nbsp; The corresponding assessment procedures in SP 800-53A have also been updated , and the SP 800-53A assessment procedures and SP 800-53B control baselines are also now available in the CPRT.&nbsp; For more information, see: <a href="/news/2023/cybersecurity-and-privacy-reference-tool-update">CSRC News Article</a> and the <a href="/csrc/media/Projects/risk-management/documents/Additional%20Resources/SP800.53.r5.1.1-FAQ.pdf">SP 800-53 Release 5.1.1 FAQ</a>&nbsp;(updated). A detailed listing of the changes is also available for <a href="/pubs/sp/800/53/r5/upd1/final">SP 800-53</a> and <a href="/pubs/sp/800/53/a/r5/final">SP 800-53A</a>.</p>
+
+<p><em>Thank you to those who submitted comments using the&nbsp;<a href="/Projects/risk-management/sp800-53-controls/public-comments#/home">NIST SP 800-53 Public Comment Website</a>.&nbsp;&nbsp;</em></p>
+
+<p><strong>November 1, 2023:</strong>&nbsp;The expedited 2-week public comment period is closed.&nbsp; NIST is adjudicating comments and plans to issue SP 800-53 Release 5.1.1 in November 2023.&nbsp;</p>
+
+<p><strong>October 17, 2023:&nbsp;</strong>NIST opens a 2-week expedited public comment period on draft controls for October 17–31, 2023, and plans to issue SP 800-53 Patch Release 5.1.1 in November 2023. Please review and submit comments on the proposed new control, control enhancements and corresponding assessment procedures using the <a href="/Projects/risk-management/sp800-53-controls/public-comments#/home">NIST SP 800-53 Public Comment Website</a>.&nbsp;For more information, see: <a href="/news/2023/nist-invites-public-comments-on-sp-800-53-controls">CSRC News Article</a> and the <a href="/csrc/media/Projects/risk-management/documents/Additional%20Resources/SP800.53.r5.1.1-FAQ.pdf">SP 800-53 Release 5.1.1 FAQ</a>.</p>
+
+<p>Please direct questions and comments to:&nbsp;<a href="mailto:800-53comments@list.nist.gov" style="color:#0563c1; text-decoration:underline">800-53comments@list.nist.gov</a>.&nbsp;&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+
+<p>The NIST Risk Management Framework (RMF) provides a comprehensive, flexible, repeatable, and measurable 7-step process that any organization can use to manage information security and privacy risk for organizations and systems and links to a suite of NIST standards and guidelines to support implementation of risk management programs to meet the requirements of the Federal Information Security Modernization Act (FISMA). &nbsp;</p>
+
+<hr>
+<p>This site provides an <a href="/Projects/risk-management/about-rmf">overview</a>, explains each RMF step, and offers resources to support implementation, such as updated Quick Start Guides, and the <a href="https://csrc.nist.gov/publications/detail/sp/800-37/rev-2/final">RMF Publication</a>.</p>
+
+<p><br>
+<a href="/Projects/risk-management/about-rmf" target="_self"><img alt="RMF wheel" center="" src="/CSRC/media/Projects/risk-management/images-media/RMF%20Logos/PNG%20Format/NIST%20RMF%20Graphc.png" style="float:left; height:330px; margin-bottom:90px; margin-top:90px; padding-right:20px; width:350px"></a></p>
+
+<div class="table-responsive">
+<table align="left" class="table table-condensed table-striped">
+	<tbody>
+		<tr>
+			<td><strong><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/prepare-step">Prepare</a></strong></td>
+			<td>Essential activities to <strong>prepare</strong> the organization to manage security and privacy risks&nbsp;</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/categorize-step">Categorize</a></td>
+			<td><strong>Categorize</strong> the system and information processed, stored, and transmitted based on an impact analysis</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/select-step">Select</a></td>
+			<td><strong>Select </strong>the set of NIST SP 800-53 controls to protect the system based on risk assessment(s)</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/implement-step">Implement</a></td>
+			<td><strong>Implement</strong> the controls and document how controls are deployed</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/assess-step">Assess</a></td>
+			<td><strong>Assess</strong> to determine if the controls are in place, operating as intended, and producing the desired results</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/authorize-step">Authorize</a></td>
+			<td>Senior official makes a risk-based decision to <strong>authorize</strong> the system (to operate)</td>
+		</tr>
+		<tr>
+			<td><a class="btn btn-primary btn-lg btn-block" href="/Projects/risk-management/about-rmf/monitor-step">Monitor</a></td>
+			<td>Continuously <strong>monitor</strong> control implementation and risks to the system</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<hr>
+<p>&nbsp;</p>
+
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<p style="text-align:center"><img alt="Learn More Picture" src="/CSRC/media/Projects/risk-management/images-media/Stock%20Images/iStock-hands-raised-for-vote-1094302626.jpg" style="height:167px; width:250px"></p>
+
+<h4 style="text-align:center">Learn More</h4>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><a href="/Projects/risk-management/fisma-background">FISMA Background</a>&nbsp;</li>
+	<li><a href="/Projects/risk-management/about-rmf">About the Risk Management Framework (RMF)</a></li>
+	<li><a href="/Projects/risk-management/faqs">RMF FAQs</a></li>
+	<li><a href="/Projects/risk-management/rmf-course">Introduction to the RMF Online Course</a></li>
+	<li><a href="/Projects/risk-management/publications">Publications</a></li>
+</ul>
+
+<p style="text-align:center">&nbsp;</p>
+</div>
+
+<div class="col-md-4 col-xs-12">
+<p style="text-align:center"><a href="/Projects/risk-management/sp800-53-controls"><img alt="SP 800-53 Controls &amp; SP 800-53B Control Baselines Picture" src="/CSRC/media/Projects/risk-management/images-media/Stock%20Images/iStock-concept-protection-cyber-security-hands-1180897630.jpg" style="height:167px; width:250px"></a></p>
+
+<h4 style="text-align:center">Controls &amp; Control Baselines</h4>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><a href="/Projects/risk-management/sp800-53-controls/release-search">Controls &amp; Control Baselines</a></li>
+	<li><a href="/Projects/risk-management/sp800-53-controls/downloads">Control &amp; Control Baseline Downloads</a></li>
+	<li><a href="/Projects/risk-management/sp800-53-controls/overlay-repository">Control Overlay Repository</a></li>
+</ul>
+
+<p>&nbsp;</p>
+</div>
+
+<div class="col-md-4 col-xs-12">
+<p style="text-align:center"><img alt="Stay Informed Picture" src="/CSRC/media/Projects/risk-management/images-media/Stock%20Images/iStock-stay-informed-memo-1169888385.jpg" style="height:167px; padding-right:10px; width:250px"></p>
+
+<h4 style="text-align:center">Stay Informed &amp; Contact Us</h4>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><a href="/Projects/risk-management/mailing-list">Subscribe to the RMF Email Announcement List</a></li>
+	<li><a href="/Projects/risk-management/events">Register for and watch events/webinars</a></li>
+	<li><a href="/Projects/risk-management/meet-the-rmf-team">Meet the RMF Team &amp; Contact Information</a></li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
+</div>
+
+</div>
+
+        </div>
+
+
+        <div class="col-lg-4 hidden-xs hidden-sm hidden-md">
+
+            <div class="project-nav-container">
+                <div class="bs-callout bs-callout-subnav" id="projectLinksContainer-lg">
+<h4><i class="fa fa-link"></i> Project Links</h4>
+<div class="project-icons-container">
+    <span>
+        <a href="/projects/risk-management" id="SideNavOverviewLink">
+            <i class="fa fa-info-circle"></i> Overview
+        </a>
+    </span>
+    <span>
+        <a href="/Projects/risk-management/faqs" id="SideNavFaqsLink">
+            <i class="fa fa-question-circle"></i> FAQs
+        </a>
+    </span>
+        <span>
+        <a href="/Projects/risk-management/news" id="SideNavNewsLink" data-count="21">
+            <i class="fa fa-newspaper-o"></i> News &amp; Updates
+        </a>
+    </span>
+        <span>
+        <a href="/Projects/risk-management/events" id="SideNavEventsLink" data-count="4">
+            <i class="fa fa-calendar-o"></i> Events
+        </a>
+    </span>
+        <span>
+        <a href="/Projects/risk-management/publications" id="SideNavPubsLink" data-count="27">
+            <i class="fa fa-file-text"></i> Publications
+        </a>
+    </span>
+        <span>
+        <a href="/Projects/risk-management/presentations" id="SideNavPresLink" data-count="18">
+            <i class="fa fa-desktop"></i> Presentations
+        </a>
+    </span>
+</div>
+
+    <h4>Additional Pages</h4>
+    <div id="projectPagesCallout-lg">
+
+<a class="csrc-add-page" data-node-level="0" data-node-order="1" href="/Projects/risk-management/fisma-background" id="projPage0" style="border-left: solid 0rem transparent;">FISMA Background</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="2" href="/Projects/risk-management/about-rmf" id="projPage1" style="border-left: solid 0rem transparent;">About the RMF</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="1" href="/Projects/risk-management/about-rmf/prepare-step" id="projPage2" style="border-left: solid 1rem transparent;">Prepare Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="2" href="/Projects/risk-management/about-rmf/categorize-step" id="projPage3" style="border-left: solid 1rem transparent;">Categorize Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="3" href="/Projects/risk-management/about-rmf/select-step" id="projPage4" style="border-left: solid 1rem transparent;">Select Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="4" href="/Projects/risk-management/about-rmf/implement-step" id="projPage5" style="border-left: solid 1rem transparent;">Implement Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="5" href="/Projects/risk-management/about-rmf/assess-step" id="projPage6" style="border-left: solid 1rem transparent;">Assess Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="7" href="/Projects/risk-management/about-rmf/authorize-step" id="projPage7" style="border-left: solid 1rem transparent;">Authorize Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="8" href="/Projects/risk-management/about-rmf/monitor-step" id="projPage8" style="border-left: solid 1rem transparent;">Monitor Step</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="3" href="/Projects/risk-management/sp800-53-controls" id="projPage9" style="border-left: solid 0rem transparent;">SP 800-53 Controls</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/release-search" id="projPage10" style="border-left: solid 1rem transparent;">SP 800-53 Release Search</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="2" href="/Projects/risk-management/sp800-53-controls/downloads" id="projPage11" style="border-left: solid 1rem transparent;">Downloads</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="3" href="/Projects/risk-management/sp800-53-controls/public-comments-home" id="projPage12" style="border-left: solid 1rem transparent;">Control Catalog Public Comments Overview</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/public-comments-home/more-info" id="projPage13" style="border-left: solid 2rem transparent;">More Information</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="2" href="/Projects/risk-management/sp800-53-controls/public-comments-home/user-guide" id="projPage14" style="border-left: solid 2rem transparent;">User Guide</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="3" href="/Projects/risk-management/sp800-53-controls/public-comments-home/faq" id="projPage15" style="border-left: solid 2rem transparent;">SP 800-53 Comment Site FAQ</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="4" href="/Projects/risk-management/sp800-53-controls/public-comments" id="projPage16" style="border-left: solid 1rem transparent;">Public Comments: Submit and View</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="5" href="/Projects/risk-management/sp800-53-controls/overlay-repository" id="projPage17" style="border-left: solid 1rem transparent;">Control Overlay Repository</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/overlay-repository/overlay-overview" id="projPage18" style="border-left: solid 2rem transparent;">Overlay Overview</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="6" href="/Projects/risk-management/sp800-53-controls/overlay-repository/submission-process" id="projPage19" style="border-left: solid 2rem transparent;">SCOR Submission Process</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="7" href="/Projects/risk-management/sp800-53-controls/overlay-repository/scor-contact" id="projPage20" style="border-left: solid 2rem transparent;">SCOR Contact</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="4" href="/Projects/risk-management/rmf-course" id="projPage21" style="border-left: solid 0rem transparent;">RMF Introductory Course</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="5" href="/Projects/risk-management/mailing-list" id="projPage22" style="border-left: solid 0rem transparent;">RMF Email List</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="6" href="/Projects/risk-management/meet-the-rmf-team" id="projPage23" style="border-left: solid 0rem transparent;">Meet the RMF Team</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="7" href="/Projects/risk-management/rmf-presentation-request" id="projPage24" style="border-left: solid 0rem transparent;">RMF Presentation Request</a>
+
+
+    </div>
+
+                </div>
+            </div>
+
+    <div class="bs-callout bs-callout-success" id="contactsCallout-lg">
+        <h4><i class="fa fa-user"></i> Contacts</h4>
+            <p id="projContact0"><span class='contact-display'><strong data-field='full-name'> <span data-field='firstname'>NIST Risk Management Framework</span>   <span data-field='lastname'>Team</span> </strong><br/><a href='mailto:sec-cert@nist.gov' data-field='email'>sec-cert@nist.gov</a><br/></span></p>
+    </div>
+
+
+    <div class="bs-callout bs-callout-danger" id="owningGroupCallout-lg">
+        <h4><i class="fa fa-sitemap"></i> Group</h4>
+        <a href="/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management">Security Engineering and Risk Management</a>
+    </div>
+
+
+    <div class="bs-callout bs-callout-danger" id="topicsCallout-lg">
+        <h4><i class="fa fa-tag"></i> Topics</h4>
+
+            <p>
+                <strong id="catName0-lg">Security and Privacy:</strong>
+                    <a id="catTopLink0-0-lg" href="/Topics/Security-and-Privacy/general-security-and-privacy">general security &amp; privacy</a>,                     <a id="catTopLink0-1-lg" href="/Topics/Security-and-Privacy/privacy">privacy</a>,                     <a id="catTopLink0-2-lg" href="/Topics/Security-and-Privacy/risk-management">risk management</a>,                     <a id="catTopLink0-3-lg" href="/Topics/Security-and-Privacy/security-measurement">security measurement</a>,                     <a id="catTopLink0-4-lg" href="/Topics/Security-and-Privacy/security-programs-and-operations">security programs &amp; operations</a>            </p>
+            <p>
+                <strong id="catName1-lg">Laws and Regulations:</strong>
+                    <a id="catTopLink1-0-lg" href="/Topics/Laws-and-Regulations/laws/E-Gov-Act">E-Government Act</a>,                     <a id="catTopLink1-1-lg" href="/Topics/Laws-and-Regulations/laws/FISMA">Federal Information Security Modernization Act</a>            </p>
+    </div>
+
+
+    <div class="bs-callout bs-callout-warning" id="relatedProjectsCallout-lg">
+        <h4>Related Projects</h4>
+            <a href="/Projects/cybersecurity-framework" id="relProjLink0">Cybersecurity Framework</a><br/>
+            <a href="/Projects/cyber-supply-chain-risk-management" id="relProjLink1">Cybersecurity Supply Chain Risk Management</a><br/>
+            <a href="/Projects/forum" id="relProjLink2">Federal Cybersecurity &amp; Privacy Forum</a><br/>
+            <a href="/Projects/macos-security" id="relProjLink3">macOS Security</a><br/>
+            <a href="/Projects/open-security-controls-assessment-language" id="relProjLink4">Open Security Controls Assessment Language</a><br/>
+            <a href="/Projects/operational-technology-security" id="relProjLink5">Operational Technology Security</a><br/>
+            <a href="/Projects/privacy-engineering" id="relProjLink6">Privacy Engineering</a><br/>
+            <a href="/Projects/protecting-controlled-unclassified-information" id="relProjLink7">Protecting CUI</a><br/>
+            <a href="/Projects/systems-security-engineering-project" id="relProjLink8">Systems Security Engineering (SSE) Project</a><br/>
+    </div>
+
+
+        </div>
+
+</div>
+    <div class="row visible-sm visible-xs visible-md">
+
+        <div class="col-sm-12">
+
+<div class="bs-callout bs-callout-subnav" id="projectPagesCallout-sm">
+    <h4>Additional Pages</h4>
+    <p>
+
+<a class="csrc-add-page" data-node-level="0" data-node-order="1" href="/Projects/risk-management/fisma-background" id="projPage0-sm" style="border-left: solid 0rem transparent;">FISMA Background</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="2" href="/Projects/risk-management/about-rmf" id="projPage1-sm" style="border-left: solid 0rem transparent;">About the RMF</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="1" href="/Projects/risk-management/about-rmf/prepare-step" id="projPage2-sm" style="border-left: solid 1rem transparent;">Prepare Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="2" href="/Projects/risk-management/about-rmf/categorize-step" id="projPage3-sm" style="border-left: solid 1rem transparent;">Categorize Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="3" href="/Projects/risk-management/about-rmf/select-step" id="projPage4-sm" style="border-left: solid 1rem transparent;">Select Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="4" href="/Projects/risk-management/about-rmf/implement-step" id="projPage5-sm" style="border-left: solid 1rem transparent;">Implement Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="5" href="/Projects/risk-management/about-rmf/assess-step" id="projPage6-sm" style="border-left: solid 1rem transparent;">Assess Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="7" href="/Projects/risk-management/about-rmf/authorize-step" id="projPage7-sm" style="border-left: solid 1rem transparent;">Authorize Step</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="8" href="/Projects/risk-management/about-rmf/monitor-step" id="projPage8-sm" style="border-left: solid 1rem transparent;">Monitor Step</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="3" href="/Projects/risk-management/sp800-53-controls" id="projPage9-sm" style="border-left: solid 0rem transparent;">SP 800-53 Controls</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/release-search" id="projPage10-sm" style="border-left: solid 1rem transparent;">SP 800-53 Release Search</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="2" href="/Projects/risk-management/sp800-53-controls/downloads" id="projPage11-sm" style="border-left: solid 1rem transparent;">Downloads</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="3" href="/Projects/risk-management/sp800-53-controls/public-comments-home" id="projPage12-sm" style="border-left: solid 1rem transparent;">Control Catalog Public Comments Overview</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/public-comments-home/more-info" id="projPage13-sm" style="border-left: solid 2rem transparent;">More Information</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="2" href="/Projects/risk-management/sp800-53-controls/public-comments-home/user-guide" id="projPage14-sm" style="border-left: solid 2rem transparent;">User Guide</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="3" href="/Projects/risk-management/sp800-53-controls/public-comments-home/faq" id="projPage15-sm" style="border-left: solid 2rem transparent;">SP 800-53 Comment Site FAQ</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="4" href="/Projects/risk-management/sp800-53-controls/public-comments" id="projPage16-sm" style="border-left: solid 1rem transparent;">Public Comments: Submit and View</a>
+<a class="csrc-add-page" data-node-level="1" data-node-order="5" href="/Projects/risk-management/sp800-53-controls/overlay-repository" id="projPage17-sm" style="border-left: solid 1rem transparent;">Control Overlay Repository</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="1" href="/Projects/risk-management/sp800-53-controls/overlay-repository/overlay-overview" id="projPage18-sm" style="border-left: solid 2rem transparent;">Overlay Overview</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="6" href="/Projects/risk-management/sp800-53-controls/overlay-repository/submission-process" id="projPage19-sm" style="border-left: solid 2rem transparent;">SCOR Submission Process</a>
+<a class="csrc-add-page" data-node-level="2" data-node-order="7" href="/Projects/risk-management/sp800-53-controls/overlay-repository/scor-contact" id="projPage20-sm" style="border-left: solid 2rem transparent;">SCOR Contact</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="4" href="/Projects/risk-management/rmf-course" id="projPage21-sm" style="border-left: solid 0rem transparent;">RMF Introductory Course</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="5" href="/Projects/risk-management/mailing-list" id="projPage22-sm" style="border-left: solid 0rem transparent;">RMF Email List</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="6" href="/Projects/risk-management/meet-the-rmf-team" id="projPage23-sm" style="border-left: solid 0rem transparent;">Meet the RMF Team</a>
+<a class="csrc-add-page" data-node-level="0" data-node-order="7" href="/Projects/risk-management/rmf-presentation-request" id="projPage24-sm" style="border-left: solid 0rem transparent;">RMF Presentation Request</a>
+
+
+    </p>
+</div>
+
+
+    <div class="bs-callout bs-callout-subnav" id="contactsCallout-sm">
+        <h4><i class="fa fa-user"></i> Contacts</h4>
+        <p style="padding-left: 15px;">
+            <span id="projContact0-sm"><span class='contact-display'><strong data-field='full-name'> <span data-field='firstname'>NIST Risk Management Framework</span>   <span data-field='lastname'>Team</span> </strong><br/><a href='mailto:sec-cert@nist.gov' data-field='email'>sec-cert@nist.gov</a><br/></span></span><br/>
+        </p>
+    </div>
+
+
+    <div class="bs-callout bs-callout-danger" id="owningGroupCallout-sm">
+        <h4><i class="fa fa-sitemap"></i> Group</h4>
+        <a href="/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management">Security Engineering and Risk Management</a>
+    </div>
+
+
+    <div class="bs-callout bs-callout-danger" id="topicsCallout-sm">
+        <h4><i class="fa fa-tag"></i> Topics</h4>
+
+            <p>
+                <strong id="catName0-sm">Security and Privacy:</strong>
+                    <a id="catTopLink0-0-sm" href="/Topics/Security-and-Privacy/general-security-and-privacy">general security &amp; privacy</a>,                     <a id="catTopLink0-1-sm" href="/Topics/Security-and-Privacy/privacy">privacy</a>,                     <a id="catTopLink0-2-sm" href="/Topics/Security-and-Privacy/risk-management">risk management</a>,                     <a id="catTopLink0-3-sm" href="/Topics/Security-and-Privacy/security-measurement">security measurement</a>,                     <a id="catTopLink0-4-sm" href="/Topics/Security-and-Privacy/security-programs-and-operations">security programs &amp; operations</a>            </p>
+            <p>
+                <strong id="catName1-sm">Laws and Regulations:</strong>
+                    <a id="catTopLink1-0-sm" href="/Topics/Laws-and-Regulations/laws/E-Gov-Act">E-Government Act</a>,                     <a id="catTopLink1-1-sm" href="/Topics/Laws-and-Regulations/laws/FISMA">Federal Information Security Modernization Act</a>            </p>
+    </div>
+
+
+    <div class="bs-callout bs-callout-warning" id="relatedProjectsCallout-sm">
+        <h4>Related Projects</h4>
+        <p>
+            <a href="/Projects/cybersecurity-framework" id="relProjLink0-sm">Cybersecurity Framework</a><br/>
+            <a href="/Projects/cyber-supply-chain-risk-management" id="relProjLink1-sm">Cybersecurity Supply Chain Risk Management</a><br/>
+            <a href="/Projects/forum" id="relProjLink2-sm">Federal Cybersecurity &amp; Privacy Forum</a><br/>
+            <a href="/Projects/macos-security" id="relProjLink3-sm">macOS Security</a><br/>
+            <a href="/Projects/open-security-controls-assessment-language" id="relProjLink4-sm">Open Security Controls Assessment Language</a><br/>
+            <a href="/Projects/operational-technology-security" id="relProjLink5-sm">Operational Technology Security</a><br/>
+            <a href="/Projects/privacy-engineering" id="relProjLink6-sm">Privacy Engineering</a><br/>
+            <a href="/Projects/protecting-controlled-unclassified-information" id="relProjLink7-sm">Protecting CUI</a><br/>
+            <a href="/Projects/systems-security-engineering-project" id="relProjLink8-sm">Systems Security Engineering (SSE) Project</a><br/>
+        </p>
+    </div>
+
+
+        </div>
+
+    </div>
+
+<div class="row">
+    <div class="col-md-12 historical-data-area" id="historical-data-area">
+
+            <span>Created <span id="page-created-date">November 30, 2016</span>, Updated <span id="page-updated-date">November 08, 2023</span></span>
+    </div>
+</div>
+
+
+
+
+
+
+        <div id="footer-pusher"></div>
+
+    </div>
+
+    
+
+    <footer id="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="hidden-xs">
+                    <a href="https://www.nist.gov" title="National Institute of Standards and Technology" rel="home" target="_blank" class="footer-nist-logo" id="footer-nist-logo-link">
+                        <img src="/CSRC/Media/images/nist-logo-brand-white.svg" alt="National Institute of Standards and Technology logo" id="footer-nist-logo" />
+                    </a>
+                </span>
+
+                <div class="row footer-contact-container">
+                    <div class="col-sm-12" id="footer-address">
+                        <strong>HEADQUARTERS</strong><br>
+                        100 Bureau Drive<br>
+                        Gaithersburg, MD 20899
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <ul class="social-list text-right" style="display: block;">
+                    <li class="field-item service-twitter list-horiz">
+                        <a href="https://twitter.com/NISTCyber" class="social-btn social-btn--large extlink ext" id="footer-social-twitter-link">
+                            <i class="fa fa-twitter fa-fw"><span class="element-invisible">twitter</span></i><span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+                    </li>
+                    <li class="field-item service-facebook list-horiz">
+                        <a href="https://www.facebook.com/NIST" class="social-btn social-btn--large extlink ext" id="footer-social-facebook-link">
+                            <i class="fa fa-facebook fa-fw"><span class="element-invisible">facebook</span></i><span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+
+                    </li>
+                    <li class="field-item service-linkedin list-horiz">
+                        <a href="https://www.linkedin.com/company/nist" class="social-btn social-btn--large extlink ext" id="footer-social-linkedin-link">
+                            <i class="fa fa-linkedin fa-fw"><span class="element-invisible">linkedin</span></i><span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+
+                    </li>
+                    <li class="field-item service-instagram list-horiz">
+                        <a href="https://www.instagram.com/usnistgov/" class="social-btn social-btn--large extlink ext" id="footer-social-instagram-link">
+                            <i class="fa fa-instagram fa-fw"><span class="element-invisible">instagram</span></i>
+                            <span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+
+                    </li>
+                    <li class="field-item service-youtube list-horiz">
+                        <a href="https://www.youtube.com/user/USNISTGOV" class="social-btn social-btn--large extlink ext" id="footer-social-youtube-link">
+                            <i class="fa fa-youtube fa-fw"><span class="element-invisible">youtube</span></i><span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+
+                    </li>
+                    <li class="field-item service-rss list-horiz">
+                        <a href="https://www.nist.gov/news-events/nist-rss-feeds" class="social-btn social-btn--large extlink" id="footer-social-rss-link">
+                            <i class="fa fa-rss fa-fw"><span class="element-invisible">rss</span></i>
+                        </a>
+
+                    </li>
+                    <li class="field-item service-govdelivery list-horiz last">
+                        <a href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3" class="social-btn social-btn--large extlink ext" title="Subscribe to CSRC and publication updates, and other NIST cybersecurity news" id="footer-social-govdelivery-link">
+                            <i class="fa fa-envelope fa-fw"><span class="element-invisible">govdelivery</span></i><span class="ext"><span class="element-invisible"> (link is external)</span></span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-right">
+                    Want updates about CSRC and our publications?
+                    <a href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3" class="btn btn-lg btn-primary" style="background-color: #12659c!important; border-color: #12659c!important;" id="footer-subscribe-link">Subscribe</a>
+                </p>
+            </div>
+        </div>
+        <div class="row hidden-sm hidden-md hidden-lg">
+            <div class="col-sm-12">
+                <a href="https://www.nist.gov" title="National Institute of Standards and Technology" rel="home" target="_blank" class="footer-nist-logo" id="footer-bottom-nist-logo-link">
+                    <img src="/CSRC/Media/images/logo_rev.png" alt="National Institute of Standards and Technology logo" id="footer-bottom-nist-logo" />
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <p>
+                    <a href="/about/contact" id="footer-contact-us-link">Contact Us</a> |
+                    <a href="https://www.nist.gov/about-nist/our-organization" style="display: inline-block;" id="footer-org-link">Our Other Offices</a>
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <span class="pull-right text-right">
+                    Send inquiries to <a href="mailto:csrc-inquiry@nist.gov?subject=CSRC Inquiry" style="display: inline-block;" id="footer-inquiries-link">csrc-inquiry@nist.gov</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="footer-bottom-links-container" id="footer-bottom-links-container">
+                <ul>
+                  <li><a href="https://www.nist.gov/privacy-policy">Site Privacy</a></li>
+                  <li><a href="https://www.nist.gov/oism/accessibility">Accessibility</a></li>
+                  <li><a href="https://www.nist.gov/privacy">Privacy Program</a></li>
+                  <li><a href="https://www.nist.gov/oism/copyrights">Copyrights</a></li>
+                  <li><a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a></li>
+                  <li><a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a></li>
+                  <li><a href="https://www.nist.gov/foia">FOIA</a></li>
+                  <li><a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a></li>
+                  <li><a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a></li>
+                  <li><a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a></li>
+                  <li><a href="https://www.commerce.gov/">Commerce.gov</a></li>
+                  <li><a href="https://www.science.gov/">Science.gov</a></li>
+                  <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                  <li><a href="https://vote.gov/">Vote.gov</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/dist/js/quick-collapse.js"></script>
+<script type="text/javascript" src="/dist/app.bundle.js"></script>
+
+    
+    <script type="text/javascript" src="/dist/projects.bundle.js"></script>
+
+    
+
+
+    </body>
+</html>

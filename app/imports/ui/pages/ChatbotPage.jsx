@@ -14,7 +14,10 @@ const ChatbotPage = () => {
   }, []);
 
   return (
-    <Container id="chatbot-page" fluid className="py-3">
+    <Container id="chatbot-page" fluid>
+      <Container>
+        <p><a href="https://askuh.info">Home</a> &gt; ChatBot</p>
+      </Container>
       <Chatbot input={question} />
     </Container>
   );
