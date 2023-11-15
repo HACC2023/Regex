@@ -14,7 +14,6 @@ const ChatBox = (props) => {
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
   const [opacity, setOpacity] = useState(0);
-  const [opacVal, setOpacVal] = useState(true);
 
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
