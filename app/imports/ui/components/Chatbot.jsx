@@ -14,6 +14,7 @@ const ChatBox = (props) => {
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
   const [opacity, setOpacity] = useState(0);
+  const [opacVal, setOpacVal] = useState(true);
 
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
@@ -115,10 +116,15 @@ const ChatBox = (props) => {
 
   // Fades in cards
   useEffect(() => {
-    if (opacity < 100 && similarArticles[0]) {
-      setInterval(setOpacity(opacity + 1), 3);
-    }
-  }, [opacity]);
+    const intervalId = setInterval(() => {
+      if (opacity < 100 && similarArticles[0]) {
+        setOpacity((prevOpacity) => prevOpacity + 1);
+      }
+    }, 3);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [opacity, similarArticles]);
 
   // Scrolls to bottom of chat window when chatHistory is updated
   const chat = useRef();
