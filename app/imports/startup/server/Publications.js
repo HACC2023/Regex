@@ -20,7 +20,7 @@ Meteor.publish(AskUs.adminPublicationName, function (start, num) {
   if (Roles.userIsInRole(this.userId, 'admin')) {
     return AskUs.collection.find(
       {},
-      { sort: { _id: 1 }, skip: start, limit: num },
+      { sort: { filename: 1 }, skip: start, limit: num },
     );
   }
   return this.ready();

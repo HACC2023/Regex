@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Table } from 'react-bootstrap';
-import StatItemAdmin from './StatItemAdmin';
+import PaginationTableItem from './PaginationTableItem';
 // eslint-disable-next-line no-unused-vars
 import LoadingSpinner from './LoadingSpinner';
 import { AskUs } from '../../api/askus/AskUs';
@@ -34,7 +34,11 @@ const PaginationTable = ({ itemsPerPage }) => {
     // const endOffset = itemOffset + itemsPerPage;
     // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
-    const tableItems = AskUs.collection.find().fetch();
+    const tableItems = AskUs.collection.find(
+      {},
+      // { sort: { filename: 1 } },
+      { skip: 8 },
+    ).fetch();
     setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
@@ -60,7 +64,7 @@ const PaginationTable = ({ itemsPerPage }) => {
           </tr>
         </thead>
         <tbody>
-          {pages.map((page) => <StatItemAdmin key={page._id} page={page} />)}
+          {pages.map((page) => <PaginationTableItem key={page._id} page={page} />)}
         </tbody>
       </Table>
       <ReactPaginate

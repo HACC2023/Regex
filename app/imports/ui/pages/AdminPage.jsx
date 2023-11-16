@@ -11,16 +11,16 @@ import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
 
-/* Renders a table containing all of the Stuff documents. Use <StatItemAdmin> to render each row. */
+/* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
   const [complete, setComplete] = useState(false);
 
   // Fetch and prepare data for the table
-  const { ready, pages } = useTracker(() => {
+  const { ready, faq } = useTracker(() => {
     const subscription = Meteor.subscribe(AskUs.userPublicationName);
     const items = AskUs.collection.find().fetch();
     return {
-      pages: items,
+      faq: items,
       ready: subscription.ready(),
     };
   }, []);
@@ -31,13 +31,13 @@ const AdminPage = () => {
   // Checks if embeddings (for top 8 freq articles) exist
   useEffect(() => {
     let val = true;
-    for (let i = 0; i < pages.length; i++) {
-      if (!ready || (ready && !pages[i].embedding)) {
+    for (let i = 0; i < faq.length; i++) {
+      if (!ready || (ready && !faq[i].embedding)) {
         val = false;
       }
     }
     setComplete(val);
-  }, [pages, ready]); // Add dependencies to useEffect
+  }, [faq, ready]); // Add dependencies to useEffect
 
   return (
     <Container>
