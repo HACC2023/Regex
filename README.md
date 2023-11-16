@@ -4,7 +4,7 @@ This website is currently deployed at: [https://askuh.info/](https://askuh.info/
 <br />
 <div align="center">
   
-<img src="https://regex-ics314.github.io/docs/logo.png" alt="Logo" width="200" height="200">
+<img src="https://regex-ics314.github.io/docs/logo.png" alt="Logo" width="80" height="80">
 
 
   <p align="center">
