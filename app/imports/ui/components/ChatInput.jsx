@@ -19,7 +19,7 @@ const ChatInput = React.forwardRef((props, ref) => {
             aria-label="User input"
             className="search-boarder"
           />
-          <Button variant="link" className="ms-2 search"><Mic /></Button>
+          <Button variant="link" type="submit" className="ms-2 search"><Mic /></Button>
         </InputGroup>
         <Button type="submit" className="ms-2" style={{ backgroundColor: '#907139' }} disabled={loading}>Send</Button>
       </div>
