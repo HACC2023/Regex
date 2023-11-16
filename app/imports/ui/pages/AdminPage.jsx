@@ -7,6 +7,8 @@ import { useChartData } from '../components/ChartDataHook';
 import BarChartComponent from '../components/AdminBarChart';
 import StatItemAdmin from '../components/StatItemAdmin';
 import LoadingSpinner from '../components/LoadingSpinner';
+import LoadingBar from '../components/LoadingBar';
+import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 
@@ -25,7 +27,7 @@ const AdminPage = () => {
   }, []);
 
   // Fetch and prepare data for the chart using useChartData hook
-  const { chartData } = useChartData(); // Use the custom hook
+  const { chartData, chartReady } = useChartData(); // Use the custom hook
 
   // Checks if embeddings (for top 8 freq articles) exist
   useEffect(() => {
@@ -38,53 +40,66 @@ const AdminPage = () => {
     setComplete(val);
   }, [pages, ready]); // Add dependencies to useEffect
 
-  return (ready ? (
+  const maxArticles = 8;
+
+  return (
     <Container>
       <Container>
         <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
       </Container>
       <Row className="justify-content-center">
-        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>Admin Stats</h2>
+        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
 
         <Col lg={6}>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Filename</th>
-                <th>Question</th>
-                <th>Frequency</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pages.map((page) => <StatItemAdmin key={page._id} page={page} />)}
-            </tbody>
-          </Table>
+          {ready ? (
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Filename</th>
+                  <th>Question</th>
+                  <th>Frequency</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pages.map((page) => <StatItemAdmin key={page._id} page={page} />)}
+              </tbody>
+            </Table>
+          ) : <LoadingBar now={100 * (pages.length / maxArticles)} size={7} />}
+
         </Col>
 
         <Col lg={1} />
 
         <Col className="justify-content-md-center" lg={5}>
-          <Row className="text-center g-0">
+          <Row className="g-0"><h5>Startup Features</h5></Row>
+          <Row className="text-center g-0 mb-1">
             <Col>
               <EmbeddedButton />
             </Col>
             <Col>
-              {complete ? <div className="square" style={{ backgroundColor: 'lightgreen' }}>&#x2713;</div> : <div className="square" style={{ backgroundColor: 'red' }}>X</div>}
+              <StatusSquare complete={complete} size={1} />
             </Col>
           </Row>
-          <Row className="text-center g-0 mt-1" style={{ marginRight: '-1.4em' }}>
-            <Col lg={5}>
+
+          <Row className="text-center g-0 mb-1">
+            <Col>
               <UpdateDatabaseButton />
+            </Col>
+            <Col>
+              <StatusSquare complete={false} />
             </Col>
           </Row>
         </Col>
 
       </Row>
-      <Row className="justify-content-center py-5">
-        <BarChartComponent data={chartData} />
-      </Row>
+
+      {chartReady ? (
+        <Row className="justify-content-center py-5">
+          <BarChartComponent data={chartData} />
+        </Row>
+      ) : <LoadingSpinner />}
     </Container>
-  ) : <LoadingSpinner />);
+  );
 };
 
 export default AdminPage;
