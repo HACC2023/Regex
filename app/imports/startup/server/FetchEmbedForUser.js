@@ -3,6 +3,9 @@ import OpenAI from 'openai';
 import { check } from 'meteor/check';
 import { AskUs } from '../../api/askus/AskUs.js'; // Make sure to use the correct collection name
 
+// turn off console globally for eslint
+/* eslint-disable no-console */
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });

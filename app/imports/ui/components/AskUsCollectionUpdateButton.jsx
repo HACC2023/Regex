@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Button } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 const UpdateDatabaseButton = () => {
   const handleUpdateClick = async () => {
@@ -8,21 +9,21 @@ const UpdateDatabaseButton = () => {
       // Fetch JSON data using a Meteor method
       Meteor.call('getJsonData', (error, result) => {
         if (error) {
-          console.error('Error fetching JSON data:', error);
+          swal('Error fetching JSON data', `${error}`, 'error');
         } else {
           const jsonData = result;
           // Now call the updateDatabase method with the fetched JSON data
           Meteor.call('askus.updateDatabase', jsonData, (updateError) => {
             if (updateError) {
-              console.error('Error updating database:', updateError);
+              swal('Error updating database', `${updateError}`, 'error');
             } else {
-              console.log('Database successfully updated');
+              swal('Success', 'Database successfully updated', 'success');
             }
           });
         }
       });
     } catch (error) {
-      console.error('Error in handleUpdateClick:', error);
+      swal('Error in handleUpdateClick', `${error}`, 'error');
     }
   };
 

@@ -37,9 +37,9 @@ body .navbar {
 }
 
 .square {
-  height: 37px;
-  width: 37px;
-  line-height: 37px;
+  height: 2.4em;
+  width: 2.4em;
+  line-height: 2.4em;
   border-radius: 15%;
   text-align: center;
   margin-left: -2.4em;
@@ -54,7 +54,7 @@ body .navbar {
   padding: 8px 20px 10px !important;
 }
 
-/* Styling for NavBar below */
+/* Styling for UHNavbar below */
 .navbarColor {
   background-color: #444444;
 }
@@ -108,6 +108,10 @@ body .navbar {
 .dropdown-item {
   white-space: normal !important;
 }
+.unique-dropdown-class .dropdown-toggle::after {
+  display: none;
+}
+
 /* Styling for Footer below */
 #footer_top {
   background-color: #fff;

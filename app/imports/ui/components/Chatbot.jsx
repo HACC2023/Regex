@@ -13,6 +13,7 @@ const ChatBox = (props) => {
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
+  const [opacity, setOpacity] = useState(0);
 
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
@@ -63,6 +64,10 @@ const ChatBox = (props) => {
         setSimilarArticles(result.similarArticles);
         setUserInput('');
 
+        if (opacity < 100) {
+          setOpacity(opacity + 1);
+        }
+
         // Log the response time
         const timeEnd = (new Date()).getTime();
         const responseTimeMs = timeEnd - timeStart;
@@ -108,6 +113,18 @@ const ChatBox = (props) => {
     return <div>ChatBot</div>;
   };
 
+  // Fades in similar article cards when they are rendered
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (opacity < 100 && similarArticles[0]) {
+        setOpacity((prevOpacity) => prevOpacity + 1);
+      }
+    }, 3);
+
+    // Clears the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [opacity, similarArticles]);
+
   // Scrolls to bottom of chat window when chatHistory is updated
   const chat = useRef();
   useEffect(() => {
@@ -152,8 +169,7 @@ const ChatBox = (props) => {
       </Row>
       {/* Similar articles cards */}
       <Row className="mt-5">
-        <h5 className="mb-3">Relevant Articles</h5>
-        <SimilarArticles similarArticles={similarArticles} />
+        <SimilarArticles similarArticles={similarArticles} opacity={opacity / 100} />
       </Row>
     </Container>
   );
