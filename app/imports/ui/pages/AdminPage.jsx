@@ -72,15 +72,16 @@ const AdminPage = () => {
               <StatusSquare complete={false} />
             </Col>
           </Row>
+
+          {chartReady ? (
+            <Row className="justify-content-center pt-2 pb-5">
+              <BarChartComponent data={chartData} />
+            </Row>
+          ) : <LoadingSpinner />}
         </Col>
 
       </Row>
 
-      {chartReady ? (
-        <Row className="justify-content-center py-5">
-          <BarChartComponent data={chartData} />
-        </Row>
-      ) : <LoadingSpinner />}
     </Container>
   );
 };
