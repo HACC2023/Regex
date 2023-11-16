@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
+import { check } from 'meteor/check';
 import { AskUs } from '../../api/askus/AskUs';
 
 // Publishes the top 8 most frequently visited sites.
@@ -12,15 +13,15 @@ Meteor.publish(AskUs.userPublicationName, function () {
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
-Meteor.publish(AskUs.adminPublicationName, function (start, number) {
+Meteor.publish(AskUs.adminPublicationName, function (start, num) {
+  check(start, Number);
+  check(num, Number);
+
   if (Roles.userIsInRole(this.userId, 'admin')) {
-    const totalCount = AskUs.collection.find().count();
-    const dataCursor = AskUs.collection.find({}, { skip: start, limit: number });
+    const size = AskUs.collection.find().count();
+    console.log(`The current size of the collection is ${size}.`);
 
-    // Add a property 'totalCount' to the cursor with the total database size
-    dataCursor.totalCount = totalCount;
-
-    return dataCursor;
+    return AskUs.collection.find({}, { skip: start, limit: num });
   }
   return this.ready();
 });

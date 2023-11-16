@@ -18,9 +18,11 @@ const PaginationTable = ({ itemsPerPage }) => {
     // Retrieve data for pagination table from mongodb.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // const count1 = Meteor.subscribe(AskUs.Count);
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
     const tableItems = AskUs.collection.find().fetch();
-    setTotalCount(tableItems.totalCount);
+    // console.log(count);
+    // setTotalCount(count);
     setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
