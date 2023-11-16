@@ -37,8 +37,12 @@ body .navbar {
 }
 
 .square {
-  height: 50px;
-  width: 50px;
+  height: 37px;
+  width: 37px;
+  line-height: 37px;
+  border-radius: 15%;
+  text-align: center;
+  margin-left: -2.4em;
 }
 
 /* Styling for landing (LandingSearch and FAQCards) */
