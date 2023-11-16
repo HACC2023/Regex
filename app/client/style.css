@@ -99,6 +99,9 @@ body .navbar {
 .dropdown-item {
   white-space: normal !important;
 }
+.unique-dropdown-class .dropdown-toggle::after {
+  display: none;
+}
 /* Styling for UHFooter below */
 #footer_top {
   background-color: #fff;
