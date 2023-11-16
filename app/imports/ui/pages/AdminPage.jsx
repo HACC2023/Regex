@@ -69,7 +69,8 @@ const AdminPage = () => {
               <UpdateDatabaseButton />
             </Col>
             <Col>
-              <StatusSquare complete={false} />
+              { /* Add unique tracker for this */ }
+              <StatusSquare complete={complete} />
             </Col>
           </Row>
 
