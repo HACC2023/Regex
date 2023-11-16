@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { AskUs } from '../../api/askus/AskUs';
+import { Messages } from '../../api/message/Messages';
 
 // Publishes the top 8 most frequently visited sites.
 Meteor.publish(AskUs.userPublicationName, function () {
@@ -26,4 +27,12 @@ Meteor.publish(null, function () {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
   }
   return this.ready();
+});
+
+// Return all the chats in the database sorted by date
+Meteor.publish(Messages.userPublicationName, function () {
+  return Messages.collection.find(
+    {},
+    { sort: { sentAt: 1 } },
+  );
 });
