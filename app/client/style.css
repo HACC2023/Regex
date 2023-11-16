@@ -54,7 +54,7 @@ body .navbar {
   padding: 8px 20px 10px !important;
 }
 
-/* Styling for NavBar below */
+/* Styling for UHNavbar below */
 .navbarColor {
   background-color: #444444;
 }
@@ -113,7 +113,6 @@ body .navbar {
 }
 
 /* Styling for Footer below */
-
 #footer_top {
   background-color: #fff;
   padding: 0;

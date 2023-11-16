@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Form, InputGroup } from 'react-bootstrap';
 import { Mic } from 'react-bootstrap-icons';
 
 const ChatInput = React.forwardRef((props, ref) => {
