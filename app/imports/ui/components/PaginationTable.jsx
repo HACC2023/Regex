@@ -1,5 +1,5 @@
 import ReactPaginate from 'react-paginate';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Table } from 'react-bootstrap';
@@ -15,8 +15,8 @@ const PaginationTable = ({ itemsPerPage }) => {
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
 
-  const { ready, pages } = useTracker(() => {
-    // Retrieve total size of db using meteor functions.
+  // Retrieve total size of db using meteor functions.
+  useEffect(() => {
     Meteor.call('getItemsCount', (error, result) => {
       if (error) {
         console.error('Error getting count:', error);
@@ -25,22 +25,25 @@ const PaginationTable = ({ itemsPerPage }) => {
       }
       setTotalCount(result);
     });
+  }, []);
+
+  const { ready, pages } = useTracker(() => {
+    console.log('USETRACKER RENDER');
     // Retrieve data for pagination table from mongodb.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
     const tableItems = AskUs.collection.find().fetch();
-    console.log(`${totalCount} / ${itemsPerPage} --> ${Math.ceil(totalCount / itemsPerPage)}`);
     setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
       ready: subscription.ready(),
     };
-  }, [itemOffset, itemsPerPage]);
+  }, [itemOffset]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % totalCount;
+    const newOffset = (event.selected * itemsPerPage);
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
