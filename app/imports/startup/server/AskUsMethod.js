@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import OpenAIApi from 'openai';
 import crypto from 'crypto';
+import { Roles } from 'meteor/alanning:roles';
 import { AskUs } from '../../api/askus/AskUs.js';
 
 const openai = new OpenAIApi(process.env.OPENAI_API_KEY);
@@ -93,5 +94,14 @@ Meteor.methods({
     // Wait for all the update operations to complete
     await Promise.all(updatePromises);
     console.log('All embeddings have been processed.'); // Log when all articles have been processed
+  },
+
+  getItemsCount() {
+    // Calculate the count on the server
+    if (Roles.userIsInRole(this.userId, 'admin')) {
+      const count = AskUs.collection.find().count();
+      return count;
+    }
+    return ('');
   },
 });
