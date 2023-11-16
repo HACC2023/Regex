@@ -18,10 +18,10 @@ Meteor.publish(AskUs.adminPublicationName, function (start, num) {
   check(num, Number);
 
   if (Roles.userIsInRole(this.userId, 'admin')) {
-    const size = AskUs.collection.find().count();
-    console.log(`The current size of the collection is ${size}.`);
-
-    return AskUs.collection.find({}, { skip: start, limit: num });
+    return AskUs.collection.find(
+      {},
+      { sort: { _id: 1 }, skip: start, limit: num },
+    );
   }
   return this.ready();
 });

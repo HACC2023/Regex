@@ -18,11 +18,16 @@ const PaginationTable = ({ itemsPerPage }) => {
     // Retrieve data for pagination table from mongodb.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    // const count1 = Meteor.subscribe(AskUs.Count);
+    Meteor.call('getItemsCount', (error, result) => {
+      if (error) {
+        console.error('Error getting count:', error);
+      } else {
+        // console.log('Count:', result);
+      }
+      setTotalCount(result);
+    });
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
     const tableItems = AskUs.collection.find().fetch();
-    // console.log(count);
-    // setTotalCount(count);
     setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
