@@ -7,6 +7,7 @@ import StatItemAdmin from './StatItemAdmin';
 import LoadingSpinner from './LoadingSpinner';
 import { AskUs } from '../../api/askus/AskUs';
 
+// eslint-disable-next-line react/prop-types
 const PaginationTable = ({ itemsPerPage }) => {
   const [totalCount, setTotalCount] = useState(0);
   const [pageCount, setPageCount] = useState(0);
@@ -15,9 +16,7 @@ const PaginationTable = ({ itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState(0);
 
   const { ready, pages } = useTracker(() => {
-    // Retrieve data for pagination table from mongodb.
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // Retrieve total size of db using meteor functions.
     Meteor.call('getItemsCount', (error, result) => {
       if (error) {
         console.error('Error getting count:', error);
@@ -26,8 +25,12 @@ const PaginationTable = ({ itemsPerPage }) => {
       }
       setTotalCount(result);
     });
+    // Retrieve data for pagination table from mongodb.
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const subscription = Meteor.subscribe(AskUs.adminPublicationName, itemOffset, itemsPerPage);
     const tableItems = AskUs.collection.find().fetch();
+    console.log(`${totalCount} / ${itemsPerPage} --> ${Math.ceil(totalCount / itemsPerPage)}`);
     setPageCount(Math.ceil(totalCount / itemsPerPage));
     return {
       pages: tableItems,
