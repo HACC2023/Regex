@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
-import { useParams } from 'react-router';
 import { AskUs } from '../../api/askus/AskUs';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
@@ -27,8 +26,6 @@ const ChatBox = (props) => {
       console.log(/* 'Success', `increased ${item.filename} freq by ${amount} (from ${item.freq} to ${freq})` */)));
   };
 
-  const { _id } = useParams();
-
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -41,9 +38,12 @@ const ChatBox = (props) => {
     Messages.collection.insert(
       { sender: 'user', message: userInput, feedback: 'none', sessionId: sessionId, userId: userId, sentAt: sentAt, stars: 0 },
     );
-
+    const sessionExists = Sessions.collection.find(sessionId);
+    if (!sessionExists) {
+      console.log(`Session with id ${sessionId} does not exist`);
+    }
     // eslint-disable-next-line no-use-before-define
-    Sessions.collection.update(_id, { $set: { latestQuery: userInput, sentAt: sentAt } }, (error) => (error ?
+    Sessions.collection.update(sessionId, { $set: { latestQuery: userInput, sentAt: sentAt } }, (error) => (error ?
       console.log('Session Fail to Update') :
       console.log('Session Updated')));
 

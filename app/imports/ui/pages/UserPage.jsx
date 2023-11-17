@@ -12,7 +12,6 @@ const UserPage = () => {
     const subscription = Meteor.subscribe(Sessions.userPublicationName);
     const rdy = subscription.ready();
     const userToFind = Meteor.user() ? Meteor.user().username : 'notLoggedIn';
-    console.log(userToFind);
     const sessionItems = Sessions.collection.find({ userId: userToFind }).fetch();
     return {
       sessions: sessionItems,
@@ -22,6 +21,7 @@ const UserPage = () => {
 
   return (
     <Container>
+      <h1> History </h1>
       <Col lg={6}>
         {ready ? (
           <Table striped bordered hover>
@@ -32,7 +32,6 @@ const UserPage = () => {
               </tr>
             </thead>
             <tbody>
-              {console.log(sessions)}
               {sessions.map((session) => <ChatHistory key={session._id} session={session} />)}
             </tbody>
           </Table>
