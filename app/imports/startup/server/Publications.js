@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { AskUs } from '../../api/askus/AskUs';
 import { Messages } from '../../api/message/Messages';
+import { Sessions } from '../../api/session/Sessions';
 
 // Publishes the top 8 most frequently visited sites.
 Meteor.publish(AskUs.userPublicationName, function () {
@@ -29,10 +30,18 @@ Meteor.publish(null, function () {
   return this.ready();
 });
 
-// Return all the chats in the database sorted by date
+// Return all the chats in the database sorted by earliest date
 Meteor.publish(Messages.userPublicationName, function () {
   return Messages.collection.find(
     {},
     { sort: { sentAt: 1 } },
+  );
+});
+
+// Return all the history in the database sorted by latest date
+Meteor.publish(Sessions.userPublicationName, function () {
+  return Sessions.collection.find(
+    {},
+    { sort: { sentAt: -1 } },
   );
 });

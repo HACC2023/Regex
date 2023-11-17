@@ -1,21 +1,17 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class MessagesCollection {
+class SessionsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'MessagesCollection';
+    this.name = 'SessionsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      sender: String,
-      message: String,
-      feedback: String,
-      sessionId: String,
-      userId: String,
+      latestQuery: String,
       sentAt: Date,
-      stars: Number,
+      userId: String,
       // Add more fields if necessary
     });
     // Attach the schema to the collection.
@@ -27,7 +23,7 @@ class MessagesCollection {
 }
 
 /**
- * The singleton instance of the MessagesCollection.
- * @type {MessagesCollection}
+ * The singleton instance of the SessionsCollection.
+ * @type {SessionsCollection}
  */
-export const Messages = new MessagesCollection();
+export const Sessions = new SessionsCollection();

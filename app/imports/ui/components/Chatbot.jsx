@@ -3,11 +3,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
+import { useParams } from 'react-router';
 import { AskUs } from '../../api/askus/AskUs';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 import { Messages } from '../../api/message/Messages';
 import SimilarArticles from './SimilarArticles';
+import { Sessions } from '../../api/session/Sessions';
 
 const ChatBox = (props) => {
   const { input } = props;
@@ -25,18 +27,26 @@ const ChatBox = (props) => {
       console.log(/* 'Success', `increased ${item.filename} freq by ${amount} (from ${item.freq} to ${freq})` */)));
   };
 
+  const { _id } = useParams();
+
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const userId = 'placeholderUserId'; // Placeholder, replace with actual userId if available
-    const sessionId = sessionStorage.getItem('chatbotSessionId'); // Placeholder, replace with actual userId if available
+    const userId = Meteor.user() ? Meteor.user().username : 'notLoggedIn';
+    const sessionId = sessionStorage.getItem('chatbotSessionId');
 
     let sentAt = new Date();
     sentAt = new Date();
     Messages.collection.insert(
       { sender: 'user', message: userInput, feedback: 'none', sessionId: sessionId, userId: userId, sentAt: sentAt, stars: 0 },
     );
+
+    // eslint-disable-next-line no-use-before-define
+    Sessions.collection.update(_id, { $set: { latestQuery: userInput, sentAt: sentAt } }, (error) => (error ?
+      console.log('Session Fail to Update') :
+      console.log('Session Updated')));
+
     if (!userInput.trim()) {
       // Handle the case when userInput is empty or just whitespace
       setLoading(false);
@@ -88,6 +98,7 @@ const ChatBox = (props) => {
       }
     });
   };
+
   // Function to format chatbot's response
   const formatChatbotResponse = (text) => {
     const lines = text.split('\n');
@@ -121,11 +132,12 @@ const ChatBox = (props) => {
     }
     return <div>ChatBot</div>;
   };
+
   // eslint-disable-next-line no-unused-vars
   const { ready, messages } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Message documents.
     const subscription = Meteor.subscribe(Messages.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
