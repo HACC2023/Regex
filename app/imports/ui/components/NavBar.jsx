@@ -115,7 +115,7 @@ const NavBar = () => {
                 <Nav.Link href="https://www.hawaii.edu/its/services/">ITS Services</Nav.Link>
                 <Nav.Link href="https://www.hawaii.edu/infosec/">INFORMATION SECURITY</Nav.Link>
                 <Nav.Link href="https://www.hawaii.edu/its/alerts/">ALERTS</Nav.Link>
-                <NavDropdown alignRight title="ABOUT" id="basic-nav-dropdown">
+                <NavDropdown title="ABOUT" id="basic-nav-dropdown">
                   <NavDropdown.Item href="https://www.hawaii.edu/its/about/">About</NavDropdown.Item>
                   <NavDropdown.Item href="https://www.hawaii.edu/its/about/about-cio/index.html">
                     VP for Information Technology and Chief Information Officer

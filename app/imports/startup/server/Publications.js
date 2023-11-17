@@ -2,6 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { check } from 'meteor/check';
 import { AskUs } from '../../api/askus/AskUs';
+import { Visits } from '../../api/visit/Visits';
+
+// Publishes page visit collection.
+Meteor.publish(Visits.userPublicationName, function () {
+  return Visits.collection.find();
+});
 
 // Publishes the top 8 most frequently visited sites.
 Meteor.publish(AskUs.userPublicationName, function () {

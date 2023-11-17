@@ -10,77 +10,88 @@ import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
+import AvgResponseAdmin from '../components/AvgResponseAdmin';
+import DragNDrop from '../components/DragNDrop';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
   const [complete, setComplete] = useState(false);
+  const [complete2, setComplete2] = useState(false);
 
-  // Fetch and prepare data for the table
-  const { ready, faq } = useTracker(() => {
-    const subscription = Meteor.subscribe(AskUs.userPublicationName);
-    const items = AskUs.collection.find().fetch();
-    return {
-      faq: items,
-      ready: subscription.ready(),
-    };
-  }, []);
-
-  // Fetch and prepare data for the chart using useChartData hook
-  const { chartData, chartReady } = useChartData(); // Use the custom hook
-
-  // Checks if embeddings (for top 8 freq articles) exist
+  // Retrieve status of db using meteor functions.
   useEffect(() => {
-    let val = true;
-    for (let i = 0; i < faq.length; i++) {
-      if (!ready || (ready && !faq[i].embedding)) {
-        val = false;
+    Meteor.call('embedExist', (error, result) => {
+      if (error) {
+        console.error('Error getting embed status:', error);
+      } else {
+        // console.log('Status:', result);
       }
-    }
-    setComplete(val);
-  }, [faq, ready]); // Add dependencies to useEffect
+      setComplete(result);
+    });
+  });
+
+  // Retrieve status of FERPA using meteor functions.
+  useEffect(() => {
+    Meteor.call('otherDbExist', (error, result) => {
+      if (error) {
+        console.error('Error getting FERPA status:', error);
+      } else {
+        // console.log('Status:', result);
+      }
+      setComplete2(result);
+    });
+  });
 
   return (
     <Container>
       <Container>
         <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
       </Container>
-      <Row className="justify-content-center">
-        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
 
+      <Row className="justify-content-center">
+        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Dashboard</h2>
+      </Row>
+
+      <Row>
         <Col lg={6}>
           <PaginationTable itemsPerPage={10} />
         </Col>
 
-        <Col lg={1} />
+        <Col className="justify-content-md-center text-center" lg={6}>
+          <Row>
 
-        <Col className="justify-content-md-center" lg={5}>
-          <Row className="g-0"><h5>Startup Features</h5></Row>
-          <Row className="text-center g-0 mb-1">
             <Col>
-              <EmbeddedButton />
+              <Row className="g-0"><h5>Startup Requirements</h5></Row>
+
+              <Row className="text-center g-0 mb-1">
+                <Col>
+                  <EmbeddedButton />
+                </Col>
+                <Col lg={2}>
+                  <StatusSquare complete={complete} size={1} />
+                </Col>
+              </Row>
+
+              <Row className="text-center g-0 mb-1">
+                <Col>
+                  <UpdateDatabaseButton />
+                </Col>
+                <Col lg={2}>
+                  <StatusSquare complete={complete2} />
+                </Col>
+              </Row>
             </Col>
+
             <Col>
-              <StatusSquare complete={complete} size={1} />
+              <AvgResponseAdmin />
             </Col>
+
           </Row>
 
-          <Row className="text-center g-0 mb-1">
-            <Col>
-              <UpdateDatabaseButton />
-            </Col>
-            <Col>
-              { /* Add unique tracker for this */ }
-              <StatusSquare complete={complete} />
-            </Col>
+          <Row>
+            <DragNDrop />
           </Row>
-
-          {chartReady ? (
-            <Row className="justify-content-center pt-2 pb-5">
-              <BarChartComponent data={chartData} />
-            </Row>
-          ) : <LoadingSpinner />}
         </Col>
-
       </Row>
 
     </Container>

@@ -104,4 +104,31 @@ Meteor.methods({
     }
     return ('');
   },
+
+  // Checks if the embeddings of the first 10 items in the AskUs collection exist.
+  embedExist() {
+    const stuff = AskUs.collection.find(
+      {},
+      { fields: { embedding: 1 }, limit: 10 },
+    ).fetch();
+    let val = true;
+    for (let i = 0; i < 10; i++) {
+      if (!stuff[i].embedding) {
+        val = false;
+      }
+    }
+    return val;
+  },
+
+  // Checks if the embeddings of the new data exists.
+  otherDbExist() {
+    const stuff = AskUs.collection.find(
+      { filename: 'An Eligible Student Guide to FERPA_0.pdf' },
+    ).fetch();
+    let val = true;
+    if (!stuff[0].embedding) {
+      val = false;
+    }
+    return val;
+  },
 });

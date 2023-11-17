@@ -1,25 +1,17 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class AskUsCollection {
+class VisitCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'AskUsCollection';
+    this.name = 'VisitCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      filename: String,
-      question: String,
-      article_text: String,
-      freq: Number,
-      embedding: { type: Array, optional: true }, // Add this line
-      'embedding.$': Number, // Each item in the embedding array is a Number
-      textHash: {
-        type: String,
-        optional: true, // This field is optional because it may not exist until the first embedding is generated.
-      },
-      // Add more fields if necessary
+      pageUrl: String,
+      pageName: String,
+      visitCount: Number,
     });
     // Attach the schema to the collection.
     this.collection.attachSchema(this.schema);
@@ -31,6 +23,6 @@ class AskUsCollection {
 
 /**
  * The singleton instance of the AskUsCollection.
- * @type {AskUsCollection}
+ * @type {VisitCollection}
  */
-export const AskUs = new AskUsCollection();
+export const Visits = new VisitCollection();
