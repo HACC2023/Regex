@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row } from 'react-bootstrap';
-import { AskUs } from '../../api/askus/AskUs';
-import { useChartData } from '../components/ChartDataHook';
 import BarChartComponent from '../components/AdminBarChart';
-import LoadingSpinner from '../components/LoadingSpinner';
 import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
