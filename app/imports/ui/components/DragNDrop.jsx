@@ -54,9 +54,11 @@ const DragNDrop = () => {
 
   return (
     <Card className="m-1 p-2">
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <div {...getRootProps({ style })}>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <input {...getInputProps()} />
-        <p>Click or drop files here to upload (Currently doesn't do anything)</p>
+        <p>Click or drop files here to upload (Currently doesn&apos;t do anything)</p>
       </div>
     </Card>
   );

@@ -49,7 +49,7 @@ const AdminPage = () => {
       </Container>
 
       <Row className="justify-content-center">
-        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
+        <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Dashboard</h2>
       </Row>
 
       <Row>
@@ -61,7 +61,7 @@ const AdminPage = () => {
           <Row>
 
             <Col>
-              <Row className="g-0"><h5>Startup Features</h5></Row>
+              <Row className="g-0"><h5>Startup Requirements</h5></Row>
 
               <Row className="text-center g-0 mb-1">
                 <Col>
@@ -91,9 +91,7 @@ const AdminPage = () => {
           <Row>
             <DragNDrop />
           </Row>
-
         </Col>
-
       </Row>
 
     </Container>
