@@ -13,7 +13,7 @@ const UserPage = () => {
     const rdy = subscription.ready();
     const userToFind = Meteor.user() ? Meteor.user().username : 'notLoggedIn';
     console.log(userToFind);
-    const sessionItems = Sessions.collection.find({ sessionId: userToFind }).fetch();
+    const sessionItems = Sessions.collection.find({ userId: userToFind }).fetch();
     return {
       sessions: sessionItems,
       ready: rdy,
