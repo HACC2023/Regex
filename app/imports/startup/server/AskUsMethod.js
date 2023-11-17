@@ -119,4 +119,16 @@ Meteor.methods({
     }
     return val;
   },
+
+  // Checks if the embeddings of the new data exists.
+  otherDbExist() {
+    const stuff = AskUs.collection.find(
+      { filename: 'An Eligible Student Guide to FERPA_0.pdf' },
+    ).fetch();
+    let val = true;
+    if (!stuff) {
+      val = false;
+    }
+    return val;
+  },
 });

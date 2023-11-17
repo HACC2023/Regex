@@ -28,6 +28,18 @@ const AdminPage = () => {
     });
   }, []);
 
+  // Retrieve status of FERPA using meteor functions.
+  useEffect(() => {
+    Meteor.call('otherDbExist', (error, result) => {
+      if (error) {
+        console.error('Error getting FERPA status:', error);
+      } else {
+        // console.log('Status:', result);
+      }
+      setComplete2(result);
+    });
+  }, []);
+
   return (
     <Container>
       <Container>
