@@ -5,7 +5,6 @@ import { Button, Col, Container, Image, Nav, Navbar, Row, NavDropdown, InputGrou
 import { BoxArrowRight, Facebook, Instagram, List, PersonFill, PersonPlusFill, Search, Twitter, Youtube } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-
 // import EmbeddedButton from './EmbeddedButton'; // TODO: Remove this line when you remove the EmbeddedButton component.
 
 const NavBar = () => {
@@ -33,6 +32,7 @@ const NavBar = () => {
               <Nav.Link href="https://www.instagram.com/uhawaiinews/"><Instagram /></Nav.Link>
               <Nav.Link href="https://www.flickr.com/photos/uhawaii"><Image src="/images/icon-flickr.png" width={15} /></Nav.Link>
               <Nav.Link href="https://www.youtube.com/user/uhmagazine"><Youtube /></Nav.Link>
+
               <Nav className="justify-content-end">
                 {currentUser === '' ? (
                   <NavDropdown id="basic-nav-dropdown" title={<PersonFill />} className="unique-dropdown-class">
@@ -115,7 +115,7 @@ const NavBar = () => {
                 <Nav.Link href="https://www.hawaii.edu/its/services/">ITS Services</Nav.Link>
                 <Nav.Link href="https://www.hawaii.edu/infosec/">INFORMATION SECURITY</Nav.Link>
                 <Nav.Link href="https://www.hawaii.edu/its/alerts/">ALERTS</Nav.Link>
-                <NavDropdown alignRight title="ABOUT" id="basic-nav-dropdown">
+                <NavDropdown alignright="true" title="ABOUT" id="basic-nav-dropdown">
                   <NavDropdown.Item href="https://www.hawaii.edu/its/about/">About</NavDropdown.Item>
                   <NavDropdown.Item href="https://www.hawaii.edu/its/about/about-cio/index.html">
                     VP for Information Technology and Chief Information Officer

@@ -225,9 +225,10 @@ function getAverageEmbedding(messages) {
 const userSessions = {};
 
 Meteor.methods({
-  async getChatbotResponse(userId, userMessage) {
+  async getChatbotResponse(userId, userMessage, userLanguage) {
     check(userId, String);
     check(userMessage, String);
+    check(userLanguage, String);
 
     // Retrieve or initialize the user's session
     const userSession = userSessions[userId] || {
@@ -280,11 +281,30 @@ Meteor.methods({
         }
       }
 
-      const initialContext = [
-        { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
-        { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
-        { role: 'assistant', content: 'Hello! How can I assist you today?' },
-      ];
+      // Adjust initial context based on user's language preference
+      let initialContext;
+
+      switch (userLanguage) {
+      case 'japanese':
+        initialContext = [{ role: 'system', content: 'You are a Japanese translator and will respond in Japanese only.' }];
+        break;
+      case 'spanish':
+        initialContext = [{ role: 'system', content: 'You are a Spanish translator and will respond in Spanish only.' }];
+        break;
+      case 'chinese':
+        initialContext = [{ role: 'system', content: 'You are a Chinese translator and will respond in Chinese only.' }];
+        break;
+      case 'korean':
+        initialContext = [{ role: 'system', content: 'You are a Korean translator and will respond in Korean only.' }];
+        break;
+        // Add cases for other languages
+      default:
+        initialContext = [
+          { role: 'system', content: 'You are a helpful chatbot that can answer questions based on the following articles provided.' },
+          { role: 'system', content: 'You can engage in friendly conversation, but your main purpose is to provide information from our knowledge base.' },
+          { role: 'assistant', content: 'Hello! How can I assist you today?' },
+        ];
+      }
 
       console.log('Session History:', userSession.messages);
 

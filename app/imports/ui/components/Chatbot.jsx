@@ -14,6 +14,7 @@ const ChatBox = (props) => {
   const [loading, setLoading] = useState(false);
   const [similarArticles, setSimilarArticles] = useState([]);
   const [opacity, setOpacity] = useState(0);
+  const [userLanguage, setUserLanguage] = useState('english');
 
   // Increases the freq attribute in the Askus database for selected item.
   const increaseFreq = (item, amount) => {
@@ -24,6 +25,9 @@ const ChatBox = (props) => {
       console.log(/* 'Success', `increased ${item.filename} freq by ${amount} (from ${item.freq} to ${freq})` */)));
   };
 
+  const handleLanguageSelect = (e) => {
+    setUserLanguage(e.target.value);
+  };
   const handleSend = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -41,7 +45,7 @@ const ChatBox = (props) => {
     const timeStart = (new Date()).getTime();
 
     // Meteor.call is executed immediately here without the setTimeout
-    Meteor.call('getChatbotResponse', userId, userInput, (error, result) => {
+    Meteor.call('getChatbotResponse', userId, userInput, userLanguage, (error, result) => {
       setLoading(false);
       if (!error) {
         const newMessages = [
@@ -151,6 +155,15 @@ const ChatBox = (props) => {
       <Row>
         {/* Chatbot Conversation Column */}
         <Col>
+          <select value={userLanguage} onChange={handleLanguageSelect}>
+            <option value="english">English</option>
+            <option value="spanish">Español</option>
+            <option value="japanese">日本語</option>
+            <option value="chinese">中文</option>
+            <option value="korean">한국어</option>
+
+            {/* Add more languages as needed */}
+          </select>
           <ChatWindow
             ref={chat}
             chatHistory={chatHistory}
