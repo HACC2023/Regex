@@ -15,6 +15,7 @@ import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import Infosec from '../pages/Infosec';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           { /* <Route path="/signup" element={<SignUp />} /> */ }
           <Route path="/signout" element={<SignOut />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
+          <Route path="/infosec" element={<Infosec />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
