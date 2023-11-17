@@ -155,7 +155,7 @@ const ChatBox = (props) => {
       <Row>
         {/* Chatbot Conversation Column */}
         <Col>
-          <select value={userLanguage} onChange={handleLanguageSelect}>
+          <select value={userLanguage} onChange={handleLanguageSelect} className="mb-1">
             <option value="english">English</option>
             <option value="spanish">Español</option>
             <option value="japanese">日本語</option>
