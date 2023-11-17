@@ -67,7 +67,7 @@ const AdminPage = () => {
                 <Col>
                   <EmbeddedButton />
                 </Col>
-                <Col>
+                <Col lg={2}>
                   <StatusSquare complete={complete} size={1} />
                 </Col>
               </Row>
@@ -76,7 +76,7 @@ const AdminPage = () => {
                 <Col>
                   <UpdateDatabaseButton />
                 </Col>
-                <Col>
+                <Col lg={2}>
                   <StatusSquare complete={complete2} />
                 </Col>
               </Row>
