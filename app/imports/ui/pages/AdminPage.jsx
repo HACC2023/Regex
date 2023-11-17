@@ -12,6 +12,7 @@ import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
 import AvgResponseAdmin from '../components/AvgResponseAdmin';
 import DragNDrop from '../components/DragNDrop';
+import AdminGraph from '../components/AdminGraph';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
@@ -58,6 +59,9 @@ const AdminPage = () => {
         </Col>
 
         <Col className="justify-content-md-center text-center" lg={6}>
+          <Row>
+            <AdminGraph />
+          </Row>
           <Row>
 
             <Col>
