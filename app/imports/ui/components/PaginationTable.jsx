@@ -2,7 +2,7 @@ import ReactPaginate from 'react-paginate';
 import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Container, Table } from 'react-bootstrap';
+import { Container, Table, Col } from 'react-bootstrap';
 import PaginationTableItem from './PaginationTableItem';
 // eslint-disable-next-line no-unused-vars
 import LoadingSpinner from './LoadingSpinner';
@@ -50,41 +50,43 @@ const PaginationTable = ({ itemsPerPage }) => {
 
   return (
     <Container>
-      <Table striped bordered hover className="items">
-        <thead>
-          <tr>
-            <th>Filename</th>
-            <th>Question</th>
-            <th>Frequency</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pages.map((page) => <PaginationTableItem key={page._id} page={page} />)}
-        </tbody>
-      </Table>
-      {totalCount > 0 ? (
-        <ReactPaginate
-          nextLabel="Next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
-          // Change this to pageCount variable eventually, but it's super broken.
-          pageCount={56}
-          previousLabel="< Prev"
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-          previousClassName="page-item"
-          previousLinkClassName="page-link"
-          nextClassName="page-item"
-          nextLinkClassName="page-link"
-          breakLabel="..."
-          breakClassName="page-item"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
-          activeClassName="active"
-          renderOnZeroPageCount={null}
-        />
-      ) : (<LoadingSpinner />)}
+      <Col>
+        <Table striped bordered hover className="items mb-0">
+          <thead>
+            <tr>
+              <th>Filename</th>
+              <th>Question</th>
+              <th>Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pages.map((page) => <PaginationTableItem key={page._id} page={page} />)}
+          </tbody>
+        </Table>
+        {totalCount > 0 ? (
+          <ReactPaginate
+            nextLabel="Next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={3}
+            // Change this to pageCount variable eventually, but it's super broken.
+            pageCount={56}
+            previousLabel="< Prev"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            breakLabel="..."
+            breakClassName="page-item"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        ) : (<LoadingSpinner />)}
+      </Col>
     </Container>
   );
 };
