@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTracker } from 'meteor/react-meteor-data';
 import ChatLoading from './ChatLoading';
 import { Messages } from '../../api/message/Messages';
+import LoadingSpinner from './LoadingSpinner';
 
 const transition = {
   type: 'spring',
@@ -35,7 +36,7 @@ const ChatWindow = React.forwardRef((props, ref) => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Message documents
-    const messageItems = Messages.collection.find({}).fetch();
+    const messageItems = Messages.collection.find({ sessionId: sessionStorage.getItem('chatbotSessionId') }).fetch();
     return {
       messages: messageItems,
       ready: rdy,
@@ -75,7 +76,7 @@ const ChatWindow = React.forwardRef((props, ref) => {
       {loading && <ChatLoading />}
       <div ref={ref} />
     </div>
-  ) : 'Not Ready');
+  ) : <LoadingSpinner />);
 });
 
 ChatWindow.propTypes = {

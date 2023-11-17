@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
-import { v4 as uuidv4 } from 'uuid';
 import { AskUs } from '../../api/askus/AskUs';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
@@ -31,7 +30,7 @@ const ChatBox = (props) => {
     setLoading(true);
 
     const userId = 'placeholderUserId'; // Placeholder, replace with actual userId if available
-    const sessionId = uuidv4(); // Placeholder, replace with actual userId if available
+    const sessionId = sessionStorage.getItem('chatbotSessionId'); // Placeholder, replace with actual userId if available
 
     let sentAt = new Date();
     sentAt = new Date();
