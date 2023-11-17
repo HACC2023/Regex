@@ -27,7 +27,7 @@ const BarChartComponent = ({ data }) => {
     labels: data.map(d => d.label),
     datasets: [
       {
-        label: 'Frequency (Times accessed)',
+        label: 'Page Visits (Fake data currently)',
         data: data.map(d => d.value),
         backgroundColor: 'rgba(0, 123, 255, 0.5)',
         borderWidth: 1,
