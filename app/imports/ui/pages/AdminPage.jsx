@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Card } from 'react-bootstrap';
 import BarChartComponent from '../components/AdminBarChart';
 import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
@@ -58,32 +58,36 @@ const AdminPage = () => {
 
         <Col className="justify-content-md-center text-center" lg={6}>
           <Row className="mb-3">
-            <BarChartComponent data={testData} />
+            <Card>
+              <BarChartComponent data={testData} />
+            </Card>
           </Row>
           <Row>
 
             <Col>
-              <Row className="g-0"><h5>Startup Requirements</h5></Row>
+              <Card>
+                <Card.Header>
+                  <Row className="g-0"><h5>Startup Requirements</h5></Row>
+                </Card.Header>
+                <Row className="text-center g-0 my-1">
+                  <Col>
+                    <EmbeddedButton />
+                  </Col>
+                  <Col lg={2}>
+                    <StatusSquare complete={complete} size={1} />
+                  </Col>
+                </Row>
 
-              <Row className="text-center g-0 mb-1">
-                <Col>
-                  <EmbeddedButton />
-                </Col>
-                <Col lg={2}>
-                  <StatusSquare complete={complete} size={1} />
-                </Col>
-              </Row>
-
-              <Row className="text-center g-0 mb-1">
-                <Col>
-                  <UpdateDatabaseButton />
-                </Col>
-                <Col lg={2}>
-                  <StatusSquare complete={complete2} />
-                </Col>
-              </Row>
+                <Row className="text-center g-0 mb-1">
+                  <Col>
+                    <UpdateDatabaseButton />
+                  </Col>
+                  <Col lg={2}>
+                    <StatusSquare complete={complete2} />
+                  </Col>
+                </Row>
+              </Card>
             </Col>
-
             <Col>
               <AvgResponseAdmin />
             </Col>
