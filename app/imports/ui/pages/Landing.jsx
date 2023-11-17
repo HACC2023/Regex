@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import LandingSearch from '../components/LandingSearch';
 import FAQCards from '../components/FAQCards';
+import Notifications from '../components/Notifications';
 
 /* A simple component to render the landing page. */
 const Landing = () => (
@@ -11,6 +12,7 @@ const Landing = () => (
     </Container>
     <LandingSearch />
     <FAQCards />
+    <Notifications />
   </Container>
 );
 
