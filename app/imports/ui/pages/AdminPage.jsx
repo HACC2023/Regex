@@ -10,6 +10,7 @@ import StatusSquare from '../components/StatusSquare';
 import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
+import AvgResponseAdmin from '../components/AvgResponseAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
@@ -45,35 +46,46 @@ const AdminPage = () => {
       <Container>
         <p><a href="https://askuh.info">Home</a> &gt; Admin</p>
       </Container>
+
       <Row className="justify-content-center">
         <h2 className="text-center pb-3" style={{ textDecoration: 'underline' }}>System Analytics</h2>
+      </Row>
 
+      <Row>
         <Col lg={6}>
           <PaginationTable itemsPerPage={10} />
         </Col>
 
-        <Col lg={1} />
+        <Col className="justify-content-md-center text-center" lg={6}>
+          <Row>
 
-        <Col className="justify-content-md-center" lg={5}>
-          <Row className="g-0"><h5>Startup Features</h5></Row>
-          <Row className="text-center g-0 mb-1">
             <Col>
-              <EmbeddedButton />
+              <Row className="g-0"><h5>Startup Features</h5></Row>
+
+              <Row className="text-center g-0 mb-1">
+                <Col>
+                  <EmbeddedButton />
+                </Col>
+                <Col>
+                  <StatusSquare complete={complete} size={1} />
+                </Col>
+              </Row>
+
+              <Row className="text-center g-0 mb-1">
+                <Col>
+                  <UpdateDatabaseButton />
+                </Col>
+                <Col>
+                  <StatusSquare complete={complete2} />
+                </Col>
+              </Row>
             </Col>
+
             <Col>
-              <StatusSquare complete={complete} size={1} />
+              <AvgResponseAdmin />
             </Col>
+
           </Row>
-
-          <Row className="text-center g-0 mb-1">
-            <Col>
-              <UpdateDatabaseButton />
-            </Col>
-            <Col>
-              <StatusSquare complete={complete2} />
-            </Col>
-          </Row>
-
         </Col>
 
       </Row>
