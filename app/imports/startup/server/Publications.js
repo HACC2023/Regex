@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { check } from 'meteor/check';
 import { AskUs } from '../../api/askus/AskUs';
+import { Messages } from '../../api/message/Messages';
+import { Sessions } from '../../api/session/Sessions';
 import { Visits } from '../../api/visit/Visits';
 
 // Publishes page visit collection.
@@ -39,4 +41,20 @@ Meteor.publish(null, function () {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
   }
   return this.ready();
+});
+
+// Return all the chats in the database sorted by earliest date
+Meteor.publish(Messages.userPublicationName, function () {
+  return Messages.collection.find(
+    {},
+    { sort: { sentAt: 1 } },
+  );
+});
+
+// Return all the history in the database sorted by latest date
+Meteor.publish(Sessions.userPublicationName, function () {
+  return Sessions.collection.find(
+    {},
+    { sort: { sentAt: -1 } },
+  );
 });

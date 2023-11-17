@@ -29,7 +29,8 @@
     "sweetalert": "^2.1.2",
     "uniforms": "^3.10.2",
     "uniforms-bootstrap5": "^3.10.2",
-    "uniforms-bridge-simple-schema-2": "^3.10.2"
+    "uniforms-bridge-simple-schema-2": "^3.10.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.9",
