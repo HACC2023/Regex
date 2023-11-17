@@ -7,6 +7,7 @@ import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
 import AvgResponseAdmin from '../components/AvgResponseAdmin';
+// eslint-disable-next-line no-unused-vars
 import DragNDrop from '../components/DragNDrop';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
@@ -94,9 +95,10 @@ const AdminPage = () => {
 
           </Row>
 
+          { /* Commented unused component for HACC
           <Row>
             <DragNDrop />
-          </Row>
+          </Row> */ }
         </Col>
       </Row>
 
