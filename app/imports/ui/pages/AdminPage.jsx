@@ -12,12 +12,14 @@ import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
 import AvgResponseAdmin from '../components/AvgResponseAdmin';
 import DragNDrop from '../components/DragNDrop';
-import AdminGraph from '../components/AdminGraph';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
   const [complete, setComplete] = useState(false);
   const [complete2, setComplete2] = useState(false);
+
+  // Replace this when send times are implemented in message collection
+  const testData = [{ label: 'Week 1', value: 13 }, { label: 'Week 2', value: 57 }, { label: 'Week 3', value: 32 }, { label: 'Week 4', value: 79 }];
 
   // Retrieve status of db using meteor functions.
   useEffect(() => {
@@ -59,8 +61,8 @@ const AdminPage = () => {
         </Col>
 
         <Col className="justify-content-md-center text-center" lg={6}>
-          <Row>
-            <AdminGraph />
+          <Row className="mb-3">
+            <BarChartComponent data={testData} />
           </Row>
           <Row>
 
