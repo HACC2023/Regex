@@ -11,6 +11,7 @@ import EmbeddedButton from '../components/EmbeddedButton';
 import UpdateDatabaseButton from '../components/AskUsCollectionUpdateButton';
 import PaginationTable from '../components/PaginationTable';
 import AvgResponseAdmin from '../components/AvgResponseAdmin';
+import DragNDrop from '../components/DragNDrop';
 
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
@@ -86,6 +87,11 @@ const AdminPage = () => {
             </Col>
 
           </Row>
+
+          <Row>
+            <DragNDrop />
+          </Row>
+
         </Col>
 
       </Row>
