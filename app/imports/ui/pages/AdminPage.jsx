@@ -26,7 +26,7 @@ const AdminPage = () => {
       }
       setComplete(result);
     });
-  }, []);
+  });
 
   // Retrieve status of FERPA using meteor functions.
   useEffect(() => {
@@ -38,7 +38,7 @@ const AdminPage = () => {
       }
       setComplete2(result);
     });
-  }, []);
+  });
 
   return (
     <Container>

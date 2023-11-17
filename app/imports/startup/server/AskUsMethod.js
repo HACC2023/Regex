@@ -113,7 +113,7 @@ Meteor.methods({
     ).fetch();
     let val = true;
     for (let i = 0; i < 10; i++) {
-      if (!stuff[i]) {
+      if (!stuff[i].embedding) {
         val = false;
       }
     }
@@ -126,7 +126,7 @@ Meteor.methods({
       { filename: 'An Eligible Student Guide to FERPA_0.pdf' },
     ).fetch();
     let val = true;
-    if (!stuff) {
+    if (!stuff[0].embedding) {
       val = false;
     }
     return val;
