@@ -53,7 +53,7 @@ const DragNDrop = () => {
   ]);
 
   return (
-    <Card className="my-2 py-3">
+    <Card className="m-1 p-2">
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
         <p>Click or drop files here to upload (Currently doesn't do anything)</p>
