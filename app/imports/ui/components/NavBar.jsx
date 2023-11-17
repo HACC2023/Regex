@@ -130,6 +130,7 @@ const NavBar = () => {
                 </NavDropdown>
                 <NavDropdown title="ASK US">
                   <NavDropdown.Item id="landing" as={NavLink} to="/" key="landing">Home</NavDropdown.Item>
+                  <NavDropdown.Item id="infosec" as={NavLink} to="/infosec" key="infosec">Infosec</NavDropdown.Item>
                   <NavDropdown.Item id="chatbot-nav" as={NavLink} to="/chatbot" key="chatbot">Chatbot</NavDropdown.Item>
                   {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                     <NavDropdown.Item id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</NavDropdown.Item>
