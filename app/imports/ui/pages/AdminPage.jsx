@@ -14,30 +14,19 @@ import PaginationTable from '../components/PaginationTable';
 /* Renders a table containing all of the Stuff documents. Use <PaginationTableItem> to render each row. */
 const AdminPage = () => {
   const [complete, setComplete] = useState(false);
+  const [complete2, setComplete2] = useState(false);
 
-  // Fetch and prepare data for the table
-  const { ready, faq } = useTracker(() => {
-    const subscription = Meteor.subscribe(AskUs.userPublicationName);
-    const items = AskUs.collection.find().fetch();
-    return {
-      faq: items,
-      ready: subscription.ready(),
-    };
-  }, []);
-
-  // Fetch and prepare data for the chart using useChartData hook
-  const { chartData, chartReady } = useChartData(); // Use the custom hook
-
-  // Checks if embeddings (for top 8 freq articles) exist
+  // Retrieve status of db using meteor functions.
   useEffect(() => {
-    let val = true;
-    for (let i = 0; i < faq.length; i++) {
-      if (!ready || (ready && !faq[i].embedding)) {
-        val = false;
+    Meteor.call('embedExist', (error, result) => {
+      if (error) {
+        console.error('Error getting embed status:', error);
+      } else {
+        // console.log('Status:', result);
       }
-    }
-    setComplete(val);
-  }, [faq, ready]); // Add dependencies to useEffect
+      setComplete(result);
+    });
+  }, []);
 
   return (
     <Container>
@@ -69,16 +58,10 @@ const AdminPage = () => {
               <UpdateDatabaseButton />
             </Col>
             <Col>
-              { /* Add unique tracker for this */ }
-              <StatusSquare complete={complete} />
+              <StatusSquare complete={complete2} />
             </Col>
           </Row>
 
-          {chartReady ? (
-            <Row className="justify-content-center pt-2 pb-5">
-              <BarChartComponent data={chartData} />
-            </Row>
-          ) : <LoadingSpinner />}
         </Col>
 
       </Row>

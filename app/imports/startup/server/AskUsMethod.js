@@ -104,4 +104,19 @@ Meteor.methods({
     }
     return ('');
   },
+
+  // Checks if the embeddings of the first 10 items in the AskUs collection exist.
+  embedExist() {
+    const stuff = AskUs.collection.find(
+      {},
+      { fields: { embedding: 1 }, limit: 10 },
+    ).fetch();
+    let val = true;
+    for (let i = 0; i < 10; i++) {
+      if (!stuff[i]) {
+        val = false;
+      }
+    }
+    return val;
+  },
 });

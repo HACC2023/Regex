@@ -26,7 +26,6 @@ class AskUsCollection {
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
-    this.Count = `${this.name}.Count`;
   }
 }
 
