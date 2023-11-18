@@ -55,6 +55,6 @@ Meteor.publish(Messages.userPublicationName, function () {
 Meteor.publish(Sessions.userPublicationName, function () {
   return Sessions.collection.find(
     {},
-    { sort: { sentAt: -1 } },
+    { sort: { sentAt: 1 } },
   );
 });

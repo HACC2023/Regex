@@ -9,7 +9,10 @@ class SessionsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      latestQuery: String,
+      latestQuery: {
+        type: String,
+        optional: true,
+      },
       sentAt: Date,
       userId: String,
       // Add more fields if necessary
