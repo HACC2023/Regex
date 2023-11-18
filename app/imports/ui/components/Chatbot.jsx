@@ -111,9 +111,7 @@ const ChatBox = (props) => {
 
     const formattedLines = lines.map((line, index) => {
       // Replace Markdown links with HTML anchor tags
-      const formattedLine = line.replace(markdownLinkRegex, (match, linkText, linkUrl) => {
-        return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
-      });
+      const formattedLine = line.replace(markdownLinkRegex, (match, linkText, linkUrl) => `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer">${linkText}</a>`);
 
       return <p key={index} dangerouslySetInnerHTML={{ __html: formattedLine }} />;
     });
