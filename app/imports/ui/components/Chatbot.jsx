@@ -106,26 +106,20 @@ const ChatBox = (props) => {
   // Function to format chatbot's response
   const formatChatbotResponse = (text) => {
     const lines = text.split('\n');
-    const linkRegex = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&;/~+#])?/;
+    // Regex to match Markdown links
+    const markdownLinkRegex = /\[([^\]]+)\]\((http[s]?:\/\/[^\s)]+)\)/g;
+
     const formattedLines = lines.map((line, index) => {
-      const linkMatch = line.match(linkRegex);
-      if (linkMatch) {
-        const link = linkMatch[0];
-        const linkText = line.replace(link, '').trim() || 'Link';
-        return (
-          <p key={index}>
-            {linkText}
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              {link}
-            </a>
-          </p>
-        );
-      }
-      return <p key={index}>{line}</p>;
+      // Replace Markdown links with HTML anchor tags
+      const formattedLine = line.replace(markdownLinkRegex, (match, linkText, linkUrl) => {
+        return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+      });
+
+      return <p key={index} dangerouslySetInnerHTML={{ __html: formattedLine }} />;
     });
+
     return <div>{formattedLines}</div>;
   };
-
   // Helper function that provides message sender above messages that aren't chatbot links.
   const chatSender = (message) => {
     if (message.sender === 'user') {
